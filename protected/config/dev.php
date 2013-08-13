@@ -56,7 +56,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=sound',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'ZAQ!2wsx',
+            'password' => 'undertaker',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
