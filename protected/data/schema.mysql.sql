@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 02, 2013 at 11:21 PM
+-- Generation Time: Aug 13, 2013 at 11:11 PM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `address`
 --
 
+DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -57,6 +58,7 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 -- Table structure for table `affiliate`
 --
 
+DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -98,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 -- Table structure for table `affiliate_transaction`
 --
 
+DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -114,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 -- Table structure for table `attribute`
 --
 
+DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -144,6 +148,7 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 -- Table structure for table `attribute_description`
 --
 
+DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -185,6 +190,7 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 -- Table structure for table `attribute_group`
 --
 
+DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -207,6 +213,7 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Table structure for table `attribute_group_description`
 --
 
+DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -234,6 +241,7 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 -- Table structure for table `banner`
 --
 
+DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -256,6 +264,7 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 -- Table structure for table `banner_image`
 --
 
+DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -284,6 +293,7 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 -- Table structure for table `banner_image_description`
 --
 
+DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -320,6 +330,7 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 -- Table structure for table `category`
 --
 
+DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -367,6 +378,7 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 -- Table structure for table `category_description`
 --
 
+DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -424,6 +436,7 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 -- Table structure for table `category_filter`
 --
 
+DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -436,6 +449,7 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 -- Table structure for table `category_path`
 --
 
+DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -478,6 +492,7 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 -- Table structure for table `category_to_layout`
 --
 
+DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -491,6 +506,7 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 -- Table structure for table `category_to_store`
 --
 
+DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -531,6 +547,7 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 -- Table structure for table `country`
 --
 
+DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -803,6 +820,7 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 -- Table structure for table `coupon`
 --
 
+DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -836,6 +854,7 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 -- Table structure for table `coupon_category`
 --
 
+DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -848,6 +867,7 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 -- Table structure for table `coupon_history`
 --
 
+DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -864,6 +884,7 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 -- Table structure for table `coupon_product`
 --
 
+DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -877,6 +898,7 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 -- Table structure for table `currency`
 --
 
+DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -903,6 +925,7 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 -- Table structure for table `customer`
 --
 
+DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -939,6 +962,7 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 -- Table structure for table `customer_ban_ip`
 --
 
+DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -952,6 +976,7 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 -- Table structure for table `customer_field`
 --
 
+DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -968,6 +993,7 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 -- Table structure for table `customer_group`
 --
 
+DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -992,6 +1018,7 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 -- Table structure for table `customer_group_description`
 --
 
+DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1014,6 +1041,7 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 -- Table structure for table `customer_history`
 --
 
+DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1028,6 +1056,7 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 -- Table structure for table `customer_ip`
 --
 
+DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1050,6 +1079,7 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 -- Table structure for table `customer_online`
 --
 
+DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1065,6 +1095,7 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 -- Table structure for table `customer_reward`
 --
 
+DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -1081,6 +1112,7 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 -- Table structure for table `customer_transaction`
 --
 
+DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1097,6 +1129,7 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 -- Table structure for table `custom_field`
 --
 
+DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1114,6 +1147,7 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 -- Table structure for table `custom_field_description`
 --
 
+DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1127,6 +1161,7 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 -- Table structure for table `custom_field_to_customer_group`
 --
 
+DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1139,6 +1174,7 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 -- Table structure for table `custom_field_value`
 --
 
+DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -1152,6 +1188,7 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 -- Table structure for table `custom_field_value_description`
 --
 
+DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1166,6 +1203,7 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 -- Table structure for table `download`
 --
 
+DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -1181,6 +1219,7 @@ CREATE TABLE IF NOT EXISTS `download` (
 -- Table structure for table `download_description`
 --
 
+DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1194,6 +1233,7 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 -- Table structure for table `extension`
 --
 
+DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1237,6 +1277,7 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 -- Table structure for table `filter`
 --
 
+DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1250,6 +1291,7 @@ CREATE TABLE IF NOT EXISTS `filter` (
 -- Table structure for table `filter_description`
 --
 
+DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1264,6 +1306,7 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 -- Table structure for table `filter_group`
 --
 
+DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1276,6 +1319,7 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 -- Table structure for table `filter_group_description`
 --
 
+DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1289,6 +1333,7 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 -- Table structure for table `geo_zone`
 --
 
+DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1312,6 +1357,7 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 -- Table structure for table `information`
 --
 
+DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1336,6 +1382,7 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) V
 -- Table structure for table `information_description`
 --
 
+DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1364,6 +1411,7 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 -- Table structure for table `information_to_layout`
 --
 
+DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1377,6 +1425,7 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
 -- Table structure for table `information_to_store`
 --
 
+DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1399,6 +1448,7 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 -- Table structure for table `language`
 --
 
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1427,6 +1477,7 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 -- Table structure for table `layout`
 --
 
+DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1456,6 +1507,7 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 -- Table structure for table `layout_route`
 --
 
+DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1486,6 +1538,7 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 -- Table structure for table `length_class`
 --
 
+DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1507,6 +1560,7 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 -- Table structure for table `length_class_description`
 --
 
+DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1533,6 +1587,7 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 -- Table structure for table `manufacturer`
 --
 
+DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1559,6 +1614,7 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VA
 -- Table structure for table `manufacturer_to_store`
 --
 
+DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1583,6 +1639,7 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- Table structure for table `option`
 --
 
+DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1613,6 +1670,7 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 -- Table structure for table `option_description`
 --
 
+DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1654,6 +1712,7 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 -- Table structure for table `option_value`
 --
 
+DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1688,6 +1747,7 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 -- Table structure for table `option_value_description`
 --
 
+DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1736,6 +1796,7 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 -- Table structure for table `order`
 --
 
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1813,6 +1874,7 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 -- Table structure for table `order_download`
 --
 
+DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1830,6 +1892,7 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 -- Table structure for table `order_field`
 --
 
+DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1846,6 +1909,7 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 -- Table structure for table `order_fraud`
 --
 
+DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1909,6 +1973,7 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 -- Table structure for table `order_history`
 --
 
+DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1934,6 +1999,7 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 -- Table structure for table `order_option`
 --
 
+DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1968,6 +2034,7 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 -- Table structure for table `order_product`
 --
 
+DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1997,6 +2064,7 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 -- Table structure for table `order_status`
 --
 
+DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2044,6 +2112,7 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `order_total`
 --
 
+DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2077,6 +2146,7 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 -- Table structure for table `order_voucher`
 --
 
+DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2099,6 +2169,7 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 -- Table structure for table `product`
 --
 
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
@@ -2165,6 +2236,7 @@ INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`
 -- Table structure for table `product_attribute`
 --
 
+DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2195,6 +2267,7 @@ INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `t
 -- Table structure for table `product_description`
 --
 
+DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2256,6 +2329,7 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 -- Table structure for table `product_discount`
 --
 
+DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2284,6 +2358,7 @@ INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_g
 -- Table structure for table `product_filter`
 --
 
+DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2296,6 +2371,7 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 -- Table structure for table `product_image`
 --
 
+DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2377,6 +2453,7 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 -- Table structure for table `product_option`
 --
 
+DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2409,6 +2486,7 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 -- Table structure for table `product_option_value`
 --
 
+DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2451,6 +2529,7 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 -- Table structure for table `product_related`
 --
 
+DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -2473,6 +2552,7 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 -- Table structure for table `product_reward`
 --
 
+DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2511,6 +2591,7 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 -- Table structure for table `product_spec`
 --
 
+DROP TABLE IF EXISTS `product_spec`;
 CREATE TABLE IF NOT EXISTS `product_spec` (
   `product_spec_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2539,6 +2620,7 @@ INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id
 -- Table structure for table `product_special`
 --
 
+DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2566,6 +2648,7 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 -- Table structure for table `product_to_category`
 --
 
+DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -2602,6 +2685,7 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 -- Table structure for table `product_to_download`
 --
 
+DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2614,6 +2698,7 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 -- Table structure for table `product_to_layout`
 --
 
+DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2627,6 +2712,7 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 -- Table structure for table `product_to_store`
 --
 
+DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2661,6 +2747,7 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 -- Table structure for table `return`
 --
 
+DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2690,6 +2777,7 @@ CREATE TABLE IF NOT EXISTS `return` (
 -- Table structure for table `return_action`
 --
 
+DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2715,6 +2803,7 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_history`
 --
 
+DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2731,6 +2820,7 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 -- Table structure for table `return_reason`
 --
 
+DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2760,6 +2850,7 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_status`
 --
 
+DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2785,6 +2876,7 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `review`
 --
 
+DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2805,6 +2897,7 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- Table structure for table `setting`
 --
 
+DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2972,6 +3065,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 -- Table structure for table `spec`
 --
 
+DROP TABLE IF EXISTS `spec`;
 CREATE TABLE IF NOT EXISTS `spec` (
   `spec_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -2997,6 +3091,7 @@ INSERT INTO `spec` (`spec_id`, `name`) VALUES
 -- Table structure for table `stock_status`
 --
 
+DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3024,6 +3119,7 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `store`
 --
 
+DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3038,6 +3134,7 @@ CREATE TABLE IF NOT EXISTS `store` (
 -- Table structure for table `tax_class`
 --
 
+DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -3061,6 +3158,7 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 -- Table structure for table `tax_rate`
 --
 
+DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -3086,6 +3184,7 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 -- Table structure for table `tax_rate_to_customer_group`
 --
 
+DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -3106,6 +3205,7 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 -- Table structure for table `tax_rule`
 --
 
+DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -3131,6 +3231,7 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 -- Table structure for table `unit`
 --
 
+DROP TABLE IF EXISTS `unit`;
 CREATE TABLE IF NOT EXISTS `unit` (
   `unit_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -3155,6 +3256,7 @@ INSERT INTO `unit` (`unit_id`, `name`) VALUES
 -- Table structure for table `url_alias`
 --
 
+DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
@@ -3182,6 +3284,7 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -3211,6 +3314,7 @@ INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, 
 -- Table structure for table `user_group`
 --
 
+DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3232,6 +3336,7 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Table structure for table `voucher`
 --
 
+DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -3254,6 +3359,7 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 -- Table structure for table `voucher_history`
 --
 
+DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -3269,6 +3375,7 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 -- Table structure for table `voucher_theme`
 --
 
+DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -3290,6 +3397,7 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Table structure for table `voucher_theme_description`
 --
 
+DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3315,6 +3423,7 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 -- Table structure for table `weight_class`
 --
 
+DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -3337,6 +3446,7 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 -- Table structure for table `weight_class_description`
 --
 
+DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3365,6 +3475,7 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 -- Table structure for table `zone`
 --
 
+DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -7373,6 +7484,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- Table structure for table `zone_to_geo_zone`
 --
 
+DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
