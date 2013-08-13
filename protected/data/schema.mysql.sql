@@ -1,17 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Aug 02, 2013 at 11:21 PM
+-- Server version: 5.5.16
+-- PHP Version: 5.3.8
+
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
+--
+-- Database: `sound`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `address`
 --
 
-DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -43,7 +57,6 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 -- Table structure for table `affiliate`
 --
 
-DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -85,7 +98,6 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 -- Table structure for table `affiliate_transaction`
 --
 
-DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -102,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 -- Table structure for table `attribute`
 --
 
-DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -133,7 +144,6 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 -- Table structure for table `attribute_description`
 --
 
-DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -175,7 +185,6 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 -- Table structure for table `attribute_group`
 --
 
-DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -198,7 +207,6 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Table structure for table `attribute_group_description`
 --
 
-DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -226,7 +234,6 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 -- Table structure for table `banner`
 --
 
-DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -249,7 +256,6 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 -- Table structure for table `banner_image`
 --
 
-DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -278,7 +284,6 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 -- Table structure for table `banner_image_description`
 --
 
-DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -315,7 +320,6 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -327,51 +331,35 @@ CREATE TABLE IF NOT EXISTS `category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=71 ;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2011-05-30 12:14:55'),
-(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2010-08-22 06:32:15'),
-(20, 'data/demo/compaq_presario.jpg', 0, 1, 1, 1, 1, '2009-01-05 21:49:43', '2011-07-16 02:14:42'),
-(24, '', 0, 1, 1, 5, 1, '2009-01-20 02:36:26', '2011-05-30 12:15:18'),
-(18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2011-05-30 12:13:55'),
-(17, '', 0, 1, 1, 4, 1, '2009-01-03 21:08:57', '2011-05-30 12:15:11'),
-(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2010-08-22 06:32:46'),
-(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2010-08-22 06:31:45'),
-(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2010-08-22 06:32:39'),
-(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2010-08-22 06:33:00'),
-(31, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:24', '2010-08-22 06:33:06'),
-(32, '', 25, 0, 0, 1, 1, '2009-02-03 14:17:34', '2010-08-22 06:33:12'),
-(33, '', 0, 1, 1, 6, 1, '2009-02-03 14:17:55', '2011-05-30 12:15:25'),
-(34, 'data/demo/ipod_touch_4.jpg', 0, 1, 4, 7, 1, '2009-02-03 14:18:11', '2011-05-30 12:15:31'),
-(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2010-09-18 14:02:42'),
-(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2010-09-18 14:02:55'),
-(37, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:39', '2011-04-22 01:55:08'),
-(38, '', 34, 0, 0, 0, 1, '2010-09-18 14:03:51', '2010-09-18 14:03:51'),
-(39, '', 34, 0, 0, 0, 1, '2010-09-18 14:04:17', '2011-04-22 01:55:20'),
-(40, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:36', '2010-09-18 14:05:36'),
-(41, '', 34, 0, 0, 0, 1, '2010-09-18 14:05:49', '2011-04-22 01:55:30'),
-(42, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:34', '2010-11-07 20:31:04'),
-(43, '', 34, 0, 0, 0, 1, '2010-09-18 14:06:49', '2011-04-22 01:55:40'),
-(44, '', 34, 0, 0, 0, 1, '2010-09-21 15:39:21', '2010-11-07 20:30:55'),
-(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2011-04-26 08:52:11'),
-(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2011-04-26 08:52:23'),
-(47, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:16', '2010-11-07 11:13:16'),
-(48, '', 34, 0, 0, 0, 1, '2010-11-07 11:13:33', '2010-11-07 11:13:33'),
-(49, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:04', '2010-11-07 11:14:04'),
-(50, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:23', '2011-04-22 01:16:01'),
-(51, '', 34, 0, 0, 0, 1, '2010-11-07 11:14:38', '2011-04-22 01:16:13'),
-(52, '', 34, 0, 0, 0, 1, '2010-11-07 11:16:09', '2011-04-22 01:54:57'),
-(53, '', 34, 0, 0, 0, 1, '2010-11-07 11:28:53', '2011-04-22 01:14:36'),
-(54, '', 34, 0, 0, 0, 1, '2010-11-07 11:29:16', '2011-04-22 01:16:50'),
-(55, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:32', '2010-11-08 10:31:32'),
-(56, '', 34, 0, 0, 0, 1, '2010-11-08 10:31:50', '2011-04-22 01:16:37'),
-(57, '', 0, 1, 1, 3, 1, '2011-04-26 08:53:16', '2011-05-30 12:15:05'),
-(58, '', 52, 0, 0, 0, 1, '2011-05-08 13:44:16', '2011-05-08 13:44:16');
+(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2013-07-22 00:00:00'),
+(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2013-07-22 00:00:00'),
+(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2013-07-31 00:00:00'),
+(18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2013-07-22 00:00:00'),
+(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2013-07-22 00:00:00'),
+(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2013-07-22 00:00:00'),
+(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2013-07-22 00:00:00'),
+(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2013-07-22 00:00:00'),
+(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2013-07-22 00:00:00'),
+(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2013-07-22 00:00:00'),
+(68, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2013-07-22 00:00:00'),
+(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2013-07-22 00:00:00'),
+(67, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(66, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(65, '', 26, 1, 1, 3, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(64, '', 26, 1, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(63, '', 26, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(62, '', 20, 0, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(59, '', 27, 0, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(60, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
+(61, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -379,7 +367,6 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 -- Table structure for table `category_description`
 --
 
-DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -396,82 +383,40 @@ CREATE TABLE IF NOT EXISTS `category_description` (
 --
 
 INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
-(28, 1, 'Monitors', '', '', ''),
-(33, 1, 'Cameras', '', '', ''),
-(32, 1, 'Web Cameras', '', '', ''),
-(31, 1, 'Scanners', '', '', ''),
-(30, 1, 'Printers', '', '', ''),
-(29, 1, 'Mice and Trackballs', '', '', ''),
-(27, 1, 'Mac', '', '', ''),
-(26, 1, 'PC', '', '', ''),
-(17, 1, 'Software', '', '', ''),
-(25, 1, 'Components', '', '', ''),
-(24, 1, 'Phones &amp; PDAs', '', '', ''),
-(20, 1, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Example of category description', ''),
-(35, 1, 'test 1', '', '', ''),
-(36, 1, 'test 2', '', '', ''),
-(37, 1, 'test 5', '', '', ''),
-(38, 1, 'test 4', '', '', ''),
-(39, 1, 'test 6', '', '', ''),
-(40, 1, 'test 7', '', '', ''),
-(41, 1, 'test 8', '', '', ''),
-(42, 1, 'test 9', '', '', ''),
-(43, 1, 'test 11', '', '', ''),
-(34, 1, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-(18, 1, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-(44, 1, 'test 12', '', '', ''),
-(45, 1, 'Windows', '', '', ''),
-(46, 1, 'Macs', '', '', ''),
-(47, 1, 'test 15', '', '', ''),
-(48, 1, 'test 16', '', '', ''),
-(49, 1, 'test 17', '', '', ''),
-(50, 1, 'test 18', '', '', ''),
-(51, 1, 'test 19', '', '', ''),
-(52, 1, 'test 20', '', '', ''),
-(53, 1, 'test 21', '', '', ''),
-(54, 1, 'test 22', '', '', ''),
-(55, 1, 'test 23', '', '', ''),
-(56, 1, 'test 24', '', '', ''),
-(57, 1, 'Tablets', '', '', ''),
-(58, 1, 'test 25', '', '', ''),
+(28, 1, 'Product Menu 3.1', '', '', ''),
+(30, 1, 'Product Menu 3.3', '', '', ''),
+(29, 1, 'Product Menu 3.2', '', '', ''),
+(27, 1, 'Product Menu 1.1', '', '', ''),
+(26, 1, 'Product Menu 1.2', '', '', ''),
+(25, 1, 'Product Menu 3', '', '', ''),
+(20, 1, 'Product Menu 1', '<p>Example of category description text</p>\r\n', '', ''),
+(35, 1, 'Product Menu 3.1.1', '', '', ''),
+(36, 1, 'Product Menu 3.1.2', '', '', ''),
+(18, 1, 'Product Menu 2', '<p>Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.</p>\r\n', '', ''),
+(45, 1, 'Product Menu 2.1', '', '', ''),
+(46, 1, 'Product Menu 2.2', '', '', ''),
 (28, 2, 'Monitors', '', '', ''),
-(33, 2, 'Cameras', '', '', ''),
-(32, 2, 'Web Cameras', '', '', ''),
-(31, 2, 'Scanners', '', '', ''),
 (30, 2, 'Printers', '', '', ''),
 (29, 2, 'Mice and Trackballs', '', '', ''),
 (27, 2, 'Mac', '', '', ''),
 (26, 2, 'PC', '', '', ''),
-(17, 2, 'Software', '', '', ''),
 (25, 2, 'Components', '', '', ''),
-(24, 2, 'Phones &amp; PDAs', '', '', ''),
 (20, 2, 'Desktops', '&lt;p&gt;\r\n	Example of category description text&lt;/p&gt;\r\n', 'Example of category description', ''),
 (35, 2, 'test 1', '', '', ''),
 (36, 2, 'test 2', '', '', ''),
-(37, 2, 'test 5', '', '', ''),
-(38, 2, 'test 4', '', '', ''),
-(39, 2, 'test 6', '', '', ''),
-(40, 2, 'test 7', '', '', ''),
-(41, 2, 'test 8', '', '', ''),
-(42, 2, 'test 9', '', '', ''),
-(43, 2, 'test 11', '', '', ''),
-(34, 2, 'MP3 Players', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
+(62, 1, 'Product Menu 1.3', '', '', ''),
+(63, 1, 'Product Menu 1.2.1', '', '', ''),
+(64, 1, 'Product Menu 1.2.2', '', '', ''),
+(65, 1, 'Product Menu 1.2.3', '', '', ''),
+(66, 1, 'Product Menu 1.3.1', '', '', ''),
+(67, 1, 'Product Menu 1.3.2', '', '', ''),
+(68, 1, 'Product Menu 1.3.3', '', '', ''),
 (18, 2, 'Laptops &amp; Notebooks', '&lt;p&gt;\r\n	Shop Laptop feature only the best laptop deals on the market. By comparing laptop deals from the likes of PC World, Comet, Dixons, The Link and Carphone Warehouse, Shop Laptop has the most comprehensive selection of laptops on the internet. At Shop Laptop, we pride ourselves on offering customers the very best laptop deals. From refurbished laptops to netbooks, Shop Laptop ensures that every laptop - in every colour, style, size and technical spec - is featured on the site at the lowest possible price.&lt;/p&gt;\r\n', '', ''),
-(44, 2, 'test 12', '', '', ''),
 (45, 2, 'Windows', '', '', ''),
 (46, 2, 'Macs', '', '', ''),
-(47, 2, 'test 15', '', '', ''),
-(48, 2, 'test 16', '', '', ''),
-(49, 2, 'test 17', '', '', ''),
-(50, 2, 'test 18', '', '', ''),
-(51, 2, 'test 19', '', '', ''),
-(52, 2, 'test 20', '', '', ''),
-(53, 2, 'test 21', '', '', ''),
-(54, 2, 'test 22', '', '', ''),
-(55, 2, 'test 23', '', '', ''),
-(56, 2, 'test 24', '', '', ''),
-(57, 2, 'Tablets', '', '', ''),
-(58, 2, 'test 25', '', '', '');
+(59, 1, 'Product Menu 1.1.1', '', '', ''),
+(60, 1, 'Product Menu 1.1.2', '', '', ''),
+(61, 1, 'Product Menu 1.1.3', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -479,7 +424,6 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 -- Table structure for table `category_filter`
 --
 
-DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -492,7 +436,6 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 -- Table structure for table `category_path`
 --
 
-DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -518,64 +461,16 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 (29, 29, 1),
 (30, 25, 0),
 (30, 30, 1),
-(31, 25, 0),
-(31, 31, 1),
-(32, 25, 0),
-(32, 32, 1),
 (20, 20, 0),
 (27, 20, 0),
 (27, 27, 1),
 (26, 20, 0),
 (26, 26, 1),
-(24, 24, 0),
 (18, 18, 0),
 (45, 18, 0),
 (45, 45, 1),
 (46, 18, 0),
-(46, 46, 1),
-(17, 17, 0),
-(33, 33, 0),
-(34, 34, 0),
-(37, 34, 0),
-(37, 37, 1),
-(38, 34, 0),
-(38, 38, 1),
-(39, 34, 0),
-(39, 39, 1),
-(40, 34, 0),
-(40, 40, 1),
-(41, 34, 0),
-(41, 41, 1),
-(42, 34, 0),
-(42, 42, 1),
-(43, 34, 0),
-(43, 43, 1),
-(44, 34, 0),
-(44, 44, 1),
-(47, 34, 0),
-(47, 47, 1),
-(48, 34, 0),
-(48, 48, 1),
-(49, 34, 0),
-(49, 49, 1),
-(50, 34, 0),
-(50, 50, 1),
-(51, 34, 0),
-(51, 51, 1),
-(52, 34, 0),
-(52, 52, 1),
-(58, 34, 0),
-(58, 52, 1),
-(58, 58, 2),
-(53, 34, 0),
-(53, 53, 1),
-(54, 34, 0),
-(54, 54, 1),
-(55, 34, 0),
-(55, 55, 1),
-(56, 34, 0),
-(56, 56, 1),
-(57, 57, 0);
+(46, 46, 1);
 
 -- --------------------------------------------------------
 
@@ -583,7 +478,6 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 -- Table structure for table `category_to_layout`
 --
 
-DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -597,7 +491,6 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 -- Table structure for table `category_to_store`
 --
 
-DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -609,44 +502,28 @@ CREATE TABLE IF NOT EXISTS `category_to_store` (
 --
 
 INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
-(17, 0),
 (18, 0),
 (20, 0),
-(24, 0),
 (25, 0),
 (26, 0),
 (27, 0),
 (28, 0),
 (29, 0),
 (30, 0),
-(31, 0),
-(32, 0),
-(33, 0),
-(34, 0),
 (35, 0),
 (36, 0),
-(37, 0),
-(38, 0),
-(39, 0),
-(40, 0),
-(41, 0),
-(42, 0),
-(43, 0),
-(44, 0),
 (45, 0),
 (46, 0),
-(47, 0),
-(48, 0),
-(49, 0),
-(50, 0),
-(51, 0),
-(52, 0),
-(53, 0),
-(54, 0),
-(55, 0),
-(56, 0),
-(57, 0),
-(58, 0);
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0),
+(64, 0),
+(65, 0),
+(66, 0),
+(67, 0),
+(68, 0);
 
 -- --------------------------------------------------------
 
@@ -654,7 +531,6 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 -- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -927,7 +803,6 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 -- Table structure for table `coupon`
 --
 
-DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -961,7 +836,6 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 -- Table structure for table `coupon_category`
 --
 
-DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -974,7 +848,6 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 -- Table structure for table `coupon_history`
 --
 
-DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -991,7 +864,6 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 -- Table structure for table `coupon_product`
 --
 
-DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -1005,7 +877,6 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 -- Table structure for table `currency`
 --
 
-DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -1024,7 +895,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
 --
 
 INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(4, 'Yuan', 'CNY', '', ' 元', '0', 1.00000000, 1, '2013-07-11 15:30:57');
+(4, 'Yuan', 'CNY', '', ' å…ƒ', '0', 1.00000000, 1, '2013-07-11 15:30:57');
 
 -- --------------------------------------------------------
 
@@ -1032,7 +903,6 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -1069,7 +939,6 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 -- Table structure for table `customer_ban_ip`
 --
 
-DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -1083,7 +952,6 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 -- Table structure for table `customer_field`
 --
 
-DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1100,7 +968,6 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 -- Table structure for table `customer_group`
 --
 
-DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -1125,7 +992,6 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 -- Table structure for table `customer_group_description`
 --
 
-DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1148,7 +1014,6 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 -- Table structure for table `customer_history`
 --
 
-DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1163,7 +1028,6 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 -- Table structure for table `customer_ip`
 --
 
-DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1186,7 +1050,6 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 -- Table structure for table `customer_online`
 --
 
-DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1202,7 +1065,6 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 -- Table structure for table `customer_reward`
 --
 
-DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -1219,7 +1081,6 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 -- Table structure for table `customer_transaction`
 --
 
-DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1236,7 +1097,6 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 -- Table structure for table `custom_field`
 --
 
-DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1254,7 +1114,6 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 -- Table structure for table `custom_field_description`
 --
 
-DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1268,7 +1127,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 -- Table structure for table `custom_field_to_customer_group`
 --
 
-DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1281,7 +1139,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 -- Table structure for table `custom_field_value`
 --
 
-DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -1295,7 +1152,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 -- Table structure for table `custom_field_value_description`
 --
 
-DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1310,7 +1166,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 -- Table structure for table `download`
 --
 
-DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -1326,7 +1181,6 @@ CREATE TABLE IF NOT EXISTS `download` (
 -- Table structure for table `download_description`
 --
 
-DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1340,7 +1194,6 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 -- Table structure for table `extension`
 --
 
-DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1384,7 +1237,6 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 -- Table structure for table `filter`
 --
 
-DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1398,7 +1250,6 @@ CREATE TABLE IF NOT EXISTS `filter` (
 -- Table structure for table `filter_description`
 --
 
-DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1413,7 +1264,6 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 -- Table structure for table `filter_group`
 --
 
-DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1426,7 +1276,6 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 -- Table structure for table `filter_group_description`
 --
 
-DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1440,7 +1289,6 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 -- Table structure for table `geo_zone`
 --
 
-DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1464,7 +1312,6 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 -- Table structure for table `information`
 --
 
-DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1489,7 +1336,6 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) V
 -- Table structure for table `information_description`
 --
 
-DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1509,7 +1355,7 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 (5, 2, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n'),
 (3, 2, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n'),
 (6, 2, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n'),
-(4, 2, '關於我們 /ABOUT US', '&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-1.png&quot; style=&quot;width: 211px; height: 292px; float: left; margin-right: 10px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-title.png&quot; style=&quot;width: 412px; height: 74px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;平時在網路上或者是賣場上，購物採買價錢都由經銷商所訂製。大盤商經過一手，中盤商在抽。消費者都處於弱勢。難道我們只能像似被宰的肥羊？都不能反抗這消費模式？因為這樣，創辦人建設此網站。不為利益，只為消費者權益著想。由廠商直接給於價碼，以及若由消費者來幫廠商代理有多少利益。全部透明化！&lt;br /&gt;\r\n台灣的景氣這幾年變得愈來愈差，貧富差異可以說是典型的M型社會，創辦人覺得網路行銷這個通路這麼的好，為何都是有品牌的網站所佔據? 根據統計透過網路行銷真的有賺到比原先收入還多的%數不到二成， 真的是&quot;花錢燒時間的多，真正賺錢的卻沒有幾個&lt;/p&gt;\r\n\r\n&lt;hr /&gt;\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-2.png&quot; style=&quot;width: 358px; height: 361px; float: right; margin-left: 10px;&quot; /&gt;我們不相信網路購物這一個通路就應該被慢慢壟斷，這是不公平的!!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;有一股強烈的意念不斷由內心深處湧出，如果我們可以提供一個擁有多元化產品、&lt;br /&gt;\r\n免費客服、價格優勢的平台與想創業或兼職的你巧妙結合的話， 我想能夠在不景氣&lt;br /&gt;\r\n的環境中開創另一個全新的商機。&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;我們不相信消費者是肥羊，這是不公平的!!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;每一個人都應該擁有他所想要的幸福、健康與財富才對!&lt;br /&gt;\r\n我們自行選擇供應商，自行挑選我們要的服務&lt;br /&gt;\r\n我們自行主宰買賣，拒當肥羊！&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;所以消費者我最大要提供給大家一個這樣的網路購物平台!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;你可以在消費者我最大用最實在的價格購買到你想要的產品， 你不需要多花一毛錢購買你不需要的產品， 商城裡的產品都是廠商們競價以及由消費者評估過可行的廠商。 你不必再強迫自己改變消費習慣，我們也不用再教育消費者， 因為商品都是經過認證以及保固的產品。 你不用再擔心因為有紅利分享而低價高賣。&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;我們敢說比別人便宜!也是最有保固的產品!!&lt;/p&gt;\r\n'),
+(4, 2, 'é?œæ??æ??å?? /ABOUT US', '&lt;p&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-1.png&quot; style=&quot;width: 211px; height: 292px; float: left; margin-right: 10px;&quot; /&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-title.png&quot; style=&quot;width: 412px; height: 74px;&quot; /&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;å??æ??åœ?ç??è??ä?Šæ??è??æ??è??å??ä?Šï?Œè??ç??æŽ?è??åƒ?éŒ?éƒ?ç??ç??éŠ?å??æ??è??è??ã??å??ç??å??ç??é?Žä??æ??ï?Œä??ç??å??åœ?æŠ?ã??æ??è??è??éƒ?è??æ??å??å??ã??é??é??æ??å??å?ªèƒ?åƒ?ä??è??å??çš?è??ç?Šï?Ÿéƒ?ä??èƒ?å??æŠ?é??æ??è??æ??å??ï?Ÿå??ç?ºé??æ??ï?Œå?µè??äººå?ºè??æ??ç??ç??ã??ä??ç?ºå??ç?Šï?Œå?ªç?ºæ??è??è??æ?Šç?Šè??æƒ?ã??ç??å??å??ç??æŽ?çµ?æ??åƒ?ç??ï?Œä??å?Šè??ç??æ??è??è??ä??å??å??å??ä??ç??æœ?å?šå??å??ç?Šã??å??éƒ?é??æ?ŽåŒ?ï??&lt;br /&gt;\r\nå??ç??çš?æ??æ??é??å??å??è?Šå??æ??ä??æ??å??ï?Œè??å?Œå??ç??å??ä??èªªæ??å??åž?çš?Måž?ç??æœƒï?Œå?µè??äººè?ºå??ç??è??è?ŒéŠ?é??å??é?šè??é??éº?çš?å??ï?Œç?ºä??éƒ?æ??æœ?å??ç?Œçš?ç??ç??æ??ä??æ?š? æ??æ?šçµ?è??é??é?Žç??è??è?ŒéŠ?çœŸçš?æœ?è?ºå??æ??åŽŸå??æ??å??é??å?šçš?%æ??ä??å??äºŒæ??ï?Œ çœŸçš?æ??&quot;èŠ?éŒ?ç??æ??é??çš?å?šï?ŒçœŸæ??è?ºéŒ?çš?å??æ??æœ?å??å??&lt;/p&gt;\r\n\r\n&lt;hr /&gt;\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;&lt;img alt=&quot;&quot; src=&quot;http://localhost/shopping.com.tw/image/data/about-us-2.png&quot; style=&quot;width: 358px; height: 361px; float: right; margin-left: 10px;&quot; /&gt;æ??å??ä??ç??ä??ç??è??è??ç??é??ä??å??é?šè??å??æ??è??è??æ??æ??å?Ÿæ??ï?Œé??æ??ä??å??å??çš?!!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;æœ?ä??è??å??çƒ?çš?æ??å?µä??æ??ç??å??å?ƒæ??è??æ??å?ºï?Œå??æžœæ??å??å??ä??æ??ä??ä??å??æ??æœ?å?šå?ƒåŒ?ç??å??ã??&lt;br /&gt;\r\nå??è??å??æœ?ã??åƒ?æ??å?ªå??çš?å??å??è??æƒ?å?µæ??æ??å??è??çš?ä??å??å??çµ?å??çš?è??ï?Œ æ??æƒ?èƒ?å??åœ?ä??æ??æ??&lt;br /&gt;\r\nçš?ç??å?ƒä??é??å?µå??ä??å??å??æ??çš?å??æ?Ÿã??&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;æ??å??ä??ç??ä??æ??è??è??æ??è??ç?Šï?Œé??æ??ä??å??å??çš?!!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;æ??ä??å??äººéƒ?æ??è??æ??æœ?ä??æ??æƒ?è??çš?å??ç??ã??å??åº?è??è??å?Œæ??å??!&lt;br /&gt;\r\næ??å??è?ªè?Œé??æ??ä??æ??å??ï?Œè?ªè?ŒæŒ?é??æ??å??è??çš?æœ?å??&lt;br /&gt;\r\næ??å??è?ªè?Œä??å??è??è??ï?Œæ??ç??è??ç?Šï??&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;&lt;strong&gt;æ??ä??æ??è??è??æ??æœ?å??è??æ??ä??çµ?å??å??ä??å??é??æ??çš?ç??è??è??ç??å??å??!&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px;&quot;&gt;ä??å??ä??åœ?æ??è??è??æ??æœ?å??ç??æœ?å??åœ?çš?åƒ?æ??è??è??å??ä??æƒ?è??çš?ç??å??ï?Œ ä??ä??éœ?è??å?šèŠ?ä??æ??éŒ?è??è??ä??ä??éœ?è??çš?ç??å??ï?Œ å??åŸŽè??çš?ç??å??éƒ?æ??å??å??å??ç??åƒ?ä??å?Šç??æ??è??è??è??ä??é?Žå??è?Œçš?å??å??ã?? ä??ä??å??å??å??è??è?ªå??æ??è?Šæ??è??ç??æ??ï?Œæ??å??ä?Ÿä??ç??å??æ??è??æ??è??è??ï?Œ å??ç?ºå??å??éƒ?æ??ç??é?Žèª?è??ä??å?Šä??å?ºçš?ç??å??ã?? ä??ä??ç??å??æ??å?ƒå??ç?ºæœ?ç??å??å??äº?è?Œä?Žåƒ?é??è??ã??&lt;/p&gt;\r\n\r\n&lt;p style=&quot;font-size:15px; line-height: 38px; color:#a40000;&quot;&gt;æ??å??æ??èªªæ??å??äººä??å?œ!ä?Ÿæ??æœ?æœ?ä??å?ºçš?ç??å??!!&lt;/p&gt;\r\n'),
 (4, 1, 'About Us', '&lt;p&gt;About Us&lt;/p&gt;\r\n');
 
 -- --------------------------------------------------------
@@ -1518,7 +1364,6 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 -- Table structure for table `information_to_layout`
 --
 
-DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1532,7 +1377,6 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
 -- Table structure for table `information_to_store`
 --
 
-DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1555,7 +1399,6 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 -- Table structure for table `language`
 --
 
-DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1584,7 +1427,6 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 -- Table structure for table `layout`
 --
 
-DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1614,7 +1456,6 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 -- Table structure for table `layout_route`
 --
 
-DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1645,7 +1486,6 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 -- Table structure for table `length_class`
 --
 
-DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1667,7 +1507,6 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 -- Table structure for table `length_class_description`
 --
 
-DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1694,7 +1533,6 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 -- Table structure for table `manufacturer`
 --
 
-DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1721,7 +1559,6 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VA
 -- Table structure for table `manufacturer_to_store`
 --
 
-DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1746,7 +1583,6 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- Table structure for table `option`
 --
 
-DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1777,7 +1613,6 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 -- Table structure for table `option_description`
 --
 
-DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1819,7 +1654,6 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 -- Table structure for table `option_value`
 --
 
-DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1854,7 +1688,6 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 -- Table structure for table `option_value_description`
 --
 
-DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1903,7 +1736,6 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 -- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1981,7 +1813,6 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 -- Table structure for table `order_download`
 --
 
-DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1999,7 +1830,6 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 -- Table structure for table `order_field`
 --
 
-DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -2016,7 +1846,6 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 -- Table structure for table `order_fraud`
 --
 
-DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -2080,7 +1909,6 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 -- Table structure for table `order_history`
 --
 
-DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2106,7 +1934,6 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 -- Table structure for table `order_option`
 --
 
-DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2141,7 +1968,6 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 -- Table structure for table `order_product`
 --
 
-DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2171,7 +1997,6 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 -- Table structure for table `order_status`
 --
 
-DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2219,7 +2044,6 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `order_total`
 --
 
-DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2237,15 +2061,15 @@ CREATE TABLE IF NOT EXISTS `order_total` (
 --
 
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
-(1, 1, 'sub_total', 'Sub-Total', '101 元', 101.0000, 1),
-(2, 1, 'shipping', 'Flat Shipping Rate', '5 元', 5.0000, 3),
-(3, 1, 'total', 'Total', '106 元', 106.0000, 9),
-(4, 2, 'sub_total', 'Sub-Total', '80 元', 80.0000, 1),
-(5, 2, 'shipping', 'Flat Shipping Rate', '5 元', 5.0000, 3),
-(6, 2, 'total', 'Total', '85 元', 85.0000, 9),
-(7, 3, 'sub_total', 'Sub-Total', '366 元', 366.0000, 1),
-(8, 3, 'shipping', 'Flat Shipping Rate', '5 元', 5.0000, 3),
-(9, 3, 'total', 'Total', '371 元', 371.0000, 9);
+(1, 1, 'sub_total', 'Sub-Total', '101 å…ƒ', 101.0000, 1),
+(2, 1, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
+(3, 1, 'total', 'Total', '106 å…ƒ', 106.0000, 9),
+(4, 2, 'sub_total', 'Sub-Total', '80 å…ƒ', 80.0000, 1),
+(5, 2, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
+(6, 2, 'total', 'Total', '85 å…ƒ', 85.0000, 9),
+(7, 3, 'sub_total', 'Sub-Total', '366 å…ƒ', 366.0000, 1),
+(8, 3, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
+(9, 3, 'total', 'Total', '371 å…ƒ', 371.0000, 9);
 
 -- --------------------------------------------------------
 
@@ -2253,7 +2077,6 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 -- Table structure for table `order_voucher`
 --
 
-DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2276,10 +2099,10 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
   `sku` varchar(64) NOT NULL,
   `upc` varchar(12) NOT NULL,
   `ean` varchar(14) NOT NULL,
@@ -2316,26 +2139,25 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-(28, 'Product 1', '', '', '', '', '', '', '', 939, 7, 'data/demo/htc_touch_hd_1.jpg', 5, 1, 100.0000, 200, 9, '2009-02-03', 146.40000000, 2, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0),
-(29, 'Product 2', '', '', '', '', '', '', '', 999, 6, 'data/demo/palm_treo_pro_1.jpg', 6, 1, 279.9900, 0, 9, '2009-02-03', 133.00000000, 2, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-(30, 'Product 3', '', '', '', '', '', '', '', 7, 6, 'data/demo/canon_eos_5d_1.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0),
-(31, 'Product 4', '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2),
-(32, 'Product 5', '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
-(33, 'Product 6', '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
-(34, 'Product 7', '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
-(35, 'Product 8', '', '', '', '', '', '', '', 1000, 5, '', 0, 0, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 18:08:31', '2011-09-30 01:06:17', 0),
-(36, 'Product 9', '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
-(40, 'product 11', '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1),
-(41, 'Product 14', '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1),
-(42, 'Product 15', '', '', '', '', '', '', '', 988, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 2.00000000, 3.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-07-11 09:04:10', 5),
-(43, 'Product 16', '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1),
-(44, 'Product 17', '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
-(45, 'Product 18', '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 100, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
-(46, 'Product 19', '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-(47, 'Product 21', '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0),
-(48, 'product 20', 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-(49, 'SAM1', '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2);
+INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
+(28, 'Product 1', 'Test Type', '', '', '', '', '', '', '', 0, 0, 'data/demo/htc_touch_hd_1.jpg', 5, 0, 100.0000, 200, 0, '0000-00-00', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0),
+(29, 'Product 2', '', '', '', '', '', '', '', '', 0, 0, 'data/demo/palm_treo_pro_1.jpg', 6, 0, 279.9900, 0, 0, '0000-00-00', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 3, 0, 0, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
+(30, 'Product 3', NULL, '', '', '', '', '', '', '', 7, 6, 'data/demo/canon_eos_5d_1.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0),
+(31, 'Product 4', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2),
+(32, 'Product 5', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
+(33, 'Product 6', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
+(34, 'Product 7', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
+(36, 'Product 9', NULL, '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
+(40, 'product 11', NULL, '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1),
+(41, 'Product 14', NULL, '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1),
+(42, 'Product 15', NULL, '', '', '', '', '', '', '', 988, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 0.00000000, 0.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-07-11 09:04:10', 5),
+(43, 'Product 16', NULL, '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1),
+(44, 'Product 17', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
+(45, 'Product 18', NULL, '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
+(46, 'Product 19', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
+(47, 'Product 21', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0),
+(48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
+(49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2);
 
 -- --------------------------------------------------------
 
@@ -2343,7 +2165,6 @@ INSERT INTO `product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`
 -- Table structure for table `product_attribute`
 --
 
-DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2374,7 +2195,6 @@ INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `t
 -- Table structure for table `product_description`
 --
 
-DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2392,25 +2212,23 @@ CREATE TABLE IF NOT EXISTS `product_description` (
 --
 
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-(35, 1, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '', ''),
-(48, 1, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
-(40, 1, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', ''),
-(28, 1, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
-(44, 1, 'MacBook Air', '&lt;div&gt;\r\n	MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&amp;rsquo;t lose inches and pounds overnight. It&amp;rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.&lt;/div&gt;\r\n', '', '', ''),
-(45, 1, 'MacBook Pro', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Latest Intel mobile architecture&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Leading-edge graphics&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Designed for life on the road&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Connect. Create. Communicate.&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;b&gt;Next-generation wireless&lt;/b&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
-(29, 1, 'Palm Treo Pro', '&lt;p&gt;\r\n	Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&amp;rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Edition&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Qualcomm&amp;reg; MSM7201 400MHz Processor&lt;/li&gt;\r\n	&lt;li&gt;\r\n		320x320 transflective colour TFT touchscreen&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/UMTS/EDGE/GPRS/GSM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Tri-band UMTS &amp;mdash; 850MHz, 1900MHz, 2100MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM &amp;mdash; 850/900/1800/1900&lt;/li&gt;\r\n	&lt;li&gt;\r\n		802.11b/g with WPA, WPA2, and 801.1x authentication&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in GPS&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth Version: 2.0 + Enhanced Data Rate&lt;/li&gt;\r\n	&lt;li&gt;\r\n		256MB storage (100MB user available), 128MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		2.0 megapixel camera, up to 8x digital zoom and video capture&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Removable, rechargeable 1500mAh lithium-ion battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Up to 5.0 hours talk time and up to 250 hours standby&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroSDHC card expansion (up to 32GB supported)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		MicroUSB 2.0 for synchronization and charging&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.5mm stereo headset jack&lt;/li&gt;\r\n	&lt;li&gt;\r\n		60mm (W) x 114mm (L) x 13.5mm (D) / 133g&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
-(36, 1, 'iPod Nano', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Video in your pocket.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Sleek and colorful.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;iTunes.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-(46, 1, 'Sony VAIO', '&lt;div&gt;\r\n	Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&amp;#39;s latest, most powerful innovation yet: Intel&amp;reg; Centrino&amp;reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.&lt;/div&gt;\r\n', '', '', ''),
-(47, 1, 'HP LP3065', '&lt;p&gt;\r\n	Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&amp;#39;re at the office&lt;/p&gt;\r\n', '', '', ''),
-(32, 1, 'iPod Touch', '&lt;p&gt;\r\n	&lt;strong&gt;Revolutionary multi-touch interface.&lt;/strong&gt;&lt;br /&gt;\r\n	iPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Gorgeous 3.5-inch widescreen display.&lt;/strong&gt;&lt;br /&gt;\r\n	Watch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Music downloads straight from iTunes.&lt;/strong&gt;&lt;br /&gt;\r\n	Shop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Surf the web with Wi-Fi.&lt;/strong&gt;&lt;br /&gt;\r\n	Browse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in&lt;br /&gt;\r\n	&amp;nbsp;&lt;/p&gt;\r\n', '', '', ''),
-(41, 1, 'iMac', '&lt;div&gt;\r\n	Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.&lt;/div&gt;\r\n', '', '', ''),
-(33, 1, 'Samsung SyncMaster 941BW', '&lt;div&gt;\r\n	Imagine the advantages of going big without slowing down. The big 19&amp;quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&amp;#39;s not hard to imagine.&lt;/div&gt;\r\n', '', '', ''),
-(34, 1, 'iPod Shuffle', '&lt;div&gt;\r\n	&lt;strong&gt;Born to be worn.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;strong&gt;Random meets rhythm.&lt;/strong&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.&lt;/p&gt;\r\n	&lt;strong&gt;Everything is easy.&lt;/strong&gt;\r\n	&lt;p&gt;\r\n		Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-(43, 1, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
-(31, 1, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
-(49, 1, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', ''),
-(30, 1, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', '', ''),
-(35, 2, 'Product 8', '&lt;p&gt;\r\n	Product 8&lt;/p&gt;\r\n', '', '', ''),
+(48, 1, 'iPod Classic', '<p><strong>More room to move.</strong></p>\r\n\r\n<p>With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.</p>\r\n\r\n<p><strong>Cover Flow.</strong></p>\r\n\r\n<p>Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.</p>\r\n\r\n<p><strong>Enhanced interface.</strong></p>\r\n\r\n<p>Experience a whole new way to browse and view your music and video.</p>\r\n\r\n<p><strong>Sleeker design.</strong></p>\r\n\r\n<p>Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.</p>\r\n<!-- cpt_container_end -->', '', '', ''),
+(40, 1, 'iPhone', '<p>iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.</p>\r\n', '', '', ''),
+(28, 1, 'HTC Touch HD', '<p>HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.</p>\r\n\r\n<p><strong>Features</strong></p>\r\n\r\n<ul>\r\n	<li>Processor Qualcomm&reg; MSM 7201A&trade; 528 MHz</li>\r\n	<li>Windows Mobile&reg; 6.1 Professional Operating System</li>\r\n	<li>Memory: 512 MB ROM, 288 MB RAM</li>\r\n	<li>Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams</li>\r\n	<li>3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution</li>\r\n	<li>HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds</li>\r\n	<li>Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)</li>\r\n	<li>Device Control via HTC TouchFLO&trade; 3D &amp; Touch-sensitive front panel buttons</li>\r\n	<li>GPS and A-GPS ready</li>\r\n	<li>Bluetooth&reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets</li>\r\n	<li>Wi-Fi&reg;: IEEE 802.11 b/g</li>\r\n	<li>HTC ExtUSB&trade; (11-pin mini-USB 2.0)</li>\r\n	<li>5 megapixel color camera with auto focus</li>\r\n	<li>VGA CMOS color camera</li>\r\n	<li>Built-in 3.5 mm audio jack, microphone, speaker, and FM radio</li>\r\n	<li>Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV</li>\r\n	<li>40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI</li>\r\n	<li>Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery</li>\r\n	<li>Expansion Slot: microSD&trade; memory card (SD 2.0 compatible)</li>\r\n	<li>AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A</li>\r\n	<li>Special Features: FM Radio, G-Sensor</li>\r\n</ul>\r\n', '', '', ''),
+(44, 1, 'MacBook Air', '<p>MacBook Air is ultrathin, ultraportable, and ultra unlike anything else. But you don&rsquo;t lose inches and pounds overnight. It&rsquo;s the result of rethinking conventions. Of multiple wireless innovations. And of breakthrough design. With MacBook Air, mobile computing suddenly has a new standard.</p>\r\n', '', '', ''),
+(45, 1, 'MacBook Pro', '<p><strong>Latest Intel mobile architecture</strong></p>\r\n\r\n<p>Powered by the most advanced mobile processors from Intel, the new Core 2 Duo MacBook Pro is over 50% faster than the original Core Duo MacBook Pro and now supports up to 4GB of RAM.</p>\r\n\r\n<p><strong>Leading-edge graphics</strong></p>\r\n\r\n<p>The NVIDIA GeForce 8600M GT delivers exceptional graphics processing power. For the ultimate creative canvas, you can even configure the 17-inch model with a 1920-by-1200 resolution display.</p>\r\n\r\n<p><strong>Designed for life on the road</strong></p>\r\n\r\n<p>Innovations such as a magnetic power connection and an illuminated keyboard with ambient light sensor put the MacBook Pro in a class by itself.</p>\r\n\r\n<p><strong>Connect. Create. Communicate.</strong></p>\r\n\r\n<p>Quickly set up a video conference with the built-in iSight camera. Control presentations and media from up to 30 feet away with the included Apple Remote. Connect to high-bandwidth peripherals with FireWire 800 and DVI.</p>\r\n\r\n<p><strong>Next-generation wireless</strong></p>\r\n\r\n<p>Featuring 802.11n wireless technology, the MacBook Pro delivers up to five times the performance and up to twice the range of previous-generation technologies.</p>\r\n<!-- cpt_container_end -->', '', '', ''),
+(29, 1, 'Palm Treo Pro', '<p>Redefine your workday with the Palm Treo Pro smartphone. Perfectly balanced, you can respond to business and personal email, stay on top of appointments and contacts, and use Wi-Fi or GPS when you&rsquo;re out and about. Then watch a video on YouTube, catch up with news and sports on the web, or listen to a few songs. Balance your work and play the way you like it, with the Palm Treo Pro.</p>\r\n\r\n<p><strong>Features</strong></p>\r\n\r\n<ul>\r\n	<li>Windows Mobile&reg; 6.1 Professional Edition</li>\r\n	<li>Qualcomm&reg; MSM7201 400MHz Processor</li>\r\n	<li>320x320 transflective colour TFT touchscreen</li>\r\n	<li>HSDPA/UMTS/EDGE/GPRS/GSM radio</li>\r\n	<li>Tri-band UMTS &mdash; 850MHz, 1900MHz, 2100MHz</li>\r\n	<li>Quad-band GSM &mdash; 850/900/1800/1900</li>\r\n	<li>802.11b/g with WPA, WPA2, and 801.1x authentication</li>\r\n	<li>Built-in GPS</li>\r\n	<li>Bluetooth Version: 2.0 + Enhanced Data Rate</li>\r\n	<li>256MB storage (100MB user available), 128MB RAM</li>\r\n	<li>2.0 megapixel camera, up to 8x digital zoom and video capture</li>\r\n	<li>Removable, rechargeable 1500mAh lithium-ion battery</li>\r\n	<li>Up to 5.0 hours talk time and up to 250 hours standby</li>\r\n	<li>MicroSDHC card expansion (up to 32GB supported)</li>\r\n	<li>MicroUSB 2.0 for synchronization and charging</li>\r\n	<li>3.5mm stereo headset jack</li>\r\n	<li>60mm (W) x 114mm (L) x 13.5mm (D) / 133g</li>\r\n</ul>\r\n', '', '', ''),
+(36, 1, 'iPod Nano', '<p><strong>Video in your pocket.</strong></p>\r\n\r\n<p>Its the small iPod with one very big idea: video. The worlds most popular music player now lets you enjoy movies, TV shows, and more on a two-inch display thats 65% brighter than before.</p>\r\n\r\n<p><strong>Cover Flow.</strong></p>\r\n\r\n<p>Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.<strong>&nbsp;</strong></p>\r\n\r\n<p><strong>Enhanced interface.</strong></p>\r\n\r\n<p>Experience a whole new way to browse and view your music and video.</p>\r\n\r\n<p><strong>Sleek and colorful.</strong></p>\r\n\r\n<p>With an anodized aluminum and polished stainless steel enclosure and a choice of five colors, iPod nano is dressed to impress.</p>\r\n\r\n<p><strong>iTunes.</strong></p>\r\n\r\n<p>Available as a free download, iTunes makes it easy to browse and buy millions of songs, movies, TV shows, audiobooks, and games and download free podcasts all at the iTunes Store. And you can import your own music, manage your whole media library, and sync your iPod or iPhone with ease.</p>\r\n', '', '', ''),
+(46, 1, 'Sony VAIO', '<p>Unprecedented power. The next generation of processing technology has arrived. Built into the newest VAIO notebooks lies Intel&#39;s latest, most powerful innovation yet: Intel&reg; Centrino&reg; 2 processor technology. Boasting incredible speed, expanded wireless connectivity, enhanced multimedia support and greater energy efficiency, all the high-performance essentials are seamlessly combined into a single chip.</p>\r\n', '', '', ''),
+(47, 1, 'HP LP3065', '<p>Stop your co-workers in their tracks with the stunning new 30-inch diagonal HP LP3065 Flat Panel Monitor. This flagship monitor features best-in-class performance and presentation features on a huge wide-aspect screen while letting you work as comfortably as possible - you might even forget you&#39;re at the office</p>\r\n', '', '', ''),
+(32, 1, 'iPod Touch', '<p><strong>Revolutionary multi-touch interface.</strong><br />\r\niPod touch features the same multi-touch screen technology as iPhone. Pinch to zoom in on a photo. Scroll through your songs and videos with a flick. Flip through your library by album artwork with Cover Flow.</p>\r\n\r\n<p><strong>Gorgeous 3.5-inch widescreen display.</strong><br />\r\nWatch your movies, TV shows, and photos come alive with bright, vivid color on the 320-by-480-pixel display.</p>\r\n\r\n<p><strong>Music downloads straight from iTunes.</strong><br />\r\nShop the iTunes Wi-Fi Music Store from anywhere with Wi-Fi.1 Browse or search to find the music youre looking for, preview it, and buy it with just a tap.</p>\r\n\r\n<p><strong>Surf the web with Wi-Fi.</strong><br />\r\nBrowse the web using Safari and watch YouTube videos on the first iPod with Wi-Fi built in<br />\r\n&nbsp;</p>\r\n', '', '', ''),
+(41, 1, 'iMac', '<p>Just when you thought iMac had everything, now there&acute;s even more. More powerful Intel Core 2 Duo processors. And more memory standard. Combine this with Mac OS X Leopard and iLife &acute;08, and it&acute;s more all-in-one than ever. iMac packs amazing performance into a stunningly slim space.</p>\r\n', '', '', ''),
+(33, 1, 'Samsung SyncMaster 941BW', '<p>Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp motion. In addition, the exclusive MagicBright 2, MagicColor and MagicTune technologies help deliver the ideal image in every situation, while sleek, narrow bezels and adjustable stands deliver style just the way you want it. With the Samsung 941BW widescreen analog/digital LCD monitor, it&#39;s not hard to imagine.</p>\r\n', '', '', ''),
+(34, 1, 'iPod Shuffle', '<p><strong>Born to be worn.</strong></p>\r\n\r\n<p>Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion statement.</p>\r\n\r\n<p><strong>Random meets rhythm.</strong></p>\r\n\r\n<p>With iTunes autofill, iPod shuffle can deliver a new musical experience every time you sync. For more randomness, you can shuffle songs during playback with the slide of a switch.</p>\r\n\r\n<p><strong>Everything is easy.</strong></p>\r\n\r\n<p>Charge and sync with the included USB dock. Operate the iPod shuffle controls with one hand. Enjoy up to 12 hours straight of skip-free music playback.</p>\r\n', '', '', ''),
+(43, 1, 'MacBook', '<p><strong>Intel Core 2 Duo processor</strong></p>\r\n\r\n<p>Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.</p>\r\n\r\n<p><strong>1GB memory, larger hard drives</strong></p>\r\n\r\n<p>The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.</p>\r\n\r\n<p><strong>Sleek, 1.08-inch-thin design</strong></p>\r\n\r\n<p>MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.</p>\r\n\r\n<p><strong>Built-in iSight camera</strong></p>\r\n\r\n<p>Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth</p>\r\n', '', '', ''),
+(31, 1, 'Nikon D300', '<p>Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.<br />\r\n<br />\r\nSimilar to the D3, the D300 features Nikon&#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&#39;s new features. The D300 features a new 51-point autofocus system with Nikon&#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.<br />\r\n<br />\r\nThe D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)<br />\r\n<br />\r\nThe D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.</p>\r\n<!-- cpt_container_end -->', '', '', ''),
+(49, 1, 'Samsung Galaxy Tab 10.1', '<p>Samsung Galaxy Tab 10.1, is the world&rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.</p>\r\n\r\n<p>Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.</p>\r\n\r\n<p>Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&nbsp;&auml;&ouml;</p>\r\n', '', '', ''),
+(30, 1, 'Canon EOS 5D', '<p>Canon&#39;s press material for the EOS 5D states that it &#39;defines (a) new D-SLR category&#39;, while we&#39;re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably &#39;chunkier&#39;). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR&#39;s, an important difference when compared to the latter is that the EOS 5D doesn&#39;t have any environmental seals. While Canon don&#39;t specifically refer to the EOS 5D as a &#39;professional&#39; digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they&#39;ve not bought too many EF-S lenses...) &auml;&euml;</p>\r\n', '', '', ''),
 (48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
 (40, 2, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', ''),
 (28, 2, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
@@ -2427,10 +2245,10 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 (43, 2, 'MacBook', '&lt;div&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Intel Core 2 Duo processor&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;1GB memory, larger hard drives&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Sleek, 1.08-inch-thin design&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.&lt;/p&gt;\r\n	&lt;p&gt;\r\n		&lt;b&gt;Built-in iSight camera&lt;/b&gt;&lt;/p&gt;\r\n	&lt;p&gt;\r\n		Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth&lt;/p&gt;\r\n&lt;/div&gt;\r\n', '', '', ''),
 (31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
 (49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', ''),
-(42, 1, 'Apple Cinema 30&quot;', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there''s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it''s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple''s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO ''03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', '');
+(42, 1, 'Apple Cinema 30&quot;', '<p>The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there&#39;s no limit to what you can achieve.<br />\r\n<br />\r\nThe Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it&#39;s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data.<br />\r\n<br />\r\nOffering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple&#39;s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications.<br />\r\n<br />\r\nHoused in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment.<br />\r\n<br />\r\nThe Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.</p>\r\n\r\n<h3>Features:</h3>\r\n\r\n<p>Unrivaled display performance</p>\r\n\r\n<ul>\r\n	<li>30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.</li>\r\n	<li>Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.</li>\r\n	<li>Wide-format design for simultaneous display of two full pages of text and graphics.</li>\r\n	<li>Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks</li>\r\n	<li>Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.</li>\r\n	<li>Lightning-fast pixel response for full-motion digital video playback.</li>\r\n	<li>Support for 16.7 million saturated colors, for use in all graphics-intensive applications.</li>\r\n</ul>\r\n\r\n<p>Simple setup and operation</p>\r\n\r\n<ul>\r\n	<li>Single cable with elegant breakout for connection to DVI, USB and FireWire ports</li>\r\n	<li>Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.</li>\r\n	<li>Two FireWire 400 ports to support iSight and other desktop peripherals</li>\r\n</ul>\r\n\r\n<p>Sleek, elegant design</p>\r\n\r\n<ul>\r\n	<li>Huge virtual workspace, very small footprint.</li>\r\n	<li>Narrow Bezel design to minimize visual impact of using dual displays</li>\r\n	<li>Unique hinge design for effortless adjustment</li>\r\n	<li>Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)</li>\r\n</ul>\r\n\r\n<h3>Technical specifications</h3>\r\n\r\n<p><strong>Screen size (diagonal viewable image size)</strong></p>\r\n\r\n<ul>\r\n	<li>Apple Cinema HD Display: 30 inches (29.7-inch viewable)</li>\r\n</ul>\r\n\r\n<p><strong>Screen type</strong></p>\r\n\r\n<ul>\r\n	<li>Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)</li>\r\n</ul>\r\n\r\n<p><strong>Resolutions</strong></p>\r\n\r\n<ul>\r\n	<li>2560 x 1600 pixels (optimum resolution)</li>\r\n	<li>2048 x 1280</li>\r\n	<li>1920 x 1200</li>\r\n	<li>1280 x 800</li>\r\n	<li>1024 x 640</li>\r\n</ul>\r\n\r\n<p><strong>Display colors (maximum)</strong></p>\r\n\r\n<ul>\r\n	<li>16.7 million</li>\r\n</ul>\r\n\r\n<p><strong>Viewing angle (typical)</strong></p>\r\n\r\n<ul>\r\n	<li>170&deg; horizontal; 170&deg; vertical</li>\r\n</ul>\r\n\r\n<p><strong>Brightness (typical)</strong></p>\r\n\r\n<ul>\r\n	<li>30-inch Cinema HD Display: 400 cd/m2</li>\r\n</ul>\r\n\r\n<p><strong>Contrast ratio (typical)</strong></p>\r\n\r\n<ul>\r\n	<li>700:1</li>\r\n</ul>\r\n\r\n<p><strong>Response time (typical)</strong></p>\r\n\r\n<ul>\r\n	<li>16 ms</li>\r\n</ul>\r\n\r\n<p><strong>Pixel pitch</strong></p>\r\n\r\n<ul>\r\n	<li>30-inch Cinema HD Display: 0.250 mm</li>\r\n</ul>\r\n\r\n<p><strong>Screen treatment</strong></p>\r\n\r\n<ul>\r\n	<li>Antiglare hardcoat</li>\r\n</ul>\r\n\r\n<p><strong>User controls (hardware and software)</strong></p>\r\n\r\n<ul>\r\n	<li>Display Power,</li>\r\n	<li>System sleep, wake</li>\r\n	<li>Brightness</li>\r\n	<li>Monitor tilt</li>\r\n</ul>\r\n\r\n<p><strong>Connectors and cables</strong><br />\r\nCable</p>\r\n\r\n<ul>\r\n	<li>DVI (Digital Visual Interface)</li>\r\n	<li>FireWire 400</li>\r\n	<li>USB 2.0</li>\r\n	<li>DC power (24 V)</li>\r\n</ul>\r\n\r\n<p>Connectors</p>\r\n\r\n<ul>\r\n	<li>Two-port, self-powered USB 2.0 hub</li>\r\n	<li>Two FireWire 400 ports</li>\r\n	<li>Kensington security port</li>\r\n</ul>\r\n\r\n<p><strong>VESA mount adapter</strong><br />\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)</p>\r\n\r\n<ul>\r\n	<li>Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions</li>\r\n</ul>\r\n\r\n<p><strong>Electrical requirements</strong></p>\r\n\r\n<ul>\r\n	<li>Input voltage: 100-240 VAC 50-60Hz</li>\r\n	<li>Maximum power when operating: 150W</li>\r\n	<li>Energy saver mode: 3W or less</li>\r\n</ul>\r\n\r\n<p><strong>Environmental requirements</strong></p>\r\n\r\n<ul>\r\n	<li>Operating temperature: 50&deg; to 95&deg; F (10&deg; to 35&deg; C)</li>\r\n	<li>Storage temperature: -40&deg; to 116&deg; F (-40&deg; to 47&deg; C)</li>\r\n	<li>Operating humidity: 20% to 80% noncondensing</li>\r\n	<li>Maximum operating altitude: 10,000 feet</li>\r\n</ul>\r\n\r\n<p><strong>Agency approvals</strong></p>\r\n\r\n<ul>\r\n	<li>FCC Part 15 Class B</li>\r\n	<li>EN55022 Class B</li>\r\n	<li>EN55024</li>\r\n	<li>VCCI Class B</li>\r\n	<li>AS/NZS 3548 Class B</li>\r\n	<li>CNS 13438 Class B</li>\r\n	<li>ICES-003 Class B</li>\r\n	<li>ISO 13406 part 2</li>\r\n	<li>MPR II</li>\r\n	<li>IEC 60950</li>\r\n	<li>UL 60950</li>\r\n	<li>CSA 60950</li>\r\n	<li>EN60950</li>\r\n	<li>ENERGY STAR</li>\r\n	<li>TCO &#39;03</li>\r\n</ul>\r\n\r\n<p><strong>Size and weight</strong><br />\r\n30-inch Apple Cinema HD Display</p>\r\n\r\n<ul>\r\n	<li>Height: 21.3 inches (54.3 cm)</li>\r\n	<li>Width: 27.2 inches (68.8 cm)</li>\r\n	<li>Depth: 8.46 inches (21.5 cm)</li>\r\n	<li>Weight: 27.5 pounds (12.5 kg)</li>\r\n</ul>\r\n\r\n<p><strong>System Requirements</strong></p>\r\n\r\n<ul>\r\n	<li>Mac Pro, all graphic options</li>\r\n	<li>MacBook Pro</li>\r\n	<li>Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better</li>\r\n	<li>Power Mac G5 (PCI Express), all graphics options</li>\r\n	<li>PowerBook G4 with dual-link DVI support</li>\r\n	<li>Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup</li>\r\n</ul>\r\n', '', '', '');
 INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there''s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it''s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple''s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170° horizontal; 170° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50° to 95° F (10° to 35° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40° to 116° F (-40° to 47° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO ''03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
-(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) äë&lt;/p&gt;\r\n', '', '', '');
+(42, 2, 'Apple Cinema 30&quot;', '&lt;p&gt;&lt;font face=&quot;helvetica,geneva,arial&quot; size=&quot;2&quot;&gt;&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed specifically for the creative professional, this display provides more space for easier access to all the tools and palettes needed to edit, format and composite your work. Combine this display with a Mac Pro, MacBook Pro, or PowerMac G5 and there''s no limit to what you can achieve. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features an active-matrix liquid crystal display that produces flicker-free images that deliver twice the brightness, twice the sharpness and twice the contrast ratio of a typical CRT display. Unlike other flat panels, it''s designed with a pure digital interface to deliver distortion-free images that never need adjusting. With over 4 million digital pixels, the display is uniquely suited for scientific and technical applications such as visualizing molecular structures or analyzing geological data. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Offering accurate, brilliant color performance, the Cinema HD delivers up to 16.7 million colors across a wide gamut allowing you to see subtle nuances between colors from soft pastels to rich jewel tones. A wide viewing angle ensures uniform color from edge to edge. Apple''s ColorSync technology allows you to create custom profiles to maintain consistent color onscreen and in print. The result: You can confidently use this display in all your color-critical applications. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;Housed in a new aluminum design, the display has a very thin bezel that enhances visual accuracy. Each display features two FireWire 400 ports and two USB 2.0 ports, making attachment of desktop peripherals, such as iSight, iPod, digital and still cameras, hard drives, printers and scanners, even more accessible and convenient. Taking advantage of the much thinner and lighter footprint of an LCD, the new displays support the VESA (Video Electronics Standards Association) mounting interface standard. Customers with the optional Cinema Display VESA Mount Adapter kit gain the flexibility to mount their display in locations most appropriate for their work environment. &lt;/font&gt;&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;font face=&quot;Helvetica&quot; size=&quot;2&quot;&gt;The Cinema HD features a single cable design with elegant breakout for the USB 2.0, FireWire 400 and a pure digital connection using the industry standard Digital Video Interface (DVI) interface. The DVI connection allows for a direct pure-digital connection.&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;\r\n\r\n&lt;h3&gt;Features:&lt;/h3&gt;\r\n\r\n&lt;p&gt;Unrivaled display performance&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch (viewable) active-matrix liquid crystal display provides breathtaking image quality and vivid, richly saturated color.&lt;/li&gt;\r\n	&lt;li&gt;Support for 2560-by-1600 pixel resolution for display of high definition still and video imagery.&lt;/li&gt;\r\n	&lt;li&gt;Wide-format design for simultaneous display of two full pages of text and graphics.&lt;/li&gt;\r\n	&lt;li&gt;Industry standard DVI connector for direct attachment to Mac- and Windows-based desktops and notebooks&lt;/li&gt;\r\n	&lt;li&gt;Incredibly wide (170 degree) horizontal and vertical viewing angle for maximum visibility and color performance.&lt;/li&gt;\r\n	&lt;li&gt;Lightning-fast pixel response for full-motion digital video playback.&lt;/li&gt;\r\n	&lt;li&gt;Support for 16.7 million saturated colors, for use in all graphics-intensive applications.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Simple setup and operation&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Single cable with elegant breakout for connection to DVI, USB and FireWire ports&lt;/li&gt;\r\n	&lt;li&gt;Built-in two-port USB 2.0 hub for easy connection of desktop peripheral devices.&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports to support iSight and other desktop peripherals&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Sleek, elegant design&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Huge virtual workspace, very small footprint.&lt;/li&gt;\r\n	&lt;li&gt;Narrow Bezel design to minimize visual impact of using dual displays&lt;/li&gt;\r\n	&lt;li&gt;Unique hinge design for effortless adjustment&lt;/li&gt;\r\n	&lt;li&gt;Support for VESA mounting solutions (Apple Cinema Display VESA Mount Adapter sold separately)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;h3&gt;Technical specifications&lt;/h3&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen size (diagonal viewable image size)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Apple Cinema HD Display: 30 inches (29.7-inch viewable)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen type&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Thin film transistor (TFT) active-matrix liquid crystal display (AMLCD)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Resolutions&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;2560 x 1600 pixels (optimum resolution)&lt;/li&gt;\r\n	&lt;li&gt;2048 x 1280&lt;/li&gt;\r\n	&lt;li&gt;1920 x 1200&lt;/li&gt;\r\n	&lt;li&gt;1280 x 800&lt;/li&gt;\r\n	&lt;li&gt;1024 x 640&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Display colors (maximum)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16.7 million&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Viewing angle (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;170Â° horizontal; 170Â° vertical&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Brightness (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 400 cd/m2&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Contrast ratio (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;700:1&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Response time (typical)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;16 ms&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Pixel pitch&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;30-inch Cinema HD Display: 0.250 mm&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Screen treatment&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Antiglare hardcoat&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;User controls (hardware and software)&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Display Power,&lt;/li&gt;\r\n	&lt;li&gt;System sleep, wake&lt;/li&gt;\r\n	&lt;li&gt;Brightness&lt;/li&gt;\r\n	&lt;li&gt;Monitor tilt&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Connectors and cables&lt;/b&gt;&lt;br /&gt;\r\nCable&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;DVI (Digital Visual Interface)&lt;/li&gt;\r\n	&lt;li&gt;FireWire 400&lt;/li&gt;\r\n	&lt;li&gt;USB 2.0&lt;/li&gt;\r\n	&lt;li&gt;DC power (24 V)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;Connectors&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Two-port, self-powered USB 2.0 hub&lt;/li&gt;\r\n	&lt;li&gt;Two FireWire 400 ports&lt;/li&gt;\r\n	&lt;li&gt;Kensington security port&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;VESA mount adapter&lt;/b&gt;&lt;br /&gt;\r\nRequires optional Cinema Display VESA Mount Adapter (M9649G/A)&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Compatible with VESA FDMI (MIS-D, 100, C) compliant mounting solutions&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Electrical requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Input voltage: 100-240 VAC 50-60Hz&lt;/li&gt;\r\n	&lt;li&gt;Maximum power when operating: 150W&lt;/li&gt;\r\n	&lt;li&gt;Energy saver mode: 3W or less&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Environmental requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Operating temperature: 50Â° to 95Â° F (10Â° to 35Â° C)&lt;/li&gt;\r\n	&lt;li&gt;Storage temperature: -40Â° to 116Â° F (-40Â° to 47Â° C)&lt;/li&gt;\r\n	&lt;li&gt;Operating humidity: 20% to 80% noncondensing&lt;/li&gt;\r\n	&lt;li&gt;Maximum operating altitude: 10,000 feet&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Agency approvals&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;FCC Part 15 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55022 Class B&lt;/li&gt;\r\n	&lt;li&gt;EN55024&lt;/li&gt;\r\n	&lt;li&gt;VCCI Class B&lt;/li&gt;\r\n	&lt;li&gt;AS/NZS 3548 Class B&lt;/li&gt;\r\n	&lt;li&gt;CNS 13438 Class B&lt;/li&gt;\r\n	&lt;li&gt;ICES-003 Class B&lt;/li&gt;\r\n	&lt;li&gt;ISO 13406 part 2&lt;/li&gt;\r\n	&lt;li&gt;MPR II&lt;/li&gt;\r\n	&lt;li&gt;IEC 60950&lt;/li&gt;\r\n	&lt;li&gt;UL 60950&lt;/li&gt;\r\n	&lt;li&gt;CSA 60950&lt;/li&gt;\r\n	&lt;li&gt;EN60950&lt;/li&gt;\r\n	&lt;li&gt;ENERGY STAR&lt;/li&gt;\r\n	&lt;li&gt;TCO ''03&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;Size and weight&lt;/b&gt;&lt;br /&gt;\r\n30-inch Apple Cinema HD Display&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Height: 21.3 inches (54.3 cm)&lt;/li&gt;\r\n	&lt;li&gt;Width: 27.2 inches (68.8 cm)&lt;/li&gt;\r\n	&lt;li&gt;Depth: 8.46 inches (21.5 cm)&lt;/li&gt;\r\n	&lt;li&gt;Weight: 27.5 pounds (12.5 kg)&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;b&gt;System Requirements&lt;/b&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n	&lt;li&gt;Mac Pro, all graphic options&lt;/li&gt;\r\n	&lt;li&gt;MacBook Pro&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI-X) with ATI Radeon 9650 or better or NVIDIA GeForce 6800 GT DDL or better&lt;/li&gt;\r\n	&lt;li&gt;Power Mac G5 (PCI Express), all graphics options&lt;/li&gt;\r\n	&lt;li&gt;PowerBook G4 with dual-link DVI support&lt;/li&gt;\r\n	&lt;li&gt;Windows PC and graphics card that supports DVI ports with dual-link digital bandwidth and VESA DDC standard for plug-and-play setup&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
+(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) Ã¤Ã«&lt;/p&gt;\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2438,7 +2256,6 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 -- Table structure for table `product_discount`
 --
 
-DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2467,7 +2284,6 @@ INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_g
 -- Table structure for table `product_filter`
 --
 
-DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2480,7 +2296,6 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 -- Table structure for table `product_image`
 --
 
-DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2562,7 +2377,6 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 -- Table structure for table `product_option`
 --
 
-DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2577,7 +2391,6 @@ CREATE TABLE IF NOT EXISTS `product_option` (
 --
 
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
-(224, 35, 11, '', 1),
 (225, 47, 12, '2011-04-22', 1),
 (222, 42, 7, '', 1),
 (219, 42, 8, '2011-02-20', 1),
@@ -2596,7 +2409,6 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 -- Table structure for table `product_option_value`
 --
 
-DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2630,9 +2442,6 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 (9, 223, 42, 2, 24, 194, 1, 20.0000, '+', 0, '+', 20.00000000, '+'),
 (10, 223, 42, 2, 44, 2694, 1, 30.0000, '+', 0, '+', 30.00000000, '+'),
 (8, 223, 42, 2, 23, 48, 1, 10.0000, '+', 0, '+', 10.00000000, '+'),
-(12, 224, 35, 11, 46, 0, 1, 5.0000, '+', 0, '+', 0.00000000, '+'),
-(13, 224, 35, 11, 47, 10, 1, 10.0000, '+', 0, '+', 0.00000000, '+'),
-(14, 224, 35, 11, 48, 15, 1, 15.0000, '+', 0, '+', 0.00000000, '+'),
 (16, 226, 30, 5, 40, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
 (15, 226, 30, 5, 39, 2, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
 
@@ -2642,7 +2451,6 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 -- Table structure for table `product_related`
 --
 
-DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -2665,7 +2473,6 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 -- Table structure for table `product_reward`
 --
 
-DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2690,7 +2497,6 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 (331, 44, 1, 700),
 (333, 45, 1, 800),
 (337, 31, 1, 0),
-(425, 35, 1, 0),
 (345, 33, 1, 0),
 (347, 46, 1, 0),
 (545, 41, 1, 0),
@@ -2702,10 +2508,37 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_spec`
+--
+
+CREATE TABLE IF NOT EXISTS `product_spec` (
+  `product_spec_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `spec_id` int(11) NOT NULL,
+  `unit_id` int(11) NOT NULL,
+  `value_init` text NOT NULL,
+  `value_end` text,
+  PRIMARY KEY (`product_spec_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
+
+--
+-- Dumping data for table `product_spec`
+--
+
+INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id`, `value_init`, `value_end`) VALUES
+(59, 28, 3, 5, '10', '500'),
+(58, 28, 7, 3, '60', '200'),
+(57, 28, 6, 4, '500', '80'),
+(56, 28, 5, 5, 'Test', ''),
+(34, 29, 3, 5, '30', '600'),
+(55, 28, 1, 3, '50', '80');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_special`
 --
 
-DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2733,7 +2566,6 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 -- Table structure for table `product_to_category`
 --
 
-DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -2745,36 +2577,24 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
 --
 
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
-(28, 20),
-(28, 24),
-(29, 20),
-(29, 24),
-(30, 20),
-(30, 33),
-(31, 33),
-(32, 34),
-(33, 20),
-(33, 28),
-(34, 34),
-(35, 20),
-(36, 34),
-(40, 20),
-(40, 24),
-(41, 27),
-(42, 20),
-(42, 28),
-(43, 18),
-(43, 20),
-(44, 18),
-(44, 20),
-(45, 18),
-(46, 18),
-(46, 20),
-(47, 18),
-(47, 20),
-(48, 20),
-(48, 34),
-(49, 57);
+(28, 35),
+(29, 35),
+(30, 59),
+(31, 61),
+(32, 60),
+(33, 63),
+(34, 65),
+(36, 66),
+(40, 64),
+(41, 67),
+(42, 68),
+(43, 36),
+(44, 36),
+(45, 36),
+(46, 59),
+(47, 60),
+(48, 64),
+(49, 65);
 
 -- --------------------------------------------------------
 
@@ -2782,7 +2602,6 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 -- Table structure for table `product_to_download`
 --
 
-DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2795,7 +2614,6 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 -- Table structure for table `product_to_layout`
 --
 
-DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2809,7 +2627,6 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 -- Table structure for table `product_to_store`
 --
 
-DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2821,14 +2638,11 @@ CREATE TABLE IF NOT EXISTS `product_to_store` (
 --
 
 INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
-(28, 0),
-(29, 0),
 (30, 0),
 (31, 0),
 (32, 0),
 (33, 0),
 (34, 0),
-(35, 0),
 (36, 0),
 (40, 0),
 (41, 0),
@@ -2847,7 +2661,6 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 -- Table structure for table `return`
 --
 
-DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2877,7 +2690,6 @@ CREATE TABLE IF NOT EXISTS `return` (
 -- Table structure for table `return_action`
 --
 
-DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2903,7 +2715,6 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_history`
 --
 
-DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2920,7 +2731,6 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 -- Table structure for table `return_reason`
 --
 
-DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2950,7 +2760,6 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_status`
 --
 
-DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2976,7 +2785,6 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2997,7 +2805,6 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- Table structure for table `setting`
 --
 
-DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -3162,10 +2969,34 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `spec`
+--
+
+CREATE TABLE IF NOT EXISTS `spec` (
+  `spec_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`spec_id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `spec`
+--
+
+INSERT INTO `spec` (`spec_id`, `name`) VALUES
+(5, 'Deviation'),
+(3, 'Distance'),
+(7, 'Efficiency'),
+(4, 'Material'),
+(1, 'Resistance'),
+(6, 'Voltage');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `stock_status`
 --
 
-DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3193,7 +3024,6 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `store`
 --
 
-DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3208,7 +3038,6 @@ CREATE TABLE IF NOT EXISTS `store` (
 -- Table structure for table `tax_class`
 --
 
-DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -3232,7 +3061,6 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 -- Table structure for table `tax_rate`
 --
 
-DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -3258,7 +3086,6 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 -- Table structure for table `tax_rate_to_customer_group`
 --
 
-DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -3279,7 +3106,6 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 -- Table structure for table `tax_rule`
 --
 
-DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -3302,16 +3128,39 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `unit`
+--
+
+CREATE TABLE IF NOT EXISTS `unit` (
+  `unit_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`unit_id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `unit`
+--
+
+INSERT INTO `unit` (`unit_id`, `name`) VALUES
+(1, '%'),
+(5, 'Centimeter'),
+(6, 'Kg'),
+(3, 'Ohm'),
+(4, 'Volt');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `url_alias`
 --
 
-DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   PRIMARY KEY (`url_alias_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=779 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=782 ;
 
 --
 -- Dumping data for table `url_alias`
@@ -3325,7 +3174,6 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (730, 'manufacturer_id=8', 'apple'),
 (777, 'information_id=4', 'about_us'),
 (778, 'product_id=42', 'test'),
-(767, 'category_id=34', 'mp3-players'),
 (536, 'category_id=36', 'Normal');
 
 -- --------------------------------------------------------
@@ -3334,7 +3182,6 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -3364,7 +3211,6 @@ INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, 
 -- Table structure for table `user_group`
 --
 
-DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3386,7 +3232,6 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Table structure for table `voucher`
 --
 
-DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -3409,7 +3254,6 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 -- Table structure for table `voucher_history`
 --
 
-DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -3425,7 +3269,6 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 -- Table structure for table `voucher_theme`
 --
 
-DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -3447,7 +3290,6 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Table structure for table `voucher_theme_description`
 --
 
-DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3473,7 +3315,6 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 -- Table structure for table `weight_class`
 --
 
-DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -3496,7 +3337,6 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 -- Table structure for table `weight_class_description`
 --
 
-DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3525,7 +3365,6 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 -- Table structure for table `zone`
 --
 
-DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -3739,7 +3578,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (197, 13, 'Victoria', 'VIC', 1),
 (198, 13, 'Western Australia', 'WA', 1),
 (199, 14, 'Burgenland', 'BUR', 1),
-(200, 14, 'Kärnten', 'KAR', 1),
+(200, 14, 'KÃ¤rnten', 'KAR', 1),
 (201, 14, 'Nieder&ouml;sterreich', 'NOS', 1),
 (202, 14, 'Ober&ouml;sterreich', 'OOS', 1),
 (203, 14, 'Salzburg', 'SAL', 1),
@@ -3886,7 +3725,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (344, 21, 'Antwerpen', 'VAN', 1),
 (345, 21, 'Brabant Wallon', 'WBR', 1),
 (346, 21, 'Hainaut', 'WHT', 1),
-(347, 21, 'Liège', 'WLG', 1),
+(347, 21, 'LiÃ¨ge', 'WLG', 1),
 (348, 21, 'Limburg', 'VLI', 1),
 (349, 21, 'Luxembourg', 'WLX', 1),
 (350, 21, 'Namur', 'WNA', 1),
@@ -3981,29 +3820,29 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (439, 28, 'Southern', 'SO', 1),
 (440, 30, 'Acre', 'AC', 1),
 (441, 30, 'Alagoas', 'AL', 1),
-(442, 30, 'Amapá', 'AP', 1),
+(442, 30, 'AmapÃ¡', 'AP', 1),
 (443, 30, 'Amazonas', 'AM', 1),
 (444, 30, 'Bahia', 'BA', 1),
-(445, 30, 'Ceará', 'CE', 1),
+(445, 30, 'CearÃ¡', 'CE', 1),
 (446, 30, 'Distrito Federal', 'DF', 1),
-(447, 30, 'Espírito Santo', 'ES', 1),
-(448, 30, 'Goiás', 'GO', 1),
-(449, 30, 'Maranhão', 'MA', 1),
+(447, 30, 'EspÃ­rito Santo', 'ES', 1),
+(448, 30, 'GoiÃ¡s', 'GO', 1),
+(449, 30, 'MaranhÃ£o', 'MA', 1),
 (450, 30, 'Mato Grosso', 'MT', 1),
 (451, 30, 'Mato Grosso do Sul', 'MS', 1),
 (452, 30, 'Minas Gerais', 'MG', 1),
-(453, 30, 'Pará', 'PA', 1),
-(454, 30, 'Paraíba', 'PB', 1),
-(455, 30, 'Paraná', 'PR', 1),
+(453, 30, 'ParÃ¡', 'PA', 1),
+(454, 30, 'ParaÃ­ba', 'PB', 1),
+(455, 30, 'ParanÃ¡', 'PR', 1),
 (456, 30, 'Pernambuco', 'PE', 1),
-(457, 30, 'Piauí', 'PI', 1),
+(457, 30, 'PiauÃ­', 'PI', 1),
 (458, 30, 'Rio de Janeiro', 'RJ', 1),
 (459, 30, 'Rio Grande do Norte', 'RN', 1),
 (460, 30, 'Rio Grande do Sul', 'RS', 1),
-(461, 30, 'Rondônia', 'RO', 1),
+(461, 30, 'RondÃ´nia', 'RO', 1),
 (462, 30, 'Roraima', 'RR', 1),
 (463, 30, 'Santa Catarina', 'SC', 1),
-(464, 30, 'São Paulo', 'SP', 1),
+(464, 30, 'SÃ£o Paulo', 'SP', 1),
 (465, 30, 'Sergipe', 'SE', 1),
 (466, 30, 'Tocantins', 'TO', 1),
 (467, 31, 'Peros Banhos', 'PB', 1),
@@ -4185,7 +4024,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (643, 41, 'Haut-Mbomou', 'HMB', 1),
 (644, 41, 'Kemo', 'KEM', 1),
 (645, 41, 'Lobaye', 'LOB', 1),
-(646, 41, 'Mambere-KadeÔ', 'MKD', 1),
+(646, 41, 'Mambere-KadeÃ”', 'MKD', 1),
 (647, 41, 'Mbomou', 'MBO', 1),
 (648, 41, 'Nana-Mambere', 'NMM', 1),
 (649, 41, 'Ombella-M''Poko', 'OMP', 1),
@@ -4428,20 +4267,20 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (886, 55, 'Limassol', 'I', 1),
 (887, 55, 'Nicosia', 'N', 1),
 (888, 55, 'Paphos', 'P', 1),
-(889, 56, 'Ústecký', 'U', 1),
-(890, 56, 'Jihočeský', 'C', 1),
-(891, 56, 'Jihomoravský', 'B', 1),
-(892, 56, 'Karlovarský', 'K', 1),
-(893, 56, 'Královehradecký', 'H', 1),
-(894, 56, 'Liberecký', 'L', 1),
-(895, 56, 'Moravskoslezský', 'T', 1),
-(896, 56, 'Olomoucký', 'M', 1),
-(897, 56, 'Pardubický', 'E', 1),
-(898, 56, 'Plzeňský', 'P', 1),
+(889, 56, 'ÃšsteckÃ½', 'U', 1),
+(890, 56, 'JihoÄeskÃ½', 'C', 1),
+(891, 56, 'JihomoravskÃ½', 'B', 1),
+(892, 56, 'KarlovarskÃ½', 'K', 1),
+(893, 56, 'KrÃ¡lovehradeckÃ½', 'H', 1),
+(894, 56, 'LibereckÃ½', 'L', 1),
+(895, 56, 'MoravskoslezskÃ½', 'T', 1),
+(896, 56, 'OlomouckÃ½', 'M', 1),
+(897, 56, 'PardubickÃ½', 'E', 1),
+(898, 56, 'PlzeÅˆskÃ½', 'P', 1),
 (899, 56, 'Praha', 'A', 1),
-(900, 56, 'Středočeský', 'S', 1),
-(901, 56, 'Vysočina', 'J', 1),
-(902, 56, 'Zlínský', 'Z', 1),
+(900, 56, 'StÅ™edoÄeskÃ½', 'S', 1),
+(901, 56, 'VysoÄina', 'J', 1),
+(902, 56, 'ZlÃ­nskÃ½', 'Z', 1),
 (903, 57, 'Arhus', 'AR', 1),
 (904, 57, 'Bornholm', 'BH', 1),
 (905, 57, 'Copenhagen', 'CO', 1),
@@ -5072,10 +4911,10 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (1553, 101, 'Chahar Mahaal and Bakhtiari', 'CMB', 1),
 (1554, 101, 'Kohkiluyeh and Buyer Ahmad', 'KBA', 1),
 (1555, 101, 'Bushehr', 'BSH', 1),
-(1556, 101, 'Fars', 'FAR', 1),
-(1557, 101, 'Hormozgan', 'HRM', 1),
-(1558, 101, 'Sistan and Baluchistan', 'SBL', 1);
+(1556, 101, 'Fars', 'FAR', 1);
 INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
+(1557, 101, 'Hormozgan', 'HRM', 1),
+(1558, 101, 'Sistan and Baluchistan', 'SBL', 1),
 (1559, 101, 'Kerman', 'KRB', 1),
 (1560, 101, 'Yazd', 'YZD', 1),
 (1561, 101, 'Esfahan', 'EFH', 1),
@@ -5707,7 +5546,7 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2188, 140, 'Soroca', 'SO', 1),
 (2189, 140, 'Tighina', 'TI', 1),
 (2190, 140, 'Ungheni', 'UN', 1),
-(2191, 140, 'St‚nga Nistrului', 'SN', 1),
+(2191, 140, 'Stâ€šnga Nistrului', 'SN', 1),
 (2192, 141, 'Fontvieille', 'FV', 1),
 (2193, 141, 'La Condamine', 'LC', 1),
 (2194, 141, 'Monaco-Ville', 'MV', 1),
@@ -6441,14 +6280,14 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (2922, 187, 'Northern', 'N', 1),
 (2923, 187, 'Southern', 'S', 1),
 (2924, 187, 'Western', 'W', 1),
-(2925, 189, 'Banskobystrický', 'BA', 1),
-(2926, 189, 'Bratislavský', 'BR', 1),
-(2927, 189, 'Košický', 'KO', 1),
+(2925, 189, 'BanskobystrickÃ½', 'BA', 1),
+(2926, 189, 'BratislavskÃ½', 'BR', 1),
+(2927, 189, 'KoÅ¡ickÃ½', 'KO', 1),
 (2928, 189, 'Nitriansky', 'NI', 1),
-(2929, 189, 'Prešovský', 'PR', 1),
-(2930, 189, 'Trenčiansky', 'TC', 1),
-(2931, 189, 'Trnavský', 'TV', 1),
-(2932, 189, 'Žilinský', 'ZI', 1),
+(2929, 189, 'PreÅ¡ovskÃ½', 'PR', 1),
+(2930, 189, 'TrenÄiansky', 'TC', 1),
+(2931, 189, 'TrnavskÃ½', 'TV', 1),
+(2932, 189, 'Å½ilinskÃ½', 'ZI', 1),
 (2933, 191, 'Central', 'CE', 1),
 (2934, 191, 'Choiseul', 'CH', 1),
 (2935, 191, 'Guadalcanal', 'GC', 1),
@@ -6571,11 +6410,11 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3052, 199, 'Kassala', 'KSL', 1),
 (3053, 199, 'Nahr an Nil', 'NNL', 1),
 (3054, 199, 'Shamal Bahr al Ghazal', 'SBG', 1),
-(3055, 199, 'Shamal Darfur', 'SDA', 1),
+(3055, 199, 'Shamal Darfur', 'SDA', 1);
+INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3056, 199, 'Shamal Kurdufan', 'SKU', 1),
 (3057, 199, 'Sharq al Istiwa''iyah', 'SIS', 1),
-(3058, 199, 'Sinnar', 'SNR', 1);
-INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
+(3058, 199, 'Sinnar', 'SNR', 1),
 (3059, 199, 'Warab', 'WRB', 1),
 (3060, 200, 'Brokopondo', 'BR', 1),
 (3061, 200, 'Commewijne', 'CM', 1),
@@ -6833,82 +6672,82 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3313, 214, 'Tunis', 'TU', 1),
 (3314, 214, 'Zaghouan', 'ZA', 1),
 (3315, 215, 'Adana', 'ADA', 1),
-(3316, 215, 'Adıyaman', 'ADI', 1),
+(3316, 215, 'AdÄ±yaman', 'ADI', 1),
 (3317, 215, 'Afyonkarahisar', 'AFY', 1),
-(3318, 215, 'Ağrı', 'AGR', 1),
+(3318, 215, 'AÄŸrÄ±', 'AGR', 1),
 (3319, 215, 'Aksaray', 'AKS', 1),
 (3320, 215, 'Amasya', 'AMA', 1),
 (3321, 215, 'Ankara', 'ANK', 1),
 (3322, 215, 'Antalya', 'ANT', 1),
 (3323, 215, 'Ardahan', 'ARD', 1),
 (3324, 215, 'Artvin', 'ART', 1),
-(3325, 215, 'Aydın', 'AYI', 1),
-(3326, 215, 'Balıkesir', 'BAL', 1),
-(3327, 215, 'Bartın', 'BAR', 1),
+(3325, 215, 'AydÄ±n', 'AYI', 1),
+(3326, 215, 'BalÄ±kesir', 'BAL', 1),
+(3327, 215, 'BartÄ±n', 'BAR', 1),
 (3328, 215, 'Batman', 'BAT', 1),
 (3329, 215, 'Bayburt', 'BAY', 1),
 (3330, 215, 'Bilecik', 'BIL', 1),
-(3331, 215, 'Bingöl', 'BIN', 1),
+(3331, 215, 'BingÃ¶l', 'BIN', 1),
 (3332, 215, 'Bitlis', 'BIT', 1),
 (3333, 215, 'Bolu', 'BOL', 1),
 (3334, 215, 'Burdur', 'BRD', 1),
 (3335, 215, 'Bursa', 'BRS', 1),
-(3336, 215, 'Çanakkale', 'CKL', 1),
-(3337, 215, 'Çankırı', 'CKR', 1),
-(3338, 215, 'Çorum', 'COR', 1),
+(3336, 215, 'Ã‡anakkale', 'CKL', 1),
+(3337, 215, 'Ã‡ankÄ±rÄ±', 'CKR', 1),
+(3338, 215, 'Ã‡orum', 'COR', 1),
 (3339, 215, 'Denizli', 'DEN', 1),
 (3340, 215, 'Diyarbakir', 'DIY', 1),
-(3341, 215, 'Düzce', 'DUZ', 1),
+(3341, 215, 'DÃ¼zce', 'DUZ', 1),
 (3342, 215, 'Edirne', 'EDI', 1),
-(3343, 215, 'Elazığ', 'ELA', 1),
+(3343, 215, 'ElazÄ±ÄŸ', 'ELA', 1),
 (3344, 215, 'Erzincan', 'EZC', 1),
 (3345, 215, 'Erzurum', 'EZR', 1),
-(3346, 215, 'Eskişehir', 'ESK', 1),
+(3346, 215, 'EskiÅŸehir', 'ESK', 1),
 (3347, 215, 'Gaziantep', 'GAZ', 1),
 (3348, 215, 'Giresun', 'GIR', 1),
-(3349, 215, 'Gümüşhane', 'GMS', 1),
+(3349, 215, 'GÃ¼mÃ¼ÅŸhane', 'GMS', 1),
 (3350, 215, 'Hakkari', 'HKR', 1),
 (3351, 215, 'Hatay', 'HTY', 1),
-(3352, 215, 'Iğdır', 'IGD', 1),
+(3352, 215, 'IÄŸdÄ±r', 'IGD', 1),
 (3353, 215, 'Isparta', 'ISP', 1),
-(3354, 215, 'İstanbul', 'IST', 1),
-(3355, 215, 'İzmir', 'IZM', 1),
-(3356, 215, 'Kahramanmaraş', 'KAH', 1),
-(3357, 215, 'Karabük', 'KRB', 1),
+(3354, 215, 'Ä°stanbul', 'IST', 1),
+(3355, 215, 'Ä°zmir', 'IZM', 1),
+(3356, 215, 'KahramanmaraÅŸ', 'KAH', 1),
+(3357, 215, 'KarabÃ¼k', 'KRB', 1),
 (3358, 215, 'Karaman', 'KRM', 1),
 (3359, 215, 'Kars', 'KRS', 1),
 (3360, 215, 'Kastamonu', 'KAS', 1),
 (3361, 215, 'Kayseri', 'KAY', 1),
 (3362, 215, 'Kilis', 'KLS', 1),
-(3363, 215, 'Kırıkkale', 'KRK', 1),
-(3364, 215, 'Kırklareli', 'KLR', 1),
-(3365, 215, 'Kırşehir', 'KRH', 1),
+(3363, 215, 'KÄ±rÄ±kkale', 'KRK', 1),
+(3364, 215, 'KÄ±rklareli', 'KLR', 1),
+(3365, 215, 'KÄ±rÅŸehir', 'KRH', 1),
 (3366, 215, 'Kocaeli', 'KOC', 1),
 (3367, 215, 'Konya', 'KON', 1),
-(3368, 215, 'Kütahya', 'KUT', 1),
+(3368, 215, 'KÃ¼tahya', 'KUT', 1),
 (3369, 215, 'Malatya', 'MAL', 1),
 (3370, 215, 'Manisa', 'MAN', 1),
 (3371, 215, 'Mardin', 'MAR', 1),
 (3372, 215, 'Mersin', 'MER', 1),
-(3373, 215, 'Muğla', 'MUG', 1),
-(3374, 215, 'Muş', 'MUS', 1),
-(3375, 215, 'Nevşehir', 'NEV', 1),
-(3376, 215, 'Niğde', 'NIG', 1),
+(3373, 215, 'MuÄŸla', 'MUG', 1),
+(3374, 215, 'MuÅŸ', 'MUS', 1),
+(3375, 215, 'NevÅŸehir', 'NEV', 1),
+(3376, 215, 'NiÄŸde', 'NIG', 1),
 (3377, 215, 'Ordu', 'ORD', 1),
 (3378, 215, 'Osmaniye', 'OSM', 1),
 (3379, 215, 'Rize', 'RIZ', 1),
 (3380, 215, 'Sakarya', 'SAK', 1),
 (3381, 215, 'Samsun', 'SAM', 1),
-(3382, 215, 'Şanlıurfa', 'SAN', 1),
+(3382, 215, 'ÅžanlÄ±urfa', 'SAN', 1),
 (3383, 215, 'Siirt', 'SII', 1),
 (3384, 215, 'Sinop', 'SIN', 1),
-(3385, 215, 'Şırnak', 'SIR', 1),
+(3385, 215, 'ÅžÄ±rnak', 'SIR', 1),
 (3386, 215, 'Sivas', 'SIV', 1),
-(3387, 215, 'Tekirdağ', 'TEL', 1),
+(3387, 215, 'TekirdaÄŸ', 'TEL', 1),
 (3388, 215, 'Tokat', 'TOK', 1),
 (3389, 215, 'Trabzon', 'TRA', 1),
 (3390, 215, 'Tunceli', 'TUN', 1),
-(3391, 215, 'Uşak', 'USK', 1),
+(3391, 215, 'UÅŸak', 'USK', 1),
 (3392, 215, 'Van', 'VAN', 1),
 (3393, 215, 'Yalova', 'YAL', 1),
 (3394, 215, 'Yozgat', 'YOZ', 1),
@@ -7452,16 +7291,16 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3955, 222, 'Cumbria', 'CMA', 1),
 (3956, 190, 'Pomurska', '1', 1),
 (3957, 190, 'Podravska', '2', 1),
-(3958, 190, 'Koroška', '3', 1),
+(3958, 190, 'KoroÅ¡ka', '3', 1),
 (3959, 190, 'Savinjska', '4', 1),
 (3960, 190, 'Zasavska', '5', 1),
 (3961, 190, 'Spodnjeposavska', '6', 1),
 (3962, 190, 'Jugovzhodna Slovenija', '7', 1),
 (3963, 190, 'Osrednjeslovenska', '8', 1),
 (3964, 190, 'Gorenjska', '9', 1),
-(3965, 190, 'Notranjsko-kraška', '10', 1),
-(3966, 190, 'Goriška', '11', 1),
-(3967, 190, 'Obalno-kraška', '12', 1),
+(3965, 190, 'Notranjsko-kraÅ¡ka', '10', 1),
+(3966, 190, 'GoriÅ¡ka', '11', 1),
+(3967, 190, 'Obalno-kraÅ¡ka', '12', 1),
 (3968, 33, 'Ruse', '', 1),
 (3969, 101, 'Alborz', 'ALB', 1),
 (3970, 21, 'Brussels-Capital Region', 'BRU', 1),
@@ -7475,44 +7314,44 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 (3978, 242, 'Cetinje', '06', 1),
 (3979, 242, 'Danilovgrad', '07', 1),
 (3980, 242, 'Herceg-Novi', '08', 1),
-(3981, 242, 'Kolašin', '09', 1),
+(3981, 242, 'KolaÅ¡in', '09', 1),
 (3982, 242, 'Kotor', '10', 1),
 (3983, 242, 'Mojkovac', '11', 1),
-(3984, 242, 'Nikšić', '12', 1),
+(3984, 242, 'NikÅ¡iÄ‡', '12', 1),
 (3985, 242, 'Plav', '13', 1),
 (3986, 242, 'Pljevlja', '14', 1),
-(3987, 242, 'Plužine', '15', 1),
+(3987, 242, 'PluÅ¾ine', '15', 1),
 (3988, 242, 'Podgorica', '16', 1),
-(3989, 242, 'Rožaje', '17', 1),
-(3990, 242, 'Šavnik', '18', 1),
+(3989, 242, 'RoÅ¾aje', '17', 1),
+(3990, 242, 'Å avnik', '18', 1),
 (3991, 242, 'Tivat', '19', 1),
 (3992, 242, 'Ulcinj', '20', 1),
-(3993, 242, 'Žabljak', '21', 1),
+(3993, 242, 'Å½abljak', '21', 1),
 (3994, 243, 'Belgrade', '00', 1),
-(3995, 243, 'North Bačka', '01', 1),
+(3995, 243, 'North BaÄka', '01', 1),
 (3996, 243, 'Central Banat', '02', 1),
 (3997, 243, 'North Banat', '03', 1),
 (3998, 243, 'South Banat', '04', 1),
-(3999, 243, 'West Bačka', '05', 1),
-(4000, 243, 'South Bačka', '06', 1),
+(3999, 243, 'West BaÄka', '05', 1),
+(4000, 243, 'South BaÄka', '06', 1),
 (4001, 243, 'Srem', '07', 1),
-(4002, 243, 'Mačva', '08', 1),
+(4002, 243, 'MaÄva', '08', 1),
 (4003, 243, 'Kolubara', '09', 1),
 (4004, 243, 'Podunavlje', '10', 1),
-(4005, 243, 'Braničevo', '11', 1),
-(4006, 243, 'Šumadija', '12', 1),
+(4005, 243, 'BraniÄevo', '11', 1),
+(4006, 243, 'Å umadija', '12', 1),
 (4007, 243, 'Pomoravlje', '13', 1),
 (4008, 243, 'Bor', '14', 1),
-(4009, 243, 'Zaječar', '15', 1),
+(4009, 243, 'ZajeÄar', '15', 1),
 (4010, 243, 'Zlatibor', '16', 1),
 (4011, 243, 'Moravica', '17', 1),
-(4012, 243, 'Raška', '18', 1),
+(4012, 243, 'RaÅ¡ka', '18', 1),
 (4013, 243, 'Rasina', '19', 1),
-(4014, 243, 'Nišava', '20', 1),
+(4014, 243, 'NiÅ¡ava', '20', 1),
 (4015, 243, 'Toplica', '21', 1),
 (4016, 243, 'Pirot', '22', 1),
 (4017, 243, 'Jablanica', '23', 1),
-(4018, 243, 'Pčinja', '24', 1),
+(4018, 243, 'PÄinja', '24', 1),
 (4019, 243, 'Kosovo', 'KM', 1),
 (4020, 245, 'Bonaire', 'BO', 1),
 (4021, 245, 'Saba', 'SA', 1),
@@ -7534,7 +7373,6 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- Table structure for table `zone_to_geo_zone`
 --
 
-DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
