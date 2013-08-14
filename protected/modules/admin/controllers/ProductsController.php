@@ -149,6 +149,7 @@ class ProductsController extends BackendController {
         // Units
         $units = Unit::model()->findAll();
         $units = CHtml::listData($units, 'unit_id', 'name');
+        $units[0] = '';
         
         $this->render('update', array(
             'model'=>$model,

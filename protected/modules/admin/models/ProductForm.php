@@ -192,7 +192,7 @@ class ProductForm extends CFormModel {
             if(isset($product->specs) && count($product->specs)){
                 foreach ($product->specs as $spec){
                     $this->specs[$spec->spec_id] = $spec->description->name;
-                    $this->units[$spec->unit_id] = $spec->unit->name;
+                    $this->units[$spec->unit_id] = !is_null($spec->unit) ? $spec->unit->name : '';
                     $this->value_init[$spec->spec_id] = $spec->value_init;
                     $this->value_end[$spec->spec_id] = $spec->value_end;
                 }
@@ -328,7 +328,7 @@ class ProductForm extends CFormModel {
                 $valueStart = isset($this->value_init[$index]) ? $this->value_init[$index] : '';
                 $valueEnd = isset($this->value_end[$index]) ? $this->value_end[$index] : '';
                 
-                if($specId && $unitId && $valueStart)
+                if($specId && $valueStart)
                     $product->addSpec($specId, $unitId, $valueStart, $valueEnd);
             }
         }

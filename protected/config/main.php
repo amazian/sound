@@ -83,6 +83,6 @@ return array(
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
     'params' => array(
-        'imagePath' => 'c:/xampp/htdocs/YiiCart/image/',
+        'imagePath' => '/var/www/sandbox/sound/image/',
     ),
 );
