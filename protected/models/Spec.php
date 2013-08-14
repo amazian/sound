@@ -6,9 +6,13 @@
  * The followings are the available columns in table 'spec':
  * @property string $spec_id
  * @property string $name
+ * @property integer $type_id
  */
 class Spec extends CActiveRecord {
 
+    const TYPE_NUMERICAL = 1;
+    const TYPE_ALPHABETICAL = 2;
+    
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -30,8 +34,8 @@ class Spec extends CActiveRecord {
      */
     public function rules() {
         return array(
-            array('name', 'required'),
-            array('name', 'length', 'max' => 255),
+            array('name, type_id', 'required'),
+            array('name', 'length', 'max' => 255),            
         );
     }
 
@@ -50,7 +54,22 @@ class Spec extends CActiveRecord {
         return array(
             'spec_id' => 'Spec',
             'name' => 'Name',
+            'type_id' => 'Type',
         );
+    }
+    
+    public function getType(){
+        switch ($this->type_id){
+            case self::TYPE_NUMERICAL:
+                return 'Numerical';
+                break;
+            case self::TYPE_ALPHABETICAL:
+                return 'Alphabetical';
+                break;
+            default:
+                return '##Invalid##';
+                break;
+        }
     }
 
 }

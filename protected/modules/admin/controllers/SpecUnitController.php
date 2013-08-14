@@ -12,9 +12,10 @@ class SpecUnitController extends BackendController {
         ));
     }
     
-    public function actionAddSpec($name){
+    public function actionAddSpec($name, $type){
         $spec = new Spec;
         $spec->name = $name;
+        $spec->type_id = $type;
         $spec->save();
         
         $this->redirect(array('index'));

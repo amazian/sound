@@ -7,12 +7,6 @@ $this->breadcrumbs = array(
 
 <div class="row-fluid">
     <div class="span9"><h1><i class="icon-sitemap"></i>&nbsp;<?php echo Yii::t('specUnit', 'Specs & Units'); ?></h1></div>
-    <div class="span2">
-        <div class="btn-group">
-            <a href="<?php echo $this->createUrl('create'); ?>" class="btn btn-primary">Insert</a>
-            <a id="btnDeleteAll" class="btn btn-danger">Delete</a>
-        </div>
-    </div>
 </div>
 
 <br />
@@ -23,17 +17,20 @@ $this->breadcrumbs = array(
             <thead>
                 <tr>
                     <th><?php echo Yii::t('specUnit', 'Spec Name'); ?></th>
+                    <th><?php echo Yii::t('specUnit', 'Type'); ?></th>
                     <th style="width: 80px;"><?php echo Yii::t('specUnit', 'Action'); ?></th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="spec" id="spec" /></td>
-                    <td><button onclick="location='<?php echo $this->createUrl('addSpec'); ?>/?name=' + $('#spec').val();" class="btn btn-primary">Insert</button></td>
+                    <td><input type="text" name="spec" id="spec" class="span12" /></td>
+                    <td><?php echo CHtml::dropDownList('type', 1, array(1=>'Numerical', 2=>'Alphabetical'), array('class'=>'span12')); ?></td>
+                    <td><button onclick="location='<?php echo $this->createUrl('addSpec'); ?>/?name=' + $('#spec').val() + '&type=' + $('#type').val();" class="btn btn-primary">Insert</button></td>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($specs as $spec): ?>
                     <tr>
                         <td><?php echo $spec->name; ?></td>
+                        <td><?php echo $spec->getType(); ?></td>
                         <td><button onclick="location='<?php echo $this->createUrl('deleteSpec', array('id'=>$spec->spec_id)); ?>';" class="btn btn-small btn-danger">Delete</button></td>
                     </tr>
                 <?php endforeach; ?>
