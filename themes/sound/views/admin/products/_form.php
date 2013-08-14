@@ -122,8 +122,10 @@ $form = $this->beginWidget('CActiveForm', array(
             <div class="controls">
                 <div id="specs-container">
                     <?php foreach($model->getProduct()->specs as $index => $spec): ?>
-                    <?php if($index !== 0) echo "<br />"; ?>
-                    <?php echo CHtml::dropDownList(CHtml::activeName($model, 'specs') . "[{$index}]", $spec->spec_id, $specs, array('class'=>'span3')); ?><?php echo $form->textField($model, "value_init[{$index}]", array('class'=>'input-mini value_start', 'value'=>$spec->value_init)); ?><?php echo $form->textField($model, "value_end[{$index}]", array('class'=>'input-mini', 'value'=>$spec->value_end)); ?><?php echo CHtml::dropDownList(CHtml::activeName($model, 'units') . "[{$index}]", $spec->unit_id, $units, array('class'=>'span3')); ?>
+                    <div>
+                        <?php echo CHtml::dropDownList(CHtml::activeName($model, 'specs') . "[{$index}]", $spec->spec_id, $specs, array('class'=>'span3')); ?><?php echo $form->textField($model, "value_init[{$index}]", array('class'=>'input-mini value_start', 'value'=>$spec->value_init)); ?><?php echo $form->textField($model, "value_end[{$index}]", array('class'=>'input-mini', 'value'=>$spec->value_end)); ?><?php echo CHtml::dropDownList(CHtml::activeName($model, 'units') . "[{$index}]", $spec->unit_id, $units, array('class'=>'span3')); ?>
+                        <button type="button" onclick="$(this).parent('div').detach();" class="btn btn-small btn-danger">X</button>
+                    </div>
                     <?php endforeach; ?>
                 </div>
                 <a href="#" id="addSpec" class="btn">+ Add Spec&amp;Unit</a>
@@ -158,12 +160,14 @@ $form = $this->beginWidget('CActiveForm', array(
     
     var currentSpecsCount = '<?php echo count($model->getProduct()->specs); ?>';
     $('#addSpec').on('click', function(){
-        var html = '<br />';
+        html  = '<div>';
         html += <?php echo CJavaScript::encode($form->dropDownList($model, 'specs[:replaceById]', $specs, array('class'=>'span3'))); ?>;
         html += <?php echo CJavaScript::encode($form->textField($model, 'value_init[:replaceById]', array('class'=>'input-mini value_start'))); ?>;
         html += <?php echo CJavaScript::encode($form->textField($model, 'value_end[:replaceById]', array('class'=>'input-mini'))); ?>;
         html += <?php echo CJavaScript::encode($form->dropDownList($model, 'units[:replaceById]', $units, array('class'=>'span3'))); ?>;
-        html = html.replace(new RegExp(':replaceById', 'g'), currentSpecsCount);
+        html += ' <button type="button" onclick="$(this).parent(\'div\').detach();" class="btn btn-small btn-danger">X</button>';
+        html += '</div>';
+        html  = html.replace(new RegExp(':replaceById', 'g'), currentSpecsCount);
         currentSpecsCount++;
         
         $('#specs-container').append(html);
