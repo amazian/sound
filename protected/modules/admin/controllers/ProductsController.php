@@ -25,8 +25,15 @@ class ProductsController extends BackendController {
                 
         }
         
+        $categories = Category::model()->findAllByAttributes(array('parent_id'=>0));
+        $categoryOptions = array();
+        foreach($categories as $category){
+            $categoryOptions[$category->category_id] = $category->description->name;
+        }
+        
         $this->render('index', array(
-            'products'=>$filteredProducts            
+            'products'=>$filteredProducts,
+            'categories'=>$categoryOptions
         ));
     }
     
@@ -178,7 +185,7 @@ class ProductsController extends BackendController {
         echo CJSON::encode($json);
     }
     
-    public function actionAddCategoryDownList($categoryId){
+    public function actionAddCategoryDownList($categoryId, $form = true){
         $category = Category::model()->findByPk($categoryId);
         
         $categories = array();
@@ -191,9 +198,14 @@ class ProductsController extends BackendController {
         foreach($categories as $cat) $descriptions[] = $cat->description;
         $values = CHtml::listData($descriptions, 'category_id', 'name');
         $values[0] = '';
-                    
-        $model = new ProductForm;
-        echo CHtml::activeDropDownList($model, 'categories[]', $values, array('class'=>'categoryDropDownList'));
+        
+        if($form) {
+            $model = new ProductForm;
+            echo CHtml::activeDropDownList($model, 'categories[]', $values, array('class'=>'categoryDropDownList'));
+        }
+        else{
+            echo CHtml::dropDownList('categoryId', null, $values, array('class'=>'categoryDropDownList'));
+        }
     }
 
 }

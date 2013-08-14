@@ -17,15 +17,12 @@ $this->breadcrumbs = array(
 
 <form class="form-inline">
     <label>Select category</label>
-    <?php $this->widget('TypeaheadSingle', array(
-        'model' => new Category,
-        'attribute' => 'category_id',
-        'value' => null,
-        'htmlOptions' => array('class' => 'span4'),
-        'url'=>$this->createUrl('/admin/categories/autocomplete'),
-        'addHelpblock'=>false
-    ))?>
-    <button type="button" onclick="location='<?php echo $this->createUrl('index'); ?>/?categoryId=' + $('#Category_category_id').val();" class="btn">Filter</button>
+    <div id="categories-container" class="controls">
+        <?php
+        echo CHtml::dropDownList('categoryId', null, $categories, array('class' => 'categoryDropDownList'));
+        ?>
+    </div>
+    <button type="button" onclick="location='<?php echo $this->createUrl('index'); ?>/?categoryId=' + $('#categoryId').val();" class="btn">Filter</button>
 </form>
 
 <br />
@@ -44,7 +41,7 @@ $this->breadcrumbs = array(
         <tr>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
-            <th><?php echo CHtml::textField('productName', null, array('placeholder'=>'Product name')); ?></th>
+            <th><?php echo CHtml::textField('productName', null, array('placeholder' => 'Product name')); ?></th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -52,21 +49,40 @@ $this->breadcrumbs = array(
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($products as $product): ?>
+<?php foreach ($products as $product): ?>
             <tr>
-                <td><?php echo CHtml::checkBox('selected[]', false, array('value'=>$product->product_id)); ?></td>
+                <td><?php echo CHtml::checkBox('selected[]', false, array('value' => $product->product_id)); ?></td>
                 <td><img src="<?php echo $product->getImageWithSize(40, 40); ?>" /></td>
                 <td><?php echo $product->description->name; ?></td>
                 <td>---</td>
                 <td><?php echo $product->model; ?></td>
                 <td><?php echo $product->getFormattedPrice(); ?></td>
-                <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id'=>$product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a></td>
+                <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a></td>
             </tr>
-        <?php endforeach; ?>
+<?php endforeach; ?>
     </tbody>
 </table>
 
 <script>
+    function onChange(){
+        if(this.value != 0){
+            $("#categories-container select:gt(" + $(this).index() + ")").remove();
+
+            $.get('<?php echo $this->createUrl('/admin/products/addCategoryDownList'); ?>', {categoryId: this.value, form: 0}, function(html){
+                if(html != ''){
+                    var activeField = $('#categoryId');
+                    activeField.attr('name', '');
+                    activeField.attr('id', '');
+
+                    $('.categoryDropDownList').off('change');
+                    $('#categories-container').append(html);
+                    $('.categoryDropDownList').on('change', onChange);
+                }
+            });
+        }
+    }
+    $('.categoryDropDownList').on('change', onChange);
+    
     $(document).ready(function() {
         $('#btnDeleteAll').on('click', function(){   
             if(confirm('<?php echo Yii::t('common', 'Delete/Uninstall cannot be undone! Are you sure you want to do this?'); ?>')){
