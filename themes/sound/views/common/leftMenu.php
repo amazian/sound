@@ -4,7 +4,7 @@
     <ul class="breadcrumb">
         <li>Categories</span></li>
     </ul>
-    <div class="span3 product_list">
+    <div id="column-left" class="span3 product_list">
         <ul class="nav">
             <?php foreach($categories as $category): ?>
             <li>
