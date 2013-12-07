@@ -56,7 +56,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=sound',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'undertaker',
+            'password' => '',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
@@ -83,6 +83,6 @@ return array(
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']
     'params' => array(
-        'imagePath' => 'c:/xampp/htdocs/YiiCart/image/',
+        'imagePath' => '/Applications/XAMPP/htdocs/sound/image/',
     ),
 );

@@ -4,7 +4,7 @@ Thumbs.db
 *.empty
 
 # runtime and cache directories
-/assets/*
+#/assets/*
 
 /protected/runtime/*.log
 
