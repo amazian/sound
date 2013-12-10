@@ -104,10 +104,9 @@
             <div class="tabbable">
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#spec">Spec</a></li>
-                    <li><a data-toggle="tab" href="#advancedSearch">Advanced search</a></li>
                     <li><a data-toggle="tab" href="#description">Description</a></li>
-                    <!--<li><a data-toggle="tab" href="#2">Reviews</a></li>
-                    <li><a data-toggle="tab" href="#3">Related products</a></li>-->
+                    <li><a data-toggle="tab" href="#advancedSearch">Related Product Search</a></li>
+                    <li><a data-toggle="tab" href="#tags">Tags</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="spec" class="tab-pane active">
@@ -143,6 +142,17 @@
                             
                             
                         </form>
+                    </div>
+                    <div id="tags" class="tab-pane active">
+                        <table class="table table-bordered table-striped">
+                            <tbody>
+                            <?php foreach($product->tags as $tag): ?>
+                                <tr>
+                                    <th style="width: 200px; text-align: right;"><?php echo $tag->tag_text; ?></th>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -84,8 +84,6 @@ class Product extends CActiveRecord {
      * @return array validation rules for model attributes.
      */
     public function rules() {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
         return array(
             array('model', 'required'),
             array('quantity, stock_status_id, manufacturer_id, shipping, points, tax_class_id, weight_class_id, length_class_id, subtract, minimum, sort_order, status, viewed', 'numerical', 'integerOnly' => true),
@@ -117,6 +115,7 @@ class Product extends CActiveRecord {
             'downloads' => array(self::MANY_MANY, 'Download', 'product_to_download(product_id, download_id)'),
             'relatedProducts' => array(self::MANY_MANY, 'Product', 'product_related(product_id, related_id)'),
             'specs' => array(self::HAS_MANY, 'ProductSpec', 'product_id', 'order'=>'product_spec_id ASC'),
+            'tags' => array(self::HAS_MANY, 'ProductTag', 'product_id'),
         );
     }
 
