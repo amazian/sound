@@ -61,7 +61,7 @@ class ProductForm extends CFormModel {
             array('name, model', 'required'),
             array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
-            array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end', 'safe')
+            array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
         );
     }
 
@@ -165,6 +165,12 @@ class ProductForm extends CFormModel {
             if (isset($product->categories) && count($product->categories)) {
                 foreach ($product->categories as $category)
                     $this->categories[$category->category_id] = $category->description->name;
+            }
+            
+            // Tags
+            if (isset($product->tags) && count($product->tags)) {
+                foreach ($product->tags as $tag)
+                    $this->tags[$tag->tag_text] = $tag->tag_text;
             }
 
             // Filters
@@ -293,6 +299,13 @@ class ProductForm extends CFormModel {
         if (isset($this->filters) && count($this->filters) > 0) {
             foreach ($this->filters as $filterId)
                 $product->addFilter($filterId);
+        }
+        
+        // Tags
+        $product->clearAllTagsRelations();
+        if (isset($this->tags) && count($this->tags) > 0) {
+            foreach ($this->tags as $tagText)
+                $product->addTag($tagText);
         }
 
         // Categories

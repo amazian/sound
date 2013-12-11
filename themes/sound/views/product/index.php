@@ -143,18 +143,17 @@
                             
                         </form>
                     </div>
-                    <div id="tags" class="tab-pane active">
-                        <table class="table table-bordered table-striped">
-                            <tbody>
-                            <?php foreach($product->tags as $tag): ?>
-                                <tr>
-                                    <th style="width: 200px; text-align: right;"><?php echo $tag->tag_text; ?></th>
-                                </tr>
-                            <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                    <div id="tags" class="tab-pane">
+                        <div id="tags" class="tab-pane active">
+                            <div class="tags">
+                                <?php foreach($product->tags as $tag): ?>
+                                <div class="tag label btn-info">
+                                    <span><?php echo $tag->tag_text; ?></span>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
                     </div>
-                </div>
             </div>
 
         </div>

@@ -259,6 +259,17 @@ class Product extends CActiveRecord {
         return false;
     }
     
+    public function addTag($tagText) {
+        if(!ProductTag::model()->countByAttributes(array('product_id'=>$this->product_id, 'tag_text'=>$tagText))){
+            $tag = new ProductTag;
+            $tag->product_id = $this->product_id;
+            $tag->tag_text = $tagText;
+            return $tag->save();
+        }
+        
+        return false;
+    }
+    
     public function addToStore($storeId) {
         if(!ProductToStore::model()->countByAttributes(array('product_id'=>$this->product_id, 'store_id'=>$storeId))){
             $productToStore = new ProductToStore;
@@ -324,6 +335,10 @@ class Product extends CActiveRecord {
     
     public function clearAllFiltersRelations(){
         ProductFilter::model()->deleteAllByAttributes(array('product_id'=>$this->product_id));
+    }
+    
+    public function clearAllTagsRelations(){
+        ProductTag::model()->deleteAllByAttributes(array('product_id'=>$this->product_id));
     }
     
     public function clearAllCategoriesRelations(){

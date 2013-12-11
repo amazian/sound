@@ -139,13 +139,13 @@ $form = $this->beginWidget('CActiveForm', array(
                     $this->widget('ext.yii-selectize.YiiSelectize', array(
                         'model' => $model,
                         'attribute' => 'tags',
-                        'data' => array(
-                            'hello' => 'Hello',
-                            'world' => 'World',
-                        ),
+                        'data' => $model->tags,
+                        'selectedValues' => $model->tags,
                         'useWithBootstrap' => true,
-                        'cssTheme' => 'bootstrap2', // uncomment to use v2 theme instead of v3
+                        'cssTheme' => 'bootstrap2',
                         'fullWidth' => false,
+                        'multiple' => true,
+                        'selectedValues' => array('hello', 'world'),
                     ));
                 ?>
             </div>
