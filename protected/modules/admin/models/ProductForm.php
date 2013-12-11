@@ -50,6 +50,8 @@ class ProductForm extends CFormModel {
     public $units;
     public $value_init;
     public $value_end;
+    
+    public $tags;
 
     /**
      * Declares the validation rules.
@@ -110,6 +112,7 @@ class ProductForm extends CFormModel {
             'downloads' => Yii::t('products', 'Downloads'),
             'relatedProducts' => Yii::t('products', 'Related Products'),
             'specs' => Yii::t('products', 'Specs'),
+            'tags' => Yii::t('tags', 'Tags'),
         );
     }
 

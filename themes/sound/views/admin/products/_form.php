@@ -131,6 +131,25 @@ $form = $this->beginWidget('CActiveForm', array(
                 <a href="#" id="addSpec" class="btn">+ Add Spec&amp;Unit</a>
             </div>
         </div>
+            
+        <div class="control-group">
+            <?php echo $form->label($model, 'Tags', array('class' => 'control-label')); ?>
+            <div class="controls">
+                <?php
+                    $this->widget('ext.yii-selectize.YiiSelectize', array(
+                        'model' => $model,
+                        'attribute' => 'tags',
+                        'data' => array(
+                            'hello' => 'Hello',
+                            'world' => 'World',
+                        ),
+                        'useWithBootstrap' => true,
+                        'cssTheme' => 'bootstrap2', // uncomment to use v2 theme instead of v3
+                        'fullWidth' => false,
+                    ));
+                ?>
+            </div>
+        </div>
     <!--</div>-->
     <!--<div id="links" class="tab-pane fade">-->
     <!--</div>
