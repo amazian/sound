@@ -125,6 +125,7 @@
                         <?php echo $product->description->getDescription(); ?>
                     </div>    
                     <div id="advancedSearch" class="tab-pane">
+                        <p>Select the spec you want to adjust</p>
                         <form>
                             <button type="button" class="btn btn-inverse">Ok</button>
                             <br /><br />
@@ -153,12 +154,16 @@
                                 <?php endforeach; ?>
                             </div>
                         </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
             </div>
 
         </div>
     </div>
     </div>
-    <div>
+    <div class="row-fluid">
         <div class="fb-comments" data-href="<?php echo Yii::app()->createAbsoluteUrl(Yii::app()->request->url); ?>" data-numposts="5" data-colorscheme="light"></div>
     </div>
