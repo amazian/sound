@@ -8,7 +8,7 @@
         <ul class="nav">
             <?php foreach($categories as $category): ?>
             <li>
-                <a class="cat" data-cat-id="cat-<?php echo $category->category_id; ?>" href="<?php echo $this->createUrl('/category/view', array('id'=>$category->category_id)); ?>"><i id="img-cat-<?php echo $category->category_id; ?>" class="icon-angle-right"></i> <?php echo $category->description->getName(); ?> (<?php echo $category->getProductsCount(); ?>)</a>
+                <a class="cat" style="display: inline;" data-cat-id="cat-<?php echo $category->category_id; ?>" href="<?php echo $this->createUrl('/category/view', array('id'=>$category->category_id)); ?>"><i id="img-cat-<?php echo $category->category_id; ?>" class="icon-angle-right"></i> </a><a href="<?php echo $this->createUrl('/category/view', array('id'=>$category->category_id)); ?>" style="display: inline;"><?php echo $category->description->getName(); ?> (<?php echo $category->getProductsCount(); ?>)</a>
                 <?php if($category->hasChildCategories()): ?>
                 <ul id="cat-<?php echo $category->category_id; ?>" style="display: none;">
                     <?php foreach($category->childCategories as $childCategory): ?>

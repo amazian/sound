@@ -129,16 +129,13 @@
                         <form>
                             <button type="button" class="btn btn-inverse">Ok</button>
                             <br /><br />
-                            <?php echo CHtml::dropDownList('test1', 1, array(1=>'Test1', 2=>'Test2', 3=>'Test3')); ?>
-                            <input type="text" placeholder="Type something…">
-                            <input type="text" placeholder="Type something…">
-                            <?php echo CHtml::dropDownList('test2', 1, array(1=>'Test1', 2=>'Test2', 3=>'Test3')); ?>
-                            <label class="radio inline">
-                                <input type="radio"> silver
-                            </label>   
-                            <label class="radio inline">
-                                <input type="radio"> platinum
-                            </label>   
+                            <?php 
+                            $product_attributes = array();
+                            foreach($product->specs as $spec) {
+                                $product_attributes[$spec->product_spec_id] = $spec->description->name;
+                            } 
+                            ?>
+                            <?php echo CHtml::dropDownList('test1', null, $product_attributes); ?>  
                             <span class="help-block">+ Add filter</span>
                             
                             
