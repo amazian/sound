@@ -165,5 +165,5 @@
     </div>
     </div>
     <div class="row-fluid">
-        <div class="fb-comments" data-href="<?php echo Yii::app()->createAbsoluteUrl(Yii::app()->request->url); ?>" data-numposts="5" data-colorscheme="light"></div>
+        <div class="fb-comments" data-href="<?php echo Yii::app()->request->url; ?>" data-numposts="5" data-colorscheme="light"></div>
     </div>
