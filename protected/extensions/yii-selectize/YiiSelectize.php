@@ -198,6 +198,8 @@ class YiiSelectize extends CInputWidget
      * Setup widget & html options
      */
     public function setupOptions() {
+        if($this->data == null) $this->data = array();
+        
         $this->data = array('' => '') + $this->data;
 
         if (!isset($this->htmlOptions['class'])) {

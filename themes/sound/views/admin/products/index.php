@@ -54,7 +54,7 @@ $this->breadcrumbs = array(
                 <td><?php echo CHtml::checkBox('selected[]', false, array('value' => $product->product_id)); ?></td>
                 <td><img src="<?php echo $product->getImageWithSize(40, 40); ?>" /></td>
                 <td><?php echo $product->description->name; ?></td>
-                <td>---</td>
+                <td><?php echo $product->type; ?></td>
                 <td><?php echo $product->model; ?></td>
                 <td><?php echo $product->getFormattedPrice(); ?></td>
                 <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a></td>
