@@ -54,7 +54,7 @@
                                         <!--<li><a href="<?php echo $this->createUrl('/admin/filters'); ?>">Filters</a></li>-->
                                         <li><a href="<?php echo $this->createUrl('/admin/specUnit'); ?>">Specs & Units</a></li>
                                         <!--<li><a href="<?php echo $this->createUrl('/admin/options'); ?>">Options</a></li>-->
-                                        <li><a href="<?php echo $this->createUrl('/admin/manufacturers'); ?>">Manufacturers</a></li>
+                                        <li><a href="<?php echo $this->createUrl('/admin/manufacturers'); ?>">Brands</a></li>
                                         <!--<li><a href="<?php echo $this->createUrl('/admin/downloads'); ?>">Downloads</a></li>
                                         <li><a href="<?php echo $this->createUrl('/admin/reviews'); ?>">Reviews</a></li>
                                         <li><a href="<?php echo $this->createUrl('/admin/information'); ?>">Information</a></li>-->
