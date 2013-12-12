@@ -21,6 +21,7 @@ $this->breadcrumbs = array(
     <thead>
         <tr>
             <th style="width: 1px;"><?php echo CHtml::checkBox('checkall', false); ?></th>
+            <th style="width: 1px;">&nbsp;</th>
             <th><?php echo Yii::t('manufacturers', 'Brands'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('manufacturers', 'Action'); ?></th>
         </tr>
@@ -29,6 +30,7 @@ $this->breadcrumbs = array(
         <?php foreach ($manufacturers as $manufacturer): ?>
             <tr>
                 <td><?php echo CHtml::checkBox('selected[]', false, array('value'=>$manufacturer->manufacturer_id)); ?></td>
+                <td><img src="<?php echo $manufacturer->getImageWithSize(40, 40); ?>" /></td>
                 <td><?php echo $manufacturer->name; ?></td>
                 <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id'=>$manufacturer->manufacturer_id)); ?>">Edit</button></td>
             </tr>
