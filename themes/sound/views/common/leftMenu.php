@@ -13,7 +13,7 @@
                 <ul id="cat-<?php echo $category->category_id; ?>" style="display: none;">
                     <?php foreach($category->childCategories as $childCategory): ?>
                     <li>
-                        <a class="cat" data-cat-id="cat-<?php echo $childCategory->category_id; ?>" href="<?php echo $this->createUrl('/category/view', array('id'=>$childCategory->category_id)); ?>"> <i id="img-cat-<?php echo $childCategory->category_id; ?>" class="icon-angle-right"></i> <?php echo $childCategory->description->getName(); ?> (<?php echo $childCategory->getProductsCount(); ?>)</a>
+                        <a class="cat" style="display: inline;" data-cat-id="cat-<?php echo $childCategory->category_id; ?>" href="<?php echo $this->createUrl('/category/view', array('id'=>$childCategory->category_id)); ?>"> <i id="img-cat-<?php echo $childCategory->category_id; ?>" class="icon-angle-right"></i></a> <a style="display: inline;" href="<?php echo $this->createUrl('/category/view', array('id'=>$childCategory->category_id)); ?>"> <?php echo $childCategory->description->getName(); ?> (<?php echo $childCategory->getProductsCount(); ?>)</a>
                         <?php if($childCategory->hasChildCategories()): ?>
                         <ul id="cat-<?php echo $childCategory->category_id; ?>"  style="display: none;">
                             <?php foreach($childCategory->childCategories as $childCategory2): ?>
