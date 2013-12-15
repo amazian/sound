@@ -61,3 +61,38 @@
     </div>
     <?php endif; ?>
 </div>
+
+<?php 
+$js = "
+$('a.product_popover').popover({
+    html: true,
+    trigger: 'manual',
+    container: 'body',
+    placement: 'right',
+    content: function () {
+        var prodId = $(this).attr('data-product-id');
+        var div_id =  'div-id-' + $.now();
+            
+        $.get('{$this->createUrl('product/hoverCard')}', {id: prodId}, function(data){
+            $('#'+div_id).html(data);
+        });
+        
+        return '<div id=\"'+ div_id +'\">Loading...</div>';
+    }
+}).on('mouseenter', function () {
+    var _this = this;
+    $(this).popover('show');
+    $(this).siblings('.popover').on('mouseleave', function () {
+        $(_this).popover('hide');
+    });
+}).on('mouseleave', function () {
+    var _this = this;
+    setTimeout(function () {
+        if (!$('.popover:hover').length) {
+            $(_this).popover('hide')
+        }
+    }, 100);
+});";
+
+Yii::app()->clientScript->registerScript("product_popover", $js, CClientScript::POS_READY);
+?>
