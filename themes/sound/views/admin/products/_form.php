@@ -150,6 +150,13 @@ $form = $this->beginWidget('CActiveForm', array(
                 ?>
             </div>
         </div>
+            
+        <div class="control-group">
+            <?php echo $form->label($model, 'status', array('class' => 'control-label')); ?>
+            <div class="controls">
+                <?php echo $form->dropDownList($model, 'status', array(0=>"Off", 1=>"On"), array('class' => 'span1')); ?>
+            </div>
+        </div>
     <!--</div>-->
     <!--<div id="links" class="tab-pane fade">-->
     <!--</div>

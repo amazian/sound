@@ -35,13 +35,19 @@ $this->breadcrumbs = array(
             <th><?php echo Yii::t('products', 'Product Name'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('products', 'Type'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('products', 'Serial'); ?></th>
+            <th style="width: 80px;"><?php echo Yii::t('products', 'Spec'); ?></th>
+            <th><?php echo Yii::t('products', 'Category'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('products', 'Price'); ?></th>
-            <th style="width: 80px;"><?php echo Yii::t('products', 'Action'); ?></th>
+            <th style="width: 20px;"><?php echo Yii::t('products', 'On'); ?></th>
+            <th style="width: 80px;">&nbsp;</th>
         </tr>
         <tr>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th><?php echo CHtml::textField('productName', null, array('placeholder' => 'Product name')); ?></th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
             <th>&nbsp;</th>
@@ -56,7 +62,10 @@ $this->breadcrumbs = array(
                 <td><?php echo $product->description->name; ?></td>
                 <td><?php echo $product->type; ?></td>
                 <td><?php echo $product->model; ?></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
                 <td><?php echo $product->getFormattedPrice(); ?></td>
+                <td><?php echo ($product->status == 1) ? "<i class=\"icon-check\"></i>" : "<i class=\"icon-check-empty\"></i>"; ?></td>
                 <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a></td>
             </tr>
 <?php endforeach; ?>
