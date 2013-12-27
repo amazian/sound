@@ -37,6 +37,47 @@ class SiteController extends Controller {
     }
 
     /**
+     * Fills the JS tree on an AJAX request.
+     * Should receive parent node ID in $_GET['root'],
+     *  with 'source' when there is no parent.
+     */
+    public function actionAjaxFillTree()
+    {
+        // accept only AJAX request (comment this when debugging)
+        if (!Yii::app()->request->isAjaxRequest) {
+            //exit();
+        }
+        // parse the user input
+        $parentId = "0";
+        if (isset($_GET['node'])) {
+            $parentId = (int) $_GET['node'];
+        }
+
+        $children = $this->getTreeDataForCategoryId($parentId);
+
+        echo CTreeView::saveDataAsJson($children);
+    }
+
+    private function getTreeDataForCategoryId($categoryId) {
+        // read the data (this could be in a model)
+        $children = Yii::app()->db->createCommand(
+            "SELECT m3.name AS label, m1.category_id AS id, m2.category_id IS NOT NULL AS children "
+            . "FROM category AS m1 LEFT JOIN category AS m2 ON m1.category_id=m2.parent_id, category_description AS m3 "
+            . "WHERE m1.parent_id <=> $categoryId AND m1.category_id=m3.category_id "
+            . "GROUP BY m1.category_id ORDER BY m3.name ASC"
+        )->queryAll();
+
+        foreach($children as $id => $child) {
+            if($child['children'] != 0)
+                $children[$id]['children'] = $this->getTreeDataForCategoryId($child['id']);
+            else
+                $children[$id]['children'] = array();
+        }
+
+        return $children;
+    }
+
+    /**
      * Displays the contact page
      */
     public function actionContact() {
