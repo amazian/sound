@@ -29,8 +29,7 @@ class ManufacturersController extends BackendController {
         $model = new ManufacturerForm;
         if (isset($_POST['ManufacturerForm'])) {
             $model->attributes = $_POST['ManufacturerForm'];
-            if ($model->validate()) {
-                $model->save();
+            if ($model->validate() && $model->save()) {
                 $this->redirect(array('index'));
             }
         }

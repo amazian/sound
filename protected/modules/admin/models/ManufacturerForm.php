@@ -71,7 +71,7 @@ class ManufacturerForm extends CFormModel {
         
         $manufacturer->name = $this->name;
         $manufacturer->image = $this->image;
-        $manufacturer->sort_order = $this->sortOrder;        
+        $manufacturer->sort_order = 1;
         $manufacturer->save();
         
         // SEO Keyword
@@ -83,6 +83,8 @@ class ManufacturerForm extends CFormModel {
             foreach ($this->stores as $storeId)
                 $manufacturer->addToStore($storeId);
         }
+
+        return true;
     }
 
 }
