@@ -109,6 +109,7 @@ class CategoryForm extends CFormModel {
             $category->sort_order = $this->sortOrder;
             $category->status = $this->status;
             $category->parent_id = $this->parent;
+            $category->bottom_most = $this->bottomMost;
             $category->save();
             
             // Description
@@ -130,6 +131,7 @@ class CategoryForm extends CFormModel {
             $category->sort_order = $this->sortOrder;
             $category->status = $this->status;
             $category->parent_id = $this->parent;
+            $category->bottom_most = $this->bottomMost;
             $category->save();
             
             // Description
