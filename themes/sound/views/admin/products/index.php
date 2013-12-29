@@ -32,12 +32,12 @@ $this->breadcrumbs = array(
         <tr>
             <th style="width: 1px;"><?php echo CHtml::checkBox('checkall', false); ?></th>
             <th style="width: 50px;"><?php echo Yii::t('products', 'Image'); ?></th>
-            <th><?php echo Yii::t('products', 'Product Name'); ?></th>
-            <th style="width: 80px;"><?php echo Yii::t('products', 'Type'); ?></th>
-            <th style="width: 80px;"><?php echo Yii::t('products', 'Serial'); ?></th>
+            <th><a href="<?php echo $this->createUrl('index', array('sortBy'=>'name', 'sortOrder'=>$sortOrder == 'ASC' ? 'DESC' : 'ASC')); ?>"><?php echo Yii::t('products', 'Product Name'); ?></a></th>
+            <th style="width: 80px;"><a href="<?php echo $this->createUrl('index', array('sortBy'=>'type', 'sortOrder'=>$sortOrder == 'ASC' ? 'DESC' : 'ASC')); ?>"><?php echo Yii::t('products', 'Type'); ?></a></th>
+            <th style="width: 80px;"><a href="<?php echo $this->createUrl('index', array('sortBy'=>'model', 'sortOrder'=>$sortOrder == 'ASC' ? 'DESC' : 'ASC')); ?>"><?php echo Yii::t('products', 'Serial'); ?></a></th>
             <th style="width: 80px;"><?php echo Yii::t('products', 'Spec'); ?></th>
             <th><?php echo Yii::t('products', 'Category'); ?></th>
-            <th style="width: 80px;"><?php echo Yii::t('products', 'Price'); ?></th>
+            <th style="width: 80px;"><a href="<?php echo $this->createUrl('index', array('sortBy'=>'price', 'sortOrder'=>$sortOrder == 'ASC' ? 'DESC' : 'ASC')); ?>"><?php echo Yii::t('products', 'Price'); ?></a></th>
             <th style="width: 20px;"><?php echo Yii::t('products', 'On'); ?></th>
             <th style="width: 80px;">&nbsp;</th>
         </tr>

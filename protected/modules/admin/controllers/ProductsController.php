@@ -2,9 +2,18 @@
 
 class ProductsController extends BackendController {
 
-    public function actionIndex($productName = false, $categoryId = false) {
-        
-        $products = Product::model()->findAll();
+    public function actionIndex($productName = false, $categoryId = false, $sortBy = 'name', $sortOrder = 'ASC') {
+        $criteria = new CDbCriteria;
+        $criteria->with = array( 'description' );
+
+        // sort by
+        $sortOrder = ($sortOrder == 'ASC') ? 'ASC' : 'DESC';
+        if($sortBy == 'name')
+            $criteria->order = "description.name {$sortOrder}";
+        elseif($sortBy == 'type' || $sortBy == 'model' || $sortBy == 'price')
+            $criteria->order = "{$sortBy} {$sortOrder}";
+
+        $products = Product::model()->findAll($criteria);
         $filteredProducts = array();
         foreach($products as $p) {
             if($productName && !empty($productName)){
@@ -33,7 +42,9 @@ class ProductsController extends BackendController {
         
         $this->render('index', array(
             'products'=>$filteredProducts,
-            'categories'=>$categoryOptions
+            'categories'=>$categoryOptions,
+            'sortOrder'=>$sortOrder,
+            'sortBy'=>$sortBy
         ));
     }
     
