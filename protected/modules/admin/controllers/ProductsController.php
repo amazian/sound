@@ -174,6 +174,12 @@ class ProductsController extends BackendController {
             'units'=>$units,
         ));        
     }
+
+    public function actionGetBrandPhotoUrl($brand) {
+        $manufacturer = Manufacturer::model()->findByPk($brand);
+        if(!is_null($manufacturer))
+            echo $manufacturer->getImageWithSize(80, 80);
+    }
     
     public function actionDelete($ids){
         $ids = explode(',', $ids);

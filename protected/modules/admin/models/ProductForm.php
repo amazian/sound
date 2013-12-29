@@ -107,7 +107,7 @@ class ProductForm extends CFormModel {
             'weightClass' => Yii::t('products', 'Weight Class'),
             'status' => Yii::t('products', 'Status'),
             'sortOrder' => Yii::t('products', 'Sort Order'),
-            'manufacturer' => Yii::t('products', 'Manufacturer'),
+            'manufacturer' => Yii::t('products', 'Brand'),
             'categories' => Yii::t('products', 'Categories'),
             'filters' => Yii::t('products', 'Filters'),
             'stores' => Yii::t('products', 'Stores'),

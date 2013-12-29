@@ -94,18 +94,28 @@ $form = $this->beginWidget('CActiveForm', array(
                 </ul>
             </div>
         </div>
-        <div class="control-group">
-            <?php echo $form->label($model, 'manufacturer', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php $this->widget('TypeaheadSingle', array(
-                    'model' => $model,
-                    'attribute' => 'manufacturer',
-                    'value' => $model->getProduct()->getManufacturerName(),
-                    'htmlOptions' => array('class' => 'span2'),
-                    'url'=>$this->createUrl('/admin/manufacturers/autocomplete')                    
-                ))?>
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="control-group">
+                    <?php echo $form->label($model, 'manufacturer', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php $this->widget('TypeaheadSingle', array(
+                            'model' => $model,
+                            'attribute' => 'manufacturer',
+                            'value' => $model->getProduct()->getManufacturerName(),
+                            'htmlOptions' => array('class' => 'span12'),
+                            'url'=>$this->createUrl('/admin/manufacturers/autocomplete')
+                        ))?>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <?php if(isset($model->getProduct()->manufacturer)): ?>
+                <img id="brand-img" alt="" src="<?php echo $model->getProduct()->manufacturer->getImageWithSize(80, 80); ?>" />
+                <?php endif; ?>
             </div>
         </div>
+
         <div class="control-group">
             <?php echo $form->label($model, 'categories', array('class' => 'control-label')); ?>
             <div id="categories-container" class="controls">
@@ -231,4 +241,14 @@ $form = $this->beginWidget('CActiveForm', array(
     }    
     $('.value_start').on('keyup', onKeyPress);
     $('#specs-container > .value_start').each(onKeyPress);
+
+    $('#manufacturer').on('change', function(){
+        var id = $('#<?php echo CHtml::activeId($model, 'manufacturer'); ?>').val();
+        $.get('<?php echo $this->createUrl('getBrandPhotoUrl'); ?>', {brand: id}, function(data){
+            $('#brand-img').attr('src', data);
+        });
+
+        return true;
+    });
+
 </script>
