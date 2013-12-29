@@ -54,7 +54,7 @@
       <file leaf-file-name="ProductsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="76" selection-start="514" selection-end="514" vertical-scroll-proportion="-5.625" vertical-offset="45" max-vertical-offset="3420">
+            <state line="12" column="76" selection-start="514" selection-end="514" vertical-scroll-proportion="86.875" vertical-offset="2265" max-vertical-offset="3420">
               <folding />
             </state>
           </provider>
@@ -63,7 +63,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="78" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.1863354" vertical-offset="435" max-vertical-offset="1665">
+            <state line="70" column="225" selection-start="4210" selection-end="4210" vertical-scroll-proportion="0.9083851" vertical-offset="465" max-vertical-offset="1710">
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
@@ -73,7 +73,7 @@
                 <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-                <marker date="1388280568000" expanded="true" signature="2469:2482" placeholder="..." />
+                <marker date="1388280838000" expanded="true" signature="2469:2482" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -862,14 +862,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="514" selection-end="514" vertical-scroll-proportion="-5.625" vertical-offset="45" max-vertical-offset="3420">
+        <state line="12" column="76" selection-start="514" selection-end="514" vertical-scroll-proportion="86.875" vertical-offset="2265" max-vertical-offset="3420">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="78" selection-start="2023" selection-end="2023" vertical-scroll-proportion="0.1863354" vertical-offset="435" max-vertical-offset="1665">
+        <state line="70" column="225" selection-start="4210" selection-end="4210" vertical-scroll-proportion="0.9083851" vertical-offset="465" max-vertical-offset="1710">
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
@@ -879,7 +879,7 @@
             <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <marker date="1388280568000" expanded="true" signature="2469:2482" placeholder="..." />
+            <marker date="1388280838000" expanded="true" signature="2469:2482" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -66,7 +66,10 @@ $this->breadcrumbs = array(
                 <td>&nbsp;</td>
                 <td><?php echo $product->getFormattedPrice(); ?></td>
                 <td><?php echo ($product->status == 1) ? "<i class=\"icon-check\"></i>" : "<i class=\"icon-check-empty\"></i>"; ?></td>
-                <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a></td>
+                <td>
+                    <a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a>
+                    <a class="btn btn-danger btn-mini" href="<?php echo $this->createUrl('delete', array('ids' => $product->product_id)); ?>" onclick="if(!confirm('Are you sure you wish to delete this product')) return false;"><?php echo Yii::t('common', 'Delete'); ?></a>
+                </td>
             </tr>
 <?php endforeach; ?>
     </tbody>
