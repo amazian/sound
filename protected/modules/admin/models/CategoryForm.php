@@ -21,6 +21,7 @@ class CategoryForm extends CFormModel {
     public $columns;
     public $sortOrder;
     public $status;
+    public $bottomMost;
 
     /**
      * Declares the validation rules.
@@ -28,7 +29,7 @@ class CategoryForm extends CFormModel {
     public function rules() {
         return array(
             array('name', 'required'),
-            array('id, top, columns, sortOrder, parent, status', 'numerical'),
+            array('id, top, columns, sortOrder, parent, status, bottomMost', 'numerical'),
             array('metaTagDescription, metaTagKeywords, description, image, stores, filters, seoKeyword', 'safe')
         );
     }
@@ -52,7 +53,8 @@ class CategoryForm extends CFormModel {
             'top'=>Yii::t('category', 'Top'), 
             'columns'=>Yii::t('category', 'Columns'), 
             'sortOrder'=>Yii::t('category', 'Sort Order'), 
-            'status'=>Yii::t('category', 'Status'),             
+            'status'=>Yii::t('category', 'Status'),
+            'bottomMost'=>Yii::t('category', 'Bottom Most'),
         );
     }
     
@@ -78,6 +80,7 @@ class CategoryForm extends CFormModel {
             $this->status = $category->status;
             $this->parent = $category->parent_id;
             $this->seoKeyword = $category->getSEOKeyword();
+            $this->bottomMost = $category->bottom_most;
             
             // Stores
             if (isset($category->stores) && count($category->stores)) {

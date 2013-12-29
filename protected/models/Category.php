@@ -13,6 +13,7 @@
  * @property integer $status
  * @property string $date_added
  * @property string $date_modified
+ * @property string $bottom_most
  */
 class Category extends CActiveRecord {
     
@@ -60,7 +61,7 @@ class Category extends CActiveRecord {
     public function rules() {
         return array(
             array('status', 'required'),
-            array('parent_id, top, column, sort_order, status', 'numerical', 'integerOnly' => true),
+            array('parent_id, top, column, sort_order, status, bottom_most', 'numerical', 'integerOnly' => true),
             array('image', 'length', 'max' => 255),
             array('date_added, date_modified', 'safe'),
         );

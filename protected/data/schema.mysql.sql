@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 13, 2013 at 11:11 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: Dec 29, 2013 at 01:22 AM
+-- Server version: 5.5.31
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `sound`
 --
+CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `sound`;
 
 -- --------------------------------------------------------
 
@@ -26,7 +28,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `address`
 --
 
-DROP TABLE IF EXISTS `address`;
 CREATE TABLE IF NOT EXISTS `address` (
   `address_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -58,7 +59,6 @@ INSERT INTO `address` (`address_id`, `customer_id`, `firstname`, `lastname`, `co
 -- Table structure for table `affiliate`
 --
 
-DROP TABLE IF EXISTS `affiliate`;
 CREATE TABLE IF NOT EXISTS `affiliate` (
   `affiliate_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(32) NOT NULL,
@@ -100,7 +100,6 @@ CREATE TABLE IF NOT EXISTS `affiliate` (
 -- Table structure for table `affiliate_transaction`
 --
 
-DROP TABLE IF EXISTS `affiliate_transaction`;
 CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
   `affiliate_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `affiliate_id` int(11) NOT NULL,
@@ -117,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `affiliate_transaction` (
 -- Table structure for table `attribute`
 --
 
-DROP TABLE IF EXISTS `attribute`;
 CREATE TABLE IF NOT EXISTS `attribute` (
   `attribute_id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_group_id` int(11) NOT NULL,
@@ -148,7 +146,6 @@ INSERT INTO `attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VAL
 -- Table structure for table `attribute_description`
 --
 
-DROP TABLE IF EXISTS `attribute_description`;
 CREATE TABLE IF NOT EXISTS `attribute_description` (
   `attribute_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -190,7 +187,6 @@ INSERT INTO `attribute_description` (`attribute_id`, `language_id`, `name`) VALU
 -- Table structure for table `attribute_group`
 --
 
-DROP TABLE IF EXISTS `attribute_group`;
 CREATE TABLE IF NOT EXISTS `attribute_group` (
   `attribute_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -213,7 +209,6 @@ INSERT INTO `attribute_group` (`attribute_group_id`, `sort_order`) VALUES
 -- Table structure for table `attribute_group_description`
 --
 
-DROP TABLE IF EXISTS `attribute_group_description`;
 CREATE TABLE IF NOT EXISTS `attribute_group_description` (
   `attribute_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -241,7 +236,6 @@ INSERT INTO `attribute_group_description` (`attribute_group_id`, `language_id`, 
 -- Table structure for table `banner`
 --
 
-DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `banner_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -264,7 +258,6 @@ INSERT INTO `banner` (`banner_id`, `name`, `status`) VALUES
 -- Table structure for table `banner_image`
 --
 
-DROP TABLE IF EXISTS `banner_image`;
 CREATE TABLE IF NOT EXISTS `banner_image` (
   `banner_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `banner_id` int(11) NOT NULL,
@@ -293,7 +286,6 @@ INSERT INTO `banner_image` (`banner_image_id`, `banner_id`, `link`, `image`) VAL
 -- Table structure for table `banner_image_description`
 --
 
-DROP TABLE IF EXISTS `banner_image_description`;
 CREATE TABLE IF NOT EXISTS `banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -330,7 +322,6 @@ INSERT INTO `banner_image_description` (`banner_image_id`, `language_id`, `banne
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
@@ -341,6 +332,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `bottom_most` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=71 ;
 
@@ -348,29 +340,29 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2013-07-22 00:00:00'),
-(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2013-07-22 00:00:00'),
-(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2013-07-31 00:00:00'),
-(18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2013-07-22 00:00:00'),
-(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2013-07-22 00:00:00'),
-(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2013-07-22 00:00:00'),
-(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2013-07-22 00:00:00'),
-(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2013-07-22 00:00:00'),
-(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2013-07-22 00:00:00'),
-(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2013-07-22 00:00:00'),
-(68, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2013-07-22 00:00:00'),
-(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2013-07-22 00:00:00'),
-(67, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(66, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(65, '', 26, 1, 1, 3, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(64, '', 26, 1, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(63, '', 26, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(62, '', 20, 0, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(59, '', 27, 0, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(60, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00'),
-(61, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00');
+INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`, `bottom_most`) VALUES
+(25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2013-07-22 00:00:00', 0),
+(27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2013-07-22 00:00:00', 0),
+(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2013-07-31 00:00:00', 0),
+(18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2013-07-22 00:00:00', 0),
+(28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2013-07-22 00:00:00', 0),
+(26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2013-07-22 00:00:00', 0),
+(29, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:37', '2013-07-22 00:00:00', 0),
+(30, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:59', '2013-07-22 00:00:00', 0),
+(35, '', 28, 0, 0, 0, 1, '2010-09-17 10:06:48', '2013-07-22 00:00:00', 0),
+(36, '', 28, 0, 0, 0, 1, '2010-09-17 10:07:13', '2013-07-22 00:00:00', 0),
+(68, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(45, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:16', '2013-07-22 00:00:00', 0),
+(46, '', 18, 0, 0, 0, 1, '2010-09-24 18:29:31', '2013-07-22 00:00:00', 0),
+(67, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(66, '', 62, 1, 1, 0, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(65, '', 26, 1, 1, 3, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(64, '', 26, 1, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(63, '', 26, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(62, '', 20, 0, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(59, '', 27, 0, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(60, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(61, '', 27, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -378,7 +370,6 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 -- Table structure for table `category_description`
 --
 
-DROP TABLE IF EXISTS `category_description`;
 CREATE TABLE IF NOT EXISTS `category_description` (
   `category_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -436,7 +427,6 @@ INSERT INTO `category_description` (`category_id`, `language_id`, `name`, `descr
 -- Table structure for table `category_filter`
 --
 
-DROP TABLE IF EXISTS `category_filter`;
 CREATE TABLE IF NOT EXISTS `category_filter` (
   `category_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -449,7 +439,6 @@ CREATE TABLE IF NOT EXISTS `category_filter` (
 -- Table structure for table `category_path`
 --
 
-DROP TABLE IF EXISTS `category_path`;
 CREATE TABLE IF NOT EXISTS `category_path` (
   `category_id` int(11) NOT NULL,
   `path_id` int(11) NOT NULL,
@@ -492,7 +481,6 @@ INSERT INTO `category_path` (`category_id`, `path_id`, `level`) VALUES
 -- Table structure for table `category_to_layout`
 --
 
-DROP TABLE IF EXISTS `category_to_layout`;
 CREATE TABLE IF NOT EXISTS `category_to_layout` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -506,7 +494,6 @@ CREATE TABLE IF NOT EXISTS `category_to_layout` (
 -- Table structure for table `category_to_store`
 --
 
-DROP TABLE IF EXISTS `category_to_store`;
 CREATE TABLE IF NOT EXISTS `category_to_store` (
   `category_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -547,7 +534,6 @@ INSERT INTO `category_to_store` (`category_id`, `store_id`) VALUES
 -- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
   `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -820,7 +806,6 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 -- Table structure for table `coupon`
 --
 
-DROP TABLE IF EXISTS `coupon`;
 CREATE TABLE IF NOT EXISTS `coupon` (
   `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -844,9 +829,9 @@ CREATE TABLE IF NOT EXISTS `coupon` (
 --
 
 INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
-(4, '-10% Discount', '2222', 'P', 10.0000, 0, 0, 0.0000, '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
-(5, 'Free Shipping', '3333', 'P', 0.0000, 0, 1, 100.0000, '2009-03-01', '2009-08-31', 10, '10', 1, '2009-03-14 21:13:53'),
-(6, '-10.00 Discount', '1111', 'F', 10.0000, 0, 0, 10.0000, '1970-11-01', '2020-11-01', 100000, '10000', 1, '2009-03-14 21:15:18');
+(4, '-10% Discount', '2222', 'P', '10.0000', 0, 0, '0.0000', '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
+(5, 'Free Shipping', '3333', 'P', '0.0000', 0, 1, '100.0000', '2009-03-01', '2009-08-31', 10, '10', 1, '2009-03-14 21:13:53'),
+(6, '-10.00 Discount', '1111', 'F', '10.0000', 0, 0, '10.0000', '1970-11-01', '2020-11-01', 100000, '10000', 1, '2009-03-14 21:15:18');
 
 -- --------------------------------------------------------
 
@@ -854,7 +839,6 @@ INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`,
 -- Table structure for table `coupon_category`
 --
 
-DROP TABLE IF EXISTS `coupon_category`;
 CREATE TABLE IF NOT EXISTS `coupon_category` (
   `coupon_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -867,7 +851,6 @@ CREATE TABLE IF NOT EXISTS `coupon_category` (
 -- Table structure for table `coupon_history`
 --
 
-DROP TABLE IF EXISTS `coupon_history`;
 CREATE TABLE IF NOT EXISTS `coupon_history` (
   `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -884,7 +867,6 @@ CREATE TABLE IF NOT EXISTS `coupon_history` (
 -- Table structure for table `coupon_product`
 --
 
-DROP TABLE IF EXISTS `coupon_product`;
 CREATE TABLE IF NOT EXISTS `coupon_product` (
   `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `coupon_id` int(11) NOT NULL,
@@ -898,7 +880,6 @@ CREATE TABLE IF NOT EXISTS `coupon_product` (
 -- Table structure for table `currency`
 --
 
-DROP TABLE IF EXISTS `currency`;
 CREATE TABLE IF NOT EXISTS `currency` (
   `currency_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -925,7 +906,6 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -962,7 +942,6 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `ema
 -- Table structure for table `customer_ban_ip`
 --
 
-DROP TABLE IF EXISTS `customer_ban_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
   `customer_ban_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `ip` varchar(40) NOT NULL,
@@ -976,7 +955,6 @@ CREATE TABLE IF NOT EXISTS `customer_ban_ip` (
 -- Table structure for table `customer_field`
 --
 
-DROP TABLE IF EXISTS `customer_field`;
 CREATE TABLE IF NOT EXISTS `customer_field` (
   `customer_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -993,7 +971,6 @@ CREATE TABLE IF NOT EXISTS `customer_field` (
 -- Table structure for table `customer_group`
 --
 
-DROP TABLE IF EXISTS `customer_group`;
 CREATE TABLE IF NOT EXISTS `customer_group` (
   `customer_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `approval` int(1) NOT NULL,
@@ -1018,7 +995,6 @@ INSERT INTO `customer_group` (`customer_group_id`, `approval`, `company_id_displ
 -- Table structure for table `customer_group_description`
 --
 
-DROP TABLE IF EXISTS `customer_group_description`;
 CREATE TABLE IF NOT EXISTS `customer_group_description` (
   `customer_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1041,7 +1017,6 @@ INSERT INTO `customer_group_description` (`customer_group_id`, `language_id`, `n
 -- Table structure for table `customer_history`
 --
 
-DROP TABLE IF EXISTS `customer_history`;
 CREATE TABLE IF NOT EXISTS `customer_history` (
   `customer_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1056,7 +1031,6 @@ CREATE TABLE IF NOT EXISTS `customer_history` (
 -- Table structure for table `customer_ip`
 --
 
-DROP TABLE IF EXISTS `customer_ip`;
 CREATE TABLE IF NOT EXISTS `customer_ip` (
   `customer_ip_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1079,7 +1053,6 @@ INSERT INTO `customer_ip` (`customer_ip_id`, `customer_id`, `ip`, `date_added`) 
 -- Table structure for table `customer_online`
 --
 
-DROP TABLE IF EXISTS `customer_online`;
 CREATE TABLE IF NOT EXISTS `customer_online` (
   `ip` varchar(40) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1095,7 +1068,6 @@ CREATE TABLE IF NOT EXISTS `customer_online` (
 -- Table structure for table `customer_reward`
 --
 
-DROP TABLE IF EXISTS `customer_reward`;
 CREATE TABLE IF NOT EXISTS `customer_reward` (
   `customer_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL DEFAULT '0',
@@ -1112,7 +1084,6 @@ CREATE TABLE IF NOT EXISTS `customer_reward` (
 -- Table structure for table `customer_transaction`
 --
 
-DROP TABLE IF EXISTS `customer_transaction`;
 CREATE TABLE IF NOT EXISTS `customer_transaction` (
   `customer_transaction_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) NOT NULL,
@@ -1129,7 +1100,6 @@ CREATE TABLE IF NOT EXISTS `customer_transaction` (
 -- Table structure for table `custom_field`
 --
 
-DROP TABLE IF EXISTS `custom_field`;
 CREATE TABLE IF NOT EXISTS `custom_field` (
   `custom_field_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1147,7 +1117,6 @@ CREATE TABLE IF NOT EXISTS `custom_field` (
 -- Table structure for table `custom_field_description`
 --
 
-DROP TABLE IF EXISTS `custom_field_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_description` (
   `custom_field_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1161,7 +1130,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_description` (
 -- Table structure for table `custom_field_to_customer_group`
 --
 
-DROP TABLE IF EXISTS `custom_field_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
   `custom_field_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -1174,7 +1142,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_to_customer_group` (
 -- Table structure for table `custom_field_value`
 --
 
-DROP TABLE IF EXISTS `custom_field_value`;
 CREATE TABLE IF NOT EXISTS `custom_field_value` (
   `custom_field_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `custom_field_id` int(11) NOT NULL,
@@ -1188,7 +1155,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value` (
 -- Table structure for table `custom_field_value_description`
 --
 
-DROP TABLE IF EXISTS `custom_field_value_description`;
 CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
   `custom_field_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1203,7 +1169,6 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 -- Table structure for table `download`
 --
 
-DROP TABLE IF EXISTS `download`;
 CREATE TABLE IF NOT EXISTS `download` (
   `download_id` int(11) NOT NULL AUTO_INCREMENT,
   `filename` varchar(128) NOT NULL,
@@ -1219,7 +1184,6 @@ CREATE TABLE IF NOT EXISTS `download` (
 -- Table structure for table `download_description`
 --
 
-DROP TABLE IF EXISTS `download_description`;
 CREATE TABLE IF NOT EXISTS `download_description` (
   `download_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1233,7 +1197,6 @@ CREATE TABLE IF NOT EXISTS `download_description` (
 -- Table structure for table `extension`
 --
 
-DROP TABLE IF EXISTS `extension`;
 CREATE TABLE IF NOT EXISTS `extension` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1277,7 +1240,6 @@ INSERT INTO `extension` (`extension_id`, `type`, `code`) VALUES
 -- Table structure for table `filter`
 --
 
-DROP TABLE IF EXISTS `filter`;
 CREATE TABLE IF NOT EXISTS `filter` (
   `filter_id` int(11) NOT NULL AUTO_INCREMENT,
   `filter_group_id` int(11) NOT NULL,
@@ -1291,7 +1253,6 @@ CREATE TABLE IF NOT EXISTS `filter` (
 -- Table structure for table `filter_description`
 --
 
-DROP TABLE IF EXISTS `filter_description`;
 CREATE TABLE IF NOT EXISTS `filter_description` (
   `filter_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1306,7 +1267,6 @@ CREATE TABLE IF NOT EXISTS `filter_description` (
 -- Table structure for table `filter_group`
 --
 
-DROP TABLE IF EXISTS `filter_group`;
 CREATE TABLE IF NOT EXISTS `filter_group` (
   `filter_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `sort_order` int(3) NOT NULL,
@@ -1319,7 +1279,6 @@ CREATE TABLE IF NOT EXISTS `filter_group` (
 -- Table structure for table `filter_group_description`
 --
 
-DROP TABLE IF EXISTS `filter_group_description`;
 CREATE TABLE IF NOT EXISTS `filter_group_description` (
   `filter_group_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1333,7 +1292,6 @@ CREATE TABLE IF NOT EXISTS `filter_group_description` (
 -- Table structure for table `geo_zone`
 --
 
-DROP TABLE IF EXISTS `geo_zone`;
 CREATE TABLE IF NOT EXISTS `geo_zone` (
   `geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1357,7 +1315,6 @@ INSERT INTO `geo_zone` (`geo_zone_id`, `name`, `description`, `date_modified`, `
 -- Table structure for table `information`
 --
 
-DROP TABLE IF EXISTS `information`;
 CREATE TABLE IF NOT EXISTS `information` (
   `information_id` int(11) NOT NULL AUTO_INCREMENT,
   `bottom` int(1) NOT NULL DEFAULT '0',
@@ -1382,7 +1339,6 @@ INSERT INTO `information` (`information_id`, `bottom`, `sort_order`, `status`) V
 -- Table structure for table `information_description`
 --
 
-DROP TABLE IF EXISTS `information_description`;
 CREATE TABLE IF NOT EXISTS `information_description` (
   `information_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1411,7 +1367,6 @@ INSERT INTO `information_description` (`information_id`, `language_id`, `title`,
 -- Table structure for table `information_to_layout`
 --
 
-DROP TABLE IF EXISTS `information_to_layout`;
 CREATE TABLE IF NOT EXISTS `information_to_layout` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1425,7 +1380,6 @@ CREATE TABLE IF NOT EXISTS `information_to_layout` (
 -- Table structure for table `information_to_store`
 --
 
-DROP TABLE IF EXISTS `information_to_store`;
 CREATE TABLE IF NOT EXISTS `information_to_store` (
   `information_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1448,7 +1402,6 @@ INSERT INTO `information_to_store` (`information_id`, `store_id`) VALUES
 -- Table structure for table `language`
 --
 
-DROP TABLE IF EXISTS `language`;
 CREATE TABLE IF NOT EXISTS `language` (
   `language_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -1477,7 +1430,6 @@ INSERT INTO `language` (`language_id`, `name`, `code`, `locale`, `image`, `direc
 -- Table structure for table `layout`
 --
 
-DROP TABLE IF EXISTS `layout`;
 CREATE TABLE IF NOT EXISTS `layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1507,7 +1459,6 @@ INSERT INTO `layout` (`layout_id`, `name`) VALUES
 -- Table structure for table `layout_route`
 --
 
-DROP TABLE IF EXISTS `layout_route`;
 CREATE TABLE IF NOT EXISTS `layout_route` (
   `layout_route_id` int(11) NOT NULL AUTO_INCREMENT,
   `layout_id` int(11) NOT NULL,
@@ -1538,7 +1489,6 @@ INSERT INTO `layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`)
 -- Table structure for table `length_class`
 --
 
-DROP TABLE IF EXISTS `length_class`;
 CREATE TABLE IF NOT EXISTS `length_class` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL,
@@ -1550,9 +1500,9 @@ CREATE TABLE IF NOT EXISTS `length_class` (
 --
 
 INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
-(1, 1.00000000),
-(2, 10.00000000),
-(3, 0.39370000);
+(1, '1.00000000'),
+(2, '10.00000000'),
+(3, '0.39370000');
 
 -- --------------------------------------------------------
 
@@ -1560,7 +1510,6 @@ INSERT INTO `length_class` (`length_class_id`, `value`) VALUES
 -- Table structure for table `length_class_description`
 --
 
-DROP TABLE IF EXISTS `length_class_description`;
 CREATE TABLE IF NOT EXISTS `length_class_description` (
   `length_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -1587,7 +1536,6 @@ INSERT INTO `length_class_description` (`length_class_id`, `language_id`, `title
 -- Table structure for table `manufacturer`
 --
 
-DROP TABLE IF EXISTS `manufacturer`;
 CREATE TABLE IF NOT EXISTS `manufacturer` (
   `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -1601,7 +1549,7 @@ CREATE TABLE IF NOT EXISTS `manufacturer` (
 --
 
 INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
-(5, 'HTC', 'data/demo/htc_logo.jpg', 0),
+(5, 'HTC', 'data/asus_logo.png', 1),
 (6, 'Palm', 'data/demo/palm_logo.jpg', 0),
 (7, 'Hewlett-Packard', 'data/demo/hp_logo.jpg', 0),
 (8, 'Apple', 'data/demo/apple_logo.jpg', 0),
@@ -1614,7 +1562,6 @@ INSERT INTO `manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VA
 -- Table structure for table `manufacturer_to_store`
 --
 
-DROP TABLE IF EXISTS `manufacturer_to_store`;
 CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
   `manufacturer_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -1626,7 +1573,6 @@ CREATE TABLE IF NOT EXISTS `manufacturer_to_store` (
 --
 
 INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
-(5, 0),
 (6, 0),
 (7, 0),
 (8, 0),
@@ -1639,7 +1585,6 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- Table structure for table `option`
 --
 
-DROP TABLE IF EXISTS `option`;
 CREATE TABLE IF NOT EXISTS `option` (
   `option_id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(32) NOT NULL,
@@ -1670,7 +1615,6 @@ INSERT INTO `option` (`option_id`, `type`, `sort_order`) VALUES
 -- Table structure for table `option_description`
 --
 
-DROP TABLE IF EXISTS `option_description`;
 CREATE TABLE IF NOT EXISTS `option_description` (
   `option_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1712,7 +1656,6 @@ INSERT INTO `option_description` (`option_id`, `language_id`, `name`) VALUES
 -- Table structure for table `option_value`
 --
 
-DROP TABLE IF EXISTS `option_value`;
 CREATE TABLE IF NOT EXISTS `option_value` (
   `option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `option_id` int(11) NOT NULL,
@@ -1747,7 +1690,6 @@ INSERT INTO `option_value` (`option_value_id`, `option_id`, `image`, `sort_order
 -- Table structure for table `option_value_description`
 --
 
-DROP TABLE IF EXISTS `option_value_description`;
 CREATE TABLE IF NOT EXISTS `option_value_description` (
   `option_value_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -1796,7 +1738,6 @@ INSERT INTO `option_value_description` (`option_value_id`, `language_id`, `optio
 -- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `order`;
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `invoice_no` int(11) NOT NULL DEFAULT '0',
@@ -1864,9 +1805,9 @@ CREATE TABLE IF NOT EXISTS `order` (
 --
 
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
-(1, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', 106.0000, 1, 0, 0.0000, 2, 4, 'CNY', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-26 16:22:20', '2013-06-26 16:22:22'),
-(2, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', 85.0000, 1, 0, 0.0000, 1, 4, 'CNY', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:33:13', '2013-06-27 12:33:15'),
-(3, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', 371.0000, 1, 0, 0.0000, 1, 4, 'CNY', 1.00000000, '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:37:41', '2013-06-27 12:37:43');
+(1, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '106.0000', 1, 0, '0.0000', 2, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-26 16:22:20', '2013-06-26 16:22:22'),
+(2, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '85.0000', 1, 0, '0.0000', 1, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:33:13', '2013-06-27 12:33:15'),
+(3, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '371.0000', 1, 0, '0.0000', 1, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:37:41', '2013-06-27 12:37:43');
 
 -- --------------------------------------------------------
 
@@ -1874,7 +1815,6 @@ INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `st
 -- Table structure for table `order_download`
 --
 
-DROP TABLE IF EXISTS `order_download`;
 CREATE TABLE IF NOT EXISTS `order_download` (
   `order_download_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1892,7 +1832,6 @@ CREATE TABLE IF NOT EXISTS `order_download` (
 -- Table structure for table `order_field`
 --
 
-DROP TABLE IF EXISTS `order_field`;
 CREATE TABLE IF NOT EXISTS `order_field` (
   `order_id` int(11) NOT NULL,
   `custom_field_id` int(11) NOT NULL,
@@ -1909,7 +1848,6 @@ CREATE TABLE IF NOT EXISTS `order_field` (
 -- Table structure for table `order_fraud`
 --
 
-DROP TABLE IF EXISTS `order_fraud`;
 CREATE TABLE IF NOT EXISTS `order_fraud` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -1973,7 +1911,6 @@ CREATE TABLE IF NOT EXISTS `order_fraud` (
 -- Table structure for table `order_history`
 --
 
-DROP TABLE IF EXISTS `order_history`;
 CREATE TABLE IF NOT EXISTS `order_history` (
   `order_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -1999,7 +1936,6 @@ INSERT INTO `order_history` (`order_history_id`, `order_id`, `order_status_id`, 
 -- Table structure for table `order_option`
 --
 
-DROP TABLE IF EXISTS `order_option`;
 CREATE TABLE IF NOT EXISTS `order_option` (
   `order_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2034,7 +1970,6 @@ INSERT INTO `order_option` (`order_option_id`, `order_id`, `order_product_id`, `
 -- Table structure for table `order_product`
 --
 
-DROP TABLE IF EXISTS `order_product`;
 CREATE TABLE IF NOT EXISTS `order_product` (
   `order_product_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2054,9 +1989,9 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 --
 
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
-(1, 1, 40, 'iPhone', 'product 11', 1, 101.0000, 101.0000, 0.0000, 0),
-(2, 2, 31, 'Nikon D300', 'Product 4', 1, 80.0000, 80.0000, 0.0000, 0),
-(3, 3, 42, 'Apple Cinema 30&quot;', 'Product 15', 2, 183.0000, 366.0000, 0.0000, 200);
+(1, 1, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
+(2, 2, 31, 'Nikon D300', 'Product 4', 1, '80.0000', '80.0000', '0.0000', 0),
+(3, 3, 42, 'Apple Cinema 30&quot;', 'Product 15', 2, '183.0000', '366.0000', '0.0000', 200);
 
 -- --------------------------------------------------------
 
@@ -2064,7 +1999,6 @@ INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name
 -- Table structure for table `order_status`
 --
 
-DROP TABLE IF EXISTS `order_status`;
 CREATE TABLE IF NOT EXISTS `order_status` (
   `order_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -2112,7 +2046,6 @@ INSERT INTO `order_status` (`order_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `order_total`
 --
 
-DROP TABLE IF EXISTS `order_total`;
 CREATE TABLE IF NOT EXISTS `order_total` (
   `order_total_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2130,15 +2063,15 @@ CREATE TABLE IF NOT EXISTS `order_total` (
 --
 
 INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`, `value`, `sort_order`) VALUES
-(1, 1, 'sub_total', 'Sub-Total', '101 å…ƒ', 101.0000, 1),
-(2, 1, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
-(3, 1, 'total', 'Total', '106 å…ƒ', 106.0000, 9),
-(4, 2, 'sub_total', 'Sub-Total', '80 å…ƒ', 80.0000, 1),
-(5, 2, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
-(6, 2, 'total', 'Total', '85 å…ƒ', 85.0000, 9),
-(7, 3, 'sub_total', 'Sub-Total', '366 å…ƒ', 366.0000, 1),
-(8, 3, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', 5.0000, 3),
-(9, 3, 'total', 'Total', '371 å…ƒ', 371.0000, 9);
+(1, 1, 'sub_total', 'Sub-Total', '101 å…ƒ', '101.0000', 1),
+(2, 1, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', '5.0000', 3),
+(3, 1, 'total', 'Total', '106 å…ƒ', '106.0000', 9),
+(4, 2, 'sub_total', 'Sub-Total', '80 å…ƒ', '80.0000', 1),
+(5, 2, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', '5.0000', 3),
+(6, 2, 'total', 'Total', '85 å…ƒ', '85.0000', 9),
+(7, 3, 'sub_total', 'Sub-Total', '366 å…ƒ', '366.0000', 1),
+(8, 3, 'shipping', 'Flat Shipping Rate', '5 å…ƒ', '5.0000', 3),
+(9, 3, 'total', 'Total', '371 å…ƒ', '371.0000', 9);
 
 -- --------------------------------------------------------
 
@@ -2146,7 +2079,6 @@ INSERT INTO `order_total` (`order_total_id`, `order_id`, `code`, `title`, `text`
 -- Table structure for table `order_voucher`
 --
 
-DROP TABLE IF EXISTS `order_voucher`;
 CREATE TABLE IF NOT EXISTS `order_voucher` (
   `order_voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2169,7 +2101,6 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
   `model` varchar(64) NOT NULL,
@@ -2211,24 +2142,24 @@ CREATE TABLE IF NOT EXISTS `product` (
 --
 
 INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`) VALUES
-(28, 'Product 1', 'Test Type', '', '', '', '', '', '', '', 0, 0, 'data/demo/htc_touch_hd_1.jpg', 5, 0, 100.0000, 200, 0, '0000-00-00', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 1, 0, 0, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0),
-(29, 'Product 2', '', '', '', '', '', '', '', '', 0, 0, 'data/demo/palm_treo_pro_1.jpg', 6, 0, 279.9900, 0, 0, '0000-00-00', 0.00000000, 0, 0.00000000, 0.00000000, 0.00000000, 3, 0, 0, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
-(30, 'Product 3', NULL, '', '', '', '', '', '', '', 7, 6, 'data/demo/canon_eos_5d_1.jpg', 9, 1, 100.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0),
-(31, 'Product 4', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, 80.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2),
-(32, 'Product 5', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
-(33, 'Product 6', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, 200.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
-(34, 'Product 7', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
-(36, 'Product 9', NULL, '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, 100.0000, 100, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
-(40, 'product 11', NULL, '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, 101.0000, 0, 9, '2009-02-03', 10.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1),
-(41, 'Product 14', NULL, '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-03', 5.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1),
-(42, 'Product 15', NULL, '', '', '', '', '', '', '', 988, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, 100.0000, 400, 9, '2009-02-04', 12.50000000, 1, 1.00000000, 0.00000000, 0.00000000, 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-07-11 09:04:10', 5),
-(43, 'Product 16', NULL, '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, 500.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1),
-(44, 'Product 17', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
-(45, 'Product 18', NULL, '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, 2000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
-(46, 'Product 19', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, 1000.0000, 0, 9, '2009-02-03', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
-(47, 'Product 21', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, 100.0000, 400, 9, '2009-02-03', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0),
-(48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, 100.0000, 0, 9, '2009-02-08', 1.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
-(49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, 199.9900, 0, 9, '2011-04-25', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2);
+(28, 'Product 1', 'Test Type', '', '', '', '', '', '', '', 0, 0, 'data/demo/htc_touch_hd_1.jpg', 5, 0, '100.0000', 200, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 1, 0, 0, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0),
+(29, 'Product 2', 'test', '', '', '', '', '', '', '', 0, 0, 'data/demo/palm_treo_pro_1.jpg', 6, 0, '279.9900', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 3, 0, 0, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0),
+(30, 'Product 3', NULL, '', '', '', '', '', '', '', 7, 6, 'data/demo/canon_eos_5d_1.jpg', 9, 1, '100.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0),
+(31, 'Product 4', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2),
+(32, 'Product 5', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0),
+(33, 'Product 6', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0),
+(34, 'Product 7', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0),
+(36, 'Product 9', NULL, '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0),
+(40, 'product 11', NULL, '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1),
+(41, 'Product 14', NULL, '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1),
+(42, 'Product 15', NULL, '', '', '', '', '', '', '', 988, 5, 'data/demo/apple_cinema_30.jpg', 8, 1, '100.0000', 400, 9, '2009-02-04', '12.50000000', 1, '1.00000000', '0.00000000', '0.00000000', 1, 1, 2, 0, 1, '2009-02-03 21:07:37', '2013-07-11 09:04:10', 5),
+(43, 'Product 16', NULL, '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1),
+(44, 'Product 17', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0),
+(45, 'Product 18', NULL, '', '', '', '', '', '', '', 998, 5, 'data/demo/macbook_pro_1.jpg', 8, 1, '2000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:17', '2011-09-15 22:22:01', 0),
+(46, 'Product 19', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0),
+(47, 'Product 21', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0),
+(48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0),
+(49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2);
 
 -- --------------------------------------------------------
 
@@ -2236,7 +2167,6 @@ INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`
 -- Table structure for table `product_attribute`
 --
 
-DROP TABLE IF EXISTS `product_attribute`;
 CREATE TABLE IF NOT EXISTS `product_attribute` (
   `product_id` int(11) NOT NULL,
   `attribute_id` int(11) NOT NULL,
@@ -2267,7 +2197,6 @@ INSERT INTO `product_attribute` (`product_id`, `attribute_id`, `language_id`, `t
 -- Table structure for table `product_description`
 --
 
-DROP TABLE IF EXISTS `product_description`;
 CREATE TABLE IF NOT EXISTS `product_description` (
   `product_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -2329,7 +2258,6 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 -- Table structure for table `product_discount`
 --
 
-DROP TABLE IF EXISTS `product_discount`;
 CREATE TABLE IF NOT EXISTS `product_discount` (
   `product_discount_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2348,9 +2276,9 @@ CREATE TABLE IF NOT EXISTS `product_discount` (
 --
 
 INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_group_id`, `quantity`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(443, 42, 1, 30, 1, 66.0000, '0000-00-00', '0000-00-00'),
-(442, 42, 1, 20, 1, 77.0000, '0000-00-00', '0000-00-00'),
-(441, 42, 1, 10, 1, 88.0000, '0000-00-00', '0000-00-00');
+(443, 42, 1, 30, 1, '66.0000', '0000-00-00', '0000-00-00'),
+(442, 42, 1, 20, 1, '77.0000', '0000-00-00', '0000-00-00'),
+(441, 42, 1, 10, 1, '88.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -2358,7 +2286,6 @@ INSERT INTO `product_discount` (`product_discount_id`, `product_id`, `customer_g
 -- Table structure for table `product_filter`
 --
 
-DROP TABLE IF EXISTS `product_filter`;
 CREATE TABLE IF NOT EXISTS `product_filter` (
   `product_id` int(11) NOT NULL,
   `filter_id` int(11) NOT NULL,
@@ -2371,7 +2298,6 @@ CREATE TABLE IF NOT EXISTS `product_filter` (
 -- Table structure for table `product_image`
 --
 
-DROP TABLE IF EXISTS `product_image`;
 CREATE TABLE IF NOT EXISTS `product_image` (
   `product_image_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2453,7 +2379,6 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 -- Table structure for table `product_option`
 --
 
-DROP TABLE IF EXISTS `product_option`;
 CREATE TABLE IF NOT EXISTS `product_option` (
   `product_option_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2486,7 +2411,6 @@ INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `o
 -- Table structure for table `product_option_value`
 --
 
-DROP TABLE IF EXISTS `product_option_value`;
 CREATE TABLE IF NOT EXISTS `product_option_value` (
   `product_option_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_option_id` int(11) NOT NULL,
@@ -2509,19 +2433,19 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
 --
 
 INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(5, 218, 42, 1, 32, 96, 1, 10.0000, '+', 1, '+', 10.00000000, '+'),
-(7, 218, 42, 1, 43, 300, 1, 30.0000, '+', 3, '+', 30.00000000, '+'),
-(6, 218, 42, 1, 31, 144, 1, 20.0000, '+', 2, '-', 20.00000000, '+'),
-(3, 217, 42, 5, 40, 300, 0, 3.0000, '+', 0, '+', 3.00000000, '+'),
-(2, 217, 42, 5, 42, 200, 1, 2.0000, '+', 0, '+', 2.00000000, '+'),
-(4, 217, 42, 5, 39, 92, 1, 4.0000, '+', 0, '+', 4.00000000, '+'),
-(1, 217, 42, 5, 41, 100, 0, 1.0000, '+', 0, '+', 1.00000000, '+'),
-(11, 223, 42, 2, 45, 3996, 1, 40.0000, '+', 0, '+', 40.00000000, '+'),
-(9, 223, 42, 2, 24, 194, 1, 20.0000, '+', 0, '+', 20.00000000, '+'),
-(10, 223, 42, 2, 44, 2694, 1, 30.0000, '+', 0, '+', 30.00000000, '+'),
-(8, 223, 42, 2, 23, 48, 1, 10.0000, '+', 0, '+', 10.00000000, '+'),
-(16, 226, 30, 5, 40, 5, 1, 0.0000, '+', 0, '+', 0.00000000, '+'),
-(15, 226, 30, 5, 39, 2, 1, 0.0000, '+', 0, '+', 0.00000000, '+');
+(5, 218, 42, 1, 32, 96, 1, '10.0000', '+', 1, '+', '10.00000000', '+'),
+(7, 218, 42, 1, 43, 300, 1, '30.0000', '+', 3, '+', '30.00000000', '+'),
+(6, 218, 42, 1, 31, 144, 1, '20.0000', '+', 2, '-', '20.00000000', '+'),
+(3, 217, 42, 5, 40, 300, 0, '3.0000', '+', 0, '+', '3.00000000', '+'),
+(2, 217, 42, 5, 42, 200, 1, '2.0000', '+', 0, '+', '2.00000000', '+'),
+(4, 217, 42, 5, 39, 92, 1, '4.0000', '+', 0, '+', '4.00000000', '+'),
+(1, 217, 42, 5, 41, 100, 0, '1.0000', '+', 0, '+', '1.00000000', '+'),
+(11, 223, 42, 2, 45, 3996, 1, '40.0000', '+', 0, '+', '40.00000000', '+'),
+(9, 223, 42, 2, 24, 194, 1, '20.0000', '+', 0, '+', '20.00000000', '+'),
+(10, 223, 42, 2, 44, 2694, 1, '30.0000', '+', 0, '+', '30.00000000', '+'),
+(8, 223, 42, 2, 23, 48, 1, '10.0000', '+', 0, '+', '10.00000000', '+'),
+(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(15, 226, 30, 5, 39, 2, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
 
 -- --------------------------------------------------------
 
@@ -2529,7 +2453,6 @@ INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_i
 -- Table structure for table `product_related`
 --
 
-DROP TABLE IF EXISTS `product_related`;
 CREATE TABLE IF NOT EXISTS `product_related` (
   `product_id` int(11) NOT NULL,
   `related_id` int(11) NOT NULL,
@@ -2552,7 +2475,6 @@ INSERT INTO `product_related` (`product_id`, `related_id`) VALUES
 -- Table structure for table `product_reward`
 --
 
-DROP TABLE IF EXISTS `product_reward`;
 CREATE TABLE IF NOT EXISTS `product_reward` (
   `product_reward_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL DEFAULT '0',
@@ -2591,7 +2513,6 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 -- Table structure for table `product_spec`
 --
 
-DROP TABLE IF EXISTS `product_spec`;
 CREATE TABLE IF NOT EXISTS `product_spec` (
   `product_spec_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2600,19 +2521,19 @@ CREATE TABLE IF NOT EXISTS `product_spec` (
   `value_init` text NOT NULL,
   `value_end` text,
   PRIMARY KEY (`product_spec_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=97 ;
 
 --
 -- Dumping data for table `product_spec`
 --
 
 INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id`, `value_init`, `value_end`) VALUES
-(59, 28, 3, 5, '10', '500'),
-(58, 28, 7, 3, '60', '200'),
-(57, 28, 6, 4, '500', '80'),
-(56, 28, 5, 5, 'Test', ''),
-(34, 29, 3, 5, '30', '600'),
-(55, 28, 1, 3, '50', '80');
+(96, 28, 3, 5, '10', '500'),
+(95, 28, 7, 3, '60', '200'),
+(94, 28, 6, 4, '500', '80'),
+(93, 28, 5, 5, 'Test', ''),
+(81, 29, 3, 5, '30', '600'),
+(92, 28, 3, 3, '50', '80');
 
 -- --------------------------------------------------------
 
@@ -2620,7 +2541,6 @@ INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id
 -- Table structure for table `product_special`
 --
 
-DROP TABLE IF EXISTS `product_special`;
 CREATE TABLE IF NOT EXISTS `product_special` (
   `product_special_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2638,9 +2558,33 @@ CREATE TABLE IF NOT EXISTS `product_special` (
 --
 
 INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(440, 42, 1, 1, 90.0000, '0000-00-00', '0000-00-00'),
-(439, 30, 1, 2, 90.0000, '0000-00-00', '0000-00-00'),
-(438, 30, 1, 1, 80.0000, '0000-00-00', '0000-00-00');
+(440, 42, 1, 1, '90.0000', '0000-00-00', '0000-00-00'),
+(439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
+(438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `product_tag` (
+  `product_id` bigint(20) NOT NULL,
+  `tag_text` varchar(255) NOT NULL,
+  PRIMARY KEY (`product_id`,`tag_text`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_tag`
+--
+
+INSERT INTO `product_tag` (`product_id`, `tag_text`) VALUES
+(28, 'test1'),
+(28, 'test2'),
+(28, 'test3'),
+(29, 'ddd'),
+(29, 'ff'),
+(29, 'rrr');
 
 -- --------------------------------------------------------
 
@@ -2648,7 +2592,6 @@ INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_gro
 -- Table structure for table `product_to_category`
 --
 
-DROP TABLE IF EXISTS `product_to_category`;
 CREATE TABLE IF NOT EXISTS `product_to_category` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
@@ -2685,7 +2628,6 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 -- Table structure for table `product_to_download`
 --
 
-DROP TABLE IF EXISTS `product_to_download`;
 CREATE TABLE IF NOT EXISTS `product_to_download` (
   `product_id` int(11) NOT NULL,
   `download_id` int(11) NOT NULL,
@@ -2698,7 +2640,6 @@ CREATE TABLE IF NOT EXISTS `product_to_download` (
 -- Table structure for table `product_to_layout`
 --
 
-DROP TABLE IF EXISTS `product_to_layout`;
 CREATE TABLE IF NOT EXISTS `product_to_layout` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL,
@@ -2712,7 +2653,6 @@ CREATE TABLE IF NOT EXISTS `product_to_layout` (
 -- Table structure for table `product_to_store`
 --
 
-DROP TABLE IF EXISTS `product_to_store`;
 CREATE TABLE IF NOT EXISTS `product_to_store` (
   `product_id` int(11) NOT NULL,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -2747,7 +2687,6 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 -- Table structure for table `return`
 --
 
-DROP TABLE IF EXISTS `return`;
 CREATE TABLE IF NOT EXISTS `return` (
   `return_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -2777,7 +2716,6 @@ CREATE TABLE IF NOT EXISTS `return` (
 -- Table structure for table `return_action`
 --
 
-DROP TABLE IF EXISTS `return_action`;
 CREATE TABLE IF NOT EXISTS `return_action` (
   `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2803,7 +2741,6 @@ INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_history`
 --
 
-DROP TABLE IF EXISTS `return_history`;
 CREATE TABLE IF NOT EXISTS `return_history` (
   `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `return_id` int(11) NOT NULL,
@@ -2820,7 +2757,6 @@ CREATE TABLE IF NOT EXISTS `return_history` (
 -- Table structure for table `return_reason`
 --
 
-DROP TABLE IF EXISTS `return_reason`;
 CREATE TABLE IF NOT EXISTS `return_reason` (
   `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2850,7 +2786,6 @@ INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
 -- Table structure for table `return_status`
 --
 
-DROP TABLE IF EXISTS `return_status`;
 CREATE TABLE IF NOT EXISTS `return_status` (
   `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL DEFAULT '0',
@@ -2876,7 +2811,6 @@ INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) NOT NULL,
@@ -2897,7 +2831,6 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- Table structure for table `setting`
 --
 
-DROP TABLE IF EXISTS `setting`;
 CREATE TABLE IF NOT EXISTS `setting` (
   `setting_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
@@ -3065,10 +2998,10 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 -- Table structure for table `spec`
 --
 
-DROP TABLE IF EXISTS `spec`;
 CREATE TABLE IF NOT EXISTS `spec` (
   `spec_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `type_id` int(11) DEFAULT '1',
   PRIMARY KEY (`spec_id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
@@ -3077,13 +3010,13 @@ CREATE TABLE IF NOT EXISTS `spec` (
 -- Dumping data for table `spec`
 --
 
-INSERT INTO `spec` (`spec_id`, `name`) VALUES
-(5, 'Deviation'),
-(3, 'Distance'),
-(7, 'Efficiency'),
-(4, 'Material'),
-(1, 'Resistance'),
-(6, 'Voltage');
+INSERT INTO `spec` (`spec_id`, `name`, `type_id`) VALUES
+(1, 'Resistance', 1),
+(3, 'Distance', 1),
+(4, 'Material', 1),
+(5, 'Deviation', 1),
+(6, 'Voltage', 1),
+(7, 'Efficiency', 1);
 
 -- --------------------------------------------------------
 
@@ -3091,7 +3024,6 @@ INSERT INTO `spec` (`spec_id`, `name`) VALUES
 -- Table structure for table `stock_status`
 --
 
-DROP TABLE IF EXISTS `stock_status`;
 CREATE TABLE IF NOT EXISTS `stock_status` (
   `stock_status_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3119,7 +3051,6 @@ INSERT INTO `stock_status` (`stock_status_id`, `language_id`, `name`) VALUES
 -- Table structure for table `store`
 --
 
-DROP TABLE IF EXISTS `store`;
 CREATE TABLE IF NOT EXISTS `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3134,7 +3065,6 @@ CREATE TABLE IF NOT EXISTS `store` (
 -- Table structure for table `tax_class`
 --
 
-DROP TABLE IF EXISTS `tax_class`;
 CREATE TABLE IF NOT EXISTS `tax_class` (
   `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(32) NOT NULL,
@@ -3158,7 +3088,6 @@ INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `
 -- Table structure for table `tax_rate`
 --
 
-DROP TABLE IF EXISTS `tax_rate`;
 CREATE TABLE IF NOT EXISTS `tax_rate` (
   `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
   `geo_zone_id` int(11) NOT NULL DEFAULT '0',
@@ -3175,8 +3104,8 @@ CREATE TABLE IF NOT EXISTS `tax_rate` (
 --
 
 INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
-(86, 3, 'VAT (17.5%)', 17.5000, 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
-(87, 3, 'Eco Tax (-2.00)', 2.0000, 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
+(86, 3, 'VAT (17.5%)', '17.5000', 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
+(87, 3, 'Eco Tax (-2.00)', '2.0000', 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
 
 -- --------------------------------------------------------
 
@@ -3184,7 +3113,6 @@ INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `d
 -- Table structure for table `tax_rate_to_customer_group`
 --
 
-DROP TABLE IF EXISTS `tax_rate_to_customer_group`;
 CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
   `tax_rate_id` int(11) NOT NULL,
   `customer_group_id` int(11) NOT NULL,
@@ -3205,7 +3133,6 @@ INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VA
 -- Table structure for table `tax_rule`
 --
 
-DROP TABLE IF EXISTS `tax_rule`;
 CREATE TABLE IF NOT EXISTS `tax_rule` (
   `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
   `tax_class_id` int(11) NOT NULL,
@@ -3231,7 +3158,6 @@ INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `
 -- Table structure for table `unit`
 --
 
-DROP TABLE IF EXISTS `unit`;
 CREATE TABLE IF NOT EXISTS `unit` (
   `unit_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -3256,7 +3182,6 @@ INSERT INTO `unit` (`unit_id`, `name`) VALUES
 -- Table structure for table `url_alias`
 --
 
-DROP TABLE IF EXISTS `url_alias`;
 CREATE TABLE IF NOT EXISTS `url_alias` (
   `url_alias_id` int(11) NOT NULL AUTO_INCREMENT,
   `query` varchar(255) NOT NULL,
@@ -3284,7 +3209,6 @@ INSERT INTO `url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_group_id` int(11) NOT NULL,
@@ -3314,7 +3238,6 @@ INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, 
 -- Table structure for table `user_group`
 --
 
-DROP TABLE IF EXISTS `user_group`;
 CREATE TABLE IF NOT EXISTS `user_group` (
   `user_group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
@@ -3336,7 +3259,6 @@ INSERT INTO `user_group` (`user_group_id`, `name`, `permission`) VALUES
 -- Table structure for table `voucher`
 --
 
-DROP TABLE IF EXISTS `voucher`;
 CREATE TABLE IF NOT EXISTS `voucher` (
   `voucher_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_id` int(11) NOT NULL,
@@ -3359,7 +3281,6 @@ CREATE TABLE IF NOT EXISTS `voucher` (
 -- Table structure for table `voucher_history`
 --
 
-DROP TABLE IF EXISTS `voucher_history`;
 CREATE TABLE IF NOT EXISTS `voucher_history` (
   `voucher_history_id` int(11) NOT NULL AUTO_INCREMENT,
   `voucher_id` int(11) NOT NULL,
@@ -3375,7 +3296,6 @@ CREATE TABLE IF NOT EXISTS `voucher_history` (
 -- Table structure for table `voucher_theme`
 --
 
-DROP TABLE IF EXISTS `voucher_theme`;
 CREATE TABLE IF NOT EXISTS `voucher_theme` (
   `voucher_theme_id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) NOT NULL,
@@ -3397,7 +3317,6 @@ INSERT INTO `voucher_theme` (`voucher_theme_id`, `image`) VALUES
 -- Table structure for table `voucher_theme_description`
 --
 
-DROP TABLE IF EXISTS `voucher_theme_description`;
 CREATE TABLE IF NOT EXISTS `voucher_theme_description` (
   `voucher_theme_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
@@ -3423,7 +3342,6 @@ INSERT INTO `voucher_theme_description` (`voucher_theme_id`, `language_id`, `nam
 -- Table structure for table `weight_class`
 --
 
-DROP TABLE IF EXISTS `weight_class`;
 CREATE TABLE IF NOT EXISTS `weight_class` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `value` decimal(15,8) NOT NULL DEFAULT '0.00000000',
@@ -3435,10 +3353,10 @@ CREATE TABLE IF NOT EXISTS `weight_class` (
 --
 
 INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
-(1, 1.00000000),
-(2, 1000.00000000),
-(5, 2.20460000),
-(6, 35.27400000);
+(1, '1.00000000'),
+(2, '1000.00000000'),
+(5, '2.20460000'),
+(6, '35.27400000');
 
 -- --------------------------------------------------------
 
@@ -3446,7 +3364,6 @@ INSERT INTO `weight_class` (`weight_class_id`, `value`) VALUES
 -- Table structure for table `weight_class_description`
 --
 
-DROP TABLE IF EXISTS `weight_class_description`;
 CREATE TABLE IF NOT EXISTS `weight_class_description` (
   `weight_class_id` int(11) NOT NULL AUTO_INCREMENT,
   `language_id` int(11) NOT NULL,
@@ -3475,7 +3392,6 @@ INSERT INTO `weight_class_description` (`weight_class_id`, `language_id`, `title
 -- Table structure for table `zone`
 --
 
-DROP TABLE IF EXISTS `zone`;
 CREATE TABLE IF NOT EXISTS `zone` (
   `zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,
@@ -7484,7 +7400,6 @@ INSERT INTO `zone` (`zone_id`, `country_id`, `name`, `code`, `status`) VALUES
 -- Table structure for table `zone_to_geo_zone`
 --
 
-DROP TABLE IF EXISTS `zone_to_geo_zone`;
 CREATE TABLE IF NOT EXISTS `zone_to_geo_zone` (
   `zone_to_geo_zone_id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) NOT NULL,

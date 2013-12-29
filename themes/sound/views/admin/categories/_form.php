@@ -75,5 +75,11 @@ $form = $this->beginWidget('CActiveForm', array(
 <?php echo $form->dropDownList($model, 'status', $statuses, array('class' => 'span2')); ?>
     </div>
 </div>
+<div class="control-group">
+    <?php echo $form->label($model, 'bottomMost', array('class' => 'control-label')); ?>
+    <div class="controls">
+        <?php echo $form->dropDownList($model, 'bottomMost', array(0=>"No", 1=>"Yes"), array('class' => 'span1')); ?>
+    </div>
+</div>
 
 <?php $this->endWidget(); ?>
