@@ -92,8 +92,9 @@ class CategoriesController extends BackendController {
                 if(!is_null($category) && ($category->category_id == $categoryId || $category->parent == $categoryId))
                     continue;
             }
-            
-            $json[] = array('id'=>$description->category_id, 'value'=>$description->category->getFullname());
+
+            if(!$description->category->isBottomMost())
+                $json[] = array('id'=>$description->category_id, 'value'=>$description->category->getFullname());
         }
         
         // add no-parent

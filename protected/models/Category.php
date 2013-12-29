@@ -263,4 +263,8 @@ class Category extends CActiveRecord {
             throw new CException(Yii::t('errors', 'Tried to update SEO Keyword for an object that doesn\'t exists yet.'));
     }
 
+    public function isBottomMost() {
+        return ($this->bottom_most == 1) ? true : false;
+    }
+
 }
