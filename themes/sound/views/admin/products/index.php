@@ -64,7 +64,7 @@ $this->breadcrumbs = array(
                 <td><?php echo $product->model; ?></td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><?php echo $product->getFormattedPrice(); ?></td>
+                <td><?php echo $product->getFormattedPrice(true); ?></td>
                 <td><?php echo ($product->status == 1) ? "<i class=\"icon-check\"></i>" : "<i class=\"icon-check-empty\"></i>"; ?></td>
                 <td>
                     <a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id' => $product->product_id)); ?>"><?php echo Yii::t('common', 'Edit'); ?></a>

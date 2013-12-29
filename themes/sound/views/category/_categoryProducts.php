@@ -7,7 +7,7 @@
                 <td><?php echo $product->model; ?></td>
                 <td>&nbsp;</td>
                 <td><?php echo!is_null($product->manufacturer) ? $product->manufacturer->name : '' ?></td>
-                <td><?php echo $product->getFormattedPrice(); ?></td>
+                <td><?php echo $product->getFormattedPrice(true); ?></td>
                 <td>Qty: <?php echo CHtml::textField('qty', 1, array('class'=>'span1')); ?></td>
                 <td><a href="#" class="btn btn-primary">Add to cart</a></td>
             </tr>

@@ -66,7 +66,7 @@
 
             <div class="span6">
                 <h2>
-                    <strong>Price: <?php echo $product->getFormattedPrice(); ?> NTD</strong> <!--<small>Ex Tax: $500.00</small>--><br><br>
+                    <strong>Price: <?php echo $product->getFormattedPrice(true); ?> NTD</strong> <!--<small>Ex Tax: $500.00</small>--><br><br>
                 </h2>
             </div>	
 

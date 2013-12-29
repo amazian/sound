@@ -47,12 +47,27 @@ $form = $this->beginWidget('CActiveForm', array(
                 <?php echo $form->textField($model, 'type', array('class' => 'span2')); ?>
             </div>
         </div>
-        <div class="control-group">
-            <?php echo $form->label($model, 'price', array('class' => 'control-label')); ?>
-            <div class="controls">
-                <?php echo $form->textField($model, 'price', array('class' => 'span2')); ?> NTD
+
+
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="control-group">
+                    <?php echo $form->label($model, 'price', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model, 'price', array('class' => 'span12')); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="control-group">
+                    <?php echo $form->label($model, 'discount', array('class' => 'control-label')); ?>
+                    <div class="controls">
+                        <?php echo $form->textField($model, 'discount', array('class' => 'span6')); ?> %
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="control-group">
             <?php echo $form->label($model, 'image', array('class' => 'control-label')); ?>
             <div class="controls">

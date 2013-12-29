@@ -36,6 +36,7 @@
  * @property string $date_added
  * @property string $date_modified
  * @property integer $viewed
+ * @property float $discount
  */
 class Product extends CActiveRecord {
 
@@ -94,6 +95,7 @@ class Product extends CActiveRecord {
             array('location', 'length', 'max' => 128),
             array('image', 'length', 'max' => 255),
             array('price, weight, length, width, height', 'length', 'max' => 15),
+            array('discount', 'numerical'),
             array('date_added, date_modified, type', 'safe'),
         );
     }
@@ -235,9 +237,13 @@ class Product extends CActiveRecord {
         return $_image;
     }
 
-    public function getFormattedPrice() {
-        // TODO: format price according to store settings
-        return "$" . sprintf("%.2f", "{$this->price}");
+    public function getFormattedPrice($withDiscount = false) {
+        if(!$withDiscount)
+            return "$" . sprintf("%.2f", "{$this->price}");
+        else {
+            $price = $this->price - (($this->discount * $this->price) / 100);
+            return "$" . sprintf("%.2f", "{$price}");
+        }
     }
 
     public function getManufacturerName() {

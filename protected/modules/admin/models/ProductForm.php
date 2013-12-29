@@ -52,6 +52,7 @@ class ProductForm extends CFormModel {
     public $value_end;
     
     public $tags;
+    public $discount;
 
     /**
      * Declares the validation rules.
@@ -61,6 +62,7 @@ class ProductForm extends CFormModel {
             array('name, model', 'required'),
             array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
+            array('discount', 'numerical'),
             array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
         );
     }
@@ -112,7 +114,8 @@ class ProductForm extends CFormModel {
             'downloads' => Yii::t('products', 'Downloads'),
             'relatedProducts' => Yii::t('products', 'Related Products'),
             'specs' => Yii::t('products', 'Specs'),
-            'tags' => Yii::t('tags', 'Tags'),
+            'tags' => Yii::t('products', 'Tags'),
+            'discount' => Yii::t('products', 'Discount')
         );
     }
 
@@ -160,6 +163,7 @@ class ProductForm extends CFormModel {
             $this->sortOrder = $product->sort_order;
             $this->status = $product->status;
             $this->manufacturer = $product->manufacturer_id;
+            $this->discount = $product->discount;
 
             // Categories
             if (isset($product->categories) && count($product->categories)) {
@@ -224,6 +228,7 @@ class ProductForm extends CFormModel {
             $product->mpn = $this->mpn;
             $product->location = $this->location;
             $product->price = $this->price;
+            $product->discount = $this->discount;
             $product->tax_class_id = $this->taxClass;
             $product->quantity = $this->quantity;
             $product->minimum = $this->minimumQuantity;
@@ -264,6 +269,7 @@ class ProductForm extends CFormModel {
             $product->mpn = $this->mpn;
             $product->location = $this->location;
             $product->price = $this->price;
+            $product->discount = $this->discount;
             $product->tax_class_id = $this->taxClass;
             $product->quantity = $this->quantity;
             $product->minimum = $this->minimumQuantity;
