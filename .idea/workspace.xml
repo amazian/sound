@@ -4,7 +4,7 @@
     <list default="true" id="6a40cd44-8c6f-43ef-994f-2632f151e129" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php" afterPath="$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/SiteController.php" afterPath="$PROJECT_DIR$/protected/controllers/SiteController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" />
@@ -40,37 +40,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_hoverCard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="146" selection-start="1853" selection-end="1861" vertical-scroll-proportion="-23.125" vertical-offset="30" max-vertical-offset="735">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1388442721000" expanded="true" signature="711:1403" placeholder="..." />
-                <marker date="1388442721000" expanded="true" signature="1536:1543" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingCartController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="418" selection-end="418" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="450">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="73" selection-start="1164" selection-end="1164" vertical-scroll-proportion="-10.625" vertical-offset="135" max-vertical-offset="1455">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/product/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,7 +77,34 @@
       <file leaf-file-name="CategoryForm.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/CategoryForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="56.875" vertical-offset="1680" max-vertical-offset="2520">
+            <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="43.125" vertical-offset="1350" max-vertical-offset="2520">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductForm.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="0.3090615" vertical-offset="4129" max-vertical-offset="5460">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="123" column="43" selection-start="4600" selection-end="4600" vertical-scroll-proportion="-15.0" vertical-offset="1485" max-vertical-offset="3615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="189" column="9" selection-start="9472" selection-end="9472" vertical-scroll-proportion="-4.12" vertical-offset="2629" max-vertical-offset="3900">
               <folding />
             </state>
           </provider>
@@ -144,10 +140,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_view.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_view.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="102" selection-start="729" selection-end="729" vertical-scroll-proportion="0.20962733" vertical-offset="0" max-vertical-offset="644">
+            <state line="9" column="102" selection-start="729" selection-end="729" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -177,11 +173,8 @@
         <option value="$PROJECT_DIR$/themes/sound/views/admin/products/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/category/_categoryProducts.php" />
         <option value="$PROJECT_DIR$/protected/models/Product.php" />
-        <option value="$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/manufacturers/create.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/products/create.php" />
-        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/themes/sound/views/admin/products/_form.php" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
         <option value="$PROJECT_DIR$/protected/config/dev.php" />
         <option value="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
@@ -194,6 +187,9 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/admin/products/_form.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php" />
       </list>
     </option>
   </component>
@@ -397,6 +393,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="products" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,13 +917,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="55" selection-start="4304" selection-end="4304" vertical-scroll-proportion="-8.75" vertical-offset="1425" max-vertical-offset="5460">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/category/_categoryProducts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="63" selection-start="969" selection-end="969" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="345">
@@ -923,45 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="40" selection-start="421" selection-end="421" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="555">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="17" selection-start="2242" selection-end="2242" vertical-scroll-proportion="-16.875" vertical-offset="495" max-vertical-offset="3615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="101" selection-start="6254" selection-end="6254" vertical-scroll-proportion="-5.16" vertical-offset="1692" max-vertical-offset="3915">
-          <folding>
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388436542000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,8 +1021,8 @@
         <state line="39" column="146" selection-start="1853" selection-end="1861" vertical-scroll-proportion="-23.125" vertical-offset="30" max-vertical-offset="735">
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1388442721000" expanded="true" signature="711:1403" placeholder="..." />
-            <marker date="1388442721000" expanded="true" signature="1536:1543" placeholder="..." />
+            <marker date="1388442721000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388442721000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1084,13 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/CategoryForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="56.875" vertical-offset="1680" max-vertical-offset="2520">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="39" selection-start="2192" selection-end="2192" vertical-scroll-proportion="-18.333334" vertical-offset="550" max-vertical-offset="2010">
@@ -1117,7 +1090,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="102" selection-start="729" selection-end="729" vertical-scroll-proportion="0.20962733" vertical-offset="0" max-vertical-offset="644">
+        <state line="9" column="102" selection-start="729" selection-end="729" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/CategoryForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="43.125" vertical-offset="1350" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="9" selection-start="9472" selection-end="9472" vertical-scroll-proportion="-4.12" vertical-offset="2629" max-vertical-offset="3900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="43" selection-start="4600" selection-end="4600" vertical-scroll-proportion="-15.0" vertical-offset="1485" max-vertical-offset="3615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="0.3090615" vertical-offset="4129" max-vertical-offset="5460">
           <folding />
         </state>
       </provider>

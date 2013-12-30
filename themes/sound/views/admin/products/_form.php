@@ -188,7 +188,6 @@ $form = $this->beginWidget('CActiveForm', array(
     <!--<div id="links" class="tab-pane fade">-->
     <!--</div>
 </div>-->
-<?php echo $form->hiddenField($model, 'status', array('value'=>1)); ?>
 <?php $this->endWidget(); ?>
 
 <script>

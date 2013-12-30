@@ -59,7 +59,7 @@ class ProductForm extends CFormModel {
      */
     public function rules() {
         return array(
-            array('name, model', 'required'),
+            array('name, model, status', 'required'),
             array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
             array('discount', 'numerical'),
