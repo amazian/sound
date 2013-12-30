@@ -5,7 +5,7 @@
                 <?php echo CHtml::image($product->getImageWithSize(125, 125)); ?>
                 <br />
                 <br />
-                <span style="text-align: right; font-weight: bold;"><?php echo "\${$product->price}"; ?></span>
+                <span style="text-align: right; font-weight: bold;"><?php echo $product->getFormattedPrice(true); ?></span>
                 <br />
                 <br />
                 <form class="form-inline">
