@@ -11,6 +11,7 @@ $form = $this->beginWidget('CActiveForm', array(
 ));
 ?>
 <?php echo $form->hiddenField($model, 'id'); ?>
+<?php echo CHtml::hiddenField('copy', 0); ?>
 <!--<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a data-toggle="tab" href="#general"><?php echo Yii::t('products', 'General'); ?></a></li>
     <li><a data-toggle="tab" href="#data"><?php echo Yii::t('products', 'Data'); ?></a></li>
@@ -102,7 +103,7 @@ $form = $this->beginWidget('CActiveForm', array(
                         <?php $this->widget('TypeaheadSingle', array(
                             'model' => $model,
                             'attribute' => 'manufacturer',
-                            'value' => $model->getProduct()->getManufacturerName(),
+                            'value' => (!is_null($model->getProduct()) ? $model->getProduct()->getManufacturerName() : ""),
                             'htmlOptions' => array('class' => 'span12'),
                             'url'=>$this->createUrl('/admin/manufacturers/autocomplete')
                         ))?>
@@ -120,7 +121,7 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->label($model, 'categories', array('class' => 'control-label')); ?>
             <div id="categories-container" class="controls">
                 <?php 
-                $list = $model->getProduct()->getCategoriesIdList();
+                $list = !is_null($model->getProduct()) ? $model->getProduct()->getCategoriesIdList() : array();
                 $list = array_reverse($list);
                 foreach($list as $index => $categoryId){ 
                     $category = Category::model()->findByPk($categoryId);
@@ -146,7 +147,8 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->label($model, 'Specs', array('class' => 'control-label')); ?>
             <div class="controls">
                 <div id="specs-container">
-                    <?php foreach($model->getProduct()->specs as $index => $spec): ?>
+                    <?php $productSpecs = !is_null($model->getProduct()) ? $model->getProduct()->specs : array(); ?>
+                    <?php foreach($productSpecs as $index => $spec): ?>
                     <div>
                         <?php echo CHtml::dropDownList(CHtml::activeName($model, 'specs') . "[{$index}]", $spec->spec_id, $specs, array('class'=>'span3')); ?><?php echo $form->textField($model, "value_init[{$index}]", array('class'=>'input-mini value_start', 'value'=>$spec->value_init)); ?><?php echo $form->textField($model, "value_end[{$index}]", array('class'=>'input-mini', 'value'=>$spec->value_end)); ?><?php echo CHtml::dropDownList(CHtml::activeName($model, 'units') . "[{$index}]", $spec->unit_id, $units, array('class'=>'span3')); ?>
                         <button type="button" onclick="$(this).parent('div').detach();" class="btn btn-small btn-danger">X</button>
@@ -208,8 +210,8 @@ $form = $this->beginWidget('CActiveForm', array(
         }
     }
     $('.categoryDropDownList').on('change', onChange);
-    
-    var currentSpecsCount = '<?php echo count($model->getProduct()->specs); ?>';
+
+    var currentSpecsCount = '<?php echo count($productSpecs); ?>';
     $('#addSpec').on('click', function(){
         html  = '<div>';
         html += <?php echo CJavaScript::encode($form->dropDownList($model, 'specs[:replaceById]', $specs, array('class'=>'span3'))); ?>;
