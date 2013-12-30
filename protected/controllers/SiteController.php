@@ -64,7 +64,8 @@ class SiteController extends Controller {
             "SELECT m3.name AS label, m1.category_id AS id, m2.category_id IS NOT NULL AS children "
             . "FROM category AS m1 LEFT JOIN category AS m2 ON m1.category_id=m2.parent_id, category_description AS m3 "
             . "WHERE m1.parent_id <=> $categoryId AND m1.category_id=m3.category_id "
-            . "GROUP BY m1.category_id ORDER BY m3.name ASC"
+            . "GROUP BY m1.category_id "
+            . "ORDER BY m1.sort_order, m1.date_added ASC"
         )->queryAll();
 
         foreach($children as $id => $child) {

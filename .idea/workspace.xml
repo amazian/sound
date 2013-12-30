@@ -5,6 +5,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/SiteController.php" afterPath="$PROJECT_DIR$/protected/controllers/SiteController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/products/_form.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/products/_form.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php" afterPath="$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php" />
@@ -62,15 +63,6 @@
         <entry file="file://$PROJECT_DIR$/protected/components/CustomerWebUser.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="22" column="66" selection-start="697" selection-end="697" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="525">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="12" selection-start="1171" selection-end="1198" vertical-scroll-proportion="-18.75" vertical-offset="120" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -137,10 +129,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoryForm.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CategoryForm.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/CategoryForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="-2.0776255" vertical-offset="1680" max-vertical-offset="2520">
+            <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="56.875" vertical-offset="1680" max-vertical-offset="2520">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SiteController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="39" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.32724506" vertical-offset="775" max-vertical-offset="2010">
               <folding />
             </state>
           </provider>
@@ -162,7 +163,6 @@
         <option value="$PROJECT_DIR$/themes/sound/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/protected/controllers/CategoryController.php" />
         <option value="$PROJECT_DIR$/protected/extensions/yii-jqTree/source/tree.jquery.js" />
-        <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/index.php" />
@@ -187,6 +187,7 @@
         <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/product/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
       </list>
     </option>
   </component>
@@ -898,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="53" selection-start="2486" selection-end="2486" vertical-scroll-proportion="-12.083333" vertical-offset="805" max-vertical-offset="1995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="152" column="46" selection-start="5637" selection-end="5649" vertical-scroll-proportion="-5.46" vertical-offset="2007" max-vertical-offset="6135">
@@ -1107,7 +1101,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/CategoryForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="-2.0776255" vertical-offset="1680" max-vertical-offset="2520">
+        <state line="21" column="12" selection-start="498" selection-end="507" vertical-scroll-proportion="56.875" vertical-offset="1680" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="39" selection-start="2192" selection-end="2192" vertical-scroll-proportion="0.32724506" vertical-offset="775" max-vertical-offset="2010">
           <folding />
         </state>
       </provider>
