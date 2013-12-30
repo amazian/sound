@@ -9,8 +9,8 @@
                 <br />
                 <br />
                 <form class="form-inline">
-                    <?php echo CHtml::telField('price', 1, array('class'=>'span4')); ?>
-                    <?php echo CHtml::button('Buy', array('class'=>'btn')); ?>
+                    <?php echo CHtml::telField('quantity', 1, array('class'=>'span4')); ?>
+                    <?php echo CHtml::button('Buy', array('id'=>'add-to-cart', 'class'=>'btn')); ?>
                 </form>
             </div>
             <div class="span7">
@@ -31,3 +31,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#add-to-cart').on('click', function(){
+        if($('#quantity').val() <= 0)
+            alert('Qty must be at least 1. Please enter a qty and try again.');
+        else
+            document.location = '<?php echo $this->createUrl('/shoppingCart/add'); ?>/?id=<?php echo $product->product_id; ?>&qty=' + $('#quantity').val();
+
+        return false;
+    });
+</script>

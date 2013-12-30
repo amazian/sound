@@ -16,41 +16,25 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach($products as $product): ?>
             <tr>
                 <td class=""><input type="checkbox" id="optionsCheckbox" value="option1"></td>
-                <td class="muted center_text"><a href="product.html"><img src="css/images/macbook-pro.jpg"></a></td>
-                <td>MacBook Pro</td>
-                <td>Product 18</td>
+                <td class="muted center_text"><a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><img alt="" src="<?php echo $product->getImageWithSize(60, 60); ?>" /></a></td>
+                <td><?php echo $product->description->name; ?></td>
+                <td><?php echo $product->model; ?></td>
                 <td><input type="text" class="input-mini" placeholder="1"></td>
-                <td>$2,350.00</td>
-                <td>$2,350.00</td>
-            </tr>			  
-            <tr>
-                <td class=""><input type="checkbox" id="optionsCheckbox" value="option1"></td>
-                <td class="muted center_text"><a href="product.html"><img src="css/images/macbook-pro.jpg"></a></td>
-                <td>MacBook Pro</td>
-                <td>Product 18</td>
-                <td><input type="text" class="input-mini" placeholder="1"></td>
-                <td>$2,350.00</td>
-                <td>$2,350.00</td>
-            </tr>				 
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td><strong>$4,700.00</strong></td>
-            </tr>		  
+                <td><?php echo $product->getFormattedPrice(true); ?></td>
+                <td><?php echo $product->getFormattedPrice(true); ?></td>
+            </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
     <form class="form-horizontal">
-        <fieldset>	  
+        <fieldset>
 
 
-            <div id="accordion2" class="accordion">
+            <!--<div id="accordion2" class="accordion">
                 <div class="accordion-group">
                     <div class="accordion-heading">
 
@@ -89,17 +73,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <div class="row">
                 <div class="span5">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a type="submit" class="btn btn-primary" href="#">Update</a>
                 </div>		  
                 <div class="span2">
-                    <button type="submit" class="btn btn-primary">Continue shopping</button>
+                    <a type="submit" class="btn btn-primary" href="<?php echo $this->createUrl('/site/index'); ?>">Continue shopping</a>
                 </div>		  
                 <div class="span5">
-                    <a class="btn btn-primary pull-right" href="checkout.html">Checkout</a>
+                    <a class="btn btn-primary pull-right" href="#">Checkout</a>
                 </div>
             </div>
         </fieldset>

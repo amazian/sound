@@ -39,7 +39,7 @@ return array(
     // application components
     'components' => array(
         'user' => array(
-            // enable cookie-based authentication
+            'class'=>'CustomerWebUser',
             'allowAutoLogin' => true,
         ),
         // uncomment the following to enable URLs in path-format

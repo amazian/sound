@@ -74,8 +74,8 @@
                 <form class="form-inline">
                     <div class="span3 no_margin_left">
                         <label>Qty:</label>
-                        <input type="text" placeholder="1" class="span1">
-                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                        <input id="quantity" type="text" placeholder="1" class="span1" value="1">
+                        <button id="add-to-cart" type="submit" class="btn btn-primary">Add to cart</button>
                     </div>	
                     <!--
                     <div class="span1">
@@ -173,3 +173,14 @@
     <div class="row-fluid">
         <div class="fb-comments" data-href="<?php echo Yii::app()->createAbsoluteUrl('product/view', array('id'=>$product->product_id)); ?>" data-numposts="5" data-colorscheme="light"></div>
     </div>
+
+    <script>
+        $('#add-to-cart').on('click', function(){
+            if($('#quantity').val() <= 0)
+                alert('Qty must be at least 1. Please enter a qty and try again.');
+            else
+                document.location = '<?php echo $this->createUrl('/shoppingCart/add'); ?>/?id=<?php echo $product->product_id; ?>&qty=' + $('#quantity').val();
+
+            return false;
+        });
+    </script>
