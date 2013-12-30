@@ -21,13 +21,14 @@ $this->breadcrumbs = array(
     <thead>
         <tr>
             <th style="width: 1px;"><?php echo CHtml::checkBox('checkall', false); ?></th>
+            <th style="width: 1px;"><?php echo Yii::t('categories', 'Order'); ?></th>
             <th><?php echo Yii::t('categories', 'Category Name'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('categories', 'Action'); ?></th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($categories as $category): ?>
-            <?php $this->renderPartial('_view', array('category' => $category, 'parents' => array())); ?>
+        <?php foreach ($categories as $order => $category): ?>
+            <?php $this->renderPartial('_view', array('category' => $category, 'parents' => array(), 'order'=>$order)); ?>
         <?php endforeach; ?>
     </tbody>
 </table>

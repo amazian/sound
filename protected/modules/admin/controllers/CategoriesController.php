@@ -5,7 +5,7 @@ class CategoriesController extends BackendController {
     public function actionIndex() {
         $criteria = new CDbCriteria;
         $criteria->condition = 'parent_id=0';
-        $criteria->order = 'sort_order, category_id ASC';
+        $criteria->order = 'sort_order, date_added ASC';
         $categories = Category::model()->findAll($criteria);
         
         $this->render('index', array(
