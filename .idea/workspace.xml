@@ -40,31 +40,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/product/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="105" selection-start="3496" selection-end="3496" vertical-scroll-proportion="-5.5882354" vertical-offset="775" max-vertical-offset="2865">
-              <folding>
-                <marker date="1388443001000" expanded="true" signature="3551:3580" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="3954:4505" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="4568:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="4596:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="4631:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="4673:5040" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="5082:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="5142:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="5217:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="5253:5593" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="5362:5399" placeholder="..." />
-                <marker date="1388443001000" expanded="false" signature="5411:5443" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="6123:6731" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="6220:6731" placeholder="..." />
-                <marker date="1388443001000" expanded="true" signature="7738:7824" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,10 +58,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductForm.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ProductForm.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="0.3090615" vertical-offset="4129" max-vertical-offset="5460">
+            <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="-3.82" vertical-offset="4129" max-vertical-offset="5460">
               <folding />
             </state>
           </provider>
@@ -101,10 +76,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="9" selection-start="9472" selection-end="9472" vertical-scroll-proportion="-4.12" vertical-offset="2629" max-vertical-offset="3900">
+            <state line="87" column="50" selection-start="4045" selection-end="4053" vertical-scroll-proportion="0.5275081" vertical-offset="979" max-vertical-offset="3900">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileManagerController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/FileManagerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="364" column="119" selection-start="13327" selection-end="13336" vertical-scroll-proportion="-12.791667" vertical-offset="5153" max-vertical-offset="6990">
               <folding />
             </state>
           </provider>
@@ -1038,21 +1022,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="105" selection-start="3496" selection-end="3496" vertical-scroll-proportion="-5.5882354" vertical-offset="775" max-vertical-offset="2865">
           <folding>
-            <marker date="1388443001000" expanded="true" signature="3551:3580" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="3954:4505" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="4568:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="4596:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="4631:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="4673:5040" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="5082:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="5142:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="5217:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="5253:5593" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="5362:5399" placeholder="..." />
-            <marker date="1388443001000" expanded="false" signature="5411:5443" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="6123:6731" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="6220:6731" placeholder="..." />
-            <marker date="1388443001000" expanded="true" signature="7738:7824" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1388443001000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1102,13 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="9" selection-start="9472" selection-end="9472" vertical-scroll-proportion="-4.12" vertical-offset="2629" max-vertical-offset="3900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="123" column="43" selection-start="4600" selection-end="4600" vertical-scroll-proportion="-15.0" vertical-offset="1485" max-vertical-offset="3615">
@@ -1118,7 +1095,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="0.3090615" vertical-offset="4129" max-vertical-offset="5460">
+        <state line="288" column="29" selection-start="12519" selection-end="12519" vertical-scroll-proportion="-3.82" vertical-offset="4129" max-vertical-offset="5460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/FileManagerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="119" selection-start="13327" selection-end="13336" vertical-scroll-proportion="-12.791667" vertical-offset="5153" max-vertical-offset="6990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="50" selection-start="4045" selection-end="4053" vertical-scroll-proportion="0.5275081" vertical-offset="979" max-vertical-offset="3900">
           <folding />
         </state>
       </provider>
