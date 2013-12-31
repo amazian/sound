@@ -23,7 +23,18 @@
                 <?php echo $product->manufacturer->name; ?>
                 <?php echo CHtml::image($product->manufacturer->getImageWithSize(80, 80)); ?>
                 <br />
+                <?php
+                $primerySpec = $product->getPrimarySpec();
+                if(!is_null($primerySpec)):
+                    if($primerySpec->description->type_id == Spec::TYPE_NUMERICAL)
+                        echo "<b>{$primerySpec->description->name}: </b>&nbsp;{$primerySpec->value_init} ~ {$primerySpec->value_end}<br />";
+                    else
+                        echo "<b>{$primerySpec->description->name}: </b>&nbsp;{$primerySpec->value_init}<br />";
+                ?>
+                <?php endif; ?>
                 <?php foreach($product->specs as $spec) {
+                    if($primerySpec->product_spec_id == $spec->product_spec_id) continue;
+                    
                     if($spec->description->type_id == Spec::TYPE_NUMERICAL)
                         echo "<b>{$spec->description->name}: </b>&nbsp;{$spec->value_init} ~ {$spec->value_end}<br />";
                     else
