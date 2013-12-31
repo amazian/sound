@@ -182,7 +182,7 @@ class Product extends CActiveRecord {
         // delete dependencies
         ProductAttribute::model()->deleteAll("product_id={$this->cacheId}");
         ProductDescription::model()->deleteAll("product_id={$this->cacheId}");
-        ProductDiscount::model()->deleteAll("product_id={$this->cacheId}");
+        //ProductDiscount::model()->deleteAll("product_id={$this->cacheId}");
         ProductFilter::model()->deleteAll("product_id={$this->cacheId}");
         ProductImage::model()->deleteAll("product_id={$this->cacheId}");
         ProductOption::model()->deleteAll("product_id={$this->cacheId}");
