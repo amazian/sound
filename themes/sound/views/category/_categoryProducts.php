@@ -8,8 +8,8 @@
                 <td>&nbsp;</td>
                 <td><?php echo!is_null($product->manufacturer) ? $product->manufacturer->name : '' ?></td>
                 <td><?php echo $product->getFormattedPrice(true); ?></td>
-                <td>Qty: <?php echo CHtml::textField('qty', 1, array('class'=>'span1')); ?></td>
-                <td><a href="#" class="btn btn-primary">Add to cart</a></td>
+                <td>Qty: <?php echo CHtml::textField('qty', 1, array('class'=>'span1 quantity')); ?></td>
+                <td><a href="#" class="btn btn-primary add-to-cart" data-href="<?php echo $this->createUrl('/shoppingCart/add', array('id'=>$product->product_id)); ?>">Add to cart</a></td>
             </tr>
         <?php endforeach; ?>                                        
     </tbody>
