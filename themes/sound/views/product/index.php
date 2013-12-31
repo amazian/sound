@@ -60,7 +60,7 @@
                 <address>
                     <?php if (isset($product->manufacturer)): ?><strong>Brand:</strong> <span><?php echo $product->manufacturer->name; ?></span><br><?php endif; ?>
                     <!--<strong>Reward Points:</strong> <span>0</span><br>-->
-                    <?php if(count($product->specs) > 1): ?><strong><?php echo $product->specs[0]->description->name; ?>:</strong> <span><?php echo $product->specs[0]->value_init; ?><?php echo ($product->specs[0]->value_end != '') ? ' ~ ' . $product->specs[0]->value_end : ''; ?><?php echo (!is_null($product->specs[0]->unit)) ? ' ' . $product->specs[0]->unit->name : ''; ?></span><br><?php endif; ?>
+                    <?php if(!is_null($product->getPrimarySpec())): ?><strong><?php echo $product->getPrimarySpec()->description->name; ?>:</strong> <span><?php echo $product->getPrimarySpec()->value_init; ?><?php echo ($product->getPrimarySpec()->value_end != '') ? ' ~ ' . $product->getPrimarySpec()->value_end : ''; ?><?php echo (!is_null($product->getPrimarySpec()->unit)) ? ' ' . $product->getPrimarySpec()->unit->name : ''; ?></span><br><?php endif; ?>
                 </address>
             </div>	
 

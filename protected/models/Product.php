@@ -402,4 +402,15 @@ class Product extends CActiveRecord {
             throw new CException(Yii::t('errors', 'Tried to update SEO Keyword for an object that doesn\'t exists yet.'));
     }
 
+    public function getPrimarySpec() {
+        if($this->primary_spec > 0) {
+            return ProductSpec::model()->findByAttributes(array('product_id'=>$this->product_id, 'spec_id'=>$this->primary_spec));
+        }
+        elseif(count($this->specs) > 0) {
+            return $this->specs[0];
+        }
+
+        return null;
+    }
+
 }
