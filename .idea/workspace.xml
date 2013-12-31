@@ -68,11 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/product/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="411" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.69875777" vertical-offset="480" max-vertical-offset="2865">
+            <state line="62" column="411" selection-start="2842" selection-end="2842" vertical-scroll-proportion="-18.75" vertical-offset="480" max-vertical-offset="2865">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_hoverCard.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="69" selection-start="514" selection-end="514" vertical-scroll-proportion="0.20962733" vertical-offset="0" max-vertical-offset="825">
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,15 +111,6 @@
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/FileManagerController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="364" column="119" selection-start="13327" selection-end="13336" vertical-scroll-proportion="-12.791667" vertical-offset="5153" max-vertical-offset="6990">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriesController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="50" selection-start="232" selection-end="232" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1680">
               <folding />
             </state>
           </provider>
@@ -165,7 +168,6 @@
         <option value="$PROJECT_DIR$/protected/config/dev.php" />
         <option value="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
-        <option value="$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/_form.php" />
         <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
@@ -177,6 +179,7 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/models/ProductForm.php" />
         <option value="$PROJECT_DIR$/protected/models/Product.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/product/index.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php" />
       </list>
     </option>
   </component>
@@ -833,17 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="146" selection-start="1853" selection-end="1861" vertical-scroll-proportion="-23.125" vertical-offset="30" max-vertical-offset="735">
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1388442721000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1388442721000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="73" selection-start="1164" selection-end="1164" vertical-scroll-proportion="-10.625" vertical-offset="135" max-vertical-offset="1455">
@@ -942,8 +934,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/product/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="411" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.69875777" vertical-offset="480" max-vertical-offset="2865">
+        <state line="62" column="411" selection-start="2842" selection-end="2842" vertical-scroll-proportion="-18.75" vertical-offset="480" max-vertical-offset="2865">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="69" selection-start="514" selection-end="514" vertical-scroll-proportion="0.20962733" vertical-offset="0" max-vertical-offset="825">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
