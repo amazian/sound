@@ -121,7 +121,17 @@
                     <div id="spec" class="tab-pane active">
                         <table class="table table-bordered table-striped">
                             <tbody>
+                            <?php
+                                $primerySpec = $product->getPrimarySpec();
+                                if(!is_null($primerySpec)):
+                            ?>
+                                <tr>
+                                    <th style="width: 200px; text-align: right;"><?php echo $primerySpec->description->name; ?></th>
+                                    <td><?php echo $primerySpec->value_init; ?><?php echo ($primerySpec->value_end != '') ? ' ~ ' . $primerySpec->value_end : ''; ?><?php echo (!is_null($primerySpec->unit)) ? ' ' . $primerySpec->unit->name : ''; ?></td>
+                                </tr>
+                            <?php endif; ?>
                             <?php foreach($product->specs as $spec): ?>
+                                <?php if($primerySpec->product_spec_id == $spec->product_spec_id) continue; ?>
                                 <tr>
                                     <th style="width: 200px; text-align: right;"><?php echo $spec->description->name; ?></th>
                                     <td><?php echo $spec->value_init; ?><?php echo ($spec->value_end != '') ? ' ~ ' . $spec->value_end : ''; ?><?php echo (!is_null($spec->unit)) ? ' ' . $spec->unit->name : ''; ?></td>
