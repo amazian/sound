@@ -34,7 +34,7 @@
                 <?php endif; ?>
                 <?php foreach($product->specs as $spec) {
                     if($primerySpec->product_spec_id == $spec->product_spec_id) continue;
-                    
+
                     if($spec->description->type_id == Spec::TYPE_NUMERICAL)
                         echo "<b>{$spec->description->name}: </b>&nbsp;{$spec->value_init} ~ {$spec->value_end}<br />";
                     else
