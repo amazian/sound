@@ -37,6 +37,7 @@
  * @property string $date_modified
  * @property integer $viewed
  * @property float $discount
+ * @property integer $primary_spec;
  */
 class Product extends CActiveRecord {
 

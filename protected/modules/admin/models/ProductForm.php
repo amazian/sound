@@ -54,6 +54,8 @@ class ProductForm extends CFormModel {
     public $tags;
     public $discount;
 
+    public $primarySpec;
+
     /**
      * Declares the validation rules.
      */
@@ -62,7 +64,7 @@ class ProductForm extends CFormModel {
             array('name, model, status', 'required'),
             array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
-            array('discount', 'numerical'),
+            array('discount, primarySpec', 'numerical'),
             array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
         );
     }
@@ -164,6 +166,7 @@ class ProductForm extends CFormModel {
             $this->status = $product->status;
             $this->manufacturer = $product->manufacturer_id;
             $this->discount = $product->discount;
+            $this->primarySpec = $product->primary_spec;
 
             // Categories
             if (isset($product->categories) && count($product->categories)) {
@@ -245,6 +248,7 @@ class ProductForm extends CFormModel {
             $product->sort_order = $this->sortOrder;
             $product->status = $this->status;
             $product->manufacturer_id = $this->manufacturer;
+            $product->primary_spec = $this->primarySpec;
             $product->save();
 
             // Description
@@ -286,6 +290,7 @@ class ProductForm extends CFormModel {
             $product->sort_order = $this->sortOrder;
             $product->status = $this->status;
             $product->manufacturer_id = $this->manufacturer;
+            $product->primary_spec = $this->primarySpec;
             $product->save();
 
             // Description

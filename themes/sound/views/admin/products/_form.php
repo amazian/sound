@@ -150,6 +150,7 @@ $form = $this->beginWidget('CActiveForm', array(
                     <?php $productSpecs = !is_null($model->getProduct()) ? $model->getProduct()->specs : array(); ?>
                     <?php foreach($productSpecs as $index => $spec): ?>
                     <div>
+                        <?php echo $form->radioButton($model, 'primarySpec', array('value'=>$spec->spec_id, 'uncheckValue'=>null)); ?>
                         <?php echo CHtml::dropDownList(CHtml::activeName($model, 'specs') . "[{$index}]", $spec->spec_id, $specs, array('class'=>'span3')); ?><?php echo $form->textField($model, "value_init[{$index}]", array('class'=>'input-mini value_start', 'value'=>$spec->value_init)); ?><?php echo $form->textField($model, "value_end[{$index}]", array('class'=>'input-mini', 'value'=>$spec->value_end)); ?><?php echo CHtml::dropDownList(CHtml::activeName($model, 'units') . "[{$index}]", $spec->unit_id, $units, array('class'=>'span3')); ?>
                         <button type="button" onclick="$(this).parent('div').detach();" class="btn btn-small btn-danger">X</button>
                     </div>
