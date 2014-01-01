@@ -122,7 +122,7 @@ class ProductForm extends CFormModel {
     }
 
     public function getProduct() {
-        if (!is_null($this->id)) {
+        if (!is_null($this->id) && $this->id != "") {
             return Product::model()->findByPk($this->id);
         }
         return new Product;
@@ -250,6 +250,7 @@ class ProductForm extends CFormModel {
             $product->manufacturer_id = $this->manufacturer;
             $product->primary_spec = $this->primarySpec;
             $product->save();
+            $this->id = $product->product_id;
 
             // Description
             $description = new ProductDescription;

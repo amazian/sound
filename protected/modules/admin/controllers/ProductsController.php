@@ -50,14 +50,19 @@ class ProductsController extends BackendController {
     
     public function actionCreate(){
         $model = new ProductForm;
+
         if (isset($_POST['ProductForm'])) {
             $model->attributes = $_POST['ProductForm'];
             if ($model->validate()) {
                 $model->save();
 
                 if(isset($_POST['copy']) && $_POST['copy'] == 1) {
+                    // Keep product id
+                    $productId = $model->id;
+
+                    // Load data for this product
                     $model = new ProductForm;
-                    $model->attributes = $_POST['ProductForm'];
+                    $model->loadDataFromProduct($productId);
                 }
                 else {
                     $this->redirect(array('index'));
@@ -115,7 +120,7 @@ class ProductsController extends BackendController {
             'weightClasses'=>$weightClassesList,
             'lengthClasses'=>$lengthClassesList,
             'specs'=>$specs,
-            'units'=>$units,
+            'units'=>$units
         ));
     }
     

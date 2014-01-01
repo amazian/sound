@@ -10,7 +10,7 @@ $form = $this->beginWidget('CActiveForm', array(
     )
 ));
 ?>
-<?php echo $form->hiddenField($model, 'id'); ?>
+
 <?php echo CHtml::hiddenField('copy', 0); ?>
 <!--<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a data-toggle="tab" href="#general"><?php echo Yii::t('products', 'General'); ?></a></li>
@@ -120,9 +120,8 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="control-group">
             <?php echo $form->label($model, 'categories', array('class' => 'control-label')); ?>
             <div id="categories-container" class="controls">
-                <?php 
-                $list = !is_null($model->getProduct()) ? $model->getProduct()->getCategoriesIdList() : array();
-                $list = array_reverse($list);
+                <?php
+                $list = array_reverse($model->getProduct()->getCategoriesIdList());
                 foreach($list as $index => $categoryId){ 
                     $category = Category::model()->findByPk($categoryId);
                     if(!is_null($category) && $category->hasParent())
@@ -254,3 +253,12 @@ $form = $this->beginWidget('CActiveForm', array(
     });
 
 </script>
+
+<?php
+// This is used for the duplicate option!
+if(isset($_POST['copy']) && $_POST['copy'] == 1) {
+    // Nullify id to create a new product.
+    $model->id = null;
+}
+echo $form->hiddenField($model, 'id');
+?>

@@ -28,5 +28,5 @@ $this->breadcrumbs = array(
     'weightClasses'=>$weightClasses,
     'lengthClasses'=>$lengthClasses,
     'specs'=>$specs,
-    'units'=>$units,
+    'units'=>$units
 )); ?>
