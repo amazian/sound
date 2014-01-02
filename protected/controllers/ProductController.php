@@ -6,26 +6,56 @@ class ProductController extends Controller {
         $product = Product::model()->findByPk($id);
         if(is_null($product)) 
             die('Invalid product');
-        
-        // Convert attributes to table
-        $productAttributeIds = array();
-        foreach($product->attributes as $attr)
-            $productAttributeIds[$attr->attribute_id] = $attr->text;
-        
-        $specs = array();
-        $groups = AttributeGroup::model()->findAll();
-        foreach($groups as $group){
-            if(count($group->attributes) > 0){
-                foreach($group->attributes as $attribute){
-                    if(in_array($attribute->attribute_id, array_keys($productAttributeIds)))
-                        $specs[$group->description->name][$attribute->description->name] = $productAttributeIds[$attribute->attribute_id];
-                }                            
-            }                    
+
+        // filters
+        $productSpecs = array();
+        if(isset($_POST['spec_filter'])) {
+            $specFilterIds = $_POST['spec_filter'];
+            foreach($specFilterIds as $specFilterId) {
+                $productSpec = ProductSpec::model()->findByPk($specFilterId);
+                if(!is_null($productSpec)) {
+                    if($productSpec->description->type_id == Spec::TYPE_NUMERICAL) {
+                        // check if range
+                        if(isset($_POST["filter-{$specFilterId}-start"]) && $_POST["filter-{$specFilterId}-start"] > 0 && isset($_POST["filter-{$specFilterId}-end"]) && $_POST["filter-{$specFilterId}-end"] > 0) {
+                            $valueStart = $_POST["filter-{$specFilterId}-start"];
+                            $valueEnd = $_POST["filter-{$specFilterId}-end"];
+
+                            // product specs on range
+                            $productSpecs = ProductSpec::model()->findAll("spec_id=:spec_id AND (value_init BETWEEN :start AND :end OR value_end BETWEEN :start AND :end)", array(':spec_id'=>$productSpec->spec_id, ':start'=>$valueStart, ':end'=>$valueEnd));
+                        }
+                        // or single
+                        elseif(isset($_POST["filter-{$specFilterId}-start"]) && $_POST["filter-{$specFilterId}-start"] > 0) {
+                            $valueStart = $_POST["filter-{$specFilterId}-start"];
+
+                            // product specs on filter
+                            $productSpecs = ProductSpec::model()->findAll("spec_id=:spec_id AND (value_init=:start OR value_end=:end OR value_end=:start OR value_end=:end)", array(':spec_id'=>$productSpec->spec_id, ':start'=>$valueStart, ':end'=>$valueEnd));
+                        }
+                    }
+                    elseif($productSpec->description->type_id == Spec::TYPE_ALPHABETICAL) {
+                        $value = isset($_POST["filter-{$specFilterId}"]) ? $_POST["filter-{$specFilterId}"] : null;
+                        if(!is_null($value)) {
+                            // product specs on filter
+                            $productSpecs = ProductSpec::model()->findAll("spec_id=:spec_id AND value_init=:value", array(':spec_id'=>$productSpec->spec_id, ':value'=>$value));
+                        }
+                    }
+                }
+            }
+
+        }
+
+        $relatedProducts = array();
+        if(count($productSpecs) > 0) {
+            foreach($productSpecs as $productSpec) {
+                if($productSpec->product->product_id == $id) continue;
+
+                $relatedProducts[] = $productSpec->product;
+            }
         }
         
         $this->render('index', array(
             'product'=>$product,
-            'specGroups'=>$specs,
+            'relatedProducts'=>$relatedProducts,
+            'relatedProductSearch'=>isset($_POST['spec_filter'])
         ));
     }
     
@@ -43,6 +73,19 @@ class ProductController extends Controller {
         $this->render('compare', array(
             
         ));
+    }
+
+    public function actionGetFilterHtmlForSpec($id) {
+        $productSpec = ProductSpec::model()->findByPk($id);
+        if(!is_null($productSpec)) {
+            if($productSpec->description->type_id == Spec::TYPE_NUMERICAL) {
+                echo CHtml::textField("filter-{$productSpec->product_spec_id}-start");
+                echo CHtml::textField("filter-{$productSpec->product_spec_id}-end");
+            }
+            else {
+                echo CHtml::dropDownList("filter-{$productSpec->product_spec_id}", null, $productSpec->description->getSpecOptions());
+            }
+        }
     }
 
 }

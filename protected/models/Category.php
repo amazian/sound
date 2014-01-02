@@ -157,7 +157,7 @@ class Category extends CActiveRecord {
     }
 
     public function hasChildCategories() {
-        return count($this->childCategories) > 0 ? true : false;
+        return (!$this->isBottomMost() && count($this->childCategories) > 0) ? true : false;
     }
 
     public function hasProducts() {

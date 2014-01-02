@@ -141,23 +141,6 @@ class CategoryForm extends CFormModel {
             $category->description->description = $this->description;
             $category->description->save();
         }
-        
-        // SEO keyword
-        //$category->updateSEOKeyword($this->seoKeyword);
-        
-        // Stores
-        /*$category->clearAllStoresRelations();
-        if (isset($this->stores) && count($this->stores)) {
-            foreach ($this->stores as $storeId)
-                $category->addToStore($storeId);
-        }*/
-        
-        // Filters
-        /*$category->clearAllFiltersRelations();
-        if (isset($this->filters) && count($this->filters) > 0) {
-            foreach ($this->filters as $filterId)
-                $category->addFilter($filterId);
-        }*/
     }
 
 }

@@ -47,6 +47,7 @@ class ProductSpec extends CActiveRecord {
         return array(
             'description'=>array(self::BELONGS_TO, 'Spec', 'spec_id'),
             'unit'=>array(self::BELONGS_TO, 'Unit', 'unit_id'),
+            'product'=>array(self::BELONGS_TO, 'Product', 'product_id')
         );
     }
 

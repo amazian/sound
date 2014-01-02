@@ -112,13 +112,13 @@
         <div class="span9">
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#spec">Spec</a></li>
+                    <li class="<?php if(!$relatedProductSearch): ?>active<?php endif; ?>"><a data-toggle="tab" href="#spec">Spec</a></li>
                     <li><a data-toggle="tab" href="#description">Description</a></li>
-                    <li><a data-toggle="tab" href="#advancedSearch">Related Product Search</a></li>
+                    <li class="<?php if($relatedProductSearch): ?>active<?php endif; ?>""><a data-toggle="tab" href="#advancedSearch">Related Product Search</a></li>
                     <li><a data-toggle="tab" href="#tags">Tags</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="spec" class="tab-pane active">
+                    <div id="spec" class="tab-pane <?php if(!$relatedProductSearch): ?>active<?php endif; ?>">
                         <table class="table table-bordered table-striped">
                             <tbody>
                             <?php
@@ -143,22 +143,59 @@
                     <div id="description" class="tab-pane">
                         <?php echo $product->description->getDescription(); ?>
                     </div>    
-                    <div id="advancedSearch" class="tab-pane">
+                    <div id="advancedSearch" class="tab-pane <?php if($relatedProductSearch): ?>active<?php endif; ?>">
                         <p>Select the spec you want to adjust</p>
-                        <form>
-                            <button type="button" class="btn btn-inverse">Ok</button>
+                        <form class="form-inline" action="<?php echo $this->createUrl('view', array('id'=>$product->product_id)); ?>" method="post">
+                            <button type="submit" class="btn btn-inverse">Go</button>
                             <br /><br />
                             <?php 
-                            $product_attributes = array();
+                            $product_attributes = array(0=>'Select Spec');
                             foreach($product->specs as $spec) {
                                 $product_attributes[$spec->product_spec_id] = $spec->description->name;
                             } 
                             ?>
-                            <?php echo CHtml::dropDownList('test1', null, $product_attributes); ?>  
-                            <span class="help-block">+ Add filter</span>
-                            
-                            
+                            <div id="filters">
+                                <div id="filters-template" class="row-fluid filter-container">
+                                    <div class="filter-selector span2"><?php echo CHtml::dropDownList('spec_filter[]', 0, $product_attributes, array('id'=>'', 'class'=>'filter-select span12')); ?></div>
+                                    <div class="filter-options span10">&nbsp;</div>
+                                </div>
+                            </div>
+                            <a id="add-filter" href="#" class="">+ Add filter</a>
                         </form>
+
+                        <?php if($relatedProductSearch): ?>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Serial</th>
+                                    <th>Spec</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($relatedProducts as $relatedProduct): ?>
+                                <tr>
+                                    <td><?php echo $relatedProduct->description->name; ?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <?php endforeach; ?>
+                                <?php if(count($relatedProducts) == 0): ?>
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">We couldn't find any products with the filters specified, please try again.</td>
+                                </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                        <?php endif; ?>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </div>
                     <div id="tags" class="tab-pane">
                         <div id="tags" class="tab-pane active">
@@ -190,6 +227,20 @@
                 alert('Qty must be at least 1. Please enter a qty and try again.');
             else
                 document.location = '<?php echo $this->createUrl('/shoppingCart/add'); ?>/?id=<?php echo $product->product_id; ?>&qty=' + $('#quantity').val();
+
+            return false;
+        });
+
+        $('.filter-select').on('change', function(){
+            var specId = $(this).val();
+            var containerDiv = $(this).parent('div').parent('div').find('div.filter-options');
+            $.get('<?php echo $this->createUrl('getFilterHtmlForSpec'); ?>', {id: specId}, function(data){
+                containerDiv.html(data);
+            });
+        });
+
+        $('#add-filter').on('click', function() {
+            $( "#filters-template" ).clone(true).appendTo( "#filters" );
 
             return false;
         });

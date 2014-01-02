@@ -72,4 +72,26 @@ class Spec extends CActiveRecord {
         }
     }
 
+    public function getSpecOptions() {
+        // this is only used for non-numeric specs
+        if($this->type_id == self::TYPE_NUMERICAL) return;
+
+        // read the data (this could be in a model)
+        $specValues = Yii::app()->db->createCommand(
+            "SELECT m1.value_init AS name "
+            . "FROM product_spec AS m1 "
+            . "WHERE m1.spec_id = {$this->spec_id} "
+            . "GROUP BY m1.value_init "
+            . "ORDER BY m1.value_init ASC"
+        )->queryAll();
+
+        $options = array();
+        foreach($specValues as $value) {
+            $val = $value['name'];
+            $options[$val] = $val;
+        }
+
+        return $options;
+    }
+
 }
