@@ -188,6 +188,16 @@ $form = $this->beginWidget('CActiveForm', array(
     <!--<div id="links" class="tab-pane fade">-->
     <!--</div>
 </div>-->
+
+<?php
+// This is used for the duplicate option!
+if(isset($_POST['copy']) && $_POST['copy'] == 1) {
+    // Nullify id to create a new product.
+    $model->id = null;
+}
+echo $form->hiddenField($model, 'id');
+?>
+
 <?php $this->endWidget(); ?>
 
 <script>
@@ -253,12 +263,3 @@ $form = $this->beginWidget('CActiveForm', array(
     });
 
 </script>
-
-<?php
-// This is used for the duplicate option!
-if(isset($_POST['copy']) && $_POST['copy'] == 1) {
-    // Nullify id to create a new product.
-    $model->id = null;
-}
-echo $form->hiddenField($model, 'id');
-?>
