@@ -63,7 +63,7 @@ $this->breadcrumbs = array(
                 <td><?php echo $product->type; ?></td>
                 <td><?php echo $product->model; ?></td>
                 <td><?php echo !is_null($product->primarySpec) ? $product->primarySpec->description->name : ""; ?></td>
-                <td><?php echo $product->category->getFullname(); ?></td>
+                <td><?php echo !is_null($product->category) ? $product->category->getFullname() : null; ?></td>
                 <td><?php echo $product->getFormattedPrice(true); ?></td>
                 <td><?php echo ($product->status == 1) ? "<i class=\"icon-check\"></i>" : "<i class=\"icon-check-empty\"></i>"; ?></td>
                 <td>
