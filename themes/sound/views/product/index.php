@@ -178,10 +178,10 @@
                                 <?php foreach($relatedProducts as $relatedProduct): ?>
                                 <tr>
                                     <td><?php echo $relatedProduct->description->name; ?></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?php echo $relatedProduct->type; ?></td>
+                                    <td><?php echo $relatedProduct->model; ?></td>
+                                    <td><?php echo isset($relatedProduct->primarySpec) ? $relatedProduct->primarySpec->description->name : "&nbsp;"; ?></td>
+                                    <td><?php echo $relatedProduct->price; ?></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 <?php if(count($relatedProducts) == 0): ?>

@@ -22,7 +22,9 @@ class SpecUnitController extends BackendController {
     }
     
     public function actionDeleteSpec($id){
-        Spec::model()->deleteByPk($id);        
+        Spec::model()->deleteByPk($id);
+        ProductSpec::model()->deleteAllByAttributes(array('spec_id'=>$id));
+
         $this->redirect(array('index'));
     }
     
@@ -35,7 +37,9 @@ class SpecUnitController extends BackendController {
     }
     
     public function actionDeleteUnit($id){
-        Unit::model()->deleteByPk($id);        
+        Unit::model()->deleteByPk($id);
+        ProductSpec::model()->deleteAll(array('unit_id'=>$id));
+
         $this->redirect(array('index'));
     }
 

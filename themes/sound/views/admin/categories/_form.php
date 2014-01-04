@@ -78,7 +78,7 @@ $form = $this->beginWidget('CActiveForm', array(
 <div class="control-group">
     <?php echo $form->label($model, 'bottomMost', array('class' => 'control-label')); ?>
     <div class="controls">
-        <?php echo $form->dropDownList($model, 'bottomMost', array(0=>"No", 1=>"Yes"), array('class' => 'span1')); ?>
+        <?php echo $form->dropDownList($model, 'bottomMost', array(0=>"No", 1=>"Yes"), array('class' => 'span1', 'disabled'=>(count($model->getCategory()->childCategories) > 0 ? true : false))); ?>
     </div>
 </div>
 <div class="control-group">
