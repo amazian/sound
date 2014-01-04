@@ -83,7 +83,9 @@ class ProductController extends Controller {
                 echo CHtml::textField("filter-{$productSpec->product_spec_id}-end");
             }
             else {
-                echo CHtml::dropDownList("filter-{$productSpec->product_spec_id}", null, $productSpec->description->getSpecOptions());
+                echo CHtml::radioButtonList("filter-{$productSpec->product_spec_id}", null, $productSpec->description->getSpecOptions(), array(
+                    'separator'=>'&nbsp;&nbsp;&nbsp;'
+                ));
             }
         }
     }
