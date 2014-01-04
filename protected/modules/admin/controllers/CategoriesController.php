@@ -93,7 +93,7 @@ class CategoriesController extends BackendController {
                     continue;
             }
 
-            if(!$description->category->isBottomMost())
+            if(!$description->category->isBottomMost() && $description->category->getLevel() < 3)
                 $json[] = array('id'=>$description->category_id, 'value'=>$description->category->getFullname());
         }
         

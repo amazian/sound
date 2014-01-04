@@ -156,6 +156,18 @@ class Category extends CActiveRecord {
         return !is_null($this->parent);
     }
 
+    public function getLevel() {
+        $level = 1;
+        $current = $this;
+
+        while($current->hasParent()) {
+            $level++;
+            $current = $current->parent;
+        }
+
+        return $level;
+    }
+
     public function hasChildCategories() {
         return (!$this->isBottomMost() && count($this->childCategories) > 0) ? true : false;
     }
