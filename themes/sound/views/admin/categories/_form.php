@@ -31,7 +31,7 @@ $form = $this->beginWidget('CActiveForm', array(
 <div class="control-group">
         <?php echo $form->label($model, 'parent', array('class' => 'control-label')); ?>
     <div class="controls">
-        <?php echo CHtml::checkBox("noparent", !is_null($model->parent)); ?>&nbsp; No parent<br /><br />
+        <?php echo CHtml::checkBox("noparent", ($model->parent == 0)); ?>&nbsp; No parent<br /><br />
         <?php
         $this->widget('TypeaheadSingle', array(
             'model' => $model,
