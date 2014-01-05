@@ -31,6 +31,7 @@ $form = $this->beginWidget('CActiveForm', array(
 <div class="control-group">
         <?php echo $form->label($model, 'parent', array('class' => 'control-label')); ?>
     <div class="controls">
+        <?php echo CHtml::checkBox("noparent", !is_null($model->parent)); ?>&nbsp; No parent<br /><br />
         <?php
         $this->widget('TypeaheadSingle', array(
             'model' => $model,
@@ -89,3 +90,17 @@ $form = $this->beginWidget('CActiveForm', array(
 </div>
 
 <?php $this->endWidget(); ?>
+
+<script>
+    if($('#noparent').is(':checked')){
+        $('#parent').attr('disabled', 'disabled');
+    };
+
+    $('#noparent').on('change', function(){
+        if ($('#parent').attr('disabled')) $('#parent').removeAttr('disabled');
+        else {
+            $('#CategoryForm_parent').val('0');
+            $('#parent').attr('disabled', 'disabled');
+        }
+    });
+</script>
