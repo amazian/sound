@@ -37,15 +37,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="#"><img alt="YOSON AUDIO" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo-home.png" /> </a>
+                    <a class="brand" href="<?php echo $this->createUrl('/site/index'); ?>"><img alt="YOSON AUDIO" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo-home.png" /> </a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
-                            Logged in as <a href="#" class="navbar-link">Username</a>
+                            <!--Logged in as <a href="#" class="navbar-link">Username</a>-->
                         </p>
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li class="active"><a href="<?php echo $this->createUrl('/site/about'); ?>">公司簡介<br />About</a></li>
+                            <li><a href="<?php echo $this->createUrl('/site/news'); ?>">最新消息<br />News</a></li>
+                            <li><a href="<?php echo $this->createUrl('/site/project'); ?>">營業項目<br />Project</a></li>
+                            <li><a href="<?php echo $this->createUrl('/site/blog'); ?>">部落格<br />Blog</a></li>
+                            <li><a href="<?php echo $this->createUrl('/site/contact'); ?>">聯絡我們<br />Contact Us</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
