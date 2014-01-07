@@ -45,7 +45,6 @@
                         <ul class="nav">
                             <li class="active"><a href="<?php echo $this->createUrl('/site/about'); ?>">公司簡介<br />About</a></li>
                             <li><a href="http://www.yosonaudio.com.tw/news_list.asp" target="_blank">最新消息<br />News</a></li>
-                            <li><a href="<?php echo $this->createUrl('/site/project'); ?>">營業項目<br />Project</a></li>
                             <li><a href="http://yosonaudio.blogspot.tw/" target="_blank">部落格<br />Blog</a></li>
                             <li><a href="<?php echo $this->createUrl('/site/contact'); ?>">聯絡我們<br />Contact Us</a></li>
                         </ul>
