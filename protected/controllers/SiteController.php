@@ -7,12 +7,10 @@ class SiteController extends Controller {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
-        $latestProducts = Product::model()->latest()->active()->findAll();
-        $banners = Banner::model()->active()->findAll();
+        $categories = Category::model()->findAllByAttributes(array('parent_id'=>0));
         
         $this->render('index', array( 
-            'latestProducts'=>$latestProducts,
-            'banners'=>$banners
+            'categories'=>$categories
         ));
     }
     
