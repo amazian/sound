@@ -43,6 +43,7 @@
                             <!--Logged in as <a href="#" class="navbar-link">Username</a>-->
                         </p>
                         <ul class="nav">
+
                             <li class="active"><a href="<?php echo $this->createUrl('/site/about'); ?>">公司簡介<br />About</a></li>
                             <li><a href="http://www.yosonaudio.com.tw/news_list.asp" target="_blank">最新消息<br />News</a></li>
                             <li><a href="http://yosonaudio.blogspot.tw/" target="_blank">部落格<br />Blog</a></li>

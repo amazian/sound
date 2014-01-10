@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 31, 2013 at 03:31 AM
+-- Generation Time: Jan 10, 2014 at 11:44 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`, `bottom_most`) VALUES
 (25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2013-07-22 00:00:00', 0),
 (27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2013-07-22 00:00:00', 0),
-(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2013-12-30 00:00:00', 0),
+(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2014-01-05 00:00:00', NULL),
 (18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2013-07-22 00:00:00', 0),
 (28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2013-07-22 00:00:00', 0),
 (26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2013-07-22 00:00:00', 0),
@@ -360,7 +360,7 @@ INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `s
 (64, '', 26, 1, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
 (63, '', 26, 1, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
 (62, '', 20, 0, 1, 1, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
-(59, '', 27, 0, 1, 2, 1, '2013-07-22 00:00:00', '2013-07-22 00:00:00', 0),
+(59, '', 27, 0, 0, 2, 1, '2013-07-22 00:00:00', '2014-01-05 00:00:00', 0),
 (60, '', 27, 0, 0, 0, 1, '2013-07-22 00:00:00', '2013-12-29 00:00:00', 1),
 (61, '', 27, 0, 0, 0, 1, '2013-07-22 00:00:00', '2013-12-29 00:00:00', 1);
 
@@ -2136,38 +2136,38 @@ CREATE TABLE IF NOT EXISTS `product` (
   `viewed` int(5) NOT NULL DEFAULT '0',
   `discount` float DEFAULT '0',
   `primary_spec` int(11) DEFAULT NULL,
+  `preview` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=58 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`, `discount`, `primary_spec`) VALUES
-(28, 'Product 1', 'Test Type', '', '', '', '', '', '', '', 0, 0, 'data/demo/htc_touch_hd_1.jpg', 5, 0, '100.0000', 200, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 1, 0, 0, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0, 10, 7),
-(29, 'Product 2', 'test', '', '', '', '', '', '', '', 0, 0, 'data/demo/palm_treo_pro_1.jpg', 6, 0, '279.9900', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 3, 0, 0, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0, 0, NULL),
-(30, 'Product 3', '', '', '', '', '', '', '', '', 0, 0, 'data/demo/canon_eos_5d_1.jpg', 9, 0, '100.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 1, 0, 0, 0, 0, '2009-02-03 16:59:00', '2011-09-30 01:05:23', 0, 15, NULL),
-(31, 'Product 4', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2, 0, NULL),
-(32, 'Product 5', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0, 0, NULL),
-(33, 'Product 6', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0, 0, NULL),
-(34, 'Product 7', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0, 0, NULL),
-(36, 'Product 9', NULL, '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0, 0, NULL),
-(40, 'product 11', NULL, '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1, 0, NULL),
-(41, 'Product 14', NULL, '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1, 0, NULL),
-(43, 'Product 16', NULL, '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1, 0, NULL),
-(44, 'Product 17', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0, 0, NULL),
-(46, 'Product 19', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0, 0, NULL),
-(47, 'Product 21', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0, 0, NULL),
-(48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0, 0, NULL),
-(49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2, 0, NULL),
-(50, '4353', '444', '', '', '', '', '', '', '', 0, 0, '', 7, 1, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(51, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(52, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(53, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(54, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(55, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(56, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL),
-(57, '3425234', 'drter', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '233.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL);
+INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `date_added`, `date_modified`, `viewed`, `discount`, `primary_spec`, `preview`) VALUES
+(28, 'Product 1', 'Test Type', '', '', '', '', '', '', '', 0, 0, 'data/demo/htc_touch_hd_1.jpg', 5, 0, '100.0000', 200, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 1, 0, 0, 0, 1, '2009-02-03 16:06:50', '2011-09-30 01:05:39', 0, 10, 7, 0),
+(29, 'Product 2', 'test', '', '', '', '', '', '', '', 0, 0, 'data/demo/palm_treo_pro_1.jpg', 6, 0, '279.9900', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 3, 0, 0, 0, 1, '2009-02-03 16:42:17', '2011-09-30 01:06:08', 0, 0, NULL, 0),
+(73, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 0, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 1),
+(31, 'Product 4', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/nikon_d300_1.jpg', 0, 1, '80.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 3, 1, 1, 0, 1, '2009-02-03 17:00:10', '2011-09-30 01:06:00', 2, 0, NULL, 0),
+(32, 'Product 5', NULL, '', '', '', '', '', '', '', 999, 6, 'data/demo/ipod_touch_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 17:07:26', '2011-09-30 01:07:22', 0, 0, NULL, 0),
+(33, 'Product 6', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/samsung_syncmaster_941bw.jpg', 0, 1, '200.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 17:08:31', '2011-09-30 01:06:29', 0, 0, NULL, 0),
+(34, 'Product 7', NULL, '', '', '', '', '', '', '', 1000, 6, 'data/demo/ipod_shuffle_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:07:54', '2011-09-30 01:07:17', 0, 0, NULL, 0),
+(36, 'Product 9', NULL, '', '', '', '', '', '', '', 994, 6, 'data/demo/ipod_nano_1.jpg', 8, 0, '100.0000', 100, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 18:09:19', '2011-09-30 01:07:12', 0, 0, NULL, 0),
+(40, 'product 11', NULL, '', '', '', '', '', '', '', 969, 5, 'data/demo/iphone_1.jpg', 8, 1, '101.0000', 0, 9, '2009-02-03', '10.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:12', '2011-09-30 01:06:53', 1, 0, NULL, 0),
+(41, 'Product 14', NULL, '', '', '', '', '', '', '', 977, 5, 'data/demo/imac_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-03', '5.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 0, 1, '2009-02-03 21:07:26', '2011-09-30 01:06:44', 1, 0, NULL, 0),
+(43, 'Product 16', NULL, '', '', '', '', '', '', '', 929, 5, 'data/demo/macbook_1.jpg', 8, 0, '500.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:07:49', '2011-09-30 01:05:46', 1, 0, NULL, 0),
+(44, 'Product 17', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/macbook_air_1.jpg', 8, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:00', '2011-09-30 01:05:53', 0, 0, NULL, 0),
+(46, 'Product 19', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/sony_vaio_1.jpg', 10, 1, '1000.0000', 0, 9, '2009-02-03', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-03 21:08:29', '2011-09-30 01:06:39', 0, 0, NULL, 0),
+(47, 'Product 21', NULL, '', '', '', '', '', '', '', 1000, 5, 'data/demo/hp_1.jpg', 7, 1, '100.0000', 400, 9, '2009-02-03', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 0, 1, 0, 1, '2009-02-03 21:08:40', '2011-09-30 01:05:28', 0, 0, NULL, 0),
+(48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0, 0, NULL, 0),
+(49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2, 0, NULL, 0),
+(70, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0),
+(75, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
+(74, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 0, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
+(72, '45345', 'dfgdsg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 0, '3333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
+(71, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0),
+(68, '45345', 'gdfg', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '1222.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 22, NULL, 0),
+(69, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -2235,7 +2235,6 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 (43, 1, 'MacBook', '<p><strong>Intel Core 2 Duo processor</strong></p>\r\n\r\n<p>Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, the new MacBook is the fastest ever.</p>\r\n\r\n<p><strong>1GB memory, larger hard drives</strong></p>\r\n\r\n<p>The new MacBook now comes with 1GB of memory standard and larger hard drives for the entire line perfect for running more of your favorite applications and storing growing media collections.</p>\r\n\r\n<p><strong>Sleek, 1.08-inch-thin design</strong></p>\r\n\r\n<p>MacBook makes it easy to hit the road thanks to its tough polycarbonate case, built-in wireless technologies, and innovative MagSafe Power Adapter that releases automatically if someone accidentally trips on the cord.</p>\r\n\r\n<p><strong>Built-in iSight camera</strong></p>\r\n\r\n<p>Right out of the box, you can have a video chat with friends or family,2 record a video at your desk, or take fun pictures with Photo Booth</p>\r\n', '', '', ''),
 (31, 1, 'Nikon D300', '<p>Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.<br />\r\n<br />\r\nSimilar to the D3, the D300 features Nikon&#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&#39;s new features. The D300 features a new 51-point autofocus system with Nikon&#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.<br />\r\n<br />\r\nThe D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)<br />\r\n<br />\r\nThe D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.</p>\r\n<!-- cpt_container_end -->', '', '', ''),
 (49, 1, 'Samsung Galaxy Tab 10.1', '<p>Samsung Galaxy Tab 10.1, is the world&rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.</p>\r\n\r\n<p>Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.</p>\r\n\r\n<p>Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&nbsp;&auml;&ouml;</p>\r\n', '', '', ''),
-(30, 1, 'Canon EOS 5D', '<p>Canon&#39;s press material for the EOS 5D states that it &#39;defines (a) new D-SLR category&#39;, while we&#39;re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably &#39;chunkier&#39;). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR&#39;s, an important difference when compared to the latter is that the EOS 5D doesn&#39;t have any environmental seals. While Canon don&#39;t specifically refer to the EOS 5D as a &#39;professional&#39; digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they&#39;ve not bought too many EF-S lenses...) &auml;&euml;</p>\r\n', '', '', ''),
 (48, 2, 'iPod Classic', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;More room to move.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or up to 200 hours of video or any combination wherever you go.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Cover Flow.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Browse through your music collection by flipping through album art. Select an album to turn it over and see the track list.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Enhanced interface.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Experience a whole new way to browse and view your music and video.&lt;/p&gt;\r\n		&lt;p&gt;\r\n			&lt;strong&gt;Sleeker design.&lt;/strong&gt;&lt;/p&gt;\r\n		&lt;p&gt;\r\n			Beautiful, durable, and sleeker than ever, iPod classic now features an anodized aluminum and polished stainless steel enclosure with rounded edges.&lt;/p&gt;\r\n	&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
 (40, 2, 'iPhone', '&lt;p class=&quot;intro&quot;&gt;\r\n	iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name or number in your address book, a favorites list, or a call log. It also automatically syncs all your contacts from a PC, Mac, or Internet service. And it lets you select and listen to voicemail messages in whatever order you want just like email.&lt;/p&gt;\r\n', '', '', ''),
 (28, 2, 'HTC Touch HD', '&lt;p&gt;\r\n	HTC Touch - in High Definition. Watch music videos and streaming content in awe-inspiring high definition clarity for a mobile experience you never thought possible. Seductively sleek, the HTC Touch HD provides the next generation of mobile functionality, all at a simple touch. Fully integrated with Windows Mobile Professional 6.1, ultrafast 3.5G, GPS, 5MP camera, plus lots more - all delivered on a breathtakingly crisp 3.8&amp;quot; WVGA touchscreen - you can take control of your mobile world with the HTC Touch HD.&lt;/p&gt;\r\n&lt;p&gt;\r\n	&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n	&lt;li&gt;\r\n		Processor Qualcomm&amp;reg; MSM 7201A&amp;trade; 528 MHz&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Windows Mobile&amp;reg; 6.1 Professional Operating System&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Memory: 512 MB ROM, 288 MB RAM&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Dimensions: 115 mm x 62.8 mm x 12 mm / 146.4 grams&lt;/li&gt;\r\n	&lt;li&gt;\r\n		3.8-inch TFT-LCD flat touch-sensitive screen with 480 x 800 WVGA resolution&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HSDPA/WCDMA: Europe/Asia: 900/2100 MHz; Up to 2 Mbps up-link and 7.2 Mbps down-link speeds&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Quad-band GSM/GPRS/EDGE: Europe/Asia: 850/900/1800/1900 MHz (Band frequency, HSUPA availability, and data speed are operator dependent.)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Device Control via HTC TouchFLO&amp;trade; 3D &amp;amp; Touch-sensitive front panel buttons&lt;/li&gt;\r\n	&lt;li&gt;\r\n		GPS and A-GPS ready&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Bluetooth&amp;reg; 2.0 with Enhanced Data Rate and A2DP for wireless stereo headsets&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Wi-Fi&amp;reg;: IEEE 802.11 b/g&lt;/li&gt;\r\n	&lt;li&gt;\r\n		HTC ExtUSB&amp;trade; (11-pin mini-USB 2.0)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		5 megapixel color camera with auto focus&lt;/li&gt;\r\n	&lt;li&gt;\r\n		VGA CMOS color camera&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Built-in 3.5 mm audio jack, microphone, speaker, and FM radio&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Ring tone formats: AAC, AAC+, eAAC+, AMR-NB, AMR-WB, QCP, MP3, WMA, WAV&lt;/li&gt;\r\n	&lt;li&gt;\r\n		40 polyphonic and standard MIDI format 0 and 1 (SMF)/SP MIDI&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Rechargeable Lithium-ion or Lithium-ion polymer 1350 mAh battery&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Expansion Slot: microSD&amp;trade; memory card (SD 2.0 compatible)&lt;/li&gt;\r\n	&lt;li&gt;\r\n		AC Adapter Voltage range/frequency: 100 ~ 240V AC, 50/60 Hz DC output: 5V and 1A&lt;/li&gt;\r\n	&lt;li&gt;\r\n		Special Features: FM Radio, G-Sensor&lt;/li&gt;\r\n&lt;/ul&gt;\r\n', '', '', ''),
@@ -2252,14 +2251,28 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 (31, 2, 'Nikon D300', '&lt;div class=&quot;cpt_product_description &quot;&gt;\r\n	&lt;div&gt;\r\n		Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&amp;#39;s newly announced D3 professional digital SLR camera to offer serious photographers remarkable performance combined with agility.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		Similar to the D3, the D300 features Nikon&amp;#39;s exclusive EXPEED Image Processing System that is central to driving the speed and processing power needed for many of the camera&amp;#39;s new features. The D300 features a new 51-point autofocus system with Nikon&amp;#39;s 3D Focus Tracking feature and two new LiveView shooting modes that allow users to frame a photograph using the camera&amp;#39;s high-resolution LCD monitor. The D300 shares a similar Scene Recognition System as is found in the D3; it promises to greatly enhance the accuracy of autofocus, autoexposure, and auto white balance by recognizing the subject or scene being photographed and applying this information to the calculations for the three functions.&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 reacts with lightning speed, powering up in a mere 0.13 seconds and shooting with an imperceptible 45-millisecond shutter release lag time. The D300 is capable of shooting at a rapid six frames per second and can go as fast as eight frames per second when using the optional MB-D10 multi-power battery pack. In continuous bursts, the D300 can shoot up to 100 shots at full 12.3-megapixel resolution. (NORMAL-LARGE image setting, using a SanDisk Extreme IV 1GB CompactFlash card.)&lt;br /&gt;\r\n		&lt;br /&gt;\r\n		The D300 incorporates a range of innovative technologies and features that will significantly improve the accuracy, control, and performance photographers can get from their equipment. Its new Scene Recognition System advances the use of Nikon&amp;#39;s acclaimed 1,005-segment sensor to recognize colors and light patterns that help the camera determine the subject and the type of scene being photographed before a picture is taken. This information is used to improve the accuracy of autofocus, autoexposure, and auto white balance functions in the D300. For example, the camera can track moving subjects better and by identifying them, it can also automatically select focus points faster and with greater accuracy. It can also analyze highlights and more accurately determine exposure, as well as infer light sources to deliver more accurate white balance detection.&lt;/div&gt;\r\n&lt;/div&gt;\r\n&lt;!-- cpt_container_end --&gt;', '', '', ''),
 (49, 2, 'Samsung Galaxy Tab 10.1', '&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1, is the world&amp;rsquo;s thinnest tablet, measuring 8.6 mm thickness, running with Android 3.0 Honeycomb OS on a 1GHz dual-core Tegra 2 processor, similar to its younger brother Samsung Galaxy Tab 8.9.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 gives pure Android 3.0 experience, adding its new TouchWiz UX or TouchWiz 4.0 &amp;ndash; includes a live panel, which lets you to customize with different content, such as your pictures, bookmarks, and social feeds, sporting a 10.1 inches WXGA capacitive touch screen with 1280 x 800 pixels of resolution, equipped with 3 megapixel rear camera with LED flash and a 2 megapixel front camera, HSPA+ connectivity up to 21Mbps, 720p HD video recording capability, 1080p HD playback, DLNA support, Bluetooth 2.1, USB 2.0, gyroscope, Wi-Fi 802.11 a/b/g/n, micro-SD slot, 3.5mm headphone jack, and SIM slot, including the Samsung Stick &amp;ndash; a Bluetooth microphone that can be carried in a pocket like a pen and sound dock with powered subwoofer.&lt;/p&gt;\r\n&lt;p&gt;\r\n	Samsung Galaxy Tab 10.1 will come in 16GB / 32GB / 64GB verities and pre-loaded with Social Hub, Reader&amp;rsquo;s Hub, Music Hub and Samsung Mini Apps Tray &amp;ndash; which gives you access to more commonly used apps to help ease multitasking and it is capable of Adobe Flash Player 10.2, powered by 6860mAh battery that gives you 10hours of video-playback time.&amp;nbsp;&amp;auml;&amp;ouml;&lt;/p&gt;\r\n', '', '', ''),
 (50, 1, 'ffff', '<p>gsdfg</p>\r\n', '', '', ''),
-(51, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
-(52, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
+(59, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(58, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
 (53, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
 (54, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
 (55, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
 (56, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
 (57, 1, 'dfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
-(30, 2, 'Canon EOS 5D', '&lt;p&gt;\r\n	Canon''s press material for the EOS 5D states that it ''defines (a) new D-SLR category'', while we''re not typically too concerned with marketing talk this particular statement is clearly pretty accurate. The EOS 5D is unlike any previous digital SLR in that it combines a full-frame (35 mm sized) high resolution sensor (12.8 megapixels) with a relatively compact body (slightly larger than the EOS 20D, although in your hand it feels noticeably ''chunkier''). The EOS 5D is aimed to slot in between the EOS 20D and the EOS-1D professional digital SLR''s, an important difference when compared to the latter is that the EOS 5D doesn''t have any environmental seals. While Canon don''t specifically refer to the EOS 5D as a ''professional'' digital SLR it will have obvious appeal to professionals who want a high quality digital SLR in a body lighter than the EOS-1D. It will also no doubt appeal to current EOS 20D owners (although lets hope they''ve not bought too many EF-S lenses...) Ã¤Ã«&lt;/p&gt;\r\n', '', '', '');
+(60, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(61, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(62, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(63, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(64, 1, 'dsfsdf', '<p>asdfasdf</p>\r\n', '', '', ''),
+(65, 1, 'sfsdfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
+(67, 1, 'sfsdfgsd', '<p>fgsdfg</p>\r\n', '', '', ''),
+(68, 1, 'xcxb', '<p>cbxcvbxcv</p>\r\n', '', '', ''),
+(69, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
+(70, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
+(71, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
+(72, 1, 'fdgsdgfsdfg12345', '<p>sdfgsdfg</p>\r\n', '', '', ''),
+(73, 1, 'dfghdf', '<p>ghdfghdfgh</p>\r\n', '', '', ''),
+(74, 1, 'dfghdf!@#$%^', '<p>ghdfghdfgh</p>\r\n', '', '', ''),
+(75, 1, 'dfghdf', '<p>ghdfghdfgh</p>\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2292,7 +2305,6 @@ CREATE TABLE IF NOT EXISTS `product_image` (
 --
 
 INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
-(2345, 30, 'data/demo/canon_eos_5d_2.jpg', 0),
 (2321, 47, 'data/demo/hp_3.jpg', 0),
 (2035, 28, 'data/demo/htc_touch_hd_2.jpg', 0),
 (2351, 41, 'data/demo/imac_3.jpg', 0),
@@ -2317,7 +2329,6 @@ INSERT INTO `product_image` (`product_image_id`, `product_id`, `image`, `sort_or
 (1990, 48, 'data/demo/ipod_classic_3.jpg', 0),
 (1981, 40, 'data/demo/iphone_2.jpg', 0),
 (1980, 40, 'data/demo/iphone_5.jpg', 0),
-(2344, 30, 'data/demo/canon_eos_5d_3.jpg', 0),
 (2320, 47, 'data/demo/hp_2.jpg', 0),
 (2034, 28, 'data/demo/htc_touch_hd_3.jpg', 0),
 (2350, 41, 'data/demo/imac_2.jpg', 0),
@@ -2366,8 +2377,7 @@ CREATE TABLE IF NOT EXISTS `product_option` (
 --
 
 INSERT INTO `product_option` (`product_option_id`, `product_id`, `option_id`, `option_value`, `required`) VALUES
-(225, 47, 12, '2011-04-22', 1),
-(226, 30, 5, '', 1);
+(225, 47, 12, '2011-04-22', 1);
 
 -- --------------------------------------------------------
 
@@ -2391,14 +2401,6 @@ CREATE TABLE IF NOT EXISTS `product_option_value` (
   `weight_prefix` varchar(1) NOT NULL,
   PRIMARY KEY (`product_option_value_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
-
---
--- Dumping data for table `product_option_value`
---
-
-INSERT INTO `product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
-(16, 226, 30, 5, 40, 5, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
-(15, 226, 30, 5, 39, 2, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
 
 -- --------------------------------------------------------
 
@@ -2437,7 +2439,6 @@ INSERT INTO `product_reward` (`product_reward_id`, `product_id`, `customer_group
 (339, 29, 1, 0),
 (343, 48, 1, 0),
 (335, 40, 1, 0),
-(539, 30, 1, 200),
 (331, 44, 1, 700),
 (337, 31, 1, 0),
 (345, 33, 1, 0),
@@ -2462,7 +2463,7 @@ CREATE TABLE IF NOT EXISTS `product_spec` (
   `value_init` text NOT NULL,
   `value_end` text,
   PRIMARY KEY (`product_spec_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=122 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
 
 --
 -- Dumping data for table `product_spec`
@@ -2474,7 +2475,24 @@ INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id
 (119, 28, 6, 4, '500', '80'),
 (118, 28, 5, 5, 'Test', ''),
 (81, 29, 3, 5, '30', '600'),
-(117, 28, 3, 3, '50', '80');
+(117, 28, 3, 3, '50', '80'),
+(122, 65, 1, 5, '1', '4'),
+(123, 68, 1, 1, '2', '5'),
+(124, 68, 3, 1, '2', ''),
+(125, 69, 1, 5, '3', ''),
+(126, 69, 4, 3, '4', '5'),
+(127, 70, 1, 5, '3', ''),
+(128, 70, 4, 3, '4', '5'),
+(129, 71, 1, 5, '3', ''),
+(130, 71, 4, 3, '4', '5'),
+(134, 72, 5, 1, '4', ''),
+(133, 72, 1, 1, '3', ''),
+(141, 74, 1, 1, '55', ''),
+(139, 75, 1, 1, '55', ''),
+(140, 75, 3, 1, '555', ''),
+(142, 74, 3, 1, '8888', ''),
+(145, 73, 1, 1, '55', ''),
+(146, 73, 3, 1, '3', '');
 
 -- --------------------------------------------------------
 
@@ -2493,14 +2511,6 @@ CREATE TABLE IF NOT EXISTS `product_special` (
   PRIMARY KEY (`product_special_id`),
   KEY `product_id` (`product_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=441 ;
-
---
--- Dumping data for table `product_special`
---
-
-INSERT INTO `product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
-(439, 30, 1, 2, '90.0000', '0000-00-00', '0000-00-00'),
-(438, 30, 1, 1, '80.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -2538,7 +2548,28 @@ INSERT INTO `product_tag` (`product_id`, `tag_text`) VALUES
 (56, 'e'),
 (56, 'ff'),
 (57, 'e'),
-(57, 'ff');
+(57, 'ff'),
+(58, 'ggg'),
+(59, 'ggg'),
+(60, 'ggg'),
+(61, 'ggg'),
+(62, 'ggg'),
+(63, 'ggg'),
+(64, 'ggg'),
+(65, 'fdfd'),
+(65, 'fgfg'),
+(67, '0'),
+(68, 'fff'),
+(69, 'fff'),
+(70, 'fff'),
+(71, 'fff'),
+(72, 'vb'),
+(73, 'dfdfd'),
+(73, 'dfsdf'),
+(74, 'dfdfd'),
+(74, 'dfsdf'),
+(75, 'dfdfd'),
+(75, 'dfsdf');
 
 -- --------------------------------------------------------
 
@@ -2559,7 +2590,6 @@ CREATE TABLE IF NOT EXISTS `product_to_category` (
 INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 (28, 35),
 (29, 35),
-(30, 59),
 (31, 61),
 (32, 60),
 (33, 63),
@@ -2575,12 +2605,28 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 (49, 65),
 (50, 25),
 (51, 25),
-(52, 25),
 (53, 25),
 (54, 25),
 (55, 25),
 (56, 25),
-(57, 25);
+(57, 25),
+(58, 63),
+(59, 63),
+(60, 63),
+(61, 63),
+(62, 63),
+(63, 63),
+(64, 63),
+(65, 25),
+(67, 25),
+(68, 25),
+(69, 25),
+(70, 25),
+(71, 25),
+(72, 65),
+(73, 45),
+(74, 45),
+(75, 45);
 
 -- --------------------------------------------------------
 
@@ -2970,8 +3016,8 @@ CREATE TABLE IF NOT EXISTS `spec` (
 INSERT INTO `spec` (`spec_id`, `name`, `type_id`) VALUES
 (1, 'Resistance', 1),
 (3, 'Distance', 1),
-(4, 'Material', 1),
-(5, 'Deviation', 1),
+(4, 'Material', 2),
+(5, 'Deviation', 2),
 (6, 'Voltage', 1),
 (7, 'Efficiency', 1);
 

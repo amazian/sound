@@ -55,6 +55,7 @@ class ProductForm extends CFormModel {
     public $discount;
 
     public $primarySpec;
+    public $preview;
 
     /**
      * Declares the validation rules.
@@ -62,7 +63,7 @@ class ProductForm extends CFormModel {
     public function rules() {
         return array(
             array('name, model, status', 'required'),
-            array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer', 'numerical'),
+            array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer, preview', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
             array('discount, primarySpec', 'numerical'),
             array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
@@ -117,7 +118,8 @@ class ProductForm extends CFormModel {
             'relatedProducts' => Yii::t('products', 'Related Products'),
             'specs' => Yii::t('products', 'Specs'),
             'tags' => Yii::t('products', 'Tags'),
-            'discount' => Yii::t('products', 'Discount')
+            'discount' => Yii::t('products', 'Discount'),
+            'preview' => Yii::t('products', 'Preview'),
         );
     }
 
@@ -167,6 +169,7 @@ class ProductForm extends CFormModel {
             $this->manufacturer = $product->manufacturer_id;
             $this->discount = $product->discount;
             $this->primarySpec = $product->primary_spec;
+            $this->preview = $product->preview;
 
             // Categories
             if (isset($product->categories) && count($product->categories)) {
@@ -249,6 +252,7 @@ class ProductForm extends CFormModel {
             $product->status = $this->status;
             $product->manufacturer_id = $this->manufacturer;
             $product->primary_spec = $this->primarySpec;
+            $product->preview = $this->preview;
             $product->save();
             $this->id = $product->product_id;
 
@@ -292,6 +296,7 @@ class ProductForm extends CFormModel {
             $product->status = $this->status;
             $product->manufacturer_id = $this->manufacturer;
             $product->primary_spec = $this->primarySpec;
+            $product->preview = $this->preview;
             $product->save();
 
             // Description

@@ -38,6 +38,7 @@
  * @property integer $viewed
  * @property float $discount
  * @property integer $primary_spec;
+ * @property integer $preview;
  */
 class Product extends CActiveRecord {
 
@@ -88,7 +89,7 @@ class Product extends CActiveRecord {
     public function rules() {
         return array(
             array('model', 'required'),
-            array('quantity, stock_status_id, manufacturer_id, shipping, points, tax_class_id, weight_class_id, length_class_id, subtract, minimum, sort_order, status, viewed', 'numerical', 'integerOnly' => true),
+            array('quantity, stock_status_id, manufacturer_id, shipping, points, tax_class_id, weight_class_id, length_class_id, subtract, minimum, sort_order, status, viewed, preview', 'numerical', 'integerOnly' => true),
             array('model, sku, mpn', 'length', 'max' => 64),
             array('upc', 'length', 'max' => 12),
             array('ean', 'length', 'max' => 14),
