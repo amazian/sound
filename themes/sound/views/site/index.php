@@ -3,7 +3,7 @@
 <div class="span9">
     <h2>Top Sales</h2>
     <br />
-    
+
 
     <h2>Categories</h2>
     <br />
@@ -20,7 +20,7 @@
             <img alt="<?php echo $category->description->name; ?>" src="<?php echo $category->getImageWithSize(150, 150); ?>">
             <br />
             <br />
-            <p><a href="#" class=""><?php echo $category->description->name; ?></a></p>
+            <p><a href="<?php echo $this->createUrl('/category/view', array('id'=>$category->category_id)); ?>" class=""><?php echo $category->description->name; ?></a></p>
         </div>
 
     <?php if(count($categories) == $id+1): ?>

@@ -51,7 +51,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="4" selection-start="115" selection-end="115" vertical-scroll-proportion="0.10885341" vertical-offset="0" max-vertical-offset="689">
+            <state line="22" column="110" selection-start="695" selection-end="695" vertical-scroll-proportion="0.48816568" vertical-offset="0" max-vertical-offset="676">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -962,7 +962,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/site/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="4" selection-start="115" selection-end="115" vertical-scroll-proportion="0.10885341" vertical-offset="0" max-vertical-offset="689">
+        <state line="22" column="110" selection-start="695" selection-end="695" vertical-scroll-proportion="0.48816568" vertical-offset="0" max-vertical-offset="555">
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
