@@ -23,6 +23,7 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->label($model, 'name', array('class' => 'control-label')); ?>
             <div class="controls">
                 <?php echo $form->textField($model, 'name', array('class' => 'span8')); ?>
+                <?php if(!is_null($model->id)): ?>&nbsp;&nbsp;&nbsp;&nbsp;<span>ID: <?php echo $model->id; ?></span><?php endif; ?>
             </div>
         </div>
         <div class="control-group">
