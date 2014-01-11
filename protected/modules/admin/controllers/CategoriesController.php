@@ -91,7 +91,7 @@ class CategoriesController extends BackendController {
                 $category = Category::model()->findByPk($description->category_id);
                 if(!is_null($category) && ($category->category_id == $categoryId || $category->parent == $categoryId))
                     continue;
-                elseif(($category->getLevel() + $description->category->getMaxChildLevel()) > 3)
+                elseif((($category->getMaxChildLevel() - $category->getLevel()) + $description->category->getLevel()) > 3)
                     continue;
             }
 
