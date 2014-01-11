@@ -75,10 +75,6 @@ class ProductsController extends BackendController {
             1=>Yii::t('common', 'Enabled')
         );
         
-        $taxClasses = TaxClass::model()->findAll();
-        $taxClassesList = array();
-        foreach($taxClasses as $taxClass) $taxClassesList[$taxClass->tax_class_id] = $taxClass->title;
-        
         $yes_no = array(
             0=>Yii::t('common', 'No'),
             1=>Yii::t('common', 'Yes')
