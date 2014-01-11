@@ -13,6 +13,7 @@
             <div class="jcarousel">
                 <ul>
                     <?php foreach($topSaleProducts as $product): ?>
+                        <?php if(is_null($product->product)): continue; ?>
                     <li>
                         <img src="<?php echo $product->product->getImageWithSize(125, 125); ?>" alt="<?php echo $product->product->description->name; ?>">
                         <p><?php echo $product->product->description->name; ?></p>
