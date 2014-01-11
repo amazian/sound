@@ -13,6 +13,10 @@ footer h4 {margin-bottom: 8px;}
     margin-right: 5px;
 }
 
+.navbar-inverse .navbar-inner {
+    background-image: url('../img/bg1.jpg');
+}
+
 /* product_list - the side bar*/
 .product_list {
     margin-top: -5px;
@@ -176,4 +180,25 @@ li.tags-suggestion-highlighted {
 .fixed-width {
         width:800px;
         margin:0 auto;
+}
+
+footer {
+    background: url("../img/bg1.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    text-align: left;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: white;
 }

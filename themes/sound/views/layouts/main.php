@@ -61,6 +61,20 @@
             </div>
         </div> <!-- /container -->
 
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo_footer.png" />
+                    </div>
+                    <div class="span9">
+                        <p>佑昇音響有限公司 台北市八德路一段五之二號一樓</p>
+                        <p>Yoson Audio Copyright © 2011 All Rights Reserved. TEL:(02)23939677 FAX:(02)23939667. System Designed by <a href="http://www.amazianteam.com">Amazian</a>. Art designed by 一化設計.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
 
         <!-- Le javascript
         ================================================== -->
