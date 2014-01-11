@@ -49,7 +49,7 @@ class CategoriesController extends BackendController {
         }
         else
             $model->loadDataFromCategory($id);
-        
+
         $statuses = array(
             0=>Yii::t('common', 'Disabled'),
             1=>Yii::t('common', 'Enabled')
@@ -90,6 +90,8 @@ class CategoriesController extends BackendController {
             if($categoryId){
                 $category = Category::model()->findByPk($description->category_id);
                 if(!is_null($category) && ($category->category_id == $categoryId || $category->parent == $categoryId))
+                    continue;
+                elseif(($category->getLevel() + $description->category->getMaxChildLevel()) > 3)
                     continue;
             }
 

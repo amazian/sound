@@ -168,6 +168,25 @@ class Category extends CActiveRecord {
         return $level;
     }
 
+    public function getMaxChildLevel(){
+        return $this->maxChildLevel(0);
+    }
+
+    private function maxChildLevel($level = null) {
+        if($this->hasChildCategories()) {
+            foreach($this->childCategories as $category) {
+                $newLevel = $category->maxChildLevel($level);
+                if($newLevel > $level)
+                    $level = $newLevel;
+            }
+
+            return $level;
+        }
+        else {
+            return $this->getLevel();
+        }
+    }
+
     public function hasChildCategories() {
         return (!$this->isBottomMost() && count($this->childCategories) > 0) ? true : false;
     }
