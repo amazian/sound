@@ -8,9 +8,12 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
         $categories = Category::model()->findAllByAttributes(array('parent_id'=>0));
+
+        $topSaleProducts = ProductTopSales::model()->findAll();
         
         $this->render('index', array( 
-            'categories'=>$categories
+            'categories'=>$categories,
+            'topSaleProducts'=>$topSaleProducts
         ));
     }
     

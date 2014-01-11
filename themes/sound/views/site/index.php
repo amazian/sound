@@ -1,9 +1,32 @@
 <?php echo $this->renderPartial('/common/leftMenu'); ?>
+<?php
+    Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/jcarousel.responsive.css');
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.jcarousel.min.js');
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/jcarousel.responsive.js');
+?>
 
 <div class="span9">
     <h2>Top Sales</h2>
     <br />
+    <div>
+        <div class="jcarousel-wrapper">
+            <div class="jcarousel">
+                <ul>
+                    <?php foreach($topSaleProducts as $product): ?>
+                    <li>
+                        <img src="<?php echo $product->product->getImageWithSize(125, 125); ?>" alt="<?php echo $product->product->description->name; ?>">
+                        <p><?php echo $product->product->description->name; ?></p>
+                        <span style="color: #0044cc;"><?php echo $product->product->getFormattedPrice(true); ?></span>
+                        <a href="<?php echo $this->createUrl('/shoppingCart/add', array('id'=>$product->product_id, 'qty'=>1)); ?>" class="btn btn-mini btn-info">add to cart</a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
 
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        </div>
+    </div>
 
     <h2>Categories</h2>
     <br />
