@@ -67,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_view.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_view.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="7" selection-start="154" selection-end="154" vertical-scroll-proportion="0.06891271" vertical-offset="0" max-vertical-offset="653">
+            <state line="3" column="7" selection-start="154" selection-end="154" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="270">
               <folding />
             </state>
           </provider>
@@ -105,13 +105,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/site/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="74" selection-start="684" selection-end="684" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="915">
+            <state line="15" column="60" selection-start="670" selection-end="670" vertical-scroll-proportion="0.34456354" vertical-offset="0" max-vertical-offset="915">
               <folding>
+                <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-                <marker date="1389436237000" expanded="true" signature="985:1000" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -190,8 +190,8 @@
         <option value="$PROJECT_DIR$/protected/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/products/_form.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
-        <option value="$PROJECT_DIR$/themes/sound/views/site/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/site/index.php" />
       </list>
     </option>
   </component>
@@ -1111,15 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/topSales/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="48" selection-start="1348" selection-end="1348" vertical-scroll-proportion="-16.833334" vertical-offset="301" max-vertical-offset="990">
-          <folding>
-            <marker date="1389433883000" expanded="true" signature="187:232" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/products/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="30" selection-start="3270" selection-end="3319" vertical-scroll-proportion="-18.375" vertical-offset="459" max-vertical-offset="1710">
@@ -1148,16 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="74" selection-start="684" selection-end="684" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="915">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
-            <marker date="1389436237000" expanded="true" signature="985:1000" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="116" selection-start="1198" selection-end="1198" vertical-scroll-proportion="-14.375" vertical-offset="105" max-vertical-offset="795">
@@ -1167,8 +1148,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="7" selection-start="154" selection-end="154" vertical-scroll-proportion="0.06891271" vertical-offset="0" max-vertical-offset="653">
+        <state line="3" column="7" selection-start="154" selection-end="154" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="270">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/topSales/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="48" selection-start="1348" selection-end="1348" vertical-scroll-proportion="-16.833334" vertical-offset="301" max-vertical-offset="990">
+          <folding>
+            <marker date="1389433883000" expanded="true" signature="187:232" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="60" selection-start="670" selection-end="670" vertical-scroll-proportion="0.34456354" vertical-offset="0" max-vertical-offset="915">
+          <folding>
+            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
