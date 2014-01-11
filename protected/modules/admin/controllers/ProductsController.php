@@ -121,7 +121,18 @@ class ProductsController extends BackendController {
             $model->attributes = $_POST['ProductForm'];
             if ($model->validate()) {
                 $model->save();
-                $this->redirect(array('index'));
+
+                if(isset($_POST['copy']) && $_POST['copy'] == 1) {
+                    // Keep product id
+                    $productId = $model->id;
+
+                    // Load data for this product
+                    $model = new ProductForm;
+                    $model->loadDataFromProduct($productId);
+                }
+                else {
+                    $this->redirect(array('index'));
+                }
             }
         }
         else
