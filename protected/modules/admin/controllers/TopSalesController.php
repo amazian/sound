@@ -44,8 +44,8 @@ class TopSalesController extends BackendController {
     
     public function actionAutocomplete($query){
         $json = array();
-        
-        $productDescriptions = ProductDescription::model()->findAll("name LIKE '%{$query}%' ");
+
+        $productDescriptions = ProductDescription::model()->findAll("name LIKE '%{$query}%' OR product_id LIKE '%{$query}%'");
         foreach($productDescriptions as $description){
             $json[] = array('id'=>$description->product_id, 'value'=>"ID:{$description->product_id} {$description->name}");
         }
