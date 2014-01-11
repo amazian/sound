@@ -21,7 +21,6 @@ $this->breadcrumbs = array(
 <?php $this->renderPartial('_form', array(
     'model'=>$model, 
     'statuses'=>$statuses,
-    'taxClasses'=>$taxClasses,
     'yes_no'=>$yes_no,
     'stockStatuses'=>$stockStatuses,
     'weightClasses'=>$weightClasses,

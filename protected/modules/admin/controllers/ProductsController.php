@@ -84,10 +84,6 @@ class ProductsController extends BackendController {
             1=>Yii::t('common', 'Yes')
         );
         
-        $taxClasses = TaxClass::model()->findAll();
-        $taxClassesList = array();
-        foreach($taxClasses as $taxClass) $taxClassesList[$taxClass->tax_class_id] = $taxClass->title;
-        
         // TODO: add language
         $stockStatuses = StockStatus::model()->findAll();
         $stockStatusesList = array();
@@ -114,7 +110,6 @@ class ProductsController extends BackendController {
         $this->render('create', array(
             'model'=>$model,
             'statuses'=>$statuses,
-            'taxClasses'=>$taxClassesList,
             'yes_no'=>$yes_no,
             'stockStatuses'=>$stockStatusesList,
             'weightClasses'=>$weightClassesList,
@@ -146,10 +141,6 @@ class ProductsController extends BackendController {
             1=>Yii::t('common', 'Yes')
         );
         
-        $taxClasses = TaxClass::model()->findAll();
-        $taxClassesList = array();
-        foreach($taxClasses as $taxClass) $taxClassesList[$taxClass->tax_class_id] = $taxClass->title;
-        
         // TODO: add language
         $stockStatuses = StockStatus::model()->findAll();
         $stockStatusesList = array();
@@ -177,7 +168,6 @@ class ProductsController extends BackendController {
         $this->render('update', array(
             'model'=>$model,
             'statuses'=>$statuses,
-            'taxClasses'=>$taxClassesList,
             'yes_no'=>$yes_no,
             'stockStatuses'=>$stockStatusesList,
             'weightClasses'=>$weightClassesList,
