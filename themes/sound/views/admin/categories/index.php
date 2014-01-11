@@ -23,6 +23,7 @@ $this->breadcrumbs = array(
             <th style="width: 1px;"><?php echo CHtml::checkBox('checkall', false); ?></th>
             <th style="width: 1px;"><?php echo Yii::t('categories', 'Order'); ?></th>
             <th><?php echo Yii::t('categories', 'Category Name'); ?></th>
+            <th style="width: 80px;"><?php echo Yii::t('categories', 'Status'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('categories', 'Action'); ?></th>
         </tr>
     </thead>
