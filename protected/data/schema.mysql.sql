@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2014 at 11:44 PM
+-- Generation Time: Jan 11, 2014 at 10:58 AM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -334,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `bottom_most` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=71 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
 
 --
 -- Dumping data for table `category`
@@ -799,80 +799,6 @@ INSERT INTO `country` (`country_id`, `name`, `iso_code_2`, `iso_code_3`, `addres
 (249, 'St. Barthelemy', 'BL', 'BLM', '', 0, 1),
 (250, 'St. Martin (French part)', 'MF', 'MAF', '', 0, 1),
 (251, 'Canary Islands', 'IC', 'ICA', '', 0, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coupon`
---
-
-CREATE TABLE IF NOT EXISTS `coupon` (
-  `coupon_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(128) NOT NULL,
-  `code` varchar(10) NOT NULL,
-  `type` char(1) NOT NULL,
-  `discount` decimal(15,4) NOT NULL,
-  `logged` tinyint(1) NOT NULL,
-  `shipping` tinyint(1) NOT NULL,
-  `total` decimal(15,4) NOT NULL,
-  `date_start` date NOT NULL DEFAULT '0000-00-00',
-  `date_end` date NOT NULL DEFAULT '0000-00-00',
-  `uses_total` int(11) NOT NULL,
-  `uses_customer` varchar(11) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`coupon_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `coupon`
---
-
-INSERT INTO `coupon` (`coupon_id`, `name`, `code`, `type`, `discount`, `logged`, `shipping`, `total`, `date_start`, `date_end`, `uses_total`, `uses_customer`, `status`, `date_added`) VALUES
-(4, '-10% Discount', '2222', 'P', '10.0000', 0, 0, '0.0000', '2011-01-01', '2012-01-01', 10, '10', 1, '2009-01-27 13:55:03'),
-(5, 'Free Shipping', '3333', 'P', '0.0000', 0, 1, '100.0000', '2009-03-01', '2009-08-31', 10, '10', 1, '2009-03-14 21:13:53'),
-(6, '-10.00 Discount', '1111', 'F', '10.0000', 0, 0, '10.0000', '1970-11-01', '2020-11-01', 100000, '10000', 1, '2009-03-14 21:15:18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coupon_category`
---
-
-CREATE TABLE IF NOT EXISTS `coupon_category` (
-  `coupon_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`coupon_id`,`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coupon_history`
---
-
-CREATE TABLE IF NOT EXISTS `coupon_history` (
-  `coupon_history_id` int(11) NOT NULL AUTO_INCREMENT,
-  `coupon_id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `amount` decimal(15,4) NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`coupon_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coupon_product`
---
-
-CREATE TABLE IF NOT EXISTS `coupon_product` (
-  `coupon_product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `coupon_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`coupon_product_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2574,6 +2500,24 @@ INSERT INTO `product_tag` (`product_id`, `tag_text`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_topsales`
+--
+
+CREATE TABLE IF NOT EXISTS `product_topsales` (
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `product_topsales`
+--
+
+INSERT INTO `product_topsales` (`product_id`) VALUES
+(41);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_to_category`
 --
 
@@ -2683,130 +2627,6 @@ INSERT INTO `product_to_store` (`product_id`, `store_id`) VALUES
 (47, 0),
 (48, 0),
 (49, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `return`
---
-
-CREATE TABLE IF NOT EXISTS `return` (
-  `return_id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `email` varchar(96) NOT NULL,
-  `telephone` varchar(32) NOT NULL,
-  `product` varchar(255) NOT NULL,
-  `model` varchar(64) NOT NULL,
-  `quantity` int(4) NOT NULL,
-  `opened` tinyint(1) NOT NULL,
-  `return_reason_id` int(11) NOT NULL,
-  `return_action_id` int(11) NOT NULL,
-  `return_status_id` int(11) NOT NULL,
-  `comment` text,
-  `date_ordered` date NOT NULL,
-  `date_added` datetime NOT NULL,
-  `date_modified` datetime NOT NULL,
-  PRIMARY KEY (`return_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `return_action`
---
-
-CREATE TABLE IF NOT EXISTS `return_action` (
-  `return_action_id` int(11) NOT NULL AUTO_INCREMENT,
-  `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(64) NOT NULL,
-  PRIMARY KEY (`return_action_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `return_action`
---
-
-INSERT INTO `return_action` (`return_action_id`, `language_id`, `name`) VALUES
-(1, 1, 'Refunded'),
-(2, 1, 'Credit Issued'),
-(3, 1, 'Replacement Sent'),
-(1, 2, 'Refunded'),
-(2, 2, 'Credit Issued'),
-(3, 2, 'Replacement Sent');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `return_history`
---
-
-CREATE TABLE IF NOT EXISTS `return_history` (
-  `return_history_id` int(11) NOT NULL AUTO_INCREMENT,
-  `return_id` int(11) NOT NULL,
-  `return_status_id` int(11) NOT NULL,
-  `notify` tinyint(1) NOT NULL,
-  `comment` text NOT NULL,
-  `date_added` datetime NOT NULL,
-  PRIMARY KEY (`return_history_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `return_reason`
---
-
-CREATE TABLE IF NOT EXISTS `return_reason` (
-  `return_reason_id` int(11) NOT NULL AUTO_INCREMENT,
-  `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(128) NOT NULL,
-  PRIMARY KEY (`return_reason_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `return_reason`
---
-
-INSERT INTO `return_reason` (`return_reason_id`, `language_id`, `name`) VALUES
-(1, 1, 'Dead On Arrival'),
-(2, 1, 'Received Wrong Item'),
-(3, 1, 'Order Error'),
-(4, 1, 'Faulty, please supply details'),
-(5, 1, 'Other, please supply details'),
-(1, 2, 'Dead On Arrival'),
-(2, 2, 'Received Wrong Item'),
-(3, 2, 'Order Error'),
-(4, 2, 'Faulty, please supply details'),
-(5, 2, 'Other, please supply details');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `return_status`
---
-
-CREATE TABLE IF NOT EXISTS `return_status` (
-  `return_status_id` int(11) NOT NULL AUTO_INCREMENT,
-  `language_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`return_status_id`,`language_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `return_status`
---
-
-INSERT INTO `return_status` (`return_status_id`, `language_id`, `name`) VALUES
-(1, 1, 'Pending'),
-(3, 1, 'Complete'),
-(2, 1, 'Awaiting Products'),
-(1, 2, 'Pending'),
-(3, 2, 'Complete'),
-(2, 2, 'Awaiting Products');
 
 -- --------------------------------------------------------
 
@@ -3061,99 +2881,6 @@ CREATE TABLE IF NOT EXISTS `store` (
   `ssl` varchar(255) NOT NULL,
   PRIMARY KEY (`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tax_class`
---
-
-CREATE TABLE IF NOT EXISTS `tax_class` (
-  `tax_class_id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(32) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`tax_class_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `tax_class`
---
-
-INSERT INTO `tax_class` (`tax_class_id`, `title`, `description`, `date_added`, `date_modified`) VALUES
-(9, 'Taxable Goods', 'Taxed Stuff', '2009-01-06 23:21:53', '2011-09-23 14:07:50'),
-(10, 'Downloadable Products', 'Downloadable', '2011-09-21 22:19:39', '2011-09-22 10:27:36');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tax_rate`
---
-
-CREATE TABLE IF NOT EXISTS `tax_rate` (
-  `tax_rate_id` int(11) NOT NULL AUTO_INCREMENT,
-  `geo_zone_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(32) NOT NULL,
-  `rate` decimal(15,4) NOT NULL DEFAULT '0.0000',
-  `type` char(1) NOT NULL,
-  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`tax_rate_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
-
---
--- Dumping data for table `tax_rate`
---
-
-INSERT INTO `tax_rate` (`tax_rate_id`, `geo_zone_id`, `name`, `rate`, `type`, `date_added`, `date_modified`) VALUES
-(86, 3, 'VAT (17.5%)', '17.5000', 'P', '2011-03-09 21:17:10', '2011-09-22 22:24:29'),
-(87, 3, 'Eco Tax (-2.00)', '2.0000', 'F', '2011-09-21 21:49:23', '2011-09-23 00:40:19');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tax_rate_to_customer_group`
---
-
-CREATE TABLE IF NOT EXISTS `tax_rate_to_customer_group` (
-  `tax_rate_id` int(11) NOT NULL,
-  `customer_group_id` int(11) NOT NULL,
-  PRIMARY KEY (`tax_rate_id`,`customer_group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tax_rate_to_customer_group`
---
-
-INSERT INTO `tax_rate_to_customer_group` (`tax_rate_id`, `customer_group_id`) VALUES
-(86, 1),
-(87, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tax_rule`
---
-
-CREATE TABLE IF NOT EXISTS `tax_rule` (
-  `tax_rule_id` int(11) NOT NULL AUTO_INCREMENT,
-  `tax_class_id` int(11) NOT NULL,
-  `tax_rate_id` int(11) NOT NULL,
-  `based` varchar(10) NOT NULL,
-  `priority` int(5) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`tax_rule_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=129 ;
-
---
--- Dumping data for table `tax_rule`
---
-
-INSERT INTO `tax_rule` (`tax_rule_id`, `tax_class_id`, `tax_rate_id`, `based`, `priority`) VALUES
-(121, 10, 86, 'payment', 1),
-(120, 10, 87, 'store', 0),
-(128, 9, 86, 'shipping', 1),
-(127, 9, 87, 'shipping', 2);
 
 -- --------------------------------------------------------
 
