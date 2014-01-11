@@ -47,7 +47,7 @@ class TopSalesController extends BackendController {
         
         $productDescriptions = ProductDescription::model()->findAll("name LIKE '%{$query}%' ");
         foreach($productDescriptions as $description){
-            $json[] = array('id'=>$description->product_id, 'value'=>$description->name);
+            $json[] = array('id'=>$description->product_id, 'value'=>"ID:{$description->product_id} {$description->name}");
         }
         
         echo CJSON::encode($json);
