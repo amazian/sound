@@ -37,9 +37,6 @@ class ProductTag extends CActiveRecord
 		return array(
 			array('product_id, tag_text', 'required'),
 			array('product_id', 'length', 'max'=>20),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('product_id, tag_text', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,9 +45,8 @@ class ProductTag extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
+            'product'=>array(self::BELONGS_TO, 'Product', 'product_id')
 		);
 	}
 
@@ -63,24 +59,5 @@ class ProductTag extends CActiveRecord
 			'product_id' => 'Product',
 			'tag_text' => 'Tag Text',
 		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('product_id',$this->product_id,true);
-		$criteria->compare('tag_text',$this->tag_text,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
 	}
 }

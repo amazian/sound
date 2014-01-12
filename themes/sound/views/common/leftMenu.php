@@ -43,7 +43,7 @@ Yii::app()->clientScript->registerCoreScript('cookie');
         $tags = ProductTag::model()->findAllBySql("SELECT * FROM product_tag GROUP BY tag_text");
         foreach($tags as $tag):
         ?>
-            <a href="#" class="btn btn-mini"><?php echo $tag->tag_text; ?></a>
+            <a href="<?php echo $this->createUrl('/tag/index', array('text'=>$tag->tag_text)); ?>" class="btn btn-mini"><?php echo $tag->tag_text; ?></a>
         <?php endforeach; ?>
     </div>
     <br />
