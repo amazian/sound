@@ -67,6 +67,7 @@ class Manufacturer extends CActiveRecord {
     public function relations() {
         return array(
             'stores' => array(self::MANY_MANY, 'Store', 'manufacturer_to_store(manufacturer_id, store_id)'),
+            'products' => array(self::HAS_MANY, 'Product', 'manufacturer_id')
         );
     }
 
