@@ -37,6 +37,25 @@ Yii::app()->clientScript->registerCoreScript('cookie');
     <div class="clearfix"></div>
     <div class="tags-container">
         <ul class="breadcrumb">
+            <li>Brands</li>
+        </ul>
+        <?php
+        $manufacturers = Manufacturer::model()->findAll();
+        foreach($manufacturers as $manufacturer):
+        ?>
+        <div class="row-fluid">
+            <div class="span3">
+                <img src="<?php echo $manufacturer->getImageWithSize(50, 50); ?>" />
+            </div>
+            <div class="span9" style="padding-top: 16px; padding-left: 15px;">
+                <a href="<?php echo $this->createUrl('/manufacturer/index', array('id'=>$manufacturer->manufacturer_id)); ?>"><?php echo $manufacturer->name; ?></a>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="clearfix"></div>
+    <div class="tags-container">
+        <ul class="breadcrumb">
             <li>Tags</li>
         </ul>
         <?php
