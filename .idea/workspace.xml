@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/TopSalesController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/TopSalesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/category/_categoryProducts.php" afterPath="$PROJECT_DIR$/themes/sound/views/category/_categoryProducts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" afterPath="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/layouts/main.php" afterPath="$PROJECT_DIR$/themes/sound/views/layouts/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/css/style.css" afterPath="$PROJECT_DIR$/themes/sound/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/products/update.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/products/update.php" />
@@ -45,17 +46,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="134" column="17" selection-start="4839" selection-end="4839" vertical-scroll-proportion="-13.125" vertical-offset="1695" max-vertical-offset="3645">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/categories/_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="50" selection-start="464" selection-end="464" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="285">
-              <folding>
-                <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -108,8 +98,19 @@
       <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/layouts/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="179" selection-start="3605" selection-end="3605" vertical-scroll-proportion="-18.458334" vertical-offset="622" max-vertical-offset="1350">
+            <state line="71" column="179" selection-start="3605" selection-end="3605" vertical-scroll-proportion="-30.958334" vertical-offset="322" max-vertical-offset="1350">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leftMenu.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/common/leftMenu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="10" selection-start="1733" selection-end="1733" vertical-scroll-proportion="-25.25" vertical-offset="129" max-vertical-offset="840">
+              <folding>
+                <marker date="1389484891000" expanded="true" signature="1503:1546" placeholder="SELECT * FRO..product_tag..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +118,7 @@
       <file leaf-file-name="style.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="41" selection-start="328" selection-end="328" vertical-scroll-proportion="0.35450518" vertical-offset="0" max-vertical-offset="3135">
+            <state line="1" column="23" selection-start="30" selection-end="30" vertical-scroll-proportion="0.022156574" vertical-offset="0" max-vertical-offset="3120">
               <folding />
             </state>
           </provider>
@@ -138,7 +139,6 @@
       <list>
         <option value="$PROJECT_DIR$/protected/controllers/CategoryController.php" />
         <option value="$PROJECT_DIR$/protected/extensions/yii-jqTree/source/tree.jquery.js" />
-        <option value="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ManufacturersController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/models/ManufacturerForm.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/manufacturers/create.php" />
@@ -179,6 +179,7 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/products/update.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
         <option value="$PROJECT_DIR$/themes/sound/css/style.css" />
       </list>
     </option>
@@ -355,153 +356,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="category" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="topSales" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="products" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="categories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -872,11 +753,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/common/leftMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="789" selection-end="793" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="930" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/UserIdentity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704" />
@@ -1204,14 +1080,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="179" selection-start="3605" selection-end="3605" vertical-scroll-proportion="-18.458334" vertical-offset="622" max-vertical-offset="1350">
+        <state line="71" column="179" selection-start="3605" selection-end="3605" vertical-scroll-proportion="-30.958334" vertical-offset="322" max-vertical-offset="1350">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/common/leftMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="10" selection-start="1733" selection-end="1733" vertical-scroll-proportion="-25.25" vertical-offset="129" max-vertical-offset="840">
+          <folding>
+            <marker date="1389484891000" expanded="true" signature="1503:1546" placeholder="SELECT * FRO..product_tag..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="41" selection-start="328" selection-end="328" vertical-scroll-proportion="0.35450518" vertical-offset="0" max-vertical-offset="3135">
+        <state line="1" column="23" selection-start="30" selection-end="30" vertical-scroll-proportion="0.022156574" vertical-offset="0" max-vertical-offset="3120">
           <folding />
         </state>
       </provider>
