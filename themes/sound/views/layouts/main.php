@@ -40,7 +40,7 @@
                     <a class="brand" href="<?php echo $this->createUrl('/site/index'); ?>"><img alt="YOSON AUDIO" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/logo-home.png" /> </a>
                     <div class="nav-collapse collapse">
                         <p class="navbar-text pull-right">
-                            <!--Logged in as <a href="#" class="navbar-link">Username</a>-->
+                            <?php if(Yii::app()->user->isGuest): ?><a href="<?php echo $this->createUrl('/site/login'); ?>" class="navbar-link">Login</a><?php else: ?>Welcome, go to your <a href="#" class="navbar-link">account</a><?php endif; ?> / <a href="<?php echo $this->createUrl('/shoppingCart/index'); ?>" class="navbar-link">My Cart</a><?php if(Yii::app()->user->isGuest): ?> / <a href="<?php echo $this->createUrl('/site/register'); ?>" class="navbar-link">Register</a><?php endif; ?>
                         </p>
                         <ul class="nav">
 
