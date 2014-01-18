@@ -1,4 +1,13 @@
+<?php if(!Yii::app()->user->isGuest): ?>
+
+<?php
+$this->renderPartial('/myAccount/_leftMenu');
+?>
+
+<div class="span9">
+<?php else: ?>
 <div class="span12">
+<?php endif; ?>
 
 
     <h1> Shopping Cart</h1><br>

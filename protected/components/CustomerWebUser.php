@@ -27,4 +27,8 @@ class CustomerWebUser extends CWebUser
 
         return $products;
     }
+
+    public function countItemsOnCart() {
+        return count($this->getItemsOnCart());
+    }
 }
