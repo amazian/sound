@@ -11,8 +11,8 @@ Yii::app()->clientScript->registerCoreScript('cookie');
         </ul>
         <div id="column-left" class="span3">
             <ul class="nav-pills">
-                <li><a href="<?php echo $this->createUrl('information'); ?>">Information</a></li>
-                <li><a href="<?php echo $this->createUrl('changePassword'); ?>">Change password</a></li>
+                <li><a href="<?php echo $this->createUrl('/myAccount/information'); ?>">Information</a></li>
+                <li><a href="<?php echo $this->createUrl('/myAccount/changePassword'); ?>">Change password</a></li>
             </ul>
         </div><!-- end sidebar -->
     </div>
@@ -26,7 +26,7 @@ Yii::app()->clientScript->registerCoreScript('cookie');
         <div id="column-left" class="span3">
             <ul class="nav-pills">
                 <li><a href="<?php echo $this->createUrl('/shoppingCart/index'); ?>">My Cart</a></li>
-                <li><a href="<?php echo $this->createUrl('orders'); ?>">Purchase Records</a></li>
+                <li><a href="<?php echo $this->createUrl('/myAccount/orders'); ?>">Purchase Records</a></li>
             </ul>
         </div><!-- end sidebar -->
     </div>
