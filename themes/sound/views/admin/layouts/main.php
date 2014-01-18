@@ -103,16 +103,6 @@
                                         <li><a href="<?php echo $this->createUrl('/admin/reports/affiliates'); ?>">Affiliates</a></li>
                                     </ul>
                                 </li>-->
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo Yii::t('help', 'Help'); ?> <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="https://github.com/damnpoet/yiicart"><?php echo Yii::t('help', 'Github Page'); ?></a></li>
-                                        <li class="divider"></li>
-                                        <li class="nav-header"><?php echo Yii::t('admin', 'Contribute'); ?></li>
-                                        <li><a href="https://github.com/damnpoet/yiicart/pulls"><?php echo Yii::t('help', 'Pull request'); ?></a></li>
-                                        <li><a href="https://github.com/damnpoet/yiicart/issues"><?php echo Yii::t('help', 'Report issues'); ?></a></li>
-                                    </ul>
-                                </li>
                             </ul>
                             <ul class="nav pull-right">
                                 <li><a href="<?php echo $this->createUrl('/'); ?>"><?php echo Yii::t('help', 'Store Front'); ?></a></li>
