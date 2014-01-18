@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2014 at 10:58 AM
+-- Generation Time: Jan 18, 2014 at 08:40 AM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -343,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 INSERT INTO `category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`, `bottom_most`) VALUES
 (25, '', 0, 1, 1, 3, 1, '2009-01-31 01:04:25', '2013-07-22 00:00:00', 0),
 (27, '', 20, 0, 0, 2, 1, '2009-01-31 01:55:34', '2013-07-22 00:00:00', 0),
-(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2014-01-05 00:00:00', NULL),
+(20, 'data/categories/P_500.jpg', 0, 0, 0, 0, 1, '2009-01-05 21:49:43', '2014-01-11 00:00:00', NULL),
 (18, 'data/demo/hp_2.jpg', 0, 1, 0, 2, 1, '2009-01-05 21:49:15', '2013-07-22 00:00:00', 0),
 (28, '', 25, 0, 0, 1, 1, '2009-02-02 13:11:12', '2013-07-22 00:00:00', 0),
 (26, '', 20, 0, 0, 1, 1, '2009-01-31 01:55:14', '2013-07-22 00:00:00', 0),
@@ -835,32 +835,24 @@ INSERT INTO `currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_r
 CREATE TABLE IF NOT EXISTS `customer` (
   `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL DEFAULT '0',
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
+  `name` varchar(32) NOT NULL,
   `email` varchar(96) NOT NULL,
   `telephone` varchar(32) NOT NULL,
-  `fax` varchar(32) NOT NULL,
   `password` varchar(40) NOT NULL,
-  `salt` varchar(9) NOT NULL,
   `cart` text,
   `wishlist` text,
-  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
-  `address_id` int(11) NOT NULL DEFAULT '0',
-  `customer_group_id` int(11) NOT NULL,
-  `ip` varchar(40) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL,
-  `approved` tinyint(1) NOT NULL,
-  `token` varchar(255) NOT NULL,
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `address` text,
   PRIMARY KEY (`customer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customer_id`, `store_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `password`, `salt`, `cart`, `wishlist`, `newsletter`, `address_id`, `customer_group_id`, `ip`, `status`, `approved`, `token`, `date_added`) VALUES
-(1, 0, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', '8961b777fa1c363e7f122bc4110bc29b20120e80', 'e7a84e537', 'a:0:{}', 'a:0:{}', 0, 1, 1, '::1', 1, 1, '', '2013-06-26 16:21:18');
+INSERT INTO `customer` (`customer_id`, `store_id`, `name`, `email`, `telephone`, `password`, `cart`, `wishlist`, `status`, `date_added`, `address`) VALUES
+(2, 0, 'Richard Gonzalez Alberto', 'damnpoet@gmail.com', '3057135529', 'e41d09e4c6647a05a3e5bd5544697d95', NULL, NULL, 1, '2014-01-17 00:00:00', '13878 SW 157th Ter');
 
 -- --------------------------------------------------------
 
@@ -2064,7 +2056,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `primary_spec` int(11) DEFAULT NULL,
   `preview` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Dumping data for table `product`
@@ -2088,9 +2080,7 @@ INSERT INTO `product` (`product_id`, `model`, `type`, `sku`, `upc`, `ean`, `jan`
 (48, 'product 20', NULL, 'test 1', '', '', '', '', '', 'test 2', 995, 5, 'data/demo/ipod_classic_1.jpg', 8, 1, '100.0000', 0, 9, '2009-02-08', '1.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 2, 1, 1, 0, 1, '2009-02-08 17:21:51', '2011-09-30 01:07:06', 0, 0, NULL, 0),
 (49, 'SAM1', NULL, '', '', '', '', '', '', '', 0, 8, 'data/demo/samsung_tab_1.jpg', 0, 1, '199.9900', 0, 9, '2011-04-25', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, '2011-04-26 08:57:34', '2011-09-30 01:06:23', 2, 0, NULL, 0),
 (70, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0),
-(75, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
-(74, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 0, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
-(72, '45345', 'dfgdsg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 0, '3333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 0, 0, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 0),
+(77, '345345', 'dfgsdfg', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '333.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 3, NULL, 1),
 (71, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0),
 (68, '45345', 'gdfg', '', '', '', '', '', '', '', 0, 0, '', 5, 1, '1222.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 22, NULL, 0),
 (69, '34333', 'dfd', '', '', '', '', '', '', '', 0, 0, 'data/products/1002579_513835668705856_121241985_n.jpg', 5, 1, '33.0000', 0, 0, '0000-00-00', '0.00000000', 0, '0.00000000', '0.00000000', '0.00000000', 0, 1, 1, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 2, NULL, 0);
@@ -2195,10 +2185,8 @@ INSERT INTO `product_description` (`product_id`, `language_id`, `name`, `descrip
 (69, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
 (70, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
 (71, 1, 'sdfg', '<p>sdfgsdfg</p>\r\n', '', '', ''),
-(72, 1, 'fdgsdgfsdfg12345', '<p>sdfgsdfg</p>\r\n', '', '', ''),
-(73, 1, 'dfghdf', '<p>ghdfghdfgh</p>\r\n', '', '', ''),
-(74, 1, 'dfghdf!@#$%^', '<p>ghdfghdfgh</p>\r\n', '', '', ''),
-(75, 1, 'dfghdf', '<p>ghdfghdfgh</p>\r\n', '', '', '');
+(77, 1, 'dfghdf0000000', '<p>ghdfghdfgh</p>\r\n', '', '', ''),
+(73, 1, 'dfghdf', '<p>ghdfghdfgh</p>\r\n', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2389,7 +2377,7 @@ CREATE TABLE IF NOT EXISTS `product_spec` (
   `value_init` text NOT NULL,
   `value_end` text,
   PRIMARY KEY (`product_spec_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=159 ;
 
 --
 -- Dumping data for table `product_spec`
@@ -2417,8 +2405,12 @@ INSERT INTO `product_spec` (`product_spec_id`, `product_id`, `spec_id`, `unit_id
 (139, 75, 1, 1, '55', ''),
 (140, 75, 3, 1, '555', ''),
 (142, 74, 3, 1, '8888', ''),
-(145, 73, 1, 1, '55', ''),
-(146, 73, 3, 1, '3', '');
+(151, 76, 1, 1, '55', ''),
+(156, 73, 3, 1, '3', ''),
+(152, 76, 3, 1, '3', ''),
+(155, 73, 1, 1, '55', ''),
+(157, 77, 1, 1, '55', ''),
+(158, 77, 3, 1, '3', '');
 
 -- --------------------------------------------------------
 
@@ -2495,7 +2487,11 @@ INSERT INTO `product_tag` (`product_id`, `tag_text`) VALUES
 (74, 'dfdfd'),
 (74, 'dfsdf'),
 (75, 'dfdfd'),
-(75, 'dfsdf');
+(75, 'dfsdf'),
+(76, 'dfdfd'),
+(76, 'dfsdf'),
+(77, 'dfdfd'),
+(77, 'dfsdf');
 
 -- --------------------------------------------------------
 
@@ -2513,7 +2509,12 @@ CREATE TABLE IF NOT EXISTS `product_topsales` (
 --
 
 INSERT INTO `product_topsales` (`product_id`) VALUES
-(41);
+(28),
+(34),
+(36),
+(40),
+(41),
+(60);
 
 -- --------------------------------------------------------
 
@@ -2567,10 +2568,8 @@ INSERT INTO `product_to_category` (`product_id`, `category_id`) VALUES
 (69, 25),
 (70, 25),
 (71, 25),
-(72, 65),
 (73, 45),
-(74, 45),
-(75, 45);
+(77, 45);
 
 -- --------------------------------------------------------
 
