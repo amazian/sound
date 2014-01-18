@@ -14,6 +14,7 @@
  * @property string $wishlist
  * @property integer $status
  * @property string $date_added
+ * @property string $address
  */
 class Customer extends CActiveRecord
 {
@@ -38,10 +39,10 @@ class Customer extends CActiveRecord
 			array('name, telephone', 'length', 'max'=>32),
 			array('email', 'length', 'max'=>96),
 			array('password', 'length', 'max'=>40),
-			array('cart, wishlist, date_added', 'safe'),
+			array('cart, wishlist, date_added, address', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('customer_id, store_id, name, email, telephone, password, cart, wishlist, status, date_added', 'safe', 'on'=>'search'),
+			array('customer_id, store_id, name, email, telephone, password, cart, wishlist, status, date_added, address', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,6 +73,7 @@ class Customer extends CActiveRecord
 			'wishlist' => 'Wishlist',
 			'status' => 'Status',
 			'date_added' => 'Date Added',
+			'address' => 'Address',
 		);
 	}
 
@@ -103,6 +105,7 @@ class Customer extends CActiveRecord
 		$criteria->compare('wishlist',$this->wishlist,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('date_added',$this->date_added,true);
+		$criteria->compare('address',$this->address,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
