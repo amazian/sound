@@ -5,7 +5,7 @@ class LoginController extends BackendController {
     public $layout='/layouts/login';
 
     public function actionIndex() {
-        if (!Yii::app()->user->isGuest)
+        if (!Yii::app()->admin->isGuest)
             $this->redirect('default/index');
         else {
             $model = new LoginForm;
@@ -26,5 +26,10 @@ class LoginController extends BackendController {
             // display the login form
             $this->render('index', array('model' => $model));
         }
+    }
+
+    public function actionLogout() {
+        Yii::app()->admin->logout();
+        $this->redirect(Yii::app()->homeUrl);
     }
 }

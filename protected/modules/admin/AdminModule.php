@@ -11,6 +11,11 @@ class AdminModule extends CWebModule {
 
     public function beforeControllerAction($controller, $action) {
         if (parent::beforeControllerAction($controller, $action)) {
+
+            // Make 'admin' the main user in this module.
+            Yii::app()->setComponent('user', Yii::app()->admin);
+            Yii::app()->setComponent('admin', Yii::app()->admin);
+
             return true;
         }
         else

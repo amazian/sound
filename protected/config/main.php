@@ -42,6 +42,10 @@ return array(
             'class'=>'CustomerWebUser',
             'allowAutoLogin' => true,
         ),
+        'admin' => array(
+            'class'=>'AdministratorWebUser',
+            'allowAutoLogin' => true,
+        ),
         // uncomment the following to enable URLs in path-format
 
         'urlManager' => array(

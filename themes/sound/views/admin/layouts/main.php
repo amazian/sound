@@ -108,7 +108,7 @@
                                 <li><a href="<?php echo $this->createUrl('/'); ?>"><?php echo Yii::t('help', 'Store Front'); ?></a></li>
                                 <li class="divider-vertical"></li>
                                 <li class="dropdown">
-                                    <a class="" href="<?php echo $this->createUrl('/site/logout'); ?>"><?php echo Yii::t('site', 'Logout'); ?></a>
+                                    <a class="" href="<?php echo $this->createUrl('/admin/login/logout'); ?>"><?php echo Yii::t('site', 'Logout'); ?></a>
                                 </li>
                             </ul>
                         </div><!-- /.nav-collapse -->

@@ -41,8 +41,15 @@ return array(
         'user' => array(
             'class'=>'CustomerWebUser',
             'allowAutoLogin' => true,
+            'loginUrl'          => array('site/login'),
+            'stateKeyPrefix'    => 'frontend_',
         ),
-        // uncomment the following to enable URLs in path-format
+        'admin' => array(
+            'class'=>'AdministratorWebUser',
+            'allowAutoLogin' => true,
+            'loginUrl'          => array('/admin/default/login'),
+            'stateKeyPrefix'    => 'admin_',
+        ),
 
         'urlManager' => array(
             'urlFormat' => 'path',
