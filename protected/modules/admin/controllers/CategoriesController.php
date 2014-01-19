@@ -88,11 +88,15 @@ class CategoriesController extends BackendController {
             // ignore parent category and childs, wtf? NOTE: this was requested on Correction_sound#1_7.26
             // : a) Parent's autocomplete droplist: SET IT as do not show self and self's child as an option.
             if($categoryId){
-                $category = Category::model()->findByPk($description->category_id);
-                if(!is_null($category) && ($category->category_id == $categoryId || $category->parent == $categoryId))
-                    continue;
-                elseif($category->getLevel() != $description->category->getLevel())
-                    continue;
+                $category = Category::model()->findByPk($categoryId);
+                if(!is_null($category)) {
+                    $childLevel = $category->getMaxChildLevel() - $category->getLevel() + 1;
+                    $parentLevel = $description->category->getLevel();
+
+                    if($parentLevel + $childLevel > 3) {
+                        continue;
+                    }
+                }
             }
 
             if(!$description->category->isBottomMost() && $description->category->getLevel() < 3)
