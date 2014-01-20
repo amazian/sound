@@ -33,7 +33,15 @@ return array(
         
         'admin' => array(
             'class' => 'application.modules.admin.AdminModule',
-        )
+        ),
+
+        'SimplePaypal' => array(
+            'components' => array(
+                'paypalManager' => array(
+                    'class' => 'SimplePaypal.components.Paypal',
+                ),
+            ),
+        ),
     ),
     
     // application components

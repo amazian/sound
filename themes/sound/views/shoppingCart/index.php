@@ -92,7 +92,7 @@ $this->renderPartial('/myAccount/_leftMenu');
                     <a type="submit" class="btn btn-primary" href="<?php echo $this->createUrl('/site/index'); ?>">Continue shopping</a>
                 </div>		  
                 <div class="span5">
-                    <a class="btn btn-primary pull-right" href="#">Checkout</a>
+                    <a class="btn btn-primary pull-right" href="<?php echo $this->createUrl('checkout'); ?>">Checkout</a>
                 </div>
             </div>
         </fieldset>
