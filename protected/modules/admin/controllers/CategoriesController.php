@@ -90,16 +90,16 @@ class CategoriesController extends BackendController {
             if($categoryId){
                 $category = Category::model()->findByPk($categoryId);
                 if(!is_null($category)) {
-                    $childLevel = $category->getMaxChildLevel() - $category->getLevel() + 1;
+                    $childLevel = $category->getMaxChildLevel() - $category->getLevel();
                     $parentLevel = $description->category->getLevel();
 
-                    if($parentLevel + $childLevel > 3) {
+                    if(($parentLevel + $childLevel + 1) >= 3) {
                         continue;
                     }
                 }
             }
 
-            if(!$description->category->isBottomMost() && $description->category->getLevel() < 3)
+            if(!$description->category->isBottomMost() && !$description->category->hasDirectProducts())
                 $json[] = array('id'=>$description->category_id, 'value'=>$description->category->getFullname());
         }
         

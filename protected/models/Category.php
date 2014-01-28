@@ -191,6 +191,10 @@ class Category extends CActiveRecord {
         return (!$this->isBottomMost() && count($this->childCategories) > 0) ? true : false;
     }
 
+    public function hasDirectProducts() {
+        return count($this->activeProducts) > 0 ? true : false;
+    }
+
     public function hasProducts() {
         return count($this->getProductsCount()) > 0 ? true : false;
     }
