@@ -48,9 +48,6 @@ class OrderProduct extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			array('model', 'length', 'max'=>64),
 			array('price, total, tax', 'length', 'max'=>15),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('order_product_id, order_id, product_id, name, model, quantity, price, total, tax, reward', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,8 +56,6 @@ class OrderProduct extends CActiveRecord
 	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
 		);
 	}
@@ -82,32 +77,5 @@ class OrderProduct extends CActiveRecord
 			'tax' => 'Tax',
 			'reward' => 'Reward',
 		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('order_product_id',$this->order_product_id);
-		$criteria->compare('order_id',$this->order_id);
-		$criteria->compare('product_id',$this->product_id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('model',$this->model,true);
-		$criteria->compare('quantity',$this->quantity);
-		$criteria->compare('price',$this->price,true);
-		$criteria->compare('total',$this->total,true);
-		$criteria->compare('tax',$this->tax,true);
-		$criteria->compare('reward',$this->reward);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
 	}
 }

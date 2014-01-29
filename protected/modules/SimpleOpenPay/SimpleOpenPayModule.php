@@ -28,6 +28,8 @@ class SimpleOpenPayModule extends CWebModule {
 
     public $openPayUrl;
 
+    public $language;
+
     /**
      * @var string merchant id
      */
@@ -42,7 +44,7 @@ class SimpleOpenPayModule extends CWebModule {
             'SimplePaypal.components.*',
         ));
 
-        $model = OpenpaySetting::model()->findByPk(1);
+        $model = OpenpaySetting::model()->find();
 
         $this->openPayUrl = self::OPENPAY_PRODUCTION;
 
@@ -51,6 +53,7 @@ class SimpleOpenPayModule extends CWebModule {
         $this->notifyUrl = $model->notify_url;
         $this->currency = $this->currency;
         $this->mid = $model->mid;
+        $this->language = $model->language;
     }
 
     public function beforeControllerAction($controller, $action) {

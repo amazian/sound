@@ -32,22 +32,38 @@ class ShoppingCartController extends Controller {
             if ($model->validate()) {
                 if($orderId = $model->createOrder()) {
                     // clear shopping cart
-                    Yii::app()->user->clearItemsOnCart();
+                    //Yii::app()->user->clearItemsOnCart();
 
                     $order = Order::model()->findByPk($orderId);
 
-                    // redirect to payment gateway TODO: make dynamic, for the moment only paypal
-                    $paypalManager = Yii::app()->getModule('SimplePaypal')->paypalManager;
+                    // redirect to payment gateway
+                    if($model->paymentGateway == CheckoutForm::PAYMENT_METHOD_PAYPAL) {
+                        $paypalManager = Yii::app()->getModule('SimplePaypal')->paypalManager;
 
-                    $paypalManager->addField('item_name', 'Purchase at Sound');
-                    $paypalManager->addField('amount', '50');
-                    $paypalManager->addField('item_name_1', 'Test Title');
-                    $paypalManager->addField('quantity_1', '2');
-                    $paypalManager->addField('amount_1', 1);
-                    $paypalManager->addField('custom', '111');
+                        $paypalManager->addField('item_name', 'Items on Shopping Cart');
+                        $paypalManager->addField('amount', (float) $order->total);
 
-                    //$paypalManager->dumpFields();   // for printing paypal form fields
-                    $paypalManager->submitPaypalPost();
+                        // list items
+                        foreach($order->products as $id => $orderProduct) {
+                            $paypalManager->addField('item_name_' . ($id+1), $orderProduct->name);
+                            $paypalManager->addField('quantity_' . ($id+1), (int)$orderProduct->quantity);
+                            $paypalManager->addField('amount_' . ($id+1), (float)$orderProduct->price);
+                        }
+
+                        //$paypalManager->dumpFields();   // for printing paypal form fields
+                        $paypalManager->submitPaypalPost();
+                    }
+                    else {
+                        $openPayManager = Yii::app()->getModule('SimpleOpenPay')->openPayManager;
+
+                        $openPayManager->addField('txid', '222222'); // Merchants Order Number
+                        $openPayManager->addField('amount', $order->total);
+                        //$openPayManager->addField('Parameter check 1', '8cfe9eceb4457332e6dee59fa436c078');
+                        //$openPayManager->addField('Parameter check 2', '8f2d1f6fa969e7e12efca50099691f9a');
+
+                        //$openPayManager->dumpFields();   // for printing openpay form fields
+                        $openPayManager->submitOpenPayPost();
+                    }
                 }
             }
 

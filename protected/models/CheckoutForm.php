@@ -118,6 +118,7 @@ class CheckoutForm extends CFormModel {
             $order->date_modified = date("Y-m-d H:i:s");
 
             if($order->save()) {
+
                 // save products
                 foreach($products as $product) {
                     $orderProduct = new OrderProduct;
@@ -130,9 +131,10 @@ class CheckoutForm extends CFormModel {
                     $orderProduct->total = $product->price * $orderProduct->quantity;
                     $orderProduct->tax = 0;
                     $orderProduct->reward = 0;
+                    $orderProduct->save();
                 }
 
-                return true;
+                return $order->order_id;
             }
             else
                 return false;

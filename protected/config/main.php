@@ -42,6 +42,14 @@ return array(
                 ),
             ),
         ),
+
+        'SimpleOpenPay' => array(
+            'components' => array(
+                'openPayManager' => array(
+                    'class' => 'SimpleOpenPay.components.OpenPay',
+                ),
+            ),
+        ),
     ),
     
     // application components

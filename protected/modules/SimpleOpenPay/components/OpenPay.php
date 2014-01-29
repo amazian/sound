@@ -29,6 +29,8 @@ class OpenPay extends CComponent {
 
     public $openPayUrl;
 
+    public $language;
+
     /**
      * @var string paypal business/merchant email
      */
@@ -37,7 +39,8 @@ class OpenPay extends CComponent {
     public $fields = array();           // array holds the fields to submit to openpay
 
     public function init() {
-        $this->openPayUrl = Yii::app()->getModule('SimpleOpenPay')->paypalUrl;
+        $this->openPayUrl = Yii::app()->getModule('SimpleOpenPay')->openPayUrl;
+        $this->language = Yii::app()->getModule('SimpleOpenPay')->language;
 
         $this->returnUrl = Yii::app()->createAbsoluteUrl(Yii::app()->getModule('SimpleOpenPay')->returnUrl);
         $this->cancelUrl = Yii::app()->createAbsoluteUrl(Yii::app()->getModule('SimpleOpenPay')->cancelUrl);
@@ -51,27 +54,16 @@ class OpenPay extends CComponent {
         // values can be overwritten by the calling script.
 
         $this->addField('version', '1.0');           // Return method = POST
-        $this->addField('mid', $this->merc);
-        $this->addField('business', $this->businessEmail);
+        $this->addField('mid', $this->mid);
+        $this->addField('charset', 'UTF-8');
         $this->addField('return', $this->returnUrl . '&q=success');
         $this->addField('cancel_return', $this->cancelUrl . '&q=cancel');
         $this->addField('notify_url', $this->notifyUrl . '&q=ipn');
-        $this->addField('currency_code', $this->currency);
+        $this->addField('language', $this->language);
     }
 
     public function __construct() {
         
-    }
-
-    public function test() {
-        echo 'paypalUrl: ' . $this->paypalUrl . '<br/>';
-        echo 'returnUrl: ' . $this->returnUrl . '<br/>';
-        echo 'cancelUrl: ' . $this->cancelUrl . '<br/>';
-        echo 'notifyUrl: ' . $this->notifyUrl . '<br/>';
-        echo 'currency: ' . $this->currency . '<br/>';
-        echo 'businessEmail: ' . $this->businessEmail . '<br/>';
-
-        print '<pre>' . print_r($this->fields, 1) . '</pre>';
     }
 
     public function addField($field, $value) {
@@ -83,7 +75,7 @@ class OpenPay extends CComponent {
         $this->fields["$field"] = $value;
     }
 
-    public function submitPaypalPost() {
+    public function submitOpenPayPost() {
 
         // this function actually generates an entire HTML page consisting of
         // a form with hidden elements which is submitted to paypal via the 
@@ -100,7 +92,7 @@ class OpenPay extends CComponent {
         echo "<head><title>Processing Payment...</title></head>\n";
         echo "<body onLoad=\"document.form.submit();\">\n";
         echo "<center><h3>Please wait, your order is being processed...</h3></center>\n";
-        echo "<form method=\"post\" name=\"form\" action=\"" . $this->paypalUrl . "\">\n";
+        echo "<form method=\"post\" name=\"form\" action=\"" . $this->openPayUrl . "\">\n";
 
         foreach ($this->fields as $name => $value) {
             echo "<input type=\"hidden\" name=\"$name\" value=\"$value\">";
@@ -108,14 +100,6 @@ class OpenPay extends CComponent {
 
         echo "</form>\n";
         echo "</body></html>\n";
-    }
-
-    public function notify() {
-        $listener = new IpnListener();
-        $listener->use_curl = false;
-        $listener->use_sandbox = $this->paypalSandbox;
-
-        return $listener->processIpn();
     }
 
     public function dumpFields() {
