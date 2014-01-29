@@ -26,7 +26,7 @@ class SimplePaypalModule extends CWebModule {
     /**
      * @var string Default currency to use
      */
-    public $currency = 'USD';
+    public $currency = 'NTD';
 
     /**
      * @var string|array server URL which you have to connect for submitting your API request

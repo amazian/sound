@@ -61,9 +61,7 @@ class ShoppingCartController extends Controller {
             $model->address = $customer->address;
         }
 
-        $shippingOptions = array(
-            0 => 'Default'
-        );
+        $shippingOptions = CHtml::listData(DeliveryMethod::model()->findAll(), 'delivery_method_id', 'text');
 
         $paymentGateways = array(
             CheckoutForm::PAYMENT_METHOD_OPENPAY => 'OpenPay',

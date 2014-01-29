@@ -61,17 +61,15 @@
                                         <li><a href="<?php echo $this->createUrl('/admin/information'); ?>">Information</a></li>-->
                                     </ul>
                                 </li>
-                                <!--<li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Extensions <b class="caret"></b></a>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Delivery & Payment<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?php echo $this->createUrl('/admin/modules'); ?>">Modules</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/shipping'); ?>">Shipping</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/payment'); ?>">Payment</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/totals'); ?>">Order totals</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/feeds'); ?>">Product Feeds</a></li>
+                                        <li><a href="<?php echo $this->createUrl('/admin/deliveryMethods'); ?>">Delivery Methods</a></li>
+                                        <li><a href="<?php echo $this->createUrl('/admin/payPal'); ?>">PayPal Configuration</a></li>
+                                        <li><a href="<?php echo $this->createUrl('/admin/openPay'); ?>">OpenPay Configuration</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                                <!--<li class="dropdown">
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sales <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo $this->createUrl('/admin/orders'); ?>">Orders</a></li>
