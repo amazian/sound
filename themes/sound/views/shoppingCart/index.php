@@ -62,7 +62,7 @@ $this->renderPartial('/myAccount/_leftMenu');
 
 <script>
     $('#update').on('click', function(){
-        $.post('', $('form').serialize(), function() {
+        $.post('<?php echo $this->createUrl('update'); ?>', $('form').serialize(), function() {
             //location.reload();
             alert(1);
         })
