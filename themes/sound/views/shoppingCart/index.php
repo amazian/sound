@@ -59,8 +59,8 @@ $this->renderPartial('/myAccount/_leftMenu');
 </div>
 
 <script>
-    $('#update').on('click', function(){
-        $.post('', $('form').serialize(), function() {
+    jQuery('#update').on('click', function(){
+        jQuery.post('', jQuery('form').serialize(), function() {
             //location.reload();
             alert(1);
         })
