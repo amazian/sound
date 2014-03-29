@@ -14,42 +14,45 @@ $this->renderPartial('/myAccount/_leftMenu');
 
     <h1> Shopping Cart</h1><br>
 
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Remove</th>
-                <th>Image</th>
-                <th>Product Name</th>
-                <th>Model</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($products as $product): ?>
-            <tr>
-                <td class=""><input type="checkbox" id="optionsCheckbox" value="option1"></td>
-                <td class="muted center_text"><a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><img alt="" src="<?php echo $product->getImageWithSize(60, 60); ?>" /></a></td>
-                <td><?php echo $product->description->name; ?></td>
-                <td><?php echo $product->model; ?></td>
-                <td><input type="text" class="input-mini" placeholder="1"></td>
-                <td><?php echo $product->getFormattedPrice(true); ?></td>
-                <td><?php echo $product->getFormattedPrice(true); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+    <form id="shopping-cart-form" class="form-horizontal" action="<?php echo $this->createUrl('update'); ?>" method="post">
 
-    <form class="form-horizontal">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Remove</th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Model</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($items as $item): ?>
+                    <?php $product = $item['product']; $qty = $item['qty']; ?>
+                <tr>
+                    <td class=""><input type="checkbox" name="ids[]" value="<?php echo $product->product_id; ?>"></td>
+                    <td class="muted center_text"><a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><img alt="" src="<?php echo $product->getImageWithSize(60, 60); ?>" /></a></td>
+                    <td><?php echo $product->description->name; ?></td>
+                    <td><?php echo $product->model; ?></td>
+                    <td><input type="text" class="input-mini" name="amount[<?php echo $product->product_id; ?>]" value="<?php echo $qty; ?>"/></td>
+                    <td><?php echo $product->getFormattedPrice(true); ?></td>
+                    <td><?php echo $product->getFormattedPriceWithQuantity(true, $qty); ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+
         <fieldset>
 
             <div class="row">
                 <div class="span5">
-                    <a id="update" type="submit" class="btn btn-primary" href="#">Update</a>
+                    <button type="submit" id="update" class="btn btn-primary" href="#">Update</button>
                 </div>		  
                 <div class="span2">
-                    <a type="submit" class="btn btn-primary" href="<?php echo $this->createUrl('/site/index'); ?>">Continue shopping</a>
+                    <a class="btn btn-primary" href="<?php echo $this->createUrl('/site/index'); ?>">Continue shopping</a>
                 </div>		  
                 <div class="span5">
                     <a class="btn btn-primary pull-right" href="<?php echo $this->createUrl('checkout'); ?>">Checkout</a>
@@ -59,12 +62,3 @@ $this->renderPartial('/myAccount/_leftMenu');
     </form>
 
 </div>
-
-<script>
-    $('#update').on('click', function(){
-        $.post('<?php echo $this->createUrl('update'); ?>', $('form').serialize(), function() {
-            //location.reload();
-            alert(1);
-        })
-    })
-</script>

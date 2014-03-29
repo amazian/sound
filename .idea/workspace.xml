@@ -2,24 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a40cd44-8c6f-43ef-994f-2632f151e129" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/DeliveryMethodsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/PayPalController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/admin/deliveryMethods/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/admin/openPay/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/admin/payPal/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/CheckoutForm.php" afterPath="$PROJECT_DIR$/protected/models/CheckoutForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" afterPath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Order.php" afterPath="$PROJECT_DIR$/protected/models/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/OrderProduct.php" afterPath="$PROJECT_DIR$/protected/models/OrderProduct.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/Component1-100x100.png" afterPath="$PROJECT_DIR$/assets/cache/data/Component1-100x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/ajax-loader.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/ajax-loader.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/apple_cinema_30-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/apple_cinema_30-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/apple_cinema_30-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/apple_cinema_30-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/apple_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/apple_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/asus_logo-100x100.png" afterPath="$PROJECT_DIR$/assets/cache/data/demo/asus_logo-100x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-150x150.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-150x150.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-200x200.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-200x200.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-40x40.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-40x40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_1-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_2-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_2-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_2-50x50.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_2-50x50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_3-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_eos_5d_3-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/canon_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/canon_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/rating/delete.gif" afterPath="$PROJECT_DIR$/assets/68962d68/rating/delete.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/file.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/file.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/folder-closed.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/folder-closed.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/folder.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/folder.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-150x150.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-150x150.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-40x40.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-40x40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_1-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_2-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_2-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_2-50x50.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_2-50x50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_3-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_3-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_3-50x50.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_3-50x50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-182x182.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-182x182.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-700x286.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_banner-700x286.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-40x40.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-40x40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-700x286.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-700x286.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/hp_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-40x40.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-40x40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-700x286.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-700x286.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/htc_touch_hd_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/imac_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/imac_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/autocomplete/indicator.gif" afterPath="$PROJECT_DIR$/assets/68962d68/autocomplete/indicator.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/iphone_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/iphone_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_classic_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_classic_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_nano_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_nano_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_shuffle_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/ipod_touch_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/c579e170/jqtree-circle.png" afterPath="$PROJECT_DIR$/assets/c579e170/jqtree-circle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/c579e170/jqtree-icons.png" afterPath="$PROJECT_DIR$/assets/c579e170/jqtree-icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f1a6e956/jqtree-icons.png" afterPath="$PROJECT_DIR$/assets/f1a6e956/jqtree-icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/macbook_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/macbook_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/macbook_air_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/macbook_air_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/macbook_pro_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/macbook_pro_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/minus.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/minus.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-220x220.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-220x220.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/nikon_d300_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/no_image-100x100.jpg" afterPath="$PROJECT_DIR$/assets/cache/no_image-100x100.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/no_image-50x50.jpg" afterPath="$PROJECT_DIR$/assets/cache/no_image-50x50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/palm_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/palm_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/palm_treo_pro_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/palm_treo_pro_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/palm_treo_pro_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/palm_treo_pro_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/plus.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/plus.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/samsung_syncmaster_941bw-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/samsung_syncmaster_941bw-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/samsung_tab_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/samsung_tab_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/samsung_tab_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/samsung_tab_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/sony_logo-80x80.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/sony_logo-80x80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/sony_vaio_1-125x125.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/sony_vaio_1-125x125.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/data/demo/sony_vaio_1-60x60.jpg" afterPath="$PROJECT_DIR$/assets/cache/data/demo/sony_vaio_1-60x60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/rating/star.gif" afterPath="$PROJECT_DIR$/assets/68962d68/rating/star.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-black-line.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-black-line.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-black.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-black.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-default-line.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-default-line.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-default.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-default.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-famfamfam-line.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-famfamfam-line.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-famfamfam.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-famfamfam.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-gray-line.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-gray-line.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-gray.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-gray.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-red-line.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-red-line.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-red.gif" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/images/treeview-red.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_222222_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_2e83ff_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_454545_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_888888_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/images/ui-icons_cd0a0a_256x240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/CrudCode.php" afterPath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/CrudCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/CustomerWebUser.php" afterPath="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/ModelCode.php" afterPath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/ModelCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/gii-1.1.14/ModelCode.php" afterPath="$PROJECT_DIR$/protected/runtime/gii-1.1.14/ModelCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/ModuleCode.php" afterPath="$PROJECT_DIR$/protected/runtime/gii-1.1.10/ModuleCode.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Product.php" afterPath="$PROJECT_DIR$/protected/models/Product.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php" afterPath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/SimplePaypal/SimplePaypalModule.php" afterPath="$PROJECT_DIR$/protected/modules/SimplePaypal/SimplePaypalModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/dev.php" afterPath="$PROJECT_DIR$/protected/config/dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/layouts/main.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log.1" afterPath="$PROJECT_DIR$/protected/runtime/application.log.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cache/index.html" afterPath="$PROJECT_DIR$/assets/cache/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" afterPath="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/c579e170/jqtree.css" afterPath="$PROJECT_DIR$/assets/c579e170/jqtree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f1a6e956/jqtree.css" afterPath="$PROJECT_DIR$/assets/f1a6e956/jqtree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/js/jquery-ui-i18n.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/jui/js/jquery-ui-i18n.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery-ui.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery-ui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/jui/js/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.ajaxqueue.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.ajaxqueue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/autocomplete/jquery.autocomplete.css" afterPath="$PROJECT_DIR$/assets/68962d68/autocomplete/jquery.autocomplete.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.autocomplete.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.autocomplete.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.ba-bbq.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.ba-bbq.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.ba-bbq.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.ba-bbq.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.bgiframe.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.bgiframe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.cookie.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.history.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.history.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.maskedinput.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.maskedinput.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.maskedinput.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.maskedinput.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.metadata.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.metadata.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.multifile.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.multifile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/rating/jquery.rating.css" afterPath="$PROJECT_DIR$/assets/68962d68/rating/jquery.rating.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.rating.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.rating.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.async.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.async.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/treeview/jquery.treeview.css" afterPath="$PROJECT_DIR$/assets/68962d68/treeview/jquery.treeview.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.edit.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.edit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.treeview.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.accordion.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.autocomplete.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.autocomplete.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.button.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.button.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.core.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.core.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.datepicker.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.datepicker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.dialog.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.menu.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.progressbar.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.resizable.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.resizable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.selectable.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.selectable.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.slider.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.spinner.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.tabs.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.theme.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.tooltip.css" afterPath="$PROJECT_DIR$/assets/68962d68/jui/css/base/jquery.ui.tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.yii.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.yii.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.yiiactiveform.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.yiiactiveform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/yiitab/jquery.yiitab.css" afterPath="$PROJECT_DIR$/assets/68962d68/yiitab/jquery.yiitab.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/jquery.yiitab.js" afterPath="$PROJECT_DIR$/assets/68962d68/jquery.yiitab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/punycode.js" afterPath="$PROJECT_DIR$/assets/68962d68/punycode.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/68962d68/punycode.min.js" afterPath="$PROJECT_DIR$/assets/68962d68/punycode.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/c579e170/tree.jquery.js" afterPath="$PROJECT_DIR$/assets/c579e170/tree.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f1a6e956/tree.jquery.js" afterPath="$PROJECT_DIR$/assets/f1a6e956/tree.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sound.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,76 +187,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="78" selection-start="759" selection-end="767" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="750">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingCartController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ShoppingCartController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="26" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.8530303" vertical-offset="352" max-vertical-offset="1485">
+            <state line="45" column="40" selection-start="1370" selection-end="1370" vertical-scroll-proportion="-15.0" vertical-offset="315" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Order.php">
+      <file leaf-file-name="CustomerWebUser.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/CustomerWebUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="21" selection-start="5105" selection-end="5113" vertical-scroll-proportion="-11.041667" vertical-offset="1385" max-vertical-offset="2790">
+            <state line="15" column="38" selection-start="400" selection-end="418" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="1365">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderProduct.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/OrderProduct.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="62" selection-start="1123" selection-end="1131" vertical-scroll-proportion="-9.708333" vertical-offset="442" max-vertical-offset="1290">
+            <state line="40" column="85" selection-start="1757" selection-end="1757" vertical-scroll-proportion="-24.375" vertical-offset="15" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php">
+      <file leaf-file-name="checkout.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/checkout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="0" selection-end="1708" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="750">
+            <state line="0" column="0" selection-start="0" selection-end="64" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleOpenPayModule.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php">
+      <file leaf-file-name="Product.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/models/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="42" selection-start="1397" selection-end="1405" vertical-scroll-proportion="-18.75" vertical-offset="375" max-vertical-offset="1125">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenPay.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="5" selection-start="4609" selection-end="4609" vertical-scroll-proportion="-66.875" vertical-offset="240" max-vertical-offset="2010">
-              <folding>
-                <marker date="1390991081000" expanded="true" signature="4186:4394" placeholder="..." />
-                <marker date="1390991081000" expanded="true" signature="4203:4394" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CheckoutForm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/CheckoutForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="39" selection-start="5202" selection-end="5202" vertical-scroll-proportion="-21.875" vertical-offset="1515" max-vertical-offset="2280">
+            <state line="251" column="31" selection-start="9674" selection-end="9674" vertical-scroll-proportion="0.76119405" vertical-offset="3255" max-vertical-offset="6480">
               <folding />
             </state>
           </provider>
@@ -130,7 +245,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/themes/sound/views/tag/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/css/style.css" />
         <option value="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ManufacturerController.php" />
@@ -156,9 +270,7 @@
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/DefaultController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/AdminModule.php" />
-        <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/checkout.php" />
-        <option value="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
         <option value="$PROJECT_DIR$/protected/models/Category.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php" />
         <option value="$PROJECT_DIR$/protected/models/DeliveryMethod.php" />
@@ -180,7 +292,10 @@
         <option value="$PROJECT_DIR$/protected/models/CheckoutForm.php" />
         <option value="$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" />
+        <option value="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
+        <option value="$PROJECT_DIR$/protected/models/Product.php" />
       </list>
     </option>
   </component>
@@ -278,32 +393,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="shoppingCart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -325,208 +414,6 @@
               <option name="myItemId" value="sound" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myAccount" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="products" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="payPal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openPay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="deliveryMethods" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -539,124 +426,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimplePaypal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimplePaypal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleOpenPay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimpleOpenPay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -693,24 +462,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sound" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -911,16 +662,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/myAccount/_leftMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="34" selection-start="412" selection-end="412" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="570" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/components/AdminIdentity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="99" selection-start="461" selection-end="461" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="495" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/AttributeGroupsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170" />
@@ -1011,219 +752,197 @@
         <state line="64" column="0" selection-start="2286" selection-end="2314" vertical-scroll-proportion="-23.625" vertical-offset="393" max-vertical-offset="1050" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/checkout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="71" selection-start="1387" selection-end="1387" vertical-scroll-proportion="-11.875" vertical-offset="300" max-vertical-offset="1050" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="8" selection-start="4384" selection-end="4720" vertical-scroll-proportion="-12.75" vertical-offset="1689" max-vertical-offset="2370" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/CustomerWebUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="36" selection-start="1285" selection-end="1301" vertical-scroll-proportion="-21.75" vertical-offset="183" max-vertical-offset="840" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="64" selection-start="4134" selection-end="4134" vertical-scroll-proportion="0.7360704" vertical-offset="908" max-vertical-offset="1590">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/controllers/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="960">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="960" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/models/PaymentTransaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/views/default/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="193" column="37" selection-start="6241" selection-end="6258" vertical-scroll-proportion="-9.375" vertical-offset="2670" max-vertical-offset="4650">
-          <folding />
-        </state>
+        <state line="193" column="37" selection-start="6241" selection-end="6258" vertical-scroll-proportion="-9.375" vertical-offset="2670" max-vertical-offset="4650" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/DeliveryMethod.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="6" selection-start="978" selection-end="978" vertical-scroll-proportion="-16.583334" vertical-offset="352" max-vertical-offset="1035">
-          <folding />
-        </state>
+        <state line="50" column="6" selection-start="978" selection-end="978" vertical-scroll-proportion="-16.583334" vertical-offset="352" max-vertical-offset="1035" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/deliveryMethods/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="46" selection-start="172" selection-end="172" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
+        <state line="3" column="46" selection-start="172" selection-end="172" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="96" selection-start="4927" selection-end="4927" vertical-scroll-proportion="5.0" vertical-offset="1140" max-vertical-offset="2190">
-          <folding />
-        </state>
+        <state line="68" column="96" selection-start="4927" selection-end="4927" vertical-scroll-proportion="5.0" vertical-offset="1140" max-vertical-offset="2190" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/DeliveryMethodsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="28" selection-end="28" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="480" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="30" selection-start="197" selection-end="197" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
+        <state line="4" column="30" selection-start="197" selection-end="197" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/data/simpl-paypal.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="40" selection-start="0" selection-end="2144" vertical-scroll-proportion="-8.18" vertical-offset="221" max-vertical-offset="1095">
-          <folding />
-        </state>
+        <state line="42" column="40" selection-start="0" selection-end="2144" vertical-scroll-proportion="-8.18" vertical-offset="221" max-vertical-offset="1095" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/CategoriesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="499" selection-end="735" vertical-scroll-proportion="0.38636363" vertical-offset="0" max-vertical-offset="1770">
-          <folding />
-        </state>
+        <state line="17" column="8" selection-start="499" selection-end="735" vertical-scroll-proportion="0.38636363" vertical-offset="0" max-vertical-offset="1770" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/payPal/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="20" selection-start="669" selection-end="669" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
+        <state line="20" column="20" selection-start="669" selection-end="669" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="405" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/PayPalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="8" selection-start="103" selection-end="390" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
+        <state line="5" column="8" selection-start="103" selection-end="390" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="455" selection-end="455" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
+        <state line="15" column="13" selection-start="455" selection-end="455" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="375" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/models/PaypalSetting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="0" selection-end="1708" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="750">
+        <state line="13" column="4" selection-start="0" selection-end="1708" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/SimplePaypalModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="27" selection-start="776" selection-end="776" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="1575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="8" selection-start="1296" selection-end="1511" vertical-scroll-proportion="-16.25" vertical-offset="240" max-vertical-offset="1650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/dev.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="10" selection-start="1511" selection-end="1511" vertical-scroll-proportion="0.5270864" vertical-offset="360" max-vertical-offset="1695">
-          <folding />
-        </state>
+        <state line="28" column="27" selection-start="776" selection-end="776" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="1575" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="78" selection-start="759" selection-end="767" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="750">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/OrderProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="62" selection-start="1123" selection-end="1131" vertical-scroll-proportion="-9.708333" vertical-offset="442" max-vertical-offset="1290">
+        <state line="22" column="78" selection-start="759" selection-end="767" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="21" selection-start="5105" selection-end="5113" vertical-scroll-proportion="-11.041667" vertical-offset="1385" max-vertical-offset="2790">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/CheckoutForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="39" selection-start="5202" selection-end="5202" vertical-scroll-proportion="-21.875" vertical-offset="1515" max-vertical-offset="2280">
+        <state line="110" column="21" selection-start="5105" selection-end="5113" vertical-scroll-proportion="0.3955224" vertical-offset="1385" max-vertical-offset="2790">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/components/Paypal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="4" selection-start="5284" selection-end="6075" vertical-scroll-proportion="0.4909091" vertical-offset="1776" max-vertical-offset="2550">
-          <folding>
-            <marker date="1387427302000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1387427302000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="140" column="4" selection-start="5284" selection-end="6075" vertical-scroll-proportion="0.4909091" vertical-offset="1776" max-vertical-offset="2550" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="5" selection-start="4609" selection-end="4609" vertical-scroll-proportion="-66.875" vertical-offset="240" max-vertical-offset="2010">
-          <folding>
-            <marker date="1390991081000" expanded="true" signature="4186:4394" placeholder="..." />
-            <marker date="1390991081000" expanded="true" signature="4203:4394" placeholder="..." />
-          </folding>
+        <state line="123" column="5" selection-start="4609" selection-end="4609" vertical-scroll-proportion="2.3499267" vertical-offset="240" max-vertical-offset="2010">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="42" selection-start="1397" selection-end="1405" vertical-scroll-proportion="-18.75" vertical-offset="375" max-vertical-offset="1125">
+        <state line="55" column="42" selection-start="1397" selection-end="1405" vertical-scroll-proportion="0.658858" vertical-offset="375" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="35" selection-start="2429" selection-end="2433" vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/CheckoutForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="39" selection-start="5202" selection-end="5202" vertical-scroll-proportion="0.6486091" vertical-offset="1597" max-vertical-offset="2280">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="22" selection-start="2404" selection-end="2404" vertical-scroll-proportion="-3.125" vertical-offset="1035" max-vertical-offset="1695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/OrderProduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="62" selection-start="1123" selection-end="1131" vertical-scroll-proportion="0.34114203" vertical-offset="442" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/checkout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="64" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="26" selection-start="2645" selection-end="2645" vertical-scroll-proportion="0.8530303" vertical-offset="352" max-vertical-offset="1485">
+        <state line="45" column="40" selection-start="1370" selection-end="1370" vertical-scroll-proportion="-15.0" vertical-offset="315" max-vertical-offset="1845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/CustomerWebUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="38" selection-start="400" selection-end="418" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="1365">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="85" selection-start="1757" selection-end="1757" vertical-scroll-proportion="-24.375" vertical-offset="15" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="31" selection-start="9674" selection-end="9674" vertical-scroll-proportion="0.76119405" vertical-offset="3255" max-vertical-offset="6480">
           <folding />
         </state>
       </provider>

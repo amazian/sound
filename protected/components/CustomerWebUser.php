@@ -13,6 +13,21 @@ class CustomerWebUser extends CWebUser
         $this->setState('itemsOnCart', $itemsOnCart);
     }
 
+    public function removeItemFromCart($productId) {
+        $itemsOnCart = array();
+        if($this->hasState('itemsOnCart'))
+            $itemsOnCart = $this->getState('itemsOnCart');
+
+        foreach($itemsOnCart as $id => $item) {
+            $itemProdId = $item['id'];
+            if($itemProdId == $productId) {
+                unset($itemsOnCart[$id]);
+            }
+        }
+
+        $this->setState('itemsOnCart', $itemsOnCart);
+    }
+
     public function getQuantityForProductId($productId) {
         $itemsOnCart = array();
         if($this->hasState('itemsOnCart'))
@@ -24,6 +39,26 @@ class CustomerWebUser extends CWebUser
         }
 
         return 0;
+    }
+
+    public function setQuantityForProductId($productId, $qty) {
+        if($qty == 0) {
+            $this->removeItemFromCart($productId);
+        }
+        else {
+            $itemsOnCart = array();
+            if($this->hasState('itemsOnCart'))
+                $itemsOnCart = $this->getState('itemsOnCart');
+
+            foreach($itemsOnCart as $id => $item) {
+                $itemProdId = $item['id'];
+                if($itemProdId == $productId) {
+                    $itemsOnCart[$id]['qty'] = $qty;
+                }
+            }
+
+            $this->setState('itemsOnCart', $itemsOnCart);
+        }
     }
 
     public function getItemsOnCart() {

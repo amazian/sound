@@ -8,9 +8,16 @@ class ShoppingCartController extends Controller {
      */
     public function actionIndex() {
         $products = Yii::app()->user->getItemsOnCart();
+        $items = array();
+        foreach($products as $product) {
+            $items[] = array(
+                'product' => $product,
+                'qty' => Yii::app()->user->getQuantityForProductId($product->product_id)
+            );
+        }
 
         $this->render('index', array(
-            'products'=>$products
+            'items'=>$items
         ));
     }
 
@@ -23,7 +30,20 @@ class ShoppingCartController extends Controller {
     }
 
     public function actionUpdate() {
-        var_dump($_POST);
+        $ids = isset($_POST['ids']) ? $_POST['ids'] : array();
+        $amounts = isset($_POST['amount']) ? $_POST['amount'] : array();
+
+        // Update
+        foreach($amounts as $productId => $amount) {
+            Yii::app()->user->setQuantityForProductId($productId, $amount);
+        }
+
+        // Remove
+        foreach($ids as $productId) {
+            Yii::app()->user->removeItemFromCart($productId);
+        }
+
+        $this->redirect(array('index'));
     }
 
     public function actionCheckout() {

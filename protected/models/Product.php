@@ -248,6 +248,16 @@ class Product extends CActiveRecord {
         }
     }
 
+    public function getFormattedPriceWithQuantity($withDiscount = false, $qty = 1) {
+        $price = $this->price * $qty;
+        if(!$withDiscount)
+            return "$" . sprintf("%.2f", "{$price}");
+        else {
+            $price = $price - (($this->discount * $price) / 100);
+            return "$" . sprintf("%.2f", "{$price}");
+        }
+    }
+
     public function getManufacturerName() {
         if (isset($this->manufacturer)) {
             return $this->manufacturer->name;
