@@ -42,51 +42,9 @@ $this->renderPartial('/myAccount/_leftMenu');
     <form class="form-horizontal">
         <fieldset>
 
-
-            <!--<div id="accordion2" class="accordion">
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-
-                        <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
-                            <h3>Apply discount code</h3>
-                        </a>
-                    </div>
-                    <div class="accordion-body collapse in" id="collapseOne">
-                        <div class="accordion-inner">
-                            <div class="control-group">
-                                <label class="control-label" for="input01">Discount code: </label>
-                                <div class="controls">
-                                    <input type="text" placeholder="Enter your coupon here" class="input-xlarge" id="input01">
-                                    <p class="help-block">You can only use one discount code at a time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-group">
-                    <div class="accordion-heading">
-                        <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
-                            <h3>Use gift voucher</h3>
-                        </a>
-                    </div>
-                    <div class="accordion-body collapse" id="collapseTwo">
-                        <div class="accordion-inner">
-                            <div class="control-group">
-                                <label class="control-label" for="input01">Gift voucher: </label>
-                                <div class="controls">
-                                    <input type="text" placeholder="Enter your gift voucher here" class="input-xlarge" id="input01">
-                                    <p class="help-block">You can use multiple gift vouchers at a time</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-
             <div class="row">
                 <div class="span5">
-                    <a type="submit" class="btn btn-primary" href="#">Update</a>
+                    <a id="update" type="submit" class="btn btn-primary" href="#">Update</a>
                 </div>		  
                 <div class="span2">
                     <a type="submit" class="btn btn-primary" href="<?php echo $this->createUrl('/site/index'); ?>">Continue shopping</a>
@@ -99,3 +57,12 @@ $this->renderPartial('/myAccount/_leftMenu');
     </form>
 
 </div>
+
+<script>
+    $('#update').on('click', function(){
+        $.post('', $('form').serialize(), function() {
+            //location.reload();
+            alert(1);
+        })
+    })
+</script>

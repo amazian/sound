@@ -22,6 +22,10 @@ class ShoppingCartController extends Controller {
         $this->redirect(array('index'));
     }
 
+    public function actionUpdate() {
+        var_dump($_POST);
+    }
+
     public function actionCheckout() {
         $model = new CheckoutForm;
 
