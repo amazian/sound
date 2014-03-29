@@ -1,3 +1,5 @@
+<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
+
 <?php if(!Yii::app()->user->isGuest): ?>
 
 <?php
@@ -59,8 +61,8 @@ $this->renderPartial('/myAccount/_leftMenu');
 </div>
 
 <script>
-    jQuery('#update').on('click', function(){
-        jQuery.post('', jQuery('form').serialize(), function() {
+    $('#update').on('click', function(){
+        $.post('', $('form').serialize(), function() {
             //location.reload();
             alert(1);
         })
