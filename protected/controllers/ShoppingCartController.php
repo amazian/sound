@@ -47,6 +47,10 @@ class ShoppingCartController extends Controller {
     }
 
     public function actionCheckout() {
+        if(Yii::app()->user->isGuest) {
+            $this->redirect(array('/site/login'));
+            return;
+        }
         $model = new CheckoutForm;
 
         // collect user input data

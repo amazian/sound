@@ -17,7 +17,7 @@ $this->renderPartial('_leftMenu');
         <tbody>
             <?php foreach($orders as $order): ?>
             <tr>
-                <td><?php echo $order->id; ?></td>
+                <td><?php echo $order->order_id; ?></td>
                 <td><?php echo $order->date_modified; ?></td>
                 <td><?php echo $order->total; ?></td>
             </tr>
