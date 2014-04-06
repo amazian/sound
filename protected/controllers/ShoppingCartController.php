@@ -46,6 +46,13 @@ class ShoppingCartController extends Controller {
         $this->redirect(array('index'));
     }
 
+    public function actionSuccess() {
+        // clear shopping cart
+        Yii::app()->user->clearItemsOnCart();
+
+        $this->render('success');
+    }
+
     public function actionCheckout() {
         if(Yii::app()->user->isGuest) {
             $this->redirect(array('/site/login'));
@@ -59,8 +66,7 @@ class ShoppingCartController extends Controller {
             // validate user input and redirect to the previous page if valid
             if ($model->validate()) {
                 if($orderId = $model->createOrder()) {
-                    // clear shopping cart
-                    //Yii::app()->user->clearItemsOnCart();
+
 
                     $order = Order::model()->findByPk($orderId);
 

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a40cd44-8c6f-43ef-994f-2632f151e129" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/sound/views/shoppingCart/success.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php" />
     </list>
     <ignored path="sound.iws" />
@@ -28,7 +30,16 @@
       <file leaf-file-name="ShoppingCartController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="76" selection-start="2255" selection-end="2267" vertical-scroll-proportion="-8.75" vertical-offset="810" max-vertical-offset="1905">
+            <state line="52" column="32" selection-start="1526" selection-end="1526" vertical-scroll-proportion="-11.25" vertical-offset="510" max-vertical-offset="1995">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/success.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="86" selection-start="138" selection-end="138" vertical-scroll-proportion="0.06818182" vertical-offset="0" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -43,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="39" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.53636366" vertical-offset="66" max-vertical-offset="840">
+            <state line="28" column="39" selection-start="1047" selection-end="1047" vertical-scroll-proportion="-14.75" vertical-offset="66" max-vertical-offset="840">
               <folding />
             </state>
           </provider>
@@ -97,15 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkout.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/checkout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="43" selection-start="1359" selection-end="1359" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1050">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CheckoutForm.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/models/CheckoutForm.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/themes/sound/css/style.css" />
         <option value="$PROJECT_DIR$/themes/sound/views/common/leftMenu.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ManufacturerController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/manufacturer/index.php" />
@@ -175,10 +176,11 @@
         <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/index.php" />
         <option value="$PROJECT_DIR$/protected/models/Product.php" />
         <option value="$PROJECT_DIR$/protected/models/CheckoutForm.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
         <option value="$PROJECT_DIR$/protected/components/CustomerWebUser.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/myAccount/orders.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/shoppingCart/success.php" />
       </list>
     </option>
   </component>
@@ -544,11 +546,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/themes/sound/views/shoppingCart" />
       <recent name="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components" />
       <recent name="$PROJECT_DIR$/protected/modules/SimpleOpenPay" />
       <recent name="$PROJECT_DIR$/protected/modules" />
       <recent name="$PROJECT_DIR$/themes/sound/views/admin/openPay" />
-      <recent name="$PROJECT_DIR$/themes/sound/views/admin/payPal" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit on Server.sound on Sound">
@@ -689,11 +691,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ManufacturersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="17.0" vertical-offset="408" max-vertical-offset="1065" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ProductsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="134" column="17" selection-start="4839" selection-end="4839" vertical-scroll-proportion="-13.125" vertical-offset="1695" max-vertical-offset="3645" />
@@ -949,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="76" selection-start="2255" selection-end="2267" vertical-scroll-proportion="-8.75" vertical-offset="810" max-vertical-offset="1905">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimplePaypal/SimplePaypalModule.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="35" selection-start="1978" selection-end="1981" vertical-scroll-proportion="-13.125" vertical-offset="660" max-vertical-offset="1575">
@@ -965,7 +955,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/payPal/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="39" selection-start="1047" selection-end="1047" vertical-scroll-proportion="0.53636366" vertical-offset="66" max-vertical-offset="840">
+        <state line="28" column="39" selection-start="1047" selection-end="1047" vertical-scroll-proportion="-14.75" vertical-offset="66" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="32" selection-start="1526" selection-end="1526" vertical-scroll-proportion="-11.25" vertical-offset="510" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/shoppingCart/success.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="86" selection-start="138" selection-end="138" vertical-scroll-proportion="0.06818182" vertical-offset="0" max-vertical-offset="660">
           <folding />
         </state>
       </provider>
