@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2014 at 08:40 AM
--- Server version: 5.5.31
--- PHP Version: 5.4.19
+-- Generation Time: Apr 06, 2014 at 08:13 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sound`
 --
-CREATE DATABASE IF NOT EXISTS `sound` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `sound`;
 
 -- --------------------------------------------------------
 
@@ -1084,6 +1082,25 @@ CREATE TABLE IF NOT EXISTS `custom_field_value_description` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `delivery_methods`
+--
+
+CREATE TABLE IF NOT EXISTS `delivery_methods` (
+  `delivery_method_id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(100) NOT NULL,
+  PRIMARY KEY (`delivery_method_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `delivery_methods`
+--
+
+INSERT INTO `delivery_methods` (`delivery_method_id`, `text`) VALUES
+(1, 'Taiwan Post System');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `download`
 --
 
@@ -1500,6 +1517,29 @@ INSERT INTO `manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `openpay_setting`
+--
+
+CREATE TABLE IF NOT EXISTS `openpay_setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mid` varchar(128) DEFAULT NULL,
+  `language` varchar(256) DEFAULT NULL,
+  `return_url` varchar(256) DEFAULT NULL,
+  `cancel_url` varchar(256) DEFAULT NULL,
+  `notify_url` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `openpay_setting`
+--
+
+INSERT INTO `openpay_setting` (`id`, `mid`, `language`, `return_url`, `cancel_url`, `notify_url`) VALUES
+(1, '0', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `option`
 --
 
@@ -1716,7 +1756,7 @@ CREATE TABLE IF NOT EXISTS `order` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `order`
@@ -1725,7 +1765,8 @@ CREATE TABLE IF NOT EXISTS `order` (
 INSERT INTO `order` (`order_id`, `invoice_no`, `invoice_prefix`, `store_id`, `store_name`, `store_url`, `customer_id`, `customer_group_id`, `firstname`, `lastname`, `email`, `telephone`, `fax`, `payment_firstname`, `payment_lastname`, `payment_company`, `payment_company_id`, `payment_tax_id`, `payment_address_1`, `payment_address_2`, `payment_city`, `payment_postcode`, `payment_country`, `payment_country_id`, `payment_zone`, `payment_zone_id`, `payment_address_format`, `payment_method`, `payment_code`, `shipping_firstname`, `shipping_lastname`, `shipping_company`, `shipping_address_1`, `shipping_address_2`, `shipping_city`, `shipping_postcode`, `shipping_country`, `shipping_country_id`, `shipping_zone`, `shipping_zone_id`, `shipping_address_format`, `shipping_method`, `shipping_code`, `comment`, `total`, `order_status_id`, `affiliate_id`, `commission`, `language_id`, `currency_id`, `currency_code`, `currency_value`, `ip`, `forwarded_ip`, `user_agent`, `accept_language`, `date_added`, `date_modified`) VALUES
 (1, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '106.0000', 1, 0, '0.0000', 2, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-26 16:22:20', '2013-06-26 16:22:22'),
 (2, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '85.0000', 1, 0, '0.0000', 1, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:33:13', '2013-06-27 12:33:15'),
-(3, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '371.0000', 1, 0, '0.0000', 1, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:37:41', '2013-06-27 12:37:43');
+(3, 0, 'INV-2013-00', 0, 'Shopping.com.tw', 'http://localhost/shopping.com.tw/', 1, 1, 'Richard', 'Gonzalez Alberto', 'damnpoet@gmail.com', '+5352959106', '', 'Richard', 'Gonzalez Alberto', '', '', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Cash On Delivery', 'cod', 'Richard', 'Gonzalez Alberto', '', 'calle 37', '', 'Cienfuegos', '', 'Cuba', 54, 'Cienfuegos', 870, '', 'Flat Shipping Rate', 'flat.flat', '', '371.0000', 1, 0, '0.0000', 1, 4, 'CNY', '1.00000000', '::1', '', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 'en-US,en;q=0.5', '2013-06-27 12:37:41', '2013-06-27 12:37:43'),
+(4, 0, 'SND', 0, 'Sound', '/sound', 2, 0, 'Richard Gonzalez Alberto', 'N/A', 'damnpoet@gmail.com', '3057135529', 'N/A', 'Richard Gonzalez Alberto', 'N/A', 'N/A', '0', '0', '13878 SW 157th Ter', 'N/A', 'N/A', 'n/a', 'n/a', 0, 'n/a', 0, 'n/a', 'openpay', 'n/a', 'Richard Gonzalez Alberto', 'N/A', 'n/a', '13878 SW 157th Ter', 'n/a', 'n/a', 'n/a', 'n/a', 0, 'n/a', 0, 'n/a', 'Taiwan Post System', 'n/a', 'empty', '4000.0000', 0, 0, '0.0000', 0, 0, '0', '0.00000000', '127.0.0.1', '127.0.0.1', 'n/a', 'n/a', '2014-03-29 18:17:34', '2014-03-29 18:17:34');
 
 -- --------------------------------------------------------
 
@@ -1900,7 +1941,7 @@ CREATE TABLE IF NOT EXISTS `order_product` (
   `tax` decimal(15,4) NOT NULL DEFAULT '0.0000',
   `reward` int(8) NOT NULL,
   PRIMARY KEY (`order_product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `order_product`
@@ -1909,7 +1950,8 @@ CREATE TABLE IF NOT EXISTS `order_product` (
 INSERT INTO `order_product` (`order_product_id`, `order_id`, `product_id`, `name`, `model`, `quantity`, `price`, `total`, `tax`, `reward`) VALUES
 (1, 1, 40, 'iPhone', 'product 11', 1, '101.0000', '101.0000', '0.0000', 0),
 (2, 2, 31, 'Nikon D300', 'Product 4', 1, '80.0000', '80.0000', '0.0000', 0),
-(3, 3, 42, 'Apple Cinema 30&quot;', 'Product 15', 2, '183.0000', '366.0000', '0.0000', 200);
+(3, 3, 42, 'Apple Cinema 30&quot;', 'Product 15', 2, '183.0000', '366.0000', '0.0000', 200),
+(4, 4, 34, 'iPod Shuffle', 'Product 7', 40, '100.0000', '4000.0000', '0.0000', 0);
 
 -- --------------------------------------------------------
 
@@ -2012,6 +2054,31 @@ CREATE TABLE IF NOT EXISTS `order_voucher` (
   `amount` decimal(15,4) NOT NULL,
   PRIMARY KEY (`order_voucher_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paypal_setting`
+--
+
+CREATE TABLE IF NOT EXISTS `paypal_setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `business_email` varchar(128) DEFAULT NULL,
+  `sandbox` varchar(1) DEFAULT NULL,
+  `return_url` varchar(256) DEFAULT NULL,
+  `cancel_url` varchar(256) DEFAULT NULL,
+  `notify_url` varchar(256) DEFAULT NULL,
+  `currency` varchar(128) DEFAULT NULL,
+  `updated_at` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `paypal_setting`
+--
+
+INSERT INTO `paypal_setting` (`id`, `business_email`, `sandbox`, `return_url`, `cancel_url`, `notify_url`, `currency`, `updated_at`) VALUES
+(1, 'test@gmail.com', '1', '', '', '', 'usd', '2014-01-01');
 
 -- --------------------------------------------------------
 
@@ -2958,7 +3025,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', 'e59c8cb76bf6b561ea7a1ea614961ca1fe6e8c1a', 'fb5981af6', '', '', 'admin@gmail.com', '', '::1', 1, '2013-06-26 08:15:56');
+(1, 1, 'admin', '202cb962ac59075b964b07152d234b70', 'fb5981af6', '', '', 'admin@gmail.com', '', '::1', 1, '2013-06-26 08:15:56');
 
 -- --------------------------------------------------------
 
