@@ -69,6 +69,7 @@ class ShoppingCartController extends Controller {
 
 
                     $order = Order::model()->findByPk($orderId);
+                    $order->order_status_id = Order::STATUS_PENDING_PAYMENT;
 
                     // redirect to payment gateway
                     if($model->paymentGateway == CheckoutForm::PAYMENT_METHOD_PAYPAL) {

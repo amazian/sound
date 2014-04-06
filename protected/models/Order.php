@@ -65,6 +65,12 @@
  */
 class Order extends CActiveRecord {
 
+    const STATUS_PENDING_PAYMENT = 0;
+    const STATUS_PROCESSING = 1;
+    const STATUS_SHIPPED = 2;
+    const STATUS_CANCELED = 3;
+    const STATUS_COMPLETED = 4;
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -176,6 +182,30 @@ class Order extends CActiveRecord {
             'date_added' => 'Date Added',
             'date_modified' => 'Date Modified',
         );
+    }
+
+    public function getOrderStatus() {
+        switch($this->order_status_id) {
+            case self::STATUS_CANCELED:
+                return 'Canceled';
+                break;
+            case self::STATUS_SHIPPED:
+                return 'Shipped';
+                break;
+            case self::STATUS_COMPLETED:
+                return 'Completed';
+                break;
+            case self::STATUS_PENDING_PAYMENT:
+                return 'Pending Payment';
+                break;
+            case self::STATUS_PROCESSING:
+                return 'Processing';
+                break;
+            default:
+                return 'Invalid Order!!';
+                break;
+
+        }
     }
 
 }

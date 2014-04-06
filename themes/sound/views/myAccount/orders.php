@@ -11,6 +11,7 @@ $this->renderPartial('_leftMenu');
             <tr>
                 <th>Order #</th>
                 <th>Date</th>
+                <th>Status</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@ $this->renderPartial('_leftMenu');
             <tr>
                 <td><?php echo $order->order_id; ?></td>
                 <td><?php echo $order->date_modified; ?></td>
+                <td><?php echo $order->getOrderStatus(); ?></td>
                 <td><?php echo $order->total; ?></td>
             </tr>
             <?php endforeach; ?>
