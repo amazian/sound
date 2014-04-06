@@ -24,6 +24,12 @@ $form = $this->beginWidget('CActiveForm', array(
         </div>
     </div>
     <div class="control-group">
+        <?php echo $form->label($model, 'currency', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'currency', array('class' => 'span2')); ?>
+        </div>
+    </div>
+    <div class="control-group">
         <?php echo $form->label($model, 'return_url', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->textField($model, 'return_url', array('class' => 'span4')); ?>
