@@ -29,22 +29,10 @@
     <div class="row">
         <div class="span3">
             <img src="<?php echo $product->getImageWithSize(220, 220); ?>" alt="">
-            <div class="share">
-                <!-- AddThis Button BEGIN -->
-                <div class="addthis_default_style">
-                    <a class="addthis_button_compact">Share</a> 
-                    <a class="addthis_button_email"></a>
-                    <a class="addthis_button_print"></a> 
-                    <a class="addthis_button_facebook"></a> 
-                    <a class="addthis_button_twitter"></a>
-                </div>
-                <script src="//s7.addthis.com/js/250/addthis_widget.js" type="text/javascript"></script> 
-                <!-- AddThis Button END --> 
-            </div>
         </div>	 
 
         <div class="span6">
-            <ul class="breadcrumb">
+            <ul class="breadcrumb" style="margin-bottom: 5px;">
                 <li>
                     <a href="#"><?php echo $product->description->name; ?></a> <span class="divider">/</span>
                 </li>
@@ -57,22 +45,22 @@
             </ul>
 
             <div class="span6">
-                <address>
-                    <?php if (isset($product->manufacturer)): ?><strong>Brand:</strong> <span><?php echo $product->manufacturer->name; ?></span><br><?php endif; ?>
-                    <!--<strong>Reward Points:</strong> <span>0</span><br>-->
-                    <?php if(!is_null($product->getPrimarySpec())): ?><strong><?php echo $product->getPrimarySpec()->description->name; ?>:</strong> <span><?php echo $product->getPrimarySpec()->value_init; ?><?php echo ($product->getPrimarySpec()->value_end != '') ? ' ~ ' . $product->getPrimarySpec()->value_end : ''; ?><?php echo (!is_null($product->getPrimarySpec()->unit)) ? ' ' . $product->getPrimarySpec()->unit->name : ''; ?></span><br><?php endif; ?>
-                </address>
-            </div>	
+                <?php if (isset($product->manufacturer)): ?><img src="<?php echo $product->manufacturer->getImageWithSize(60, 60); ?>" /> <span><?php echo $product->manufacturer->name; ?></span><br><?php endif; ?>
+                <!--
+                <?php if(!is_null($product->getPrimarySpec())): ?><strong><?php echo $product->getPrimarySpec()->description->name; ?>:</strong> <span><?php echo $product->getPrimarySpec()->value_init; ?><?php echo ($product->getPrimarySpec()->value_end != '') ? ' ~ ' . $product->getPrimarySpec()->value_end : ''; ?><?php echo (!is_null($product->getPrimarySpec()->unit)) ? ' ' . $product->getPrimarySpec()->unit->name : ''; ?></span><br><?php endif; ?>
+                -->
+            </div>
 
-            <div class="span6">
+
+            <div class="span6" style="margin: 0px 0px 10px 0px;">
                 <h2>
-                    <strong>Price: <?php echo $product->getFormattedPrice(true); ?> NTD</strong> <!--<small>Ex Tax: $500.00</small>--><br><br>
+                    <strong>Price: <?php echo $product->getFormattedPrice(true); ?> NTD</strong><br>
                 </h2>
             </div>	
 
-            <div class="span6">
+            <div class="span6" style="margin: 10px 0px;">
                 <form class="form-inline">
-                    <div class="span3 no_margin_left">
+                    <div class="span3 no_margin_left" style="margin: 0px;">
                         <label>Qty:</label>
                         <input id="quantity" type="text" placeholder="1" class="span1" value="1">
                         <button id="add-to-cart" type="submit" class="btn btn-primary">Add to cart</button>
@@ -88,18 +76,19 @@
                     -->
                 </form>
             </div>	
-            <div class="span6">
-                <!--
-                <p>
-                    <input name="star1" type="radio" class="star"/>
-                    <input name="star1" type="radio" class="star"/>
-                    <input name="star1" type="radio" class="star"/>
-                    <input name="star1" type="radio" class="star"/>
-                    <input name="star1" type="radio" class="star"/>&nbsp;&nbsp;
-
-                    <a href="#">0 reviews</a>  |  <a href="#">Write a review</a>
-                </p>
-                -->                
+            <div class="span6" style="margin: 10px 0px;">
+                <div class="share">
+                    <!-- AddThis Button BEGIN -->
+                    <div class="addthis_default_style">
+                        <a class="addthis_button_compact">Share</a>
+                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_print"></a>
+                        <a class="addthis_button_facebook"></a>
+                        <a class="addthis_button_twitter"></a>
+                    </div>
+                    <script src="//s7.addthis.com/js/250/addthis_widget.js" type="text/javascript"></script>
+                    <!-- AddThis Button END -->
+                </div>
             </div>	
 
 
