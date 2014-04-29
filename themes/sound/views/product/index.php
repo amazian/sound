@@ -98,47 +98,48 @@
             </div>	
 
 
-        </div>	
-
+        </div>
 
     </div>
+    <hr>
+    <h3>Spec:</h3>
+    <table class="table table-bordered table-striped">
+        <tbody>
+        <?php
+        $primerySpec = $product->getPrimarySpec();
+        if(!is_null($primerySpec)):
+            ?>
+            <tr>
+                <th style="width: 200px; text-align: right;"><?php echo $primerySpec->description->name; ?></th>
+                <td><?php echo $primerySpec->value_init; ?><?php echo ($primerySpec->value_end != '') ? ' ~ ' . $primerySpec->value_end : ''; ?><?php echo (!is_null($primerySpec->unit)) ? ' ' . $primerySpec->unit->name : ''; ?></td>
+            </tr>
+        <?php endif; ?>
+        <?php foreach($product->specs as $spec): ?>
+            <?php if($primerySpec->product_spec_id == $spec->product_spec_id) continue; ?>
+            <tr>
+                <th style="width: 200px; text-align: right;"><?php echo $spec->description->name; ?></th>
+                <td><?php echo $spec->value_init; ?><?php echo ($spec->value_end != '') ? ' ~ ' . $spec->value_end : ''; ?><?php echo (!is_null($spec->unit)) ? ' ' . $spec->unit->name : ''; ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Description:</h3>
+    <?php echo $product->description->getDescription(); ?>
     <hr>
     <div class="row">
         <div class="span9">
             <div class="tabbable">
                 <ul class="nav nav-tabs">
-                    <li class="<?php if(!$relatedProductSearch): ?>active<?php endif; ?>"><a data-toggle="tab" href="#spec">Spec</a></li>
-                    <li><a data-toggle="tab" href="#description">Description</a></li>
-                    <li class="<?php if($relatedProductSearch): ?>active<?php endif; ?>""><a data-toggle="tab" href="#advancedSearch">Related Product Search</a></li>
+                    <li class="active"><a data-toggle="tab" href="#advancedSearch">Related Product Search</a></li>
+                    <li><a data-toggle="tab" href="#fbcomments">FB Comments</a></li>
                     <li><a data-toggle="tab" href="#tags">Tags</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="spec" class="tab-pane <?php if(!$relatedProductSearch): ?>active<?php endif; ?>">
-                        <table class="table table-bordered table-striped">
-                            <tbody>
-                            <?php
-                                $primerySpec = $product->getPrimarySpec();
-                                if(!is_null($primerySpec)):
-                            ?>
-                                <tr>
-                                    <th style="width: 200px; text-align: right;"><?php echo $primerySpec->description->name; ?></th>
-                                    <td><?php echo $primerySpec->value_init; ?><?php echo ($primerySpec->value_end != '') ? ' ~ ' . $primerySpec->value_end : ''; ?><?php echo (!is_null($primerySpec->unit)) ? ' ' . $primerySpec->unit->name : ''; ?></td>
-                                </tr>
-                            <?php endif; ?>
-                            <?php foreach($product->specs as $spec): ?>
-                                <?php if($primerySpec->product_spec_id == $spec->product_spec_id) continue; ?>
-                                <tr>
-                                    <th style="width: 200px; text-align: right;"><?php echo $spec->description->name; ?></th>
-                                    <td><?php echo $spec->value_init; ?><?php echo ($spec->value_end != '') ? ' ~ ' . $spec->value_end : ''; ?><?php echo (!is_null($spec->unit)) ? ' ' . $spec->unit->name : ''; ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div id="description" class="tab-pane">
-                        <?php echo $product->description->getDescription(); ?>
+                    <div id="fbcomments" class="tab-pane">
+                        <div class="fb-comments" data-href="<?php echo Yii::app()->createAbsoluteUrl('product/view', array('id'=>$product->product_id)); ?>" data-numposts="5" data-colorscheme="light"></div>
                     </div>    
-                    <div id="advancedSearch" class="tab-pane <?php if($relatedProductSearch): ?>active<?php endif; ?>">
+                    <div id="advancedSearch" class="tab-pane active">
                         <p>Select the spec you want to adjust</p>
                         <form class="form-inline" action="<?php echo $this->createUrl('view', array('id'=>$product->product_id)); ?>" method="post">
                             <button type="submit" class="btn btn-inverse">Go</button>
@@ -212,9 +213,6 @@
 
         </div>
     </div>
-    </div>
-    <div class="row-fluid">
-        <div class="fb-comments" data-href="<?php echo Yii::app()->createAbsoluteUrl('product/view', array('id'=>$product->product_id)); ?>" data-numposts="5" data-colorscheme="light"></div>
     </div>
 
     <script>
