@@ -26,18 +26,25 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->label($model, 'image', array('class' => 'control-label')); ?>
             <div class="controls">
                 <ul class="thumbnails">
-                  <li class="span2">
-                  <div class="thumbnail">
-                      <img id="thumb" alt="" src="<?php if(!is_null($model->getManufacturer())) echo $model->getManufacturer()->getImageWithSize(100, 100); ?>">
-                      <?php echo $form->hiddenField($model, 'image'); ?>
-                      <div class="caption">
-                        <p>
-                            <a onclick="image_upload('ManufacturerForm_image', 'thumb');" class="btn btn-mini btn-primary" href="#">Browse</a> 
-                            <a onclick="image_clear('ManufacturerForm_image', 'thumb');" class="btn btn-mini" href="#">Clear</a>
-                        </p>
-                      </div>
-                    </div>
-                  </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img id="thumb" alt="" src="<?php if(!is_null($model->getManufacturer())) echo $model->getManufacturer()->getImageWithSize(100, 100); ?>">
+                            <div class="caption">
+                                <p>
+                                    <?php
+                                    $this->widget('application.extensions.yiiavatarupload.YiiAvatarUpload', array(
+                                        'model' => $model,
+                                        'attribute' => 'image',
+                                        'thumb'=>'#thumb',
+                                        'urlPost'=>$this->createUrl('/admin/fileManager/upload'),
+                                        'urlGet'=>$this->createUrl('/admin/fileManager/image'),
+                                        'directory'=>'brands',
+                                        'htmlOptions'=>array('class'=>'btn btn-primary')
+                                    ));
+                                    ?>
+                                </p>
+                            </div>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -365,7 +365,7 @@ class FileManagerController extends BackendController {
                 $directory = rtrim(Yii::app()->params['imagePath'] . 'data/' . str_replace('../', '', $_POST['directory']), '/');
 
                 if (!is_dir($directory)) {
-                    $json['error'] = Yii::t('filemanager', 'Warning: Please select a directory!');
+                    $json['error'] = Yii::t('filemanager', 'Warning: Please select a directory! Directory: ' . $directory . ' is invalid.');
                 }
 
                 if ($_FILES['image']['size'] > 300000) {
