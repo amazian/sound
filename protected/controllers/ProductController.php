@@ -90,4 +90,16 @@ class ProductController extends Controller {
         }
     }
 
+    public function actionGetTagProducts($tagText) {
+        $productsByTag = ProductTag::model()->findAllByAttributes(array('tag_text'=>$tagText));
+        $products = array();
+        foreach($productsByTag as $productByTag) {
+            $products[] = $productByTag->product;
+        }
+
+        $this->renderPartial('_tagProducts', array(
+            'products' => $products,
+        ));
+    }
+
 }

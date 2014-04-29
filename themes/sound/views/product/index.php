@@ -6,6 +6,12 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=108658119183570";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<style>
+    .tag {
+        cursor: pointer; cursor: hand;
+    }
+</style>
         
 <?php echo $this->renderPartial('/common/leftMenu'); ?>
 <div class="span9">
@@ -191,7 +197,7 @@
                             <div class="tags">
                                 <?php foreach($product->tags as $tag): ?>
                                 <div class="tag label btn-info">
-                                    <span><?php echo $tag->tag_text; ?></span>
+                                    <span class="tag"><?php echo $tag->tag_text; ?></span>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
@@ -200,6 +206,7 @@
                         <br />
                         <br />
                         <br />
+                        <div id="tag-container">&nbsp;</div>
                     </div>
             </div>
 
@@ -233,4 +240,26 @@
 
             return false;
         });
+
+        $('.tag').on('click', function(){
+            var tagText = $(this).html();
+            var containerDiv = $('#tag-container');
+            $.get('<?php echo $this->createUrl('getTagProducts'); ?>', {tagText: tagText}, function(data){
+                containerDiv.html(data);
+                bindButton();
+            });
+        });
+
+        function bindButton() {
+            $('.add-to-cart').on('click', function(){
+                var productId = $(this).attr('data-id');
+                if($('#qty-'+productId).val() <= 0)
+                    alert('Qty must be at least 1. Please enter a qty and try again.');
+                else
+                    document.location = '<?php echo $this->createUrl('/shoppingCart/add'); ?>/?id=' + productId + '&qty=' + $('#quantity').val();
+
+                return false;
+            });
+        }
+
     </script>
