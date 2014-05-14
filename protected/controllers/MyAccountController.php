@@ -27,6 +27,27 @@ class MyAccountController extends Controller {
         }
     }
 
+    public function actionOrderDetails($id) {
+        if(Yii::app()->user->isGuest)  {
+            $this->redirect(array('site/index'));
+            die();
+        }
+
+        $email = Yii::app()->user->name;
+        $customer = Customer::model()->findByAttributes(array('email'=>$email));
+        if(!is_null($customer)) {
+            $order = Order::model()->findByAttributes(array('customer_id'=>$customer->customer_id, 'order_id'=>$id));
+
+            $this->renderPartial('_orderDetails', array(
+                'order'=>$order
+            ));
+        }
+        else {
+            $this->redirect(array('site/index'));
+            die();
+        }
+    }
+
     public function actionInformation() {
         if(Yii::app()->user->isGuest)  {
             $this->redirect(array('site/index'));

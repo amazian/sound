@@ -40,8 +40,6 @@ class OrderProduct extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
 			array('order_id, product_id, name, model, quantity, reward', 'required'),
 			array('order_id, product_id, quantity, reward', 'numerical', 'integerOnly'=>true),
@@ -57,6 +55,7 @@ class OrderProduct extends CActiveRecord
 	public function relations()
 	{
 		return array(
+            'product' => array(self::BELONGS_TO, 'Product', 'product_id')
 		);
 	}
 

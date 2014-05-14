@@ -7,7 +7,7 @@
     </ul>
     <p><?php echo $category->description->description; ?></p>
     <br />
-    
+
     <?php if($category->hasChildCategories()): ?>
     <div id="accordion-<?php echo $category->category_id; ?>" class="accordion">
         <?php foreach($category->childCategories as $child): ?>
@@ -21,7 +21,7 @@
             <div class="accordion-body collapse in" id="category-<?php echo $child->category_id; ?>">
                 <div class="accordion-inner">
                     <?php if($child->hasChildCategories()): ?>
-                    <div id="accordion<?php echo $child->category_id; ?>" class="accordion">                        
+                    <div id="accordion<?php echo $child->category_id; ?>" class="accordion">
                         <?php foreach($child->childCategories as $child2): ?>
                         <div class="accordion-group">
                             <div class="accordion-heading">
@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php endforeach; ?>                        
+                        <?php endforeach; ?>
                     </div>
                     <?php elseif(count($child->activeProducts)): ?>
                         <?php $this->renderPartial('_categoryProducts', array('category'=>$child, 'seeall'=>true)); ?>

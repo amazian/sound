@@ -12,7 +12,7 @@
                 <td>Qty: <?php echo CHtml::textField('qty', 1, array('class'=>'span1 quantity')); ?></td>
                 <td><a href="#" class="btn btn-primary add-to-cart" data-href="<?php echo $this->createUrl('/shoppingCart/add', array('id'=>$product->product_id)); ?>">Add to cart</a></td>
             </tr>
-        <?php endforeach; ?>                                        
+        <?php endforeach; ?>
     </tbody>
 </table>
 <?php if(isset($seeall) && $seeall): ?><a href="<?php echo $this->createUrl('view', array('id'=>$category->category_id)); ?>">See all (<?php echo $category->getProductsCount(); ?>) products</a><?php endif; ?>
