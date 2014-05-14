@@ -88,7 +88,6 @@ class Product extends CActiveRecord {
      */
     public function rules() {
         return array(
-            array('model', 'required'),
             array('quantity, stock_status_id, manufacturer_id, shipping, points, tax_class_id, weight_class_id, length_class_id, subtract, minimum, sort_order, status, viewed, preview', 'numerical', 'integerOnly' => true),
             array('model, sku, mpn', 'length', 'max' => 64),
             array('upc', 'length', 'max' => 12),
@@ -98,7 +97,7 @@ class Product extends CActiveRecord {
             array('image', 'length', 'max' => 255),
             array('price, weight, length, width, height', 'length', 'max' => 15),
             array('discount', 'numerical'),
-            array('date_added, date_modified, type', 'safe'),
+            array('date_added, date_modified, type, model', 'safe'),
         );
     }
 

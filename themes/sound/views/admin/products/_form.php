@@ -11,6 +11,8 @@ $form = $this->beginWidget('CActiveForm', array(
 ));
 ?>
 
+<?php echo $form->errorSummary($model); ?>
+
 <?php echo CHtml::hiddenField('copy', 0); ?>
 <!--<ul class="nav nav-tabs" id="myTab">
     <li class="active"><a data-toggle="tab" href="#general"><?php echo Yii::t('products', 'General'); ?></a></li>
@@ -47,6 +49,7 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->label($model, 'type', array('class' => 'control-label')); ?>
             <div class="controls">
                 <?php echo $form->textField($model, 'type', array('class' => 'span2')); ?>
+
             </div>
         </div>
 

@@ -62,11 +62,11 @@ class ProductForm extends CFormModel {
      */
     public function rules() {
         return array(
-            array('name, model, status', 'required'),
+            array('name, status', 'required'),
             array('id, price, taxClass, quantity, minimumQuantity, subtractStock, outOfStockStatus, requiresShipping, dimensionW, dimensionH, dimensionL, weight, weightClass, status, sortOrder, manufacturer, preview', 'numerical'),
             array('dateAvailable', 'date', 'format' => 'yyyy-MM-dd'),
             array('discount, primarySpec', 'numerical'),
-            array('metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
+            array('model, metaTagDescription, metaTagKeywords, description, productTags, model, sku, upc, ean, jan, isbn, mpn, location, seoKeyword, image, categories, filters, stores, downloadas, relatedProducts, type, specs, units, value_init, value_end, tags', 'safe')
         );
     }
 
