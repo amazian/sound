@@ -7,20 +7,11 @@ class CategoryController extends Controller {
         if(is_null($category))
             die('Invalid category');
 
-        $productsByBrand = array();
-        foreach($category->activeProducts as $product) {
-            $manufacturer = $product->manufacturer_id;
-            if(is_object($manufacturer)) {
-                $productsByBrand[$manufacturer->manufacturer_id] = array(
-                    'brand' => $manufacturer,
-                    'product' => $product,
-                );
-            }
-        }
+        $manufacturers = Manufacturer::model()->findAll();
         
         $this->render('index', array(
             'category' => $category,
-            'productsByBrand'=>$productsByBrand,
+            'manufacturers' => $manufacturers,
         ));
     }
 

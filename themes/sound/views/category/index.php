@@ -9,43 +9,24 @@
     <br />
 
     <?php if($category->hasChildCategories()): ?>
-    <div id="accordion-<?php echo $category->category_id; ?>" class="accordion">
-        <?php foreach($category->childCategories as $child): ?>
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <img src="<?php echo $child->getImageWithSize(50, 50); ?>" />
-                <a style="float: right;" href="#category-<?php echo $child->category_id; ?>" data-parent="#accordion<?php echo $category->category_id; ?>" data-toggle="collapse" class="accordion-toggle">
-                    <?php echo $child->description->getName(); ?>&nbsp;(<?php echo $child->getProductsCount(); ?> products)
-                </a>
-            </div>
-            <div class="accordion-body collapse in" id="category-<?php echo $child->category_id; ?>">
-                <div class="accordion-inner">
-                    <?php if($child->hasChildCategories()): ?>
-                    <div id="accordion<?php echo $child->category_id; ?>" class="accordion">
-                        <?php foreach($child->childCategories as $child2): ?>
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a href="#category-<?php echo $child2->category_id; ?>" data-parent="#accordion<?php echo $child->category_id; ?>" data-toggle="collapse" class="accordion-toggle">
-                                    <?php echo $child2->description->getName(); ?>
-                                </a>
-                            </div>
-                            <div class="accordion-body collapse" id="category-<?php echo $child2->category_id; ?>">
-                                <div class="accordion-inner">
-                                    <?php $this->renderPartial('_categoryProducts', array('category'=>$child2, 'seeall'=>true)); ?>
-                                </div>
-                            </div>
+        <ul class="thumbnails">
+        <?php foreach($manufacturers as $manufacturer): ?>
+                <?php if(!$category->hasProductsFromManufacturer($manufacturer->manufacturer_id)) continue; ?>
+                <li class="span4">
+                    <div class="thumbnail">
+                        <img src="<?php echo $manufacturer->getImageWithSize(100, 50); ?>" />
+                        <div class="caption">
+                            <ul class="nav nav-pills nav-stacked">
+                                <?php foreach($category->childCategories as $child): ?>
+                                    <?php if(!$child->hasProductsFromManufacturer($manufacturer->manufacturer_id)) continue; ?>
+                                <li><a href="<?php echo $this->createUrl('view', array('id'=>$child->category_id)); ?>"><?php echo $child->description->name; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
-                        <?php endforeach; ?>
                     </div>
-                    <?php elseif(count($child->activeProducts)): ?>
-                        <?php $this->renderPartial('_categoryProducts', array('category'=>$child, 'seeall'=>true)); ?>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
-        <br />
+                </li>
         <?php endforeach; ?>
-    </div>
+        </ul>
     <?php elseif(count($category->activeProducts)): ?>
     <div class="accordion">
         <div class="accordion-group">

@@ -302,4 +302,20 @@ class Category extends CActiveRecord {
         return ($this->bottom_most == 1) ? true : false;
     }
 
+    public function hasProductsFromManufacturer($manufacturerId) {
+        foreach($this->activeProducts as $product) {
+            if(is_object($product->manufacturer)) {
+                if($manufacturerId == $product->manufacturer->manufacturer_id) {
+                    return true;
+                }
+            }
+        }
+
+        if($this->hasChildCategories()) {
+            foreach($this->childCategories as $child) {
+                return $child->hasProductsFromManufacturer($manufacturerId);
+            }
+        }
+    }
+
 }

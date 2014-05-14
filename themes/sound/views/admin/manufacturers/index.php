@@ -32,7 +32,7 @@ $this->breadcrumbs = array(
                 <td><?php echo CHtml::checkBox('selected[]', false, array('value'=>$manufacturer->manufacturer_id)); ?></td>
                 <td><img src="<?php echo $manufacturer->getImageWithSize(40, 40); ?>" /></td>
                 <td><?php echo $manufacturer->name; ?></td>
-                <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id'=>$manufacturer->manufacturer_id)); ?>">Edit</button></td>
+                <td><a class="btn btn-success btn-mini" href="<?php echo $this->createUrl('update', array('id'=>$manufacturer->manufacturer_id)); ?>">Edit</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
