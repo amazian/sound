@@ -62,6 +62,7 @@
  * @property string $accept_language
  * @property string $date_added
  * @property string $date_modified
+ * @property string $admin_comment
  */
 class Order extends CActiveRecord {
 
@@ -94,7 +95,7 @@ class Order extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('invoice_prefix, store_name, store_url, firstname, lastname, email, telephone, fax, payment_firstname, payment_lastname, payment_company, payment_company_id, payment_tax_id, payment_address_1, payment_address_2, payment_city, payment_postcode, payment_country, payment_country_id, payment_zone, payment_zone_id, payment_address_format, payment_method, payment_code, shipping_firstname, shipping_lastname, shipping_company, shipping_address_1, shipping_address_2, shipping_city, shipping_postcode, shipping_country, shipping_country_id, shipping_zone, shipping_zone_id, shipping_address_format, shipping_method, shipping_code, comment, affiliate_id, commission, language_id, currency_id, currency_code, ip, forwarded_ip, user_agent, accept_language, date_added, date_modified', 'required'),
+            array('invoice_prefix, store_name, store_url, firstname, lastname, email, telephone, payment_firstname, payment_lastname, payment_address_1, payment_city, payment_country, payment_country_id, payment_zone, payment_zone_id, payment_method, payment_code, shipping_firstname, shipping_lastname, shipping_address_1, shipping_city, shipping_country, shipping_country_id, shipping_zone, shipping_zone_id, shipping_method, shipping_code, affiliate_id, commission, language_id, currency_id, currency_code, ip, user_agent, accept_language, date_added, date_modified', 'required'),
             array('invoice_no, store_id, customer_id, customer_group_id, payment_country_id, payment_zone_id, shipping_country_id, shipping_zone_id, order_status_id, affiliate_id, language_id, currency_id', 'numerical', 'integerOnly' => true),
             array('invoice_prefix', 'length', 'max' => 26),
             array('store_name', 'length', 'max' => 64),
@@ -106,6 +107,7 @@ class Order extends CActiveRecord {
             array('total, commission, currency_value', 'length', 'max' => 15),
             array('currency_code', 'length', 'max' => 3),
             array('ip, forwarded_ip', 'length', 'max' => 40),
+            array('admin_comment, fax, payment_company, payment_company_id, forwarded_ip, comment, payment_tax_id, payment_address_2, payment_postcode, payment_address_format, shipping_company, shipping_address_2, shipping_postcode, shipping_address_format', 'safe'),
         );
     }
 
@@ -206,6 +208,15 @@ class Order extends CActiveRecord {
                 break;
 
         }
+    }
+
+    public function getTotalPrice() {
+        $total = 0;
+        foreach($this->products as $product) {
+            $total += $product->price;
+        }
+
+        return $total;
     }
 
 }

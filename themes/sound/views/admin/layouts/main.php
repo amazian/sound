@@ -51,14 +51,10 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="<?php echo $this->createUrl('/admin/categories'); ?>">Categories</a></li>
                                         <li><a href="<?php echo $this->createUrl('/admin/products'); ?>">Products</a></li>
-                                        <!--<li><a href="<?php echo $this->createUrl('/admin/filters'); ?>">Filters</a></li>-->
                                         <li><a href="<?php echo $this->createUrl('/admin/specUnit'); ?>">Specs & Units</a></li>
-                                        <!--<li><a href="<?php echo $this->createUrl('/admin/options'); ?>">Options</a></li>-->
                                         <li><a href="<?php echo $this->createUrl('/admin/manufacturers'); ?>">Brands</a></li>
                                         <li><a href="<?php echo $this->createUrl('/admin/topSales'); ?>">Top Sales</a></li>
-                                        <!--<li><a href="<?php echo $this->createUrl('/admin/downloads'); ?>">Downloads</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/reviews'); ?>">Reviews</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/information'); ?>">Information</a></li>-->
+                                        <li><a href="<?php echo $this->createUrl('/admin/orders'); ?>">Orders</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -69,38 +65,6 @@
                                         <li><a href="<?php echo $this->createUrl('/admin/openPay'); ?>">OpenPay Configuration</a></li>
                                     </ul>
                                 </li>
-                                <!--<li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Sales <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?php echo $this->createUrl('/admin/orders'); ?>">Orders</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/returns'); ?>">Returns</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/customers'); ?>">Customers</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/affiliates'); ?>">Affiliates</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/coupons'); ?>">Coupons</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/giftVouchers'); ?>">Gift Vouches</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/mail'); ?>">Mail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">System <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?php echo $this->createUrl('/admin/settings'); ?>">Settings</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/design'); ?>">Design</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/users'); ?>">Users</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/localization'); ?>">Localization</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/logs'); ?>">Error logs</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/backup'); ?>">Backup / Restore</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Reports <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?php echo $this->createUrl('/admin/reports/sales'); ?>">Sales</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/reports/products'); ?>">Products</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/reports/customers'); ?>">Customers</a></li>
-                                        <li><a href="<?php echo $this->createUrl('/admin/reports/affiliates'); ?>">Affiliates</a></li>
-                                    </ul>
-                                </li>-->
                             </ul>
                             <ul class="nav pull-right">
                                 <li><a href="<?php echo $this->createUrl('/'); ?>"><?php echo Yii::t('help', 'Store Front'); ?></a></li>
