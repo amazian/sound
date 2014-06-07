@@ -18,6 +18,12 @@ $form = $this->beginWidget('CActiveForm', array(
         </div>
     </div>
     <div class="control-group">
+        <?php echo $form->label($model, 'api_key', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'api_key', array('class' => 'span4')); ?>
+        </div>
+    </div>
+    <div class="control-group">
         <?php echo $form->label($model, 'language', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->dropDownList($model, 'language', array("tchinese"=>"Traditional Chinese", "schinese"=>"Chinese", "english"=>"English"), array('class' => 'span3')); ?>

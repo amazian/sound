@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'openpay_setting':
  * @property integer $id
  * @property string $mid
+ * @property string $api_key
  * @property string $language
  * @property string $return_url
  * @property string $cancel_url
@@ -29,12 +30,9 @@ class OpenpaySetting extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('mid', 'length', 'max'=>128),
-			array('language', 'length', 'max'=>1),
-			array('return_url, cancel_url, notify_url', 'length', 'max'=>256),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, mid, language, return_url, cancel_url, notify_url', 'safe', 'on'=>'search'),
+			array('mid', 'length', 'max'=>256),
+			array('language', 'length', 'max'=>256),
+			array('return_url, cancel_url, notify_url, api_key', 'length', 'max'=>256),
 		);
 	}
 
@@ -57,41 +55,12 @@ class OpenpaySetting extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'mid' => 'Mid',
+            'api_key' => 'API Key',
 			'language' => 'Language',
 			'return_url' => 'Return Url',
 			'cancel_url' => 'Cancel Url',
 			'notify_url' => 'Notify Url',
 		);
-	}
-
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
-
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('mid',$this->mid,true);
-		$criteria->compare('language',$this->language,true);
-		$criteria->compare('return_url',$this->return_url,true);
-		$criteria->compare('cancel_url',$this->cancel_url,true);
-		$criteria->compare('notify_url',$this->notify_url,true);
-
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
 	}
 
 	/**
