@@ -24,6 +24,12 @@ $form = $this->beginWidget('CActiveForm', array(
         </div>
     </div>
     <div class="control-group">
+        <?php echo $form->label($model, 'sandbox', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->dropDownList($model, 'sandbox', array(1=>"Yes", 0=>"No"), array('class' => 'span1')); ?>
+        </div>
+    </div>
+    <div class="control-group">
         <?php echo $form->label($model, 'language', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->dropDownList($model, 'language', array("tchinese"=>"Traditional Chinese", "schinese"=>"Chinese", "english"=>"English"), array('class' => 'span3')); ?>

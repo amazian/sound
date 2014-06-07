@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenPayController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OpenPayController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="58" selection-start="251" selection-end="251" vertical-scroll-proportion="0.15718563" vertical-offset="0" max-vertical-offset="668">
+            <state line="5" column="27" selection-start="123" selection-end="123" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="OpenpaySetting.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/models/OpenpaySetting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="62" selection-start="868" selection-end="868" vertical-scroll-proportion="-3.4583333" vertical-offset="427" max-vertical-offset="1230">
+            <state line="36" column="47" selection-start="971" selection-end="971" vertical-scroll-proportion="-10.0" vertical-offset="300" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
@@ -95,10 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="56" selection-start="744" selection-end="744" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="840">
+            <state line="28" column="111" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.64122134" vertical-offset="0" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
@@ -186,9 +186,9 @@
         <option value="$PROJECT_DIR$/protected/controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/orders/index.php" />
-        <option value="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" />
-        <option value="$PROJECT_DIR$/protected/models/OpenpaySetting.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php" />
+        <option value="$PROJECT_DIR$/protected/models/OpenpaySetting.php" />
+        <option value="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" />
       </list>
     </option>
   </component>
@@ -997,13 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="56" selection-start="744" selection-end="744" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="42" selection-start="1216" selection-end="1216" vertical-scroll-proportion="-20.958334" vertical-offset="142" max-vertical-offset="810">
@@ -1011,16 +1004,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/OpenpaySetting.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="868" selection-end="868" vertical-scroll-proportion="-3.4583333" vertical-offset="427" max-vertical-offset="1230">
+        <state line="5" column="27" selection-start="123" selection-end="123" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php">
+    <entry file="file://$PROJECT_DIR$/protected/models/OpenpaySetting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="58" selection-start="251" selection-end="251" vertical-scroll-proportion="0.15718563" vertical-offset="0" max-vertical-offset="668">
+        <state line="36" column="47" selection-start="971" selection-end="971" vertical-scroll-proportion="-10.0" vertical-offset="300" max-vertical-offset="1245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="111" selection-start="1068" selection-end="1068" vertical-scroll-proportion="0.64122134" vertical-offset="0" max-vertical-offset="930">
           <folding />
         </state>
       </provider>
