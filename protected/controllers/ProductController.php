@@ -28,7 +28,7 @@ class ProductController extends Controller {
                             $valueStart = $_POST["filter-{$specFilterId}-start"];
 
                             // product specs on filter
-                            $productSpecs = ProductSpec::model()->findAll("spec_id=:spec_id AND (value_init=:start OR value_end=:end OR value_end=:start OR value_end=:end)", array(':spec_id'=>$productSpec->spec_id, ':start'=>$valueStart, ':end'=>$valueEnd));
+                            $productSpecs = ProductSpec::model()->findAll("spec_id=:spec_id AND (value_init=:start OR value_end=:end OR value_end=:start)", array(':spec_id'=>$productSpec->spec_id, ':start'=>$valueStart));
                         }
                     }
                     elseif($productSpec->description->type_id == Spec::TYPE_ALPHABETICAL) {
