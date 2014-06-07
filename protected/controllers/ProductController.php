@@ -68,6 +68,16 @@ class ProductController extends Controller {
             'product'=>$product
         ));
     }
+
+    public function actionHoverCardNoBuyButton($id) {
+        $product = Product::model()->findByPk($id);
+        if(is_null($product))
+            die('Invalid product');
+
+        $this->renderPartial('_hoverCardNoBuyButton', array (
+            'product'=>$product
+        ));
+    }
     
     public function actionCompare(){
         $this->render('compare', array(
