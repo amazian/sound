@@ -31,9 +31,10 @@ class OpenPay extends CComponent {
 
     public $language;
 
-    /**
-     * @var string paypal business/merchant email
-     */
+    public $key1;
+
+    public $key2;
+
     public $mid; // merchant id
     public $lastError;                 // holds the last error encountered
     public $fields = array();           // array holds the fields to submit to openpay
@@ -48,6 +49,8 @@ class OpenPay extends CComponent {
 
         $this->currency = Yii::app()->getModule('SimpleOpenPay')->currency;
         $this->mid = Yii::app()->getModule('SimpleOpenPay')->mid;
+        $this->key1 = Yii::app()->getModule('SimpleOpenPay')->key1;
+        $this->key2 = Yii::app()->getModule('SimpleOpenPay')->key2;
 
         // populate $fields array with a few default values.  See the openpay
         // documentation for a list of fields and their data types. These openpay
@@ -60,6 +63,7 @@ class OpenPay extends CComponent {
         $this->addField('cancel_return', $this->cancelUrl . '&q=cancel');
         $this->addField('notify_url', $this->notifyUrl . '&q=ipn');
         $this->addField('language', $this->language);
+        $this->addField('iid', '');
     }
 
     public function __construct() {
@@ -121,6 +125,10 @@ class OpenPay extends CComponent {
         }
 
         echo "</table><br>";
+    }
+
+    public function getVerification($order, $amount) {
+        return md5(implode( '|', array($this->key1, $this->mid, $order->order_id, (int)$amount, $this->key2)));
     }
 
 }

@@ -6,7 +6,8 @@
  * The followings are the available columns in table 'openpay_setting':
  * @property integer $id
  * @property string $mid
- * @property string $api_key
+ * @property string $api_key1
+ * @property string $api_key2
  * @property integer $sandbox
  * @property string $language
  * @property string $return_url
@@ -33,7 +34,7 @@ class OpenpaySetting extends CActiveRecord
 		return array(
 			array('mid', 'length', 'max'=>256),
 			array('language', 'length', 'max'=>256),
-			array('return_url, cancel_url, notify_url, api_key', 'length', 'max'=>256),
+			array('return_url, cancel_url, notify_url, api_key1, api_key2', 'length', 'max'=>256),
             array('sandbox', 'length', 'max'=>1),
 		);
 	}
@@ -55,7 +56,8 @@ class OpenpaySetting extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'mid' => 'Mid',
-            'api_key' => 'API Key',
+            'api_key1' => 'API Key 1',
+            'api_key2' => 'API Key 2',
             'sandbox' => 'Sandbox',
 			'language' => 'Language',
 			'return_url' => 'Return Url',

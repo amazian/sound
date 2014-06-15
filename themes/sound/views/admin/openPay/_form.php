@@ -18,9 +18,15 @@ $form = $this->beginWidget('CActiveForm', array(
         </div>
     </div>
     <div class="control-group">
-        <?php echo $form->label($model, 'api_key', array('class' => 'control-label')); ?>
+        <?php echo $form->label($model, 'api_key1', array('class' => 'control-label')); ?>
         <div class="controls">
-            <?php echo $form->textField($model, 'api_key', array('class' => 'span4')); ?>
+            <?php echo $form->textField($model, 'api_key1', array('class' => 'span4')); ?>
+        </div>
+    </div>
+    <div class="control-group">
+        <?php echo $form->label($model, 'api_key2', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'api_key2', array('class' => 'span4')); ?>
         </div>
     </div>
     <div class="control-group">

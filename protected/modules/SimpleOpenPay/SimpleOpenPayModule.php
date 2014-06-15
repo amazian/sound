@@ -30,6 +30,10 @@ class SimpleOpenPayModule extends CWebModule {
 
     public $language;
 
+    public $key1;
+
+    public $key2;
+
     /**
      * @var string merchant id
      */
@@ -51,9 +55,11 @@ class SimpleOpenPayModule extends CWebModule {
         $this->returnUrl = $model->return_url;
         $this->cancelUrl = $model->cancel_url;
         $this->notifyUrl = $model->notify_url;
-        $this->currency = $this->currency;
+        //$this->currency  = $model->currency;
         $this->mid = $model->mid;
         $this->language = $model->language;
+        $this->key1 = $model->api_key1;
+        $this->key2 = $model->api_key2;
     }
 
     public function beforeControllerAction($controller, $action) {

@@ -91,12 +91,12 @@ class ShoppingCartController extends Controller {
                     else {
                         $openPayManager = Yii::app()->getModule('SimpleOpenPay')->openPayManager;
 
-                        $openPayManager->addField('txid', '222222'); // Merchants Order Number
-                        $openPayManager->addField('amount', $order->total);
-                        //$openPayManager->addField('Parameter check 1', '8cfe9eceb4457332e6dee59fa436c078');
-                        //$openPayManager->addField('Parameter check 2', '8f2d1f6fa969e7e12efca50099691f9a');
+                        $openPayManager->addField('txid', $order->order_id); // Merchants Order Number
+                        $openPayManager->addField('amount', (int)$order->total);
+                        $openPayManager->addField('verify', $openPayManager->getVerification($order, (int)$order->total));
 
                         //$openPayManager->dumpFields();   // for printing openpay form fields
+                        //die();
                         $openPayManager->submitOpenPayPost();
                     }
                 }
