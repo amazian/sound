@@ -46,7 +46,7 @@ class ProductController extends Controller {
         $relatedProducts = array();
         if(count($productSpecs) > 0) {
             foreach($productSpecs as $productSpec) {
-                if($productSpec->product->product_id == $id) continue;
+                if(!is_object($productSpec) || $productSpec->product->product_id == $id) continue;
 
                 $relatedProducts[] = $productSpec->product;
             }
