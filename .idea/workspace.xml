@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a40cd44-8c6f-43ef-994f-2632f151e129" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" afterPath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/OpenpaySetting.php" afterPath="$PROJECT_DIR$/protected/models/OpenpaySetting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" afterPath="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php" afterPath="$PROJECT_DIR$/protected/modules/SimpleOpenPay/SimpleOpenPayModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" afterPath="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ProductController.php" afterPath="$PROJECT_DIR$/protected/controllers/ProductController.php" />
     </list>
     <ignored path="sound.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenPay.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OpenPay.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="5" selection-start="4753" selection-end="4753" vertical-scroll-proportion="0.66012084" vertical-offset="1468" max-vertical-offset="2130">
+            <state line="127" column="5" selection-start="4753" selection-end="4753" vertical-scroll-proportion="-18.208334" vertical-offset="1468" max-vertical-offset="2130">
               <folding>
                 <marker date="1402867802000" expanded="true" signature="4330:4538" placeholder="..." />
                 <marker date="1402867802000" expanded="true" signature="4347:4538" placeholder="..." />
@@ -105,19 +100,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingCartController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
+      <file leaf-file-name="ProductController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="26" selection-start="3773" selection-end="3773" vertical-scroll-proportion="-22.5" vertical-offset="930" max-vertical-offset="2010">
+            <state line="30" column="99" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.6302003" vertical-offset="41" max-vertical-offset="1800">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_hoverCardNoBuyButton.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/sound/views/product/_hoverCardNoBuyButton.php">
+      <file leaf-file-name="ShoppingCartController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/ShoppingCartController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="123" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="735">
+            <state line="98" column="26" selection-start="3773" selection-end="3773" vertical-scroll-proportion="-22.5" vertical-offset="930" max-vertical-offset="2010">
               <folding />
             </state>
           </provider>
@@ -178,7 +173,6 @@
         <option value="$PROJECT_DIR$/protected/models/Order.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/product/_hoverCard.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/product/_hoverCardNoBuyButton.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/themes/sound/views/admin/orders/index.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/OpenPayController.php" />
@@ -187,6 +181,7 @@
         <option value="$PROJECT_DIR$/themes/sound/views/admin/openPay/_form.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ShoppingCartController.php" />
         <option value="$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/ProductController.php" />
       </list>
     </option>
   </component>
@@ -912,11 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="51" selection-start="3522" selection-end="3522" vertical-scroll-proportion="0.8244275" vertical-offset="600" max-vertical-offset="1800" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/sound/views/admin/orders/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="49" selection-start="4237" selection-end="4237" vertical-scroll-proportion="0.0" vertical-offset="1370" max-vertical-offset="2220">
@@ -985,11 +975,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/SimpleOpenPay/components/OpenPay.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="5" selection-start="4753" selection-end="4753" vertical-scroll-proportion="0.66012084" vertical-offset="1468" max-vertical-offset="2130">
+        <state line="127" column="5" selection-start="4753" selection-end="4753" vertical-scroll-proportion="-18.208334" vertical-offset="1468" max-vertical-offset="2130">
           <folding>
             <marker date="1402867802000" expanded="true" signature="4330:4538" placeholder="..." />
             <marker date="1402867802000" expanded="true" signature="4347:4538" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="99" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.6302003" vertical-offset="41" max-vertical-offset="1800">
+          <folding />
         </state>
       </provider>
     </entry>
