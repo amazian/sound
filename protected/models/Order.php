@@ -63,6 +63,7 @@
  * @property string $date_added
  * @property string $date_modified
  * @property string $admin_comment
+ * @property string $payed
  */
 class Order extends CActiveRecord {
 
@@ -107,7 +108,7 @@ class Order extends CActiveRecord {
             array('total, commission, currency_value', 'length', 'max' => 15),
             array('currency_code', 'length', 'max' => 3),
             array('ip, forwarded_ip', 'length', 'max' => 40),
-            array('admin_comment, fax, payment_company, payment_company_id, forwarded_ip, comment, payment_tax_id, payment_address_2, payment_postcode, payment_address_format, shipping_company, shipping_address_2, shipping_postcode, shipping_address_format', 'safe'),
+            array('admin_comment, fax, payment_company, payment_company_id, forwarded_ip, comment, payment_tax_id, payment_address_2, payment_postcode, payment_address_format, shipping_company, shipping_address_2, shipping_postcode, shipping_address_format, payed', 'safe'),
         );
     }
 

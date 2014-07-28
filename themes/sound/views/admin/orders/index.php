@@ -37,7 +37,7 @@ $this->breadcrumbs = array(
             <td><?php echo '$' . $order->total; ?></td>
             <td><?php echo $order->shipping_method; ?></td>
             <td><?php echo $order->payment_method; ?></td>
-            <td><?php echo $order->order_status_id == Order::STATUS_COMPLETED ? 'Yes' : 'No'; ?></td>
+            <td><?php echo CHtml::dropDownList('payed', $order->payed, array(0=>'No', 1=>'Yes'), array('class'=>'order_payed', 'style'=>'width: inherit;', 'data-order-id'=>$order->order_id)); ?></td>
             <td><?php echo CHtml::dropDownList('order_status', $order->order_status_id, $orderStatuses, array('class'=>'order_status', 'data-order-id'=>$order->order_id)); ?></td>
             <td><a class="write" data-id="<?php echo $order->order_id; ?>" href='#'>Write</a></td>
             <td><?php if(!empty($order->comment)) echo "<a class='read' data-id='".$order->order_id."' href='#'>Read</a>"; ?></td>
@@ -108,6 +108,14 @@ $this->breadcrumbs = array(
         var status = $(this).val();
         $.post('<?php echo $this->createUrl('saveStatus'); ?>', {id: orderId, status: status}, function(){
             $('#myModal2').modal('hide');
+        });
+    });
+
+    $('.order_payed').on('change', function(){
+        var orderId = $(this).attr('data-order-id');
+        var payed = $(this).val();
+        $.post('<?php echo $this->createUrl('savePayed'); ?>', {id: orderId, payed: payed}, function(){
+            //
         });
     });
 

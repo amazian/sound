@@ -46,4 +46,13 @@ class OrdersController extends BackendController {
         $order->save();
     }
 
+    public function actionSavePayed() {
+        $order = Order::model()->findByPk($_POST['id']);
+        $payed = $_POST['payed'];
+
+        $order->payed = $payed;
+
+        $order->save();
+    }
+
 }
