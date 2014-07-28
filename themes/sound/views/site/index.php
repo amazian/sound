@@ -15,9 +15,9 @@
                     <?php foreach($topSaleProducts as $product): ?>
                         <?php if(is_null($product->product)) continue; ?>
                     <li>
-                        <img src="<?php echo $product->product->getImageWithSize(125, 125); ?>" alt="<?php echo $product->product->description->name; ?>">
-                        <p><?php echo $product->product->description->name; ?></p>
-                        <span style="color: #0044cc;"><?php echo $product->product->getFormattedPrice(true); ?></span>
+                        <a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><img src="<?php echo $product->product->getImageWithSize(125, 125); ?>" alt="<?php echo $product->product->description->name; ?>"></a>
+                        <a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><?php echo $product->product->description->name; ?></a><br />
+                        <a href="<?php echo $this->createUrl('/product/view', array('id'=>$product->product_id)); ?>"><span style="color: #0044cc;"><?php echo $product->product->getFormattedPrice(true); ?></span></a>
                         <a href="<?php echo $this->createUrl('/shoppingCart/add', array('id'=>$product->product_id, 'qty'=>1)); ?>" class="btn btn-mini btn-info">add to cart</a>
                     </li>
                     <?php endforeach; ?>
