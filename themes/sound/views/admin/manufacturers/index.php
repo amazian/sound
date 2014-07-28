@@ -21,7 +21,7 @@ $this->breadcrumbs = array(
     <thead>
         <tr>
             <th style="width: 1px;"><?php echo CHtml::checkBox('checkall', false); ?></th>
-            <th style="width: 1px;">&nbsp;</th>
+            <th style="width: 40px;">&nbsp;</th>
             <th><?php echo Yii::t('manufacturers', 'Brands'); ?></th>
             <th style="width: 80px;"><?php echo Yii::t('manufacturers', 'Action'); ?></th>
         </tr>
