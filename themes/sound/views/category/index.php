@@ -49,8 +49,11 @@ $('.add-to-cart').on('click', function(){
     var qty = $(this).parent('td').parent('tr').find('td input.quantity').val();
     if(qty <= 0)
         alert('Qty must be at least 1. Please enter a qty and try again.');
-    else
-        document.location = $(this).attr('data-href') + '?qty=' + qty;
+    else {
+        $.get($(this).attr('data-href') + '?qty=' + qty, null, function(){
+            alert('Product added to cart');
+        });
+    }
 
     return false;
 });
