@@ -143,8 +143,10 @@ class Category extends CActiveRecord {
     public function getFullname($fullname = null){
         if(is_null($fullname))
             $fullname = $this->description->getName();
-        else
-            $fullname = "{$this->description->getName()} > {$fullname}" ;
+        else {
+            $url = Yii::app()->createUrl('/category/view', array('id' => $this->category_id));
+            $fullname = "<a href=\"{$url}\">{$this->description->getName()}</a> > {$fullname}" ;
+        }
             
         if($this->hasParent())
             $fullname = $this->parent->getFullname($fullname);
